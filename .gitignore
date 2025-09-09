@@ -1,0 +1,15 @@
+# Archivos a excluir
+# Datos pesados y temporales
+/data/
+*.tmp
+~$*
+# Archivos de Office temporales
+*.lnk
+# Entornos Python (si se agregan scripts)
+.venv/
+.env
+# Jupyter
+.ipynb_checkpoints/
+# Sistema
+.DS_Store
+Thumbs.db
