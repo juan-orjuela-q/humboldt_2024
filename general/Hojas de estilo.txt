@@ -1,0 +1,5 @@
+https://reporte.humboldt.org.co/assets/css/main-v3.css?v=1.0
+https://reporte.humboldt.org.co/assets/css/colors-v3.css
+https://reporte.humboldt.org.co/assets/css/icons-v3.css
+https://reporte.humboldt.org.co/assets/css/animate.css
+https://reporte.humboldt.org.co/assets/css/fluidable-min.css
