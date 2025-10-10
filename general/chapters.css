@@ -1,0 +1,107 @@
+/***cards y capítulos***/
+.card{
+	background-position: center;
+	background-size: cover;
+	border-radius: 5px;
+	/*border: 1px #fff solid;*/
+	color:#444!important;
+	display: grid;
+	height: 20rem;
+	margin-bottom: 2rem;
+	overflow: hidden;
+	text-align: left;
+	/*added in v2021*/
+	text-decoration: none;
+}
+#capitulo2 .card{
+	height: 22rem;
+}
+.card:hover{
+	color:#222;
+	box-shadow: rgb(180 180 180 / 80%) 0 0 30px;
+}
+/*update in v2021 - 2022-09-21*/
+.card .card_wrap{
+	background-color: rgba(255,255,255,0.8);
+	bottom: 0;
+	position: relative;
+	align-self: end;
+	height: 5.4rem;
+	padding: 1rem;
+} 
+#capitulos .card .card_wrap{
+	height: 4rem;
+}
+.card:hover .card_wrap{
+	background-color: rgba(255,255,255,0.93);
+	height: 18rem;
+	overflow-y: auto;
+}
+#capitulos .card:hover .card_wrap{
+	height: 5rem;
+}
+.card .card_wrap > span{
+	display: block;
+}
+.card .card_wrap .number{
+	font-size: var(--fs-300);
+	font-weight: 400;
+	line-height: 1.5;
+}
+#capitulos .card .card_wrap .number{
+	font-size: var(--fs-xl);
+	font-weight: 600;
+	line-height: 1;
+}
+.card .card_wrap .title{
+	font-size: var(--fs-300);
+	font-weight: 500;
+}
+#capitulos .card .card_wrap .title{
+	font-size: var(--fs-300);
+	font-weight: 500;
+	line-height: 1;
+}
+.card .card_wrap .summary{
+	display: none;
+}
+.card:hover .card_wrap .summary{
+	display: block;
+}
+#lightbox #capitulos{
+	padding: 2rem 0 4rem;
+}
+.card .card_cover{
+	position:absolute;
+	top:-4rem;
+	height:4rem;
+}
+
+
+/***Índice***/
+#index{
+	margin-bottom: 2rem;
+}
+#index-content{
+	display: none;
+}
+#index-content ul{
+	font-size: 0.95rem;
+	list-style: none;
+}
+#index-content li{
+	padding: 5px 0;
+}
+#lightbox #index-content{
+	display: block;
+}
+#lightbox #index-menu{
+	display: none;
+}
+
+
+@media screen and (min-width: 640px) {
+	#capitulos, #capitulo{
+		padding: 4rem 0;
+	}
+}
