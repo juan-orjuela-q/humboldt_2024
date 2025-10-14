@@ -1,0 +1,609 @@
+/***colors background***/
+.bg-beige{
+	background-color: #DBD7CC;
+}
+.bg-beige_clear{
+	background-color: #eeece3;
+}
+.bg-black{
+	background-color:#000;
+}
+.bg-blue{
+	background-color:#75c8da;
+}
+.bg-blue_clear{
+	background-color:#bee2e9;
+}
+.bg-blue_pacific{
+	background-color:#1c2445;
+}
+.bg-brown{
+	background-color: #5b401c;
+}
+.bg-brown_dark{
+	background-color:#6D4C41;
+}
+.bg-brown_wine{
+	background-color:#692940;
+}
+.bg-dark{
+	background-color:#2A2A2A;
+}
+.bg-green{
+	background-color: #79ab2b;
+}
+.bg-green_aqua{
+	background-color: #c9ddd8;
+}
+.bg-green_blue{
+	background-color: #008493;
+}
+.bg-green_blue_dark{
+	background-color:#00748b;
+}
+.bg-green_clear{
+	background-color: #aebc14;
+}
+.bg-green_dark{
+	background-color: #689F38;
+}
+.bg-grey_clear{
+	background-color:#F5F5F5;
+}
+.bg-grey{
+	background-color:#bbb;
+}
+.bg-grey_blue_dark{
+	background-color:#2d3a43;
+}
+.bg-magenta{
+	background-color:#b16495;
+}
+.bg-magenta_lighten{
+	background-color:#d6075b;
+}
+.bg-orange{
+	background-color:#f59c00;
+}
+.bg-red{
+	background-color:#d50000;
+}
+.bg-salmon{
+	background-color:#FC7268;
+}
+.bg-violet{
+	background-color:#695da6;
+}
+.bg-violet_dark{
+	background-color:#682172;
+}
+.bg-wine{
+	background-color:#930e14;
+}
+.bg-white{
+	background-color:white;
+	color:#000;
+}
+.bg-yellow{
+	background-color:#ffcc00;
+}
+.bg-forest_silhouette{
+	background: url(../img/silueta_bosque_oscuro.png) center repeat-x;
+}
+.bg-oak_silhouette{/*added here 2020-11-17*/
+	background: url(../img/silueta_robledales.png) center repeat-x;
+}
+
+/*specific colors*/
+.bg-cr{
+	background-color:#ae0f09;
+}
+.bg-dd{
+	background-color:#bbb;
+}
+.bg-en{
+	background-color:#f59c00;
+}
+.bg-ev{
+	background-color:#1c1c1b;
+}
+.bg-ew{/*added 2020-04-21*/
+	background-color:#222;
+}
+.bg-ex{
+	background-color:#1c1c1b;
+}
+.bg-lc{
+	background-color:#689F38;
+}
+.bg-nt{
+	background-color:#aebc14;
+}
+.bg-vu{
+	background-color:#ffd400;
+}
+.bg-distribution{
+	background-color: #D4B895;
+}
+.bg-trait{
+	background-color: #67adac;
+}
+.bg-use{
+	background-color: #637f32;
+}
+
+/*different color in the first letter and similar in the others*/
+.bicolor-1, .bicolor-2, .bicolor-3, .thin {
+	font-weight:300;
+}
+.bicolor-1{/*blue*/
+	color:#ddd;
+}
+.bicolor-1:first-letter {
+	color: #ccc;
+}
+.bicolor-2{ /*brown*/
+	color: #bd925e;
+}
+.bicolor-2:first-letter { 
+	color:#ceb597;
+}
+.bicolor-3{ /*green*/
+	color: #9CCC65;
+}
+.bicolor-3:first-letter { 
+	color:#B2FF59;
+}
+
+/*gradients*/
+.gradient-brown{
+	background: -webkit-radial-gradient(rgb(93, 64, 55), rgb(78, 52, 46));
+	background: radial-gradient(rgb(93, 64, 55), rgb(78, 52, 46));
+}
+
+
+
+/***color text***/
+/*white text*/
+.bg-black, .bg-blue, .bg-blue_pacific, .bg-brown, .bg-brown_dark, .bg-brown_wine,
+.bg-dark, .bg-green, .bg-green_dark, .bg-green_blue, .bg-green_blue_dark,
+.bg-grey_blue_dark, .bg-indigo, .bg-magenta, .bg-magenta_lighten, .bg-orange,
+.bg-red, .bg-salmon, .bg-violet, .bg-violet_dark, .bg-wine,
+.bg-cr, .bg-dd, .bg-en, .bg-ev, .bg-ew, .bg-ex, .bg-lc, .bg-nt, .bg-vu, .bg-use, .bg-trait,
+/*a*/
+.bg-black a, .bg-blue a, .bg-blue_pacific a, .bg-brown a, .bg-brown_dark a, .bg-brown_wine a,
+.bg-dark a, .bg-green a, .bg-green_dark a, .bg-green_blue a, .bg-green_blue_dark a,
+.bg-grey_blue_dark a, .bg-indigo a, .bg-magenta a, .bg-magenta_lighten a, .bg-orange a,
+.bg-red a, .bg-salmon a, .bg-violet a, .bg-violet_dark a, .bg-wine a,
+.bg-cr a, .bg-dd a, .bg-en a, .bg-ev a, .bg-ew a, .bg-ex a, .bg-lc a, .bg-nt a, .bg-vu a, .bg-use a, .bg-trait a
+{
+	color:#fff;
+}
+/*a:hover*/
+.bg-black a:hover, .bg-blue a:hover, .bg-blue_pacific a:hover, .bg-brown a:hover, .bg-brown_dark a:hover, .bg-brown_wine a:hover,
+.bg-dark a:hover, .bg-green a:hover, .bg-green_dark a:hover, .bg-green_blue a:hover, .bg-green_blue_dark a:hover,
+.bg-grey_blue_dark a:hover, .bg-indigo a:hover, .bg-magenta a:hover, .bg-magenta_lighten a:hover, .bg-orange a:hover,
+.bg-red a:hover, .bg-salmon a:hover, .bg-violet a:hover, .bg-violet_dark a:hover, .bg-wine a:hover,
+.bg-cr a:hover, .bg-dd a:hover, .bg-en a:hover, .bg-ev a:hover, .bg-ew a:hover, .bg-ex a:hover, .bg-lc a:hover, .bg-nt a:hover, .bg-vu a:hover, .bg-use a:hover, .bg-trait a:hover
+{
+	opacity: 0.5;
+}
+/*dark text*/
+.bg-beige, .bg-beige_clear, .bg-distribution, .bg-blue_clear, .bg-distribution, .bg-green_aqua, .bg-green_clear,
+.bg-grey, .bg-grey_clear, .bg-yellow, .bg-white {
+	color: #222;
+}
+.text-black{
+	color:#000;
+}
+.text-blue{
+	color:#75c8da;
+}
+.text-brown{
+	color: #6D4C41;
+}
+.text-brown_wine{
+	color: #692940;
+}
+.text-grey{
+	color:#999;
+}
+.text-green{
+	color:#79ab2b;
+}
+.text-green_clear{
+	color: #aebc14;
+}
+.text-green_blue{
+	color:#008493;
+}
+.text-green_blue_dark{
+	color:#00748b;
+}
+.text-magenta{
+	color:#b16495;
+}
+.text-orange{
+	color: #f59c00;
+}
+.text-red{
+	color:#FF4444;
+}
+.text-salmon{
+	color:#FC7268;
+}
+.text-white{
+	color:#fff;
+}
+.text-wine{
+	color:#930e14;
+}
+.text-yellow{
+	color:#ffcc00;
+}
+.text-violet{
+	color: #695da6;
+}
+
+
+/***adicionados en reporte 2020***/
+/*amarillo*/
+.bg-amarillo-2020{
+    background-color: #ffda00;
+}
+.bg-amarillo-1-2020{
+background-color: #ffe340;
+}
+.bg-amarillo-2-2020{
+background-color: #ffeb73;
+}
+.bg-amarillo-3-2020{
+background-color: #fff4b2;
+}
+.bg-amarillo-4-2020{
+background-color: #fff9d9;
+}
+.bg-amarillo-5-2020{
+background-color: #fffdf2;
+}
+
+/*azul*/
+.bg-azul-2020{
+    background-color: #0078e5;
+}
+.bg-azul-1-2020{
+    background-color: #3393ea;
+}
+.bg-azul-2-2020{
+    background-color: #66aeef;
+}
+.bg-azul-3-2020{
+    background-color: #b2d6f7;
+}
+.bg-azul-4-2020{
+    background-color: #d9ebfb;
+}
+.bg-azul-5-2020{
+    background-color: #f2f8fe;
+}
+/*azul b*/
+.bg-azul-b-2020{
+    background-color: #006c89;
+}
+.bg-azul-b-1-2020{
+    background-color: #4c98ac;
+}
+.bg-azul-b-2-2020{
+    background-color: #80b5c4;
+}
+.bg-azul-b-3-2020{
+    background-color: #bfdae1;
+}
+.bg-azul-b-4-2020{
+    background-color: #e5f0f3;
+}
+.bg-azul-b-5-2020{
+    background-color: #f2f8f9;
+}
+/*azul c*/
+.bg-azul-c-2020{
+    background-color: #002359;
+}
+/*azul d*/
+.bg-azul-d-2020{
+    background-color: #02132b;
+}
+
+/*café*/
+.bg-cafe-2020{
+    background-color: #4c1f00;    
+}
+.bg-cafe-1-2020{
+    background-color: #6d3108;    
+}
+.bg-cafe-2-2020{
+    background-color: #8c4718;    
+}
+.bg-cafe-3-2020{
+    background-color: #aa6130;    
+}
+.bg-cafe-4-2020{
+    background-color: #cc9164;    
+}
+.bg-cafe-5-2020{
+    background-color: #ddb89a;    
+}
+.bg-cafe-6-2020{
+    background-color: #f7dfcd;    
+}
+.bg-cafe-7-2020{
+    background-color: #f6ede6;    
+}
+/*café b*/
+.bg-cafe-b-2020{
+    background-color: #2d1f00;    
+}
+
+/*gris*/
+.bg-gris-1-2020{
+    background-color: #464646;    
+}
+.bg-gris-2-2020{
+    background-color: #6b6464;
+}
+.bg-gris-3-2020{
+    background-color: #a0a0a0;
+}
+.bg-gris-4-2020{
+    background-color: #c8c8c8;
+}
+.bg-gris-5-2020{
+    background-color: #f3f4f3;
+}
+
+/*gris b*/
+.bg-gris-b-1-2020{
+    background-color: #676740;    
+}
+.bg-gris-b-2-2020{
+    background-color: #9a9a80;    
+}
+.bg-gris-b-3-2020{
+    background-color: #a0a0a0;    
+}
+.bg-gris-b-4-2020{
+    background-color: #ebebe6;    
+}
+.bg-gris-b-5-2020{
+    background-color: #f9f9f7;    
+}
+
+/*lima*/
+.bg-lima-2020{
+    background-color: #d8ff0f;
+}
+.bg-lima-1-2020{
+    background-color: #e2ff4b;
+}
+.bg-lima-2-2020{
+    background-color: #eaff7b;
+}
+.bg-lima-3-2020{
+    background-color: #f3ffb7;
+}
+.bg-lima-4-2020{
+    background-color: #f9ffdb;
+}
+.bg-lima-5-2020{
+    background-color: #fcffee;
+}
+
+/*magenta*/
+.bg-magenta-2020{
+background-color: #ff15b7;
+}
+
+/*morado*/
+.bg-morado-2020{
+    background-color: #53069a;
+}
+.bg-morado-1-2020{
+    background-color: #6756bd;
+}
+.bg-morado-2-2020{
+    background-color: #7c81ca;
+}
+.bg-morado-3-2020{
+    background-color: #a3a9d7;
+}
+.bg-morado-4-2020{
+    background-color: #cfd5e7;
+}
+
+/*naranja*/
+.bg-naranja-2020{
+    background-color: #ff7900;
+}
+.bg-naranja-1-2020{
+    background-color: #f7895d;
+}
+.bg-naranja-2-2020{
+    background-color: #ffbc95;
+}
+.bg-naranja-3-2020{
+    background-color: #ffd4bb;
+}
+.bg-naranja-4-2020{
+    background-color: #ffe6d9;
+}
+.bg-naranja-5-2020{
+    background-color: #fffaf5;
+}
+
+/*negro*/
+.bg-negro-2020{
+    background-color: #2d2d2d;    
+}
+.bg-negro-b-2020{
+    background-color: #353501;    
+}
+
+/*púrpura*/
+.bg-purpura-2020{
+    background-color: #8e1362;
+}
+.bg-purpura-1-2020{
+    background-color: #bc3965;
+}
+.bg-purpura-2-2020{
+    background-color: #d59699;
+}
+.bg-purpura-3-2020{
+    background-color: #ecc7c6;
+}
+.bg-purpura-4-2020{
+    background-color: #f0e5e6;
+}
+.bg-purpura-5-2020{
+    background-color: #f9f3f7;
+}
+/*púrpura b*/
+.bg-purpura-b-2020{
+    background-color: #23001a;
+}
+
+/*rojo*/
+.bg-rojo-2020{
+    background-color: #dd0303;
+}
+.bg-rojo-1-2020{
+    background-color: #ea7686;
+}
+.bg-rojo-2-2020{
+    background-color: #f4aebc;
+}
+.bg-rojo-3-2020{
+    background-color: #f9d3dc;
+}
+.bg-rojo-4-2020{
+    background-color: #fce6ef;
+}
+.bg-rojo-5-2020{
+    background-color: #fef7f7;
+}
+
+/*turquesa*/
+.bg-turquesa-2020{
+    background-color: #07e5cf;
+}
+.bg-turquesa-1-2020{
+    background-color: #45ebdb;
+}
+.bg-turquesa-2-2020{
+    background-color: #77f1e5;
+}
+.bg-turquesa-3-2020{
+    background-color: #b5f7f1;
+}
+.bg-turquesa-4-2020{
+    background-color: #dafbf8;
+}
+.bg-turquesa-5-2020{
+    background-color: #f3fefd;
+}
+
+/*verde*/
+.bg-verde-2020{
+    background-color: #36dd07;
+}
+.bg-verde-1-2020{
+    background-color: #68e545;
+}
+.bg-verde-2-2020{
+    background-color: #9aee83;
+}
+.bg-verde-3-2020{
+    background-color: #c3f5b5;
+}
+.bg-verde-4-2020{
+    background-color: #e1fada;
+}
+.bg-verde-5-2020{
+    background-color: #f5fdf3;
+}
+/*verde b*/
+.bg-verde-b-2020{
+    background-color: #6c7c2a;
+}
+.bg-verde-b-1-2020{
+    background-color: #919d5f;
+}
+.bg-verde-b-2-2020{
+    background-color: #b5bd94;
+}
+.bg-verde-b-3-2020{
+    background-color: #dadeca;
+}
+.bg-verde-b-4-2020{
+    background-color: #e9ebdf;
+}
+.bg-verde-b-5-2020{
+    background-color: #f8f8f4;
+}
+/*verde c*/
+.bg-verde-c-2020{
+    background-color: #14c44e;
+}
+.bg-verde-c-1-2020{
+    background-color: #5ad683;
+}
+.bg-verde-c-2-2020{
+    background-color: #89e1a6;
+}
+.bg-verde-c-3-2020{
+    background-color: #c4f0d3;
+}
+.bg-verde-c-4-2020{
+    background-color: #e7f9ed;
+}
+.bg-verde-c-5-2020{
+    background-color: #f3fcf6;
+}
+
+/*white text*/
+.bg-negro-2020, .bg-negro-2020 a, .bg-negro-b-2020, .bg-negro-b-2020 a,
+.bg-gris-1-2020, .bg-gris-1-2020 a, .bg-gris-2-2020, .bg-gris-2-2020 a,
+.bg-gris-b-1-2020, .bg-gris-b-1-2020 a, .bg-gris-b-2-2020, .bg-gris-b-2-2020 a,
+.bg-cafe-2020, .bg-cafe-2020 a, .bg-cafe-1-2020, .bg-cafe-1-2020 a, .bg-cafe-2-2020, .bg-cafe-2-2020 a, .bg-cafe-3-2020, .bg-cafe-3-2020 a,
+.bg-cafe-b-2020, .bg-cafe-b-2020,
+.bg-purpura-2020, .bg-purpura-2020 a, .bg-purpura-1-2020, .bg-purpura-1-2020 a, .bg-purpura-2-2020, .bg-purpura-2-2020 a, .bg-purpura-b-2020, .bg-purpura-b-2020 a, 
+.bg-morado-2020, .bg-morado-2020 a, .bg-morado-1-2020, .bg-morado-1-2020 a, .bg-morado-2-2020, .bg-morado-2-2020 a,
+.bg-naranja-2020, .bg-naranja-2020 a, .bg-naranja-1-2020, .bg-naranja-1-2020 a,
+.bg-rojo-2020, .bg-rojo-2020 a, .bg-rojo-1-2020, .bg-rojo-1-2020 a,
+.bg-verde-2020 , .bg-verde-2020 a, .bg-verde-1-2020, .bg-verde-1-2020 a,
+.bg-verde-b-2020 , .bg-verde-b-2020 a, .bg-verde-b-1-2020 , .bg-verde-b-1-2020 a, .bg-azul-b-2-2020, .bg-azul-b-2-2020 a,
+.bg-verde-c-2020 , .bg-verde-c-2020 a, .bg-verde-c-1-2020 , .bg-verde-c-1-2020 a,
+.bg-azul-2020, .bg-azul-2020 a, .bg-azul-1-2020, .bg-azul-1-2020 a, .bg-azul-2-2020, .bg-azul-2-2020 a,
+.bg-azul-b-2020, .bg-azul-b-2020 a, .bg-azul-b-1-2020, .bg-azul-b-1-2020 a,
+.bg-azul-c-2020, .bg-azul-c-2020 a,
+.bg-azul-d-2020{
+    color: white !important;
+}
+/*dark text*/
+/*.bg-gris-3-2020, .bg-gris-3-2020 a, .bg-gris-4-2020, .bg-gris-4-2020 a, .bg-gris-5-2020, .bg-gris-5-2020 a,
+.bg-gris-b3-2020, .bg-gris-b3-2020 a, .bg-gris-b4-2020, .bg-gris-b4-2020 a, .bg-gris-b5-2020, .bg-gris-b5-2020 a,
+.bg-cafe-4-2020, .bg-cafe-4-2020 a, .bg-cafe-5-2020, .bg-cafe-5-2020 a, .bg-cafe-6-2020, .bg-cafe-6-2020 a, .bg-cafe-7-2020, .bg-cafe-7-2020 a,
+.bg-purpura-3-2020, .bg-purpura-3-2020 a, .bg-purpura-4-2020, .bg-purpura-4-2020 a, .bg-purpura-4-2020, .bg-purpura-4-2020 a,
+.bg-morado-2020, .bg-morado-2020 a, .bg-morado-2-2020, .bg-morado-2-2020 a, .bg-morado-3-2020, .bg-morado-3-2020 a, .bg-morado-4-2020, .bg-morado-4-2020 a,
+.bg-naranja-2-2020, .bg-naranja-2-2020 a, .bg-naranja-3-2020, .bg-naranja-3-2020 a, .bg-naranja-4-2020, .bg-naranja-5-2020 a,
+.bg-rojo-2-2020, .bg-rojo-2-2020 a, .bg-rojo-3-2020, .bg-rojo-3-2020 a, .bg-rojo-5-2020, .bg-rojo-5-2020 a,
+.bg-verde-2-2020, .bg-verde-2-2020 a, .bg-verde-3-2020, .bg-verde-3-2020 a, .bg-verde-4-2020, .bg-verde-4-2020 a, .bg-verde-5-2020, .bg-verde-5-2020 a,
+.bg-verde-b-2-2020, .bg-verde-b-2-2020 a, .bg-verde-b-3-2020 , .bg-verde-b-3-2020 a, .bg-verde-b-4-2020 , .bg-verde-b-4-2020 a, .bg-verde-b-5-2020 , .bg-verde-b-5-2020 a,
+.bg-verde-c-2-2020, .bg-verde-c-2-2020 a, .bg-verde-c-3-2020 , .bg-verde-c-3-2020 a, .bg-verde-c-4-2020 , .bg-verde-c-4-2020 a, .bg-verde-c-5-2020 , .bg-verde-c-5-2020 a,
+.bg-azul-3-2020, .bg-azul-3-2020 a, .bg-azul-4-2020, .bg-azul-4-2020 a, .bg-azul-5-2020, .bg-azul-5-2020 a,
+.bg-azul-b-3-2020, .bg-azul-b-3-2020 a, .bg-azul-b-4-2020, .bg-azul-b-4-2020 a, .bg-azul-b-5-2020, .bg-azul-b-5-2020 a,
+.bg-turquesa-2020, .bg-turquesa-2020 a, .bg-turquesa-1-2020, .bg-turquesa-1-2020 a, .bg-turquesa-2-2020, .bg-turquesa-2-2020 a, .bg-turquesa-3-2020, .bg-turquesa-3-2020 a, .bg-turquesa-4-2020, .bg-turquesa-4-2020 a, .bg-turquesa-5-2020, .bg-turquesa-5-2020 a,
+.bg-lima-2020, .bg-lima-2020 a, .bg-lima-1-2020, .bg-lima-1-2020 a, .bg-lima-2-2020, .bg-lima-2-2020 a, .bg-lima-3-2020, .bg-lima-3-2020 a, .bg-lima-4-2020, .bg-lima-4-2020 a, .bg-lima-5-2020, .bg-lima-5-2020 a
+.bg-amarillo-2020, .bg-amarillo-2020 a, .bg-amarillo-1-2020, .bg-amarillo-1-2020 a, .bg-amarillo-2-2020, .bg-amarillo-2-2020 a, .bg-amarillo-3-2020, .bg-amarillo-3-2020 a, .bg-amarillo-4-2020, .bg-amarillo-4-2020 a, .bg-amarillo-5-2020, .bg-amarillo-5-2020 a{
+    color:#333 !important;
+}*/

@@ -1,0 +1,553 @@
+/***icons***/
+.icon{
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	padding-left: 35px;
+}
+.icon_h1 {
+	background-position:center;
+	background-size: 21px;
+	display: inline-block;
+	width:42px;
+	height:42px;
+	vertical-align: middle;
+	border-radius:50%;
+	padding: 0;
+}
+.icon_h2{
+	background-position:center;
+	background-size: 15px;
+	display: inline-block;
+	height:32px;
+	/*margin-top: 10px;*//*update v2*/
+	vertical-align: middle;
+	border-radius:50%;
+}
+.icon_big {/*added in v2021*/
+    background-position: center;
+    background-size: 50px;
+    display: flex;
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    border-radius: 50%;
+    padding: 0;
+}
+header div.container .icon_h2{
+	height:37px;
+	padding-left: 18px;
+	padding-right: 18px;
+}
+.icon_h5{
+	background-position:center;
+	background-size: 12px;
+	display: inline-block;
+	height:20px;
+	vertical-align: middle;/*update v2*/
+	border-radius:50%;
+	padding:0 10px;
+}
+.btn .icon.am, .btn .icon.ca, .btn .icon.cr, .btn .icon.ma, .btn .icon.mc, .btn .icon.or, .btn .icon.pet, .btn .icon.vu{
+	background-size:22px;
+}
+.btn .icon.medicinal{
+	background-size:18px;
+}
+.animation{/*added in v2*/
+	background-image: url(../img/svg/animation.svg);
+}
+.agriculture{
+	background-image: url(../img/svg/agriculture.svg);
+}
+.am{
+	background-image: url(../img/icons_png/am.png);
+}
+.amphibians{
+	background-image: url(../img/svg/amphibians.svg);
+}
+.armed_conflict{
+	background-image: url(../img/svg/armed_conflict.svg);
+}
+.arroyo{
+	background-image: url(../img/svg/arroyo.svg);
+}
+.arrow_left{
+	background-image: url(../img/arrow_l.png);
+}
+.arrow_right{
+	background-image: url(../img/arrow_r.png);
+}
+.code{/*added in v2*/
+	background-image: url(../img/svg/code.svg);
+}
+.crop_photo{
+	background-image: url(../img/svg/crop_photo.svg);
+}
+.basket{
+	background-image: url(../img/svg/basket.svg);
+}
+.bait{
+	background-image: url(../img/svg/bait.svg);
+}
+.bars{
+	background-image: url(../img/svg/bars.svg);
+}
+.bat{
+	background-image: url(../img/svg/bat.svg);
+}
+.bee{
+	background-image: url(../img/svg/bee.svg);
+}
+.beetle{
+	background-image: url(../img/svg/beetle.svg);
+}
+.beetle2{
+	background-image: url(../img/svg/beetle2.svg);
+}
+.biocommerce{
+	background-image: url(../img/svg/biocommerce.svg);
+}
+.birds{
+	background-image: url(../img/svg/birds.svg);
+}
+.book{
+	background-image: url(../img/svg/book.svg);
+}
+.bookmark{
+	background-image: url(../img/svg/bookmark.svg);
+}
+.bookmark_check{
+	background-image: url(../img/svg/bookmark_check.svg);
+}
+.bookmark_circle{
+	background-image: url(../img/svg/bookmark_circle.svg);
+}
+.butterfly{
+	background-image: url(../img/svg/butterfly.svg);
+}
+.ca{
+	background-image: url("../img/icons_png/ca.png");
+}
+.camera{/*added in v2*/
+	background-image: url(../img/svg/camera.svg);
+}
+.cano{
+	background-image: url(../img/svg/cano.svg);
+}
+.cattle_raising{
+	background-image: url(../img/svg/cattle_raising.svg);
+}
+.cattle_on_water{/*bio2016-407-Actividad ganadera en época de lluvias*/
+	background-image: url(../img/svg/cattle_on_water.svg);
+}
+.cienaga{
+	background-image: url(../img/svg/cienaga.svg);
+}
+.colombia{
+	background-image: url(../img/svg/colombia.svg);
+}
+.community_projects{
+	background-image: url(../img/svg/community_projects.svg);
+}
+.construction{
+	background-image: url(../img/svg/hammer.svg);
+}
+.cosmetic{/*added in edition 2022*/
+	background-image: url(../img/svg/cosmetic.svg);
+}
+.cover{/*added in v2*/
+	background-image: url(../img/svg/cover.svg);
+}
+.cr{
+	background-image: url("../img/icons_png/cr.png");
+}
+.drought{/*added in v2021*/
+	background-image: url(../img/svg/drought.svg);
+}
+.cultural{
+	background-image: url(../img/svg/maraca.svg);
+}
+.ecobag{
+	background-image: url(../img/svg/ecobag.svg);
+}
+.ecoturism{
+	background-image: url(../img/svg/ecoturism.svg);
+}
+.erosion{
+	background-image: url(../img/svg/erosion.svg);
+}
+.especiesexoticas{
+	background-image: url("../img/icons_png/especiesexoticas.png");
+}
+.en{
+	background-image: url("../img/icons_png/en.png");
+}
+.environmental_authorities{
+	background-image: url(../img/svg/environmental_authorities.svg);
+}
+.environmental_compensation{
+	background-image: url(../img/svg/environmental_compensation.svg);
+}
+.factory{
+	background-image: url(../img/svg/factory.svg);
+}
+.fence_alive{
+	background-image: url(../img/svg/fence_alive.svg);
+}
+.fire{
+	background-image: url(../img/svg/fire.svg);
+}
+.firewood{
+	background-image: url(../img/svg/firewood.svg);
+}
+.firewood_extraction{/*bio2016-407-Extracción de leña*/
+	background-image: url(../img/svg/firewood_extraction.svg);
+}
+.fishing{/*bio2016-407-Pesca*/
+	background-image: url(../img/svg/fishing.svg);
+}
+.fly{
+	background-image: url(../img/svg/fly.svg);
+}
+.food{
+	background-image: url("../img/icons_png/food.png");
+}
+.foraging{
+	background-image: url(../img/svg/foraging.svg);
+}
+.foraging_bank{/*update v2021*/
+	background-image: url(../img/svg/foraging_bank.svg);
+}
+.fuel{
+	background-image: url(../img/svg/gas_pump.svg);
+}
+.funds{
+	background-image: url(../img/svg/funds.svg);
+}
+.genes{
+	background-image: url(../img/svg/genes.svg);
+}
+.fishing{/*bio2016-407-Pesca*/
+	background-image: url(../img/svg/fishing.svg);
+}
+.grass_cutting{/*bio2016-407-Plagueo para el ganado*/
+	background-image: url(../img/svg/grass_cutting.svg);
+}
+.habitat{/*update v2021*/
+	background-image: url(../img/svg/habitat.svg);
+}
+.headphones{
+	background-image: url(../img/svg/headphones.svg);
+}
+.audio_play.playing .headphones{
+	background-image: url(../img/svg/play.svg);
+}
+.audio_play.paused .headphones{
+	background-image: url(../img/svg/pause.svg);
+}
+@media (hover: hover) {
+	.audio_play:hover .headphones, .audio_play.paused:hover .headphones{
+        background-image: url(../img/svg/play.svg);
+    }
+	.audio_play.playing:hover .headphones{
+		background-image: url(../img/svg/pause.svg);
+	}
+}
+.head_question{
+	background-image: url(../img/svg/head_question.svg);
+}
+.home_grown{/*bio2016-407-Cultivos caseros*/
+	background-image: url(../img/svg/home_grown.svg);
+}
+.humedal{
+	background-image: url(../img/svg/humedal.svg);
+}
+.house{
+	background-image: url("../img/icons_png/house.png");
+}
+.infraestructure{
+	background-image: url(../img/svg/infraestructure.svg);
+}
+.insects{
+	background-image: url(../img/svg/insects.svg);
+}
+.institution{
+	background-image: url(../img/svg/institution.svg);
+}
+.institution_circle{
+	background-image: url(../img/svg/institution_circle.svg);
+}
+.items{
+	background-image: url(../img/svg/items.svg);
+}
+.lc{
+	background-image: url("../img/icons_png/lc.png");
+}
+.leaves{
+	background-image: url(../img/svg/leaves.svg);
+}
+.legislation{
+	background-image: url(../img/svg/legislation.svg);
+}
+.logging_intensive{
+	background-image: url(../img/svg/logging_intensive.svg);
+}
+.logging_selective{
+	background-image: url(../img/svg/logging_selective.svg);
+}
+.ma{
+	background-image: url("../img/icons_png/ma.png");
+}
+.markermap{
+	background-image: url(../img/svg/markermap.svg);
+}
+.markermap_circle{
+	background-image: url(../img/svg/markermap_circle.svg);
+}
+.mayorships_and_governorates{
+	background-image: url(../img/svg/mayorships_and_governorates.svg);
+}
+.mc{
+	background-image: url("../img/icons_png/mc.png");
+}
+.medicinal{
+	background-image: url(../img/svg/medical.svg);
+}
+.meeting{
+	background-image: url(../img/svg/meeting.svg);
+}
+.melifera{
+	background-image: url(../img/svg/melifera.svg);
+}
+.message{
+	background-image: url(../img/svg/message.svg);
+}
+.minning{
+	background-image: url(../img/svg/minning.svg);
+}
+.money{
+	background-image: url(../img/svg/money.svg);
+}
+.moth{/*polilla*/
+	background-image: url(../img/svg/moth.svg);
+}
+.mountain{/*added in v2*/
+	background-image: url(../img/svg/mountain.svg);
+}
+.multilayer_high_density{
+	background-image: url("../img/icons_png/multilayer_high_density.png");
+}
+.natural_disturbances{
+	background-image: url(../img/svg/natural_disturbances.svg);
+}
+.nitrogen_fixer{
+	background-image: url(../img/svg/nitrogen_fixer.svg);
+}
+.nt{
+	background-image: url("../img/icons_png/nt.png");
+}
+.ong{
+	background-image: url(../img/svg/ong.svg);
+}
+.oil_activity{/*bio2016-407-Actividad petrolera*/
+	background-image: url(../img/svg/oil_activity.svg);
+}
+.or{
+	background-image: url("../img/icons_png/or.png");
+}
+.orchard{
+	background-image: url(../img/svg/orchard.svg);
+}
+.ornamental{
+	background-image: url(../img/svg/ornamental.svg);
+}
+.pa{
+	background-image: url("../img/icons_png/pa.png");
+}
+.pause{
+	background-image: url(../img/svg/pause.svg);
+}
+.payment_for_services{
+	background-image: url(../img/svg/payment_for_services.svg);
+}
+.pesticide{/*added in v2021*/
+	background-image: url(../img/svg/pesticide.svg);
+}
+.pdf{
+	background-image: url(../img/svg/pdf.svg);
+}
+.pen{/*added in v2*/
+	background-image: url(../img/svg/pen.svg);
+}
+.pen_tool{/*added in v2*/
+	background-image: url(../img/svg/pen_tool.svg);
+}
+.people{
+	background-image: url(../img/svg/people.svg);
+}
+.person{
+	background-image: url(../img/svg/person.svg);
+}
+.pet{
+	background-image: url(../img/svg/pet.svg);
+}
+.plants{
+	background-image: url(../img/svg/plants.svg);
+}
+.planet{
+	background-image: url(../img/svg/planet.svg);
+}
+.play{
+	background-image: url(../img/svg/play.svg);
+}
+.private_conservation_initiatives{
+	background-image: url(../img/svg/private_conservation_initiatives.svg);
+}
+.puzzle{
+	background-image: url(../img/svg/puzzle.svg);
+}
+.religion{
+	background-image: url(../img/svg/religion.svg);
+}
+.research_institutes{
+	background-image: url(../img/svg/research_institutes.svg);
+}
+.rio{
+	background-image: url(../img/svg/rio.svg);
+}
+.rule{
+	background-image: url(../img/svg/rule.svg);
+}
+.search{
+	background-image: url(../img/svg/search.svg);
+}
+.shade{
+	background-image: url(../img/svg/shade.svg);
+}
+.shade_for_cattle{/*bio2016-407-Actividad petrolera*/
+	background-image: url(../img/svg/shade_for_cattle.svg);
+}
+.share{
+	background-image: url(../img/svg/share.svg);
+}
+.soil_conservation{
+	background-image: url(../img/svg/soil_conservation.svg);
+}
+.strategy{
+	background-image: url(../img/svg/strategy.svg);
+}
+.sustainability{
+	background-image: url(../img/svg/sustainability.svg);
+}
+.table{/*added in v2*/
+	background-image: url(../img/svg/table.svg);
+}
+.temperature{
+	background-image: url(../img/svg/temperature.svg);
+}
+.thunder{/*added in v2*/
+	background-image: url(../img/svg/thunder.svg);
+}
+.threat{
+	background-image: url(../img/svg/threat.svg);
+}
+.timeline_clock{
+	background-image: url(../img/svg/time.svg);
+}
+.tractor{
+	background-image: url(../img/svg/tractor.svg);
+}
+.tree{
+	background-image: url(../img/svg/tree.svg);
+}
+.trees{
+	background-image: url(../img/svg/trees.svg);
+}
+.trees_in_pastures{
+	background-image: url(../img/svg/trees_in_pastures.svg);
+}
+.trees_in_alleys{
+	background-image: url(../img/svg/trees_in_alleys.svg);
+}
+.tools{
+	background-image: url(../img/svg/tools.svg);
+}
+.video{/*added in v2*/
+   background-image: url(../img/svg/play.svg);
+}
+.vector{/*added in v2*/
+	background-image: url(../img/svg/vector.svg);
+}
+.vu{
+	background-image: url(../img/icons_png/vu.png);
+}
+.warning{
+	background-image: url(../img/svg/warning.svg);
+}
+.wasp{/*avispa*/
+	background-image: url(../img/svg/wasp.svg);
+}
+.water{/*added in v2021*/
+	background-image: url(../img/svg/water.svg);
+}
+.water_harvest{/*bio2016-407-Cosecha de agua*/
+	background-image: url(../img/svg/water_harvest.svg);
+}
+.wild_fruits{/*bio2016-407-Provisión de frutos silvestres*/
+	background-image: url(../img/svg/wild_fruits.svg);
+}
+.wildlife_observation{/*bio2016-407-Observación de fauna*/
+	background-image: url(../img/svg/wildlife_observation.svg);
+}
+.wildlife_refuge{/*bio2016-407-Refugio de fauna silvestre*/
+	background-image: url(../img/svg/wildlife_refuge.svg);
+}
+.water_conservation{
+	background-image: url("../img/icons_png/water_conservation.png");
+}
+.weight{
+	background-image: url(../img/svg/weight.svg);
+}
+.web{
+	background-image: url(../img/svg/web.svg);
+}
+.windbreaker_barrier{
+	background-image: url(../img/svg/windbreaker_barrier.svg);
+}
+.wildlife_food{
+	background-image: url(../img/svg/wildlife_food.svg);
+}
+.wood{
+	background-image: url(../img/svg/wood.svg);
+}
+.zapal{
+	background-image: url(../img/svg/zapal.svg);
+}
+
+@media screen and (max-height: 640px) {
+	.icon_h2{/*update 2018-07-20*/
+		background-size: 10px;
+		height:22px;
+		padding:1px;
+		width:22px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.icon_h2{/*update 2018-07-20*/
+		background-size: 10px;
+		height:22px;
+		width:22px;
+		padding:1px;
+	}
+}
+
+@media screen and (max-width:1160px), screen and (max-height:740px) {
+	.icon_h2{
+		background-position:center;
+		background-size: 10px;
+		height:23px;
+		width:23px;
+		padding:0;
+	}
+}
