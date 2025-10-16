@@ -1,14 +1,12 @@
-body{
-  background: #EEECE3;
-}
 .highcharts-figure,
 .highcharts-data-table table {
   min-width: 320px;
-  max-width: 100%;
+  max-width: 660px;
   margin: 1em auto;
 }
 
 .highcharts-data-table table {
+  font-family: Verdana, sans-serif;
   border-collapse: collapse;
   border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
   margin: 10px auto;
@@ -20,7 +18,7 @@ body{
 .highcharts-data-table caption {
   padding: 1em 0;
   font-size: 1.2em;
-  color: var(--highcharts-neutral-color-60, red);
+  color: var(--highcharts-neutral-color-60, #666);
 }
 
 .highcharts-data-table th {
@@ -43,25 +41,12 @@ body{
   margin: 0.3rem 10px;
 }
 
-.highcharts-button-normal text {
-  fill: #000 !important;
-}
-
-.highcharts-button-hover text {
-  fill: #fff !important;
-}
-
-.highcharts-button-hover rect {
-  fill: #e9746a ;
-}
-
-
-.highcharts-button-pressed text {
-  fill: red !important;
-}
-
 .highcharts-menu-item:last-child {
   display: none;
+}
+
+.highcharts-exporting-group {
+  display: none !important;
 }
 
 *,
@@ -85,12 +70,13 @@ body{
 }
 
 .tab-group li {
-  min-width: 200px;
   max-width: 100%;
 }
 
 .tab-group li a {
   display: block;
+  height: 100%;
+  align-content: center;
   text-decoration: none;
   padding: 15px;
   background: #fff;
@@ -106,7 +92,7 @@ body{
 }
 
 .tab-group .active a {
-  background: #008493;
+  background: #f59c00;
   color: #ffffff;
 }
 
@@ -116,7 +102,7 @@ body{
   border-radius: 2px;
 }
 
-.total-info-container{
+.total-info-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -131,21 +117,12 @@ body{
 }
 
 .highcharts-no-tooltip[title="Chart context menu"]:last-of-type {
-    display: none;
-}
-
-#marina, #continental {
   display: none;
 }
 
-.text-description-graphic {
-  font-size: 16px;
-  color: #333333;
-  font-weight: bold;
-}
-
-.quantity-graphic{
-  font-weight: normal;
+#montes,
+#becerril {
+  display: none;
 }
 
 .graphic-text {
@@ -162,33 +139,26 @@ body{
   padding: 15px;
 }
 
-.culumn-info p {
-  margin: 0;
+.tab-content {
+  margin-top: 40px;
 }
 
-.map-img {
-  margin-top: 20px;
+.col-group_container {
+  display: flex;
+  gap: 20px;
+  align-items: end;
 }
 
 .map-img img {
-  max-height: 380px;
+  max-height: 500px;
 }
 
 
+@media screen and (max-width: 768px) {
 
-@media screen and (max-width: 750px) {
-  .tab-group {
-    display: block;
-    gap: 20px;
+
+  .col-group {
+    display: block !important;
+    
   }
-
-  .tab-group li {
-    min-width: 200px;
-    max-width: 50%;
-  }
-
-  .tab-group li a {
-    width: 50%;
-  }
-
 }
