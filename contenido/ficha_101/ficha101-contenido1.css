@@ -1,4 +1,6 @@
-
+body{
+  background: #EEECE3;
+}
 .highcharts-figure,
 .highcharts-data-table table {
   min-width: 320px;
@@ -163,6 +165,15 @@
 .culumn-info p {
   margin: 0;
 }
+
+.map-img {
+  margin-top: 20px;
+}
+
+.map-img img {
+  max-height: 380px;
+}
+
 
 
 @media screen and (max-width: 750px) {
