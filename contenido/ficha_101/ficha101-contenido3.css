@@ -1,0 +1,16 @@
+.container-height {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-info {
+
+  min-height: 400px !important;
+  display: flex;
+  align-items: baseline;
+}
+
+
+

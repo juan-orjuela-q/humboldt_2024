@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../../general/jquery.fullPage.css" />
 <link rel="stylesheet" href="../../general/main-v3.css" />
 <link rel="stylesheet" href="../../general/sonar.min.css" />
-
+<meta charset="UTF-8">
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -18,13 +18,39 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/themes/adaptive.js"></script>
 
-<figure class="highcharts-figure">
-    <div id="container-3"></div>
-    <p class="highcharts-description">
-        Chart showing basic use of bubble series with a custom tooltip formatter.
-        The chart uses plot lines to show safe intake levels for sugar and fat.
-        Bubble charts are great for comparing three dimensions of data without
-        relying on color or 3D charts.
-    </p>
-</figure>
 
+<div class="container col-group">
+  <h2 class="align-l padding-2 color-gris-osc"><i class="icon icon_h2 markermap bg-green_blue"></i>Especies amenazadas en la región</h2>
+    <div class="col-dt-4 ">
+      <div class="align-l culumn-info">
+        <i class="icon icon_h2 markermap bg-green_blue space-circle"></i>
+        <p class="align-l">
+          De acuerdo con la Resolución 0126 de 2024 del Ministerio de Ambiente y Desarrollo Sostenible6 y los datos publicados a través del SiB Colombia, en la región Caribe hay evidencia de 356 especies categorizadas en algún grado de amenaza, de las cuales el 14 % se encuentra en peligro crítico (CR), el 35 % en peligro (EN) y el 51 % en estado vulnerable (VU). Estas especies representan un 16,8 % del total de especies amenazadas en el país.
+        </p>
+      </div>
+  </div>
+  <div class="col-dt-8 ">
+    <div>
+      <ul class="tab-group">
+        <li class="tab active "><a href="#contienental">Zona Continental</a></li>
+        <li class="tab"><a href="#marina">Zona marina</a></li>
+      </ul>
+      <div class="line-tabs bg-green_blue"></div>
+    </div>
+
+    <div class="tab-content">
+      <div id="contienental">  
+        <figure class="highcharts-figure">
+            <div id="container-3"></div>
+        </figure>
+      </div>
+      
+      <div id="marina">  
+        <figure class="highcharts-figure">
+            <div id="container-4"></div>
+        </figure>
+      </div>
+      
+    </div>
+  </div>
+</div>

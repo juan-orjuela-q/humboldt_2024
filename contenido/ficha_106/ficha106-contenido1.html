@@ -1,0 +1,86 @@
+<meta charset="UTF-8">
+<!-- Estilos generales -->
+  <link rel="stylesheet" href="../../general/animate.css">
+  <link rel="stylesheet" href="../../general/chapters.css">
+  <link rel="stylesheet" href="../../general/colors-v3.css">
+  <link rel="stylesheet" href="../../general/commerce-js.css">
+  <link rel="stylesheet" href="../../general/fluidable-min.css">
+  <link rel="stylesheet" href="../../general/icons-v3.css">
+  <link rel="stylesheet" href="../../general/jquery.fullPage.css">
+  <link rel="stylesheet" href="../../general/main-v3.css">
+  <link rel="stylesheet" href="../../general/sonar.min.css">
+  
+  <!-- Estilos específicos -->
+  <link rel="stylesheet" href="ficha106-contenido1.css">
+  
+  <!-- Highcharts -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/venn.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="https://code.highcharts.com/themes/adaptive.js"></script>
+  
+  <!-- Scripts propios -->
+  <script src="bio2024-106-scripts.js" defer></script>
+</head>
+<body>
+  <div class="container col-group">
+    <div class="col-dt-6 container-info">     
+      <!-- Título -->
+      <div class="container_title padding-2">
+        <i class="icon icon_h2 markermap bg-orange"></i>
+        <h2 class="align-l color-gris-osc">
+          Número de especies útiles identificadas en Barranquilla, Montes de María y Becerril
+        </h2>
+      </div>
+      
+      <!-- Contenido del mapa -->
+      <div class="container align-l">
+        <div class="info-container">
+          
+          <!-- Filtros -->
+           <div class="filters-container">
+<div id="bio2024-layerMap-106-map_3-filters" class="map-filters">
+            <div class="checkbox-container barranquilla">
+              <input type="checkbox" id="barranquilla" checked>
+              <label for="barranquilla">Barranquilla</label>
+            </div>
+
+            <div class="checkbox-container montes_maria">
+              <input type="checkbox" id="montes_maria" checked>
+              <label for="montes_maria">Montes de María</label>
+            </div>
+
+            <div class="checkbox-container becerril">
+              <input type="checkbox" id="becerril" checked>
+              <label for="becerril">Becerril</label>
+            </div>
+          </div>
+           </div>
+          
+          
+          <!-- Mapa -->
+          <div id="bio2024-layerMap-106-map_3-content" class="map-container">
+            <img src="./input/ficha-106-mapa-fondo.png" alt="Mapa base de humedales" loading="lazy">
+            <div class="map-layers">
+              <img src="./input/ficha-106-mapa-barranquilla.png" id="img-barranquilla" alt="Capas de Barranquilla" loading="lazy">
+              <img src="./input/ficha-106-mapa-montes-maria.png" id="img-montes_maria" alt="Capas de Montes de María" loading="lazy">
+              <img src="./input/ficha-106-mapa-becerril.png" id="img-becerril" alt="Capas de Becerril" loading="lazy">
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-dt-6 container-info">     
+      <!-- Título -->
+      <div class="container_title padding-2">
+        <i class="icon icon_h2 markerbars bg-orange"></i>
+        <h2 class="align-l color-gris-osc">
+          Especies priorizadas por su potencial de aprovechamiento
+        </h2>
+      </div>
+    </div>
+  </div>
