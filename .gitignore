@@ -14,3 +14,5 @@
 .DS_Store
 Thumbs.db
 general/Ilustraciones alta/
+# Archivos ZIP grandes
+*.zip
