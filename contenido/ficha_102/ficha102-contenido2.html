@@ -13,3 +13,63 @@
 <!-- Estilos específicos -->
 <link rel="stylesheet" href="ficha102-contenido2.css" />
 
+<div class="container col-group">
+  <div class="container_title">
+    <i class="icon icon_h2 markerbars bg-magenta"></i>
+    <h2 class="align-l color-gris-osc">
+      Especies de aves acuáticas registradas por grupo funcional
+    </h2>
+  </div>
+  <div class="filters col-dt-4">
+    <h3 class="align-l color-gris-osc title-filter">Filtra por:</h3>
+    <div class="filter-buttons">
+      <h4 class="align-l color-gris-osc subtitle-group">Grupo funcional</h4>
+      <button class="filter-btn active" data-filter="Patos y afines">
+        <img src="./input/icono-Patos-fines.png" alt="Patos y afines" />
+        <span>Patos y afines</span>
+      </button>
+      <button class="filter-btn" data-filter="Vadeadoras">
+        <img src="./input/icono-Vadeadoras.png" alt="Vadeadoras" />
+        <span>Vadeadoras</span>
+      </button>
+      <button class="filter-btn" data-filter="Limícolas">
+        <img src="./input/icono-Limícolas.png" alt="Limícolas" />
+        <span>Limícolas</span>
+      </button>
+      <button class="filter-btn" data-filter="Marino costeras">
+        <img src="./input/icono-Marino-costeras.png" alt="Marino costeras" />
+        <span>Marino costeras</span>
+      </button>
+      <button class="filter-btn" data-filter="Otros">
+        <img src="./input/icono-Otros.png" alt="Otros" />
+        <span>Otros</span>
+      </button>
+    </div>
+    <hr />
+    <div class="filter-group">
+      <div class="filter-select-container">
+        <select id="status-filter" class="filter-select">
+          <option value="all">Todos los estatus</option>
+          <option value="EN">EN</option>
+          <option value="NT">NT</option>
+          <option value="VU">VU</option>
+        </select>
+      </div>
+      <div class="filter-select-container">
+        <select id="iucn-filter" class="filter-select">
+          <option value="all">Todas las categorías IUCN</option>
+          <option value="LC">LC</option>
+          <option value="NT">NT</option>
+          <option value="VU">VU</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards col-dt-8">
+    <h3 id="count" class="align-l color-gris-osc"></h3>
+    <div id="species-cards"></div>
+  </div>
+</div>
+
+<script src="./bio2024-102-script.js"></script>
