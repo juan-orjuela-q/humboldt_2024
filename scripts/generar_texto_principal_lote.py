@@ -71,6 +71,12 @@ def runs_to_html_paragraph(paragraph, ficha_id: str) -> str:
             parts.append(f"<a href=\"{href}\">{html_escape(text)}</a>")
             continue
 
+        # Cursivas (nombres científicos en el Word original) -> <em>
+        if bool(r.italic):
+            parts.append(f"<em>{html_escape(text)}</em>")
+            continue
+
+        # Texto normal
         parts.append(html_escape(text))
 
     return "".join(parts).strip()
