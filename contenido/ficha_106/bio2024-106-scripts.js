@@ -434,59 +434,6 @@ if (container) {
           },
         ],
       },
-      {
-        name: "Categorías",
-        colorByPoint: true,
-        data: [
-          {
-            name: "Medicinal",
-            y: 66,
-            sliced: false,
-            selected: true,
-            color: "#75C8DA",
-          },
-          {
-            name: "Alimentos",
-            y: 33,
-            color: "#D50000",
-          },
-          {
-            name: "Materiales",
-            y: 9,
-            color: "#E9C101",
-          },
-          {
-            name: "Usos ambientales",
-            y: 2,
-            color: "#79AB2B",
-          },
-          {
-            name: "Alimento de animales",
-            y: 3,
-            color: "#F59C00",
-          },
-          {
-            name: "Cosméticos",
-            y: 2,
-            color: "#00748B",
-          },
-          {
-            name: "Sociales (incluye espir)",
-            y: 23,
-            color: "#BEE2E9",
-          },
-          {
-            name: "Veneno o tóxico",
-            y: 1,
-            color: "#695DA6",
-          },
-          {
-            name: "Leña o combustible",
-            y: 0,
-            color: "#FC7268",
-          },
-        ],
-      },
     ],
   });
 
