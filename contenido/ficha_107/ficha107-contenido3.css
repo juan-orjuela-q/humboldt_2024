@@ -1,0 +1,58 @@
+.container {
+  padding: 40px 0;
+}
+.img-container-bg {
+  position: relative;
+}
+.img-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(10%, -100%);
+}
+
+/* Hidden state for the circular image, toggled via JS */
+.img-circle.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(10%, -100%) scale(0.9);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms;
+}
+
+.img-circle {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.more {
+  position: absolute;
+  bottom: 45%;
+  left: 55%;
+  cursor: pointer; /* indicate clickable */
+  user-select: none;
+}
+
+.description {
+  position: absolute;
+  bottom: 20%;
+  left: 70%;
+  display: flex;
+  gap: 10px;
+}
+
+.description .scientific-name{
+  font-style: italic;
+}
+
+.text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  text-align: left;
+  height: 100%;
+}
+
+.text-col .container-tetx {
+  width: 60%;
+}

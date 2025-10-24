@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="ficha202-contenido2.css" />
+<script src="bio2024-202-scripts.js" defer></script>
+<link rel="stylesheet" href="../../general/animate.css" />
+<link rel="stylesheet" href="../../general/chapters.css" />
+<link rel="stylesheet" href="../../general/colors-v3.css" />
+<link rel="stylesheet" href="../../general/commerce-js.css" />
+<link rel="stylesheet" href="../../general/fluidable-min.css" />
+<link rel="stylesheet" href="../../general/icons-v3.css" />
+<link rel="stylesheet" href="../../general/jquery.fullPage.css" />
+<link rel="stylesheet" href="../../general/main-v3.css" />
+<link rel="stylesheet" href="../../general/sonar.min.css" />
+<meta charset="UTF-8" />
+
+<div class="container align-l">
+  <div class="title-container">
+    <div>
+      <i class="icon icon_h2 markerbars bg-orange"></i>
+    </div>
+    <h2 class="color-gris-osc">Coberturas en humedales permanentes</h2>
+  </div>
+  <label class="text-grey wow flipInX">
+    <i class="icon icon_h5 warning bg-gris-4-2020"></i>Ordena la tabla haciendo
+    click en los encabezados
+  </label>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Especie</th>
+        <th onclick="sortTable(1)">
+          Densidad de hábitat
+          <button
+            class="info-btn"
+            aria-label="Info densidad"
+            data-tooltip="●Denso: estrato bajo o medio del bosque, matorrales densos, arbustos espesos y otros hábitats de vegetación cerrada.
+●Semiabierto: matorrales abiertos, arbustos dispersos, sabanas arboladas, bosques secos o caducifolios de baja altura y bosques espinosos.
+●Abierto: desiertos, pastizales, cuerpos de agua abiertos, arbustos bajos, hábitats rocosos, costas marinas, áreas urbanas, así como el dosel superior del bosque."
+          >
+            <i class="icon icon_h5 warning bg-gris-4-2020"></i>
+          </button>
+        </th>
+        <th onclick="sortTable(2)">
+          Hábitat
+          <button
+            class="info-btn"
+            aria-label="Info habitat"
+            data-tooltip="●Bosque: vegetación dominada por árboles de gran altura con un dosel más o menos cerrado, incluyendo bosques de palmas.
+●Bosque abierto: Hábitats dominados por árboles de talla media, como bosques de Acacia, bosques ribereños, manglares, bordes de bosque y sabanas arboladas con árboles dispersos.
+●Matorral: hábitats con vegetación arbustiva de baja talla, incluyendo matorrales espinosos, sabanas áridas, caatinga, matorral xerofítico y matorrales costeros.
+●Transformado: paisajes urbanos, agricultura intensiva y jardines."
+          >
+            <i class="icon icon_h5 warning bg-gris-4-2020"></i>
+          </button>
+        </th>
+        <th onclick="sortTable(3)">Pico (mm)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Datos de la tabla se cargarán aquí dinámicamente -->
+    </tbody>
+  </table>
+</div>

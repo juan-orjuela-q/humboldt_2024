@@ -1,0 +1,246 @@
+body {
+  background: #eeece3 !important;
+}
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.title-container i {
+  margin: 5px;
+}
+
+.column {
+  position: relative;
+}
+.map-container {
+  position: absolute;
+  transform: scale(1.5);
+  max-width: 65vh;
+  margin: 0 auto;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.map-container > img {
+  max-width: 100%;
+}
+.map-layers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.map-layers img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  object-fit: contain;
+}
+
+.map-filters input {
+  display: none;
+}
+.map-filters label {
+  position: relative;
+  color: #000 !important;
+  margin: 0.35rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.map-filters label:before {
+  content: "";
+  border-radius: 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+  background-size: conatain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.map-filters .cuenca_caribe input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #ffaa00;
+}
+
+.map-filters .cuenca_magdalena input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #ff7f7f;
+}
+
+.map-filters .rios_cuerpo input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #004da8;
+}
+
+.map-filters .bajo_cauca input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #615ef7;
+}
+
+.map-filters .bajo_magdalena input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #00c5ff;
+}
+
+.map-filters .rio_atrato input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #82b6ed;
+}
+
+.map-filters .rio_cesar input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #beffe8;
+}
+
+.map-filters .rio_jorge input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #ca7af5;
+}
+
+.map-filters .sinu input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #00ffc5;
+}
+
+.map-filters .rancheira input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #8400a8;
+}
+
+.map-filters .sierra_nevada input:checked + label:before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-color: #73b273;
+}
+
+/* Estilos para la tabla de leyenda */
+.map-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+.map-table th,
+.map-table td {
+  padding: 8px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+}
+.map-table th {
+  background: rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.map-container {
+  position: relative;
+  transform: scale(1.5);
+  max-width: 70vh;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.map-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border: 2px solid #333;
+}
+
+.map-table th,
+.map-table td {
+  border: 1px solid #333;
+  text-align: center;
+}
+
+td {
+  padding: 0 !important;
+}
+
+.map-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+
+.filters-table {
+  width: 80%;
+  border-collapse: collapse;
+  border: 1px solid #000;
+  margin-left: 40px;
+}
+
+.filters-table td {
+  border-bottom: 1px solid #000;
+}
+
+.filters-table tr:last-child td {
+  border-bottom: none;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.color-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 3px;
+  border: 1px solid #999;
+}
+
+.title-section {
+  padding: 20px 0;
+}
+
+.container-img {
+  position: relative;
+}
+
+.description {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  display: flex;
+  gap: 10px;
+}
+.description .scientific-name {
+  font-style: italic;
+}
+
+.img-map {
+  position: absolute;
+  max-height: 400px;
+  top: -70px;
+  left: 2%;
+}
+
+.img-caiman {
+  margin-top: -150px;
+}
