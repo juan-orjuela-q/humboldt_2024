@@ -1,0 +1,14 @@
+.container {
+  padding: 40px 0;
+}
+.title-container {
+  display: flex;
+  gap: 10px;
+}
+
+.title-container i {
+  min-width: 23px;
+}
+.img-container {
+  margin-top: 30px;
+}

@@ -1,0 +1,102 @@
+body {
+  background: #F5F5F5 !important;
+}
+
+.ficha-amenazas .title-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  margin-top: 40px;
+}
+
+.ficha-amenazas .title-container h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.tabla-amenazas {
+  position: relative;
+  padding: 18px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tabla-scroll {
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.tabla-amenazas table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: 1px solid #E1E1E1;
+}
+
+.tabla-amenazas thead th {
+  color: #1b2b36;
+  text-align: left;
+  padding: 12px 10px;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+}
+
+.tabla-amenazas tbody td {
+  vertical-align: top;
+  color: #33414a;
+  font-size: 14px;
+  line-height: 1.4;
+  border-top: 1px solid #E1E1E1;;
+  border-right: 1px solid #E1E1E1;;
+}
+
+.tabla-amenazas .col-title {
+  font-weight: 700;
+  color: #000;
+}
+
+td {
+  padding: 5px !important;
+}
+
+/* Hacer que las columnas tengan un ancho razonable y se adapten */
+.tabla-amenazas thead th:nth-child(1) {
+  width: 40px;
+}
+.tabla-amenazas thead th:nth-child(n + 2) {
+  width: calc((100% - 40px) / 5);
+}
+
+
+.ilustracion-pez img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive: en pantallas pequeñas apilar la tabla y esconder parcialmente la ilustración */
+@media (max-width: 900px) {
+  .ilustracion-pez {
+    width: 60%;
+    right: 2%;
+    bottom: -8px;
+  }
+  .tabla-amenazas thead th:nth-child(n + 2) {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .ilustracion-pez {
+    display: none;
+  }
+  .tabla-amenazas thead th,
+  .tabla-amenazas tbody td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+  .ficha-amenazas .title-container h2 {
+    font-size: 18px;
+  }
+}

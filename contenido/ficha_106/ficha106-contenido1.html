@@ -1,86 +1,196 @@
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <!-- Estilos generales -->
-  <link rel="stylesheet" href="../../general/animate.css">
-  <link rel="stylesheet" href="../../general/chapters.css">
-  <link rel="stylesheet" href="../../general/colors-v3.css">
-  <link rel="stylesheet" href="../../general/commerce-js.css">
-  <link rel="stylesheet" href="../../general/fluidable-min.css">
-  <link rel="stylesheet" href="../../general/icons-v3.css">
-  <link rel="stylesheet" href="../../general/jquery.fullPage.css">
-  <link rel="stylesheet" href="../../general/main-v3.css">
-  <link rel="stylesheet" href="../../general/sonar.min.css">
-  
-  <!-- Estilos específicos -->
-  <link rel="stylesheet" href="ficha106-contenido1.css">
-  
-  <!-- Highcharts -->
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/venn.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-  <script src="https://code.highcharts.com/themes/adaptive.js"></script>
-  
-  <!-- Scripts propios -->
-  <script src="bio2024-106-scripts.js" defer></script>
-</head>
-<body>
-  <div class="container col-group">
-    <div class="col-dt-6 container-info">     
-      <!-- Título -->
-      <div class="container_title padding-2">
+<link rel="stylesheet" href="../../general/animate.css" />
+<link rel="stylesheet" href="../../general/chapters.css" />
+<link rel="stylesheet" href="../../general/colors-v3.css" />
+<link rel="stylesheet" href="../../general/commerce-js.css" />
+<link rel="stylesheet" href="../../general/fluidable-min.css" />
+<link rel="stylesheet" href="../../general/icons-v3.css" />
+<link rel="stylesheet" href="../../general/jquery.fullPage.css" />
+<link rel="stylesheet" href="../../general/main-v3.css" />
+<link rel="stylesheet" href="../../general/sonar.min.css" />
+
+<!-- Estilos específicos -->
+<link rel="stylesheet" href="ficha106-contenido1.css" />
+
+<!-- Highcharts -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/venn.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/themes/adaptive.js"></script>
+
+<!-- Scripts propios -->
+<script src="bio2024-106-scripts.js" defer></script>
+
+<div class="container col-group">
+  <div class="col-dt-6 container-info">
+    <!-- Título -->
+    <div class="container_title padding-2">
+      <div>
         <i class="icon icon_h2 markermap bg-orange"></i>
-        <h2 class="align-l color-gris-osc">
-          Número de especies útiles identificadas en Barranquilla, Montes de María y Becerril
-        </h2>
       </div>
-      
-      <!-- Contenido del mapa -->
-      <div class="container align-l">
-        <div class="info-container">
-          
-          <!-- Filtros -->
-           <div class="filters-container">
-<div id="bio2024-layerMap-106-map_3-filters" class="map-filters">
+
+      <h2 class="align-l color-gris-osc">
+        Número de especies útiles identificadas en Barranquilla, Montes de María
+        y Becerril
+      </h2>
+    </div>
+
+    <!-- Contenido del mapa -->
+    <div class="container align-l">
+      <div class="info-container">
+        <!-- Filtros -->
+        <div class="filters-container">
+          <div id="bio2024-layerMap-106-map_3-filters" class="map-filters">
             <div class="checkbox-container barranquilla">
-              <input type="checkbox" id="barranquilla" checked>
+              <input type="checkbox" id="barranquilla" checked />
               <label for="barranquilla">Barranquilla</label>
             </div>
 
             <div class="checkbox-container montes_maria">
-              <input type="checkbox" id="montes_maria" checked>
+              <input type="checkbox" id="montes_maria" checked />
               <label for="montes_maria">Montes de María</label>
             </div>
 
             <div class="checkbox-container becerril">
-              <input type="checkbox" id="becerril" checked>
+              <input type="checkbox" id="becerril" checked />
               <label for="becerril">Becerril</label>
             </div>
           </div>
-           </div>
-          
-          
-          <!-- Mapa -->
-          <div id="bio2024-layerMap-106-map_3-content" class="map-container">
-            <img src="./input/ficha-106-mapa-fondo.png" alt="Mapa base de humedales" loading="lazy">
-            <div class="map-layers">
-              <img src="./input/ficha-106-mapa-barranquilla.png" id="img-barranquilla" alt="Capas de Barranquilla" loading="lazy">
-              <img src="./input/ficha-106-mapa-montes-maria.png" id="img-montes_maria" alt="Capas de Montes de María" loading="lazy">
-              <img src="./input/ficha-106-mapa-becerril.png" id="img-becerril" alt="Capas de Becerril" loading="lazy">
-            </div>
-          </div>
-          
         </div>
-      </div>
-      
-    </div>
-    <div class="col-dt-6 container-info">     
-      <!-- Título -->
-      <div class="container_title padding-2">
-        <i class="icon icon_h2 markerbars bg-orange"></i>
-        <h2 class="align-l color-gris-osc">
-          Especies priorizadas por su potencial de aprovechamiento
-        </h2>
+        <!-- Cierre de filters-container -->
+
+        <!-- Mapa -->
+        <div id="bio2024-layerMap-106-map_3-content" class="map-container">
+          <img
+            src="./input/ficha-106-mapa-fondo.png"
+            alt="Mapa base de humedales"
+            loading="lazy"
+          />
+          <div class="map-layers">
+            <img
+              src="./input/ficha-106-mapa-barranquilla.png"
+              id="img-barranquilla"
+              alt="Capas de Barranquilla"
+              loading="lazy"
+            />
+            <img
+              src="./input/ficha-106-mapa-montes-maria.png"
+              id="img-montes_maria"
+              alt="Capas de Montes de María"
+              loading="lazy"
+            />
+            <img
+              src="./input/ficha-106-mapa-becerril.png"
+              id="img-becerril"
+              alt="Capas de Becerril"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <div class="col-dt-6 container-info">
+    <!-- Título -->
+    <div class="container_title padding-2">
+      <div>
+        <i class="icon icon_h2 markerbars bg-orange"></i>
+      </div>
+
+      <h2 class="align-l color-gris-osc">
+        Especies priorizadas por su potencial de aprovechamiento
+      </h2>
+    </div>
+    <div class="wrap">
+      <!-- SVG -->
+      <svg
+        id="venn"
+        class="venn-svg"
+        viewBox="0 0 1000 740"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="Diagrama Venn"
+      >
+        <!-- círculos -->
+        <g id="circles" opacity="1">
+          <!-- left: Montes de María -->
+          <circle
+            id="c-left"
+            cx="350"
+            cy="360"
+            r="210"
+            fill="#bfe1f3"
+            fill-opacity="0.25"
+            stroke="var(--circle-stroke)"
+            stroke-width="1"
+          ></circle>
+          <!-- right: Barranquilla -->
+          <circle
+            id="c-right"
+            cx="600"
+            cy="360"
+            r="210"
+            fill="#ffd6b3"
+            fill-opacity="0.30"
+            stroke="var(--circle-stroke)"
+            stroke-width="1"
+          ></circle>
+          <!-- bottom: Becerril (lower center) -->
+          <circle
+            id="c-bottom"
+            cx="480"
+            cy="520"
+            r="210"
+            fill="#c7f3d9"
+            fill-opacity="0.30"
+            stroke="var(--circle-stroke)"
+            stroke-width="1"
+          ></circle>
+        </g>
+
+        <!-- region name pills -->
+        <g id="region-labels">
+          <rect
+            class="region-pill"
+            x="40"
+            y="170"
+            width="160"
+            height="38"
+          ></rect>
+          <text class="region-pill-text" x="120" y="195" text-anchor="middle">
+            Montes de María
+          </text>
+
+          <rect
+            class="region-pill"
+            x="760"
+            y="170"
+            width="150"
+            height="38"
+          ></rect>
+          <text class="region-pill-text" x="835" y="195" text-anchor="middle">
+            Barranquilla
+          </text>
+
+          <rect
+            class="region-pill"
+            x="430"
+            y="700"
+            width="140"
+            height="38"
+          ></rect>
+          <text class="region-pill-text" x="500" y="725" text-anchor="middle">
+            Becerril
+          </text>
+        </g>
+
+        <!-- contenedor para labels dinámicos -->
+        <g id="labels-layer"></g>
+      </svg>
+
+      <div id="tooltip" class="tooltip"></div>
+    </div>
+  </div>
+</div>

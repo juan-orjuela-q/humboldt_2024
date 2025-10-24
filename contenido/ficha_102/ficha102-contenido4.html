@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="ficha102-contenido4.css" />
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="bio2024-102-script.js" defer></script>
+
+<div class="ficha-map-wrap">
+  <div class="ficha-legend">
+    <h3>Áreas de mayor congregación de individuos de aves acuáticas</h3>
+
+    <section class="cuadro cuadro-1">
+      <h4>Cuadro 1</h4>
+      <label
+        ><input type="checkbox" class="filter-aica" value="AICA" checked />
+        AICA</label
+      >
+      <label
+        ><input type="checkbox" class="filter-aica" value="Ramsar" checked />
+        Ramsar</label
+      >
+      <label
+        ><input type="checkbox" class="filter-aica" value="Humedales" checked />
+        Humedales</label
+      >
+    </section>
+
+    <section class="cuadro cuadro-2">
+      <h4>Cuadro 2 - Grupos</h4>
+      <label class="group-item"
+        ><input
+          type="checkbox"
+          class="filter-group"
+          value="Patos"
+          checked
+        /><span class="dot dot-green"></span> Patos y afines</label
+      >
+      <label class="group-item"
+        ><input
+          type="checkbox"
+          class="filter-group"
+          value="Vadeadoras"
+          checked
+        /><span class="dot dot-teal"></span> Vadeadoras</label
+      >
+      <label class="group-item"
+        ><input
+          type="checkbox"
+          class="filter-group"
+          value="Marino"
+          checked
+        /><span class="dot dot-blue"></span> Aves marino-costeras</label
+      >
+      <label class="group-item"
+        ><input
+          type="checkbox"
+          class="filter-group"
+          value="Limicolas"
+          checked
+        /><span class="dot dot-brown"></span> Aves limícolas</label
+      >
+      <label class="group-item"
+        ><input
+          type="checkbox"
+          class="filter-group"
+          value="Otros"
+          checked
+        /><span class="dot dot-purple"></span> Otras aves</label
+      >
+      <label class="group-item"
+        ><input
+          type="checkbox"
+          class="filter-group"
+          value="Total"
+          checked
+        /><span class="dot dot-gray"></span> Total de aves</label
+      >
+    </section>
+
+    <section class="cuadro cuadro-3">
+      <h4>Cuadro 3 - Territorios</h4>
+      <label
+        ><input
+          type="checkbox"
+          class="filter-terr"
+          value="territorio1"
+          checked
+        />
+        Territorio 1</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="filter-terr"
+          value="territorio2"
+          checked
+        />
+        Territorio 2</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="filter-terr"
+          value="territorio3"
+          checked
+        />
+        Territorio 3</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="filter-terr"
+          value="territorio4"
+          checked
+        />
+        Territorio 4</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="filter-terr"
+          value="territorio5"
+          checked
+        />
+        Territorio 5</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="filter-terr"
+          value="territorio6"
+          checked
+        />
+        Territorio 6</label
+      >
+    </section>
+
+    <div class="legend-symbols">
+      <div><span class="dot dot-green"></span> Patos y afines</div>
+      <div><span class="dot dot-teal"></span> Vadeadoras</div>
+      <div><span class="dot dot-blue"></span> Aves marino-costeas</div>
+    </div>
+  </div>
+
+  <div class="ficha-map">
+    <svg
+      id="ficha102-map"
+      viewBox="0 0 1000 600"
+      preserveAspectRatio="xMidYMid meet"
+    ></svg>
+  </div>
+</div>
