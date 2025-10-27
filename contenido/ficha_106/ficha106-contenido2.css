@@ -138,6 +138,15 @@
 .space-circle {
   padding: 15px;
 }
+.description {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+
+.description .scientific-name{
+  font-style: italic;
+}
 
 .tab-content {
   margin-top: 40px;
