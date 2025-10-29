@@ -4,16 +4,11 @@ body {
 
 .ficha-amenazas .title-container {
   display: flex;
-  align-items: center;
   gap: 12px;
   margin-bottom: 18px;
   margin-top: 40px;
 }
 
-.ficha-amenazas .title-container h2 {
-  font-size: 20px;
-  margin: 0;
-}
 
 .tabla-amenazas {
   position: relative;
@@ -56,6 +51,22 @@ body {
   color: #000;
 }
 
+.col-title.impacto {
+  background-color: #FF9A30;
+}
+
+.col-title.manejo {
+  background-color: #FFC734;
+  
+}
+
+.text-impacto {
+  background: rgba(255, 154, 48, 0.5);
+}
+
+.text-manejo {
+  background-color: rgba(255, 199, 52, 0.5);
+}
 td {
   padding: 5px !important;
 }
@@ -73,6 +84,7 @@ td {
   width: 100%;
   height: auto;
   display: block;
+  mix-blend-mode: darken;
 }
 
 /* Responsive: en pantallas pequeñas apilar la tabla y esconder parcialmente la ilustración */

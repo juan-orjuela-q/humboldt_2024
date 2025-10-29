@@ -1,0 +1,88 @@
+<meta charset="UTF-8" />
+<!-- Estilos generales -->
+<link rel="stylesheet" href="../../general/animate.css" />
+<link rel="stylesheet" href="../../general/chapters.css" />
+<link rel="stylesheet" href="../../general/colors-v3.css" />
+<link rel="stylesheet" href="../../general/commerce-js.css" />
+<link rel="stylesheet" href="../../general/fluidable-min.css" />
+<link rel="stylesheet" href="../../general/icons-v3.css" />
+<link rel="stylesheet" href="../../general/jquery.fullPage.css" />
+<link rel="stylesheet" href="../../general/main-v3.css" />
+<link rel="stylesheet" href="../../general/sonar.min.css" />
+
+<!-- Estilos específicos -->
+<link rel="stylesheet" href="ficha201-contenido1.css" />
+<script src="./bio2024-201-script.js" defer></script>
+
+<div class="container">
+  <div class="container_title">
+    <i class="icon icon_h2 markerbars bg-green_dark"></i>
+    <h2 class="align-l color-gris-osc">
+      Especies de tortugas continentales presentes en la región Caribe
+    </h2>
+  </div>
+  <div class="col-group">
+    <div class="filters col-dt-4">
+      <h3 class="align-l color-gris-osc title-filter">Filtra por:</h3>
+      <div class="filter-buttons">
+        <h4 class="align-l color-gris-osc subtitle-group">Grupo funcional</h4>
+        <button class="filter-btn active bg-blue_pacific" data-filter="Acuática">
+          <img class="filter-acuatica" src="./input/img/ficha-201-icono-acuatica.png" alt="Acuática" />
+          <span>Acuática</span>
+        </button>
+        <button class="filter-btn" data-filter="Semiacuática">
+          <img class="filter-semiacuatica" src="./input/img/ficha-201-icono-semiacuatica.png" alt="Semiacuática" />
+          <span>Semiacuática</span>
+        </button>
+        <button class="filter-btn" data-filter="Terrestre">
+          <img class="filter-terrestre" src="./input/img/ficha-201-icono-terreste.png" alt="Terrestre" />
+          <span>Terrestre</span>
+        </button>
+      </div>
+      <hr />
+      <div class="filter-group">
+        <div class="filter-select-container">
+          <div class="filter-select-container">
+            <select id="iucn-filter" class="filter-select">
+              <option value="all">Todas las categorías IUCN</option>
+              <option value="LC">LC</option>
+              <option value="NT">NT</option>
+              <option value="VU">VU</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards col-dt-8">
+      <h3 id="count" class="align-l color-gris-osc"></h3>
+      <div id="species-cards"></div>
+    </div>
+  </div>
+</div>
+<div class="img-container">
+  <img
+    src="./input/img/ficha-201_tortugas-continenrtales-entre- biodiversisdady- cultura_imagen-4.jpg"
+    alt="Tortuga"
+  />
+
+  <div class="turtle-description">
+    <i class="icon icon_h2 bookmark bg-green_dark space-circle"></i>
+    <div class="gris-texto align-l">
+      <span><strong>Hicotea</strong></span>
+      <br />
+      <span class="scientific-name">Trachemys callirostris</span>
+      <div class="turtle-description-category">
+        <span class="scientific-name">Categoría nacional</span>
+        <span class="status-turtle">VU</span>
+      </div>
+    </div>
+  </div>
+  <div class="turtle-note">
+    <i class="icon icon_h2 bookmark bg-green_dark space-circle"></i>
+    <p>
+      El galápago, la palmera y el morrocoy podrían incluir complejos de
+      especies aún no descritas, lo que sugiere un potencial de biodiversidad
+      aún mayor en la región 16-18
+    </p>
+  </div>
+</div>

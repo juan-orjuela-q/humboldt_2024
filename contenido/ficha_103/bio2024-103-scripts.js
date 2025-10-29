@@ -47,7 +47,7 @@ Highcharts.chart('container', {
     },
 
     title: {
-        text: 'Abundancia de poblaciones de caimán aguja registradas en el Caribe (1992-2011)',
+        text: null,
         align: 'left',
         style: {
             color: '#000000'

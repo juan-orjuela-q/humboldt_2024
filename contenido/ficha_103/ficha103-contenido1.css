@@ -6,8 +6,8 @@ body {
 }
 .map-container {
   position: relative;
-  transform: scale(1.5);
-  max-width: 65vh;
+  transform: scale(1.4);
+  max-width: 95vh;
   margin: 0 auto;
   z-index: 100;
 }
@@ -141,7 +141,6 @@ body {
   position: relative;
 }
 
-
 .description {
   position: absolute;
   top: 50%;
@@ -149,18 +148,38 @@ body {
   display: flex;
   gap: 10px;
 }
-.description .scientific-name{
+.description .scientific-name {
   font-style: italic;
 }
 
 .img-map {
   position: absolute;
-  max-height: 400px;
+  max-height: 250px;
   top: -70px;
   left: 2%;
 }
 
 .img-caiman {
-
   margin-top: -150px;
+}
+
+@media screen and (max-width: 500px) {
+  .map-container {
+    transform: scale(1);
+    top: -70px;
+    right: -20;
+  }
+
+  .img-map {
+    max-height: 100px;
+    top: -100px;
+    left: 2%;
+  }
+
+}
+
+@media screen and (max-width: 1100px) {
+  .map-container {
+    max-width: 75vh;
+  }
 }

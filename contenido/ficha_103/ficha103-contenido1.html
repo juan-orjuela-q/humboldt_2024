@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="ficha103-contenido1.css" />
 <script src="bio2024-103-scripts.js" defer></script>
+<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../../general/animate.css" />
 <link rel="stylesheet" href="../../general/chapters.css" />
 <link rel="stylesheet" href="../../general/colors-v3.css" />
@@ -20,34 +21,20 @@
     <div class="col-group info-container">
       <div class="col-dt-4">
         <div id="bio2024-layerMap-103-map_3-filters" class="map-filters">
-          <table class="filters-table">
-            <tr>
-              <td>
-                <div class="checkbox-container presencia_aguja">
-                  <input type="checkbox" id="presencia_aguja" checked />
-                  <label for="presencia_aguja">
-                    Presencia de caimán aguja
-                  </label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="checkbox-container area_habitable">
-                  <input type="checkbox" id="area_habitable" checked />
-                  <label for="area_habitable"> Área habitable </label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="checkbox-container rios">
-                  <input type="checkbox" id="rios" checked />
-                  <label for="rios"> Ríos </label>
-                </div>
-              </td>
-            </tr>
-          </table>
+          <div class="checkbox-container presencia_aguja">
+            <input type="checkbox" id="presencia_aguja" checked />
+            <label for="presencia_aguja"> Presencia de caimán aguja </label>
+          </div>
+
+          <div class="checkbox-container area_habitable">
+            <input type="checkbox" id="area_habitable" checked />
+            <label for="area_habitable"> Área habitable </label>
+          </div>
+
+          <div class="checkbox-container rios">
+            <input type="checkbox" id="rios" checked />
+            <label for="rios"> Ríos </label>
+          </div>
         </div>
       </div>
       <div class="col-dt-8">
@@ -64,16 +51,17 @@
   </div>
   <div class="container-img">
     <div class="description">
-        <i class="icon icon_h2 bookmark bg-green icon-img"></i>
-        <div class="gris-texto align-l">
-          <span><strong>Caimán aguja</strong></span>
-          <br />
-          <span class="scientific-name">Crocodylus acutus</span>
-        </div>
+      <i class="icon icon_h2 bookmark bg-green icon-img"></i>
+      <div class="gris-texto align-l">
+        <span><strong>Caimán aguja</strong></span>
+        <br />
+        <span class="scientific-name">Crocodylus acutus</span>
       </div>
+    </div>
     <img class="img-map" src="./input/ficha-103-mapa-general.png" alt="mapa" />
 
-    <img class="img-caiman"
+    <img
+      class="img-caiman"
       src="./input/ficha-103_caimanes-aguja-conflicto-coexistencia _crocodylus-acutus_imagen-13.jpg"
       alt="caiman"
     />

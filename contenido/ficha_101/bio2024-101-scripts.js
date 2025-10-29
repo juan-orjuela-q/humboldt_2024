@@ -978,7 +978,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Mostrar el contenido objetivo con fadeIn
       const targetElement = document.querySelector(target);
       if (targetElement) {
-        targetElement.style.display = "block";
+        targetElement.style.display = "flex";
         targetElement.style.opacity = "0";
 
         let opacity = 0;
@@ -1446,5 +1446,619 @@ if (container3) {
         fontFamily: "rubik, sans-serif",
       },
     },
+  });
+}
+
+// Contenido 4
+const container4 = document.getElementById("socios");
+if (container4) {
+  Highcharts.chart("socios", {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      height: "100%",
+      backgroundColor: "transparent",
+      type: "pie",
+      style: {
+        fontFamily: "Rubik, sans-serif",
+      },
+    },
+    title: {
+      text: "Número de socios",
+      style: {
+        color: "#000",
+        fontFamily: "Rubik, sans-serif",
+        fontWeight: "bold",
+      },
+    },
+    tooltip: {
+      backgroundColor: "#FFFFFF",
+      borderColor: "#CCCCCC",
+      borderRadius: 8,
+      borderWidth: 1,
+      pointFormat:
+        '<span style="color:{point.color}">●</span> {point.name}<br/>' +
+        "Cantidad: <b>{point.y}</b><br/>" +
+        "Porcentaje: <b>{point.percentage:.1f}%</b>",
+      style: {
+        color: "#000",
+        fontFamily: "Rubik, sans-serif",
+      },
+    },
+    accessibility: {
+      point: {
+        valueSuffix: "%",
+      },
+    },
+    legend: {
+      enabled: false,
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: {
+          enabled: false,
+        },
+        showInLegend: true,
+      },
+    },
+    series: [
+      {
+        name: "Categorías",
+        colorByPoint: true,
+        data: [
+          {
+            name: "CONTINENTAL",
+            y: 215,
+            sliced: false,
+            selected: true,
+            color: "#96C643",
+          },
+          {
+            name: "MARINA",
+            y: 135,
+            color: "#00748B",
+          },
+        ],
+      },
+    ],
+  });
+
+  Highcharts.chart("observaciones", {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      height: "100%",
+      backgroundColor: "transparent",
+      type: "pie",
+      style: {
+        fontFamily: "Rubik, sans-serif",
+      },
+    },
+    title: {
+      text: "Número de observaciones",
+      style: {
+        color: "#000",
+        fontFamily: "Rubik, sans-serif",
+        fontWeight: "bold",
+      },
+    },
+    tooltip: {
+      backgroundColor: "#FFFFFF",
+      borderColor: "#CCCCCC",
+      borderRadius: 8,
+      borderWidth: 1,
+      pointFormat:
+        '<span style="color:{point.color}">●</span> {point.name}<br/>' +
+        "Cantidad: <b>{point.y}</b><br/>" +
+        "Porcentaje: <b>{point.percentage:.1f}%</b>",
+      style: {
+        color: "#000",
+        fontFamily: "Rubik, sans-serif",
+      },
+    },
+    accessibility: {
+      point: {
+        valueSuffix: "%",
+      },
+    },
+    legend: {
+      enabled: false,
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: {
+          enabled: false,
+        },
+        showInLegend: true,
+      },
+    },
+    series: [
+      {
+        name: "Categorías",
+        colorByPoint: true,
+        data: [
+          {
+            name: "CONTINENTAL",
+            y: 134595,
+            sliced: false,
+            selected: true,
+            color: "#96C643",
+          },
+          {
+            name: "MARINA",
+            y: 39692,
+            color: "#00748B",
+          },
+        ],
+      },
+    ],
+  });
+}
+
+// Contenido 5
+
+const contenido5 = document.getElementById("organizaciones-nacionales_socios");
+if (contenido5) {
+  // Configuración común para ambos gráficos
+  const commonConfig = {
+    chart: {
+      type: "pie",
+      backgroundColor: "none",
+      height: "100%",
+      spacing: [0, 20, 20, 20], // Aumenté el spacing superior para los títulos
+      margin: [0, 0, 0, 0],
+    },
+    accessibility: {
+      point: {
+        valueSuffix: "%",
+      },
+    },
+    tooltip: {
+      pointFormat:
+        "{point.name}: <b>{point.cantidad}</b> ({point.percentage:.1f}%)",
+      style: {
+        fontFamily: "Rubik, sans-serif",
+        fontSize: "14px",
+      },
+    },
+    title: {
+      align: "center",
+      verticalAlign: "top",
+      style: {
+        color: "#000000", // Color negro para los títulos
+        fontWeight: "bold",
+        fontSize: "24px",
+        fontFamily: "Rubik, sans-serif",
+      },
+      margin: 30, // Margen adicional para separar del gráfico
+      y: 20, // Posición vertical del título
+    },
+    legend: {
+      enabled: false,
+    },
+    plotOptions: {
+      series: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        borderRadius: 8,
+        size: "85%", // Reducido ligeramente para dar espacio al título
+        dataLabels: {
+          enabled: false,
+        },
+        showInLegend: false,
+      },
+      pie: {
+        size: "90%", // Reducido para dar más espacio al título
+        center: ["50%", "55%"], // Centrado verticalmente para compensar el título
+      },
+    },
+  };
+
+  // Datos comunes para la leyenda
+  const categories = [
+    { name: "Academia", color: "#1C2445" },
+    { name: "Autoridades ambientales", color: "#79AB2B" },
+    { name: "Centros de investigación", color: "#692940" },
+    { name: "Empresas", color: "#F59C00" },
+    { name: "Entidades territoriales", color: "#FC7268" },
+    { name: "ONG", color: "#75C8DA" },
+    { name: "Redes e iniciativas", color: "#E9C101" },
+  ];
+
+  // Primer gráfico - Socios
+  Highcharts.chart(
+    "organizaciones-nacionales_socios",
+    Highcharts.merge(commonConfig, {
+      title: {
+        text: "Número de socios",
+      },
+      series: [
+        {
+          name: "Socios",
+          colorByPoint: true,
+          innerSize: "60%",
+          data: categories.map((cat, index) => ({
+            name: cat.name,
+            y: [33, 4, 11, 27, 1, 20, 8][index],
+            cantidad: [33, 4, 11, 27, 1, 20, 8][index],
+            color: cat.color,
+          })),
+        },
+      ],
+    })
+  );
+
+  // Segundo gráfico - Observaciones
+  Highcharts.chart(
+    "organizaciones-nacionales_observaciones",
+    Highcharts.merge(commonConfig, {
+      title: {
+        text: "Número de observaciones",
+      },
+      series: [
+        {
+          name: "Observaciones",
+          colorByPoint: true,
+          innerSize: "60%",
+          data: categories.map((cat, index) => ({
+            name: cat.name,
+            y: [181072, 44552, 2138185, 818721, 14, 79728, 2366733][index],
+            cantidad: [181072, 44552, 2138185, 818721, 14, 79728, 2366733][
+              index
+            ],
+            color: cat.color,
+          })),
+        },
+      ],
+    })
+  );
+
+  // tercer gráfico - Socios MARINA
+  Highcharts.chart(
+    "marina-organizaciones-nacionales_socios",
+    Highcharts.merge(commonConfig, {
+      title: {
+        text: "Número de socios",
+      },
+      series: [
+        {
+          name: "Socios",
+          colorByPoint: true,
+          innerSize: "60%",
+          data: categories.map((cat, index) => ({
+            name: cat.name,
+            y: [24, 3, 7, 11, 4, 11, 5][index], // Datos de socios MARINA
+            cantidad: [24, 3, 7, 11, 4, 11, 5][index],
+            color: cat.color,
+          })),
+        },
+      ],
+    })
+  );
+
+  // cuarto gráfico - Observaciones MARINA
+  Highcharts.chart(
+    "marina-organizaciones-nacionales_observaciones",
+    Highcharts.merge(commonConfig, {
+      title: {
+        text: "Número de observaciones",
+      },
+      series: [
+        {
+          name: "Observaciones",
+          colorByPoint: true,
+          innerSize: "60%",
+          data: categories.map((cat, index) => ({
+            name: cat.name,
+            y: [31348, 3707, 341245, 18075, 1284, 3452, 119013][index], // Datos de observaciones MARINA
+            cantidad: [31348, 3707, 341245, 18075, 1284, 3452, 119013][index],
+            color: cat.color,
+          })),
+        },
+      ],
+    })
+  );
+
+  // Crear leyenda compartida externa
+  function createSharedLegend() {
+    const legendContainer = document.createElement("div");
+    legendContainer.className = "shared-legend";
+    legendContainer.style.cssText = `
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+  `;
+
+    categories.forEach((cat) => {
+      const legendItem = document.createElement("div");
+      legendItem.className = "legend-item";
+      legendItem.style.cssText = `
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Rubik', sans-serif;
+      font-size: 14px;
+      color: #000;
+    `;
+
+      const colorBox = document.createElement("div");
+      colorBox.style.cssText = `
+      width: 16px;
+      height: 16px;
+      background-color: ${cat.color};
+      border-radius: 3px;
+    `;
+
+      const text = document.createElement("span");
+      text.textContent = cat.name;
+
+      legendItem.appendChild(colorBox);
+      legendItem.appendChild(text);
+      legendContainer.appendChild(legendItem);
+    });
+
+    // Insertar la leyenda donde la necesites
+    // Por ejemplo, después del contenedor de gráficos
+    const chartsContainer = document.querySelector(".tab-content"); // Ajusta este selector
+    if (chartsContainer) {
+      chartsContainer.parentNode.insertBefore(
+        legendContainer,
+        chartsContainer.nextSibling
+      );
+    }
+  }
+
+  // Llamar la función después de que se carguen los gráficos
+  setTimeout(createSharedLegend, 100);
+}
+
+// Contenido 6 - Ranking de organizaciones
+const contenido6 =
+  document.getElementById("data-table-continental") ||
+  document.getElementById("data-table-marina");
+if (contenido6) {
+  // Datos de organizaciones continentales (del Excel)
+  const dataContinental = [
+    ["Universidad Nacional de Colombia", 4118, 26819, "Academia"],
+    [
+      "Instituto de Investigación de Recursos Biológicos Alexander von Humboldt",
+      3733,
+      110031,
+      "Centros de investigación",
+    ],
+    ["Naturalista Colombia", 3620, 53530, "Redes e iniciativas"],
+    ['Jardín Botánico de Cartagena "Guillermo Piñeres"', 2005, 14980, "ONG"],
+    ["Universidad de Antioquia", 1771, 17562, "Academia"],
+    ["Carbones del Cerrejón Limited", 1262, 135277, "Empresas"],
+    ["Promigas S.A E.S.P", 1217, 182883, "Empresas"],
+    ["Universidad del Magdalena", 1150, 95406, "Academia"],
+    ["eBird Colombia", 944, 2215425, "Redes e iniciativas"],
+    ["ISA INTERCOLOMBIA S.A E.S.P", 910, 179470, "Empresas"],
+  ];
+
+  // Datos de organizaciones marinas (del Excel)
+  const dataMarina = [
+    [
+      "Instituto de Investigaciones Marinas y Costeras - Invemar",
+      2599,
+      329218,
+      "Centros de investigación",
+    ],
+    ["Universidad Nacional de Colombia", 1241, 8858, "Academia"],
+    ["Naturalista Colombia", 955, 5059, "Redes e iniciativas"],
+    ["eBird Colombia", 523, 74392, "Redes e iniciativas"],
+    [
+      "Red Nacional de Observadores de Aves - RNOA",
+      490,
+      39438,
+      "Redes e iniciativas",
+    ],
+    [
+      "Instituto de Investigación de Recursos Biológicos Alexander von Humboldt",
+      444,
+      5645,
+      "Centros de investigación",
+    ],
+    ["Universidad del Valle", 425, 1278, "Academia"],
+    ["Universidad de Antioquia", 423, 4354, "Academia"],
+    ["Universidad del Magdalena", 300, 6359, "Academia"],
+    ['Jardín Botánico de Cartagena "Guillermo Piñeres"', 263, 993, "ONG"],
+  ];
+
+  // Función para formatear números con separadores de miles
+  function formatearNumero(numero) {
+    return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  // Estado de orden por columna y por tabla
+  const sortState = {
+    continental: [null, null, null, null],
+    marina: [null, null, null, null],
+  };
+
+  // Función para ordenar la tabla
+  function sortTable(columnIndex, tableType) {
+    const tableId = `data-table-${tableType}`;
+    const table = document.getElementById(tableId);
+    const tbody = table.tBodies[0] || table;
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    // Determinar dirección
+    if (
+      typeof sortState[tableType][columnIndex] === "undefined" ||
+      sortState[tableType][columnIndex] === null
+    ) {
+      // Para columnas numéricas (1 y 2), orden descendente por defecto
+      sortState[tableType][columnIndex] =
+        columnIndex === 1 || columnIndex === 2 ? false : true;
+    }
+    const asc = sortState[tableType][columnIndex];
+
+    rows.sort((a, b) => {
+      const aCell = a.getElementsByTagName("td")[columnIndex];
+      const bCell = b.getElementsByTagName("td")[columnIndex];
+      const aValue = aCell ? aCell.textContent.trim() : "";
+      const bValue = bCell ? bCell.textContent.trim() : "";
+
+      if (columnIndex === 1 || columnIndex === 2) {
+        // Columnas numéricas (Número de especies y observaciones)
+        const na = parseInt(aValue.replace(/\./g, "")) || 0;
+        const nb = parseInt(bValue.replace(/\./g, "")) || 0;
+        return asc ? na - nb : nb - na;
+      }
+      // Columnas de texto (Organización y Tipo)
+      return asc
+        ? aValue.localeCompare(bValue, undefined, { sensitivity: "base" })
+        : bValue.localeCompare(aValue, undefined, { sensitivity: "base" });
+    });
+
+    // Reinsertar en tbody
+    rows.forEach((row) => tbody.appendChild(row));
+
+    // Alternar estado para próximos clicks
+    sortState[tableType][columnIndex] = !asc;
+
+    // Actualizar indicadores visuales
+    updateSortIndicators(table, columnIndex, asc);
+  }
+
+  // Función para actualizar indicadores visuales de ordenamiento
+  function updateSortIndicators(table, columnIndex, asc) {
+    const ths = table.querySelectorAll("th");
+    ths.forEach((th, idx) => {
+      th.classList.toggle("active", idx === columnIndex);
+
+      if (!th.querySelector(".caret")) {
+        const span = document.createElement("span");
+        span.className = "caret";
+        th.appendChild(span);
+      }
+
+      const caret = th.querySelector(".caret");
+      if (idx === columnIndex) {
+        caret.textContent = asc ? "▲" : "▼";
+        caret.style.display = "inline";
+      } else {
+        caret.textContent = "▾";
+        caret.style.display = "none";
+      }
+    });
+  }
+
+  // Función para cargar datos en una tabla
+  function loadTableData(tableId, data) {
+    const tableBody = document
+      .getElementById(tableId)
+      .getElementsByTagName("tbody")[0];
+    tableBody.innerHTML = ""; // Limpiar tabla
+
+    // Encontrar máximo de especies para la barra de progreso
+    const maxEspecies = Math.max(...data.map((row) => row[1]));
+
+    data.forEach((row) => {
+      const tr = document.createElement("tr");
+      row.forEach((cell, idx) => {
+        const td = document.createElement("td");
+
+        if (idx === 1) {
+          // Columna de número de especies - mostrar con barra
+          td.className = "especies";
+          td.setAttribute("data-value", cell);
+
+          const val = document.createElement("div");
+          val.className = "value";
+          val.textContent = formatearNumero(cell);
+
+          const bar = document.createElement("div");
+          bar.className = "bar";
+          const span = document.createElement("span");
+          const pct = Math.round((cell / maxEspecies) * 100);
+          span.style.width = pct + "%";
+          bar.appendChild(span);
+
+          td.appendChild(val);
+          td.appendChild(bar);
+        } else if (idx === 2) {
+          // Columna de observaciones - solo formatear número
+          td.textContent = formatearNumero(cell);
+          td.className = "observaciones";
+        } else {
+          // Columnas de texto
+          td.textContent = cell;
+        }
+
+        tr.appendChild(td);
+      });
+      tableBody.appendChild(tr);
+    });
+
+    // Inicializar indicadores de ordenamiento
+    const table = document.getElementById(tableId);
+    const ths = table.querySelectorAll("th");
+    ths.forEach((th, idx) => {
+      if (!th.querySelector(".caret")) {
+        const span = document.createElement("span");
+        span.className = "caret";
+        span.style.display = "none";
+        th.appendChild(span);
+      }
+    });
+  }
+
+  // Cargar datos iniciales
+  loadTableData("data-table-continental", dataContinental);
+  loadTableData("data-table-marina", dataMarina);
+
+  // Sistema de tabs mejorado
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".tab a").forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Remover clase active de todos los tabs
+        document.querySelectorAll(".tab").forEach((tab) => {
+          tab.classList.remove("active");
+        });
+
+        // Agregar clase active al tab clickeado
+        this.parentElement.classList.add("active");
+
+        const target = this.getAttribute("href").substring(1); // Remover el #
+
+        // Ocultar todos los contenidos de tabs
+        document.querySelectorAll(".tab-container").forEach((content) => {
+          content.style.display = "none";
+        });
+
+        // Mostrar el contenido objetivo
+        const targetElement = document.getElementById(target);
+        if (targetElement) {
+          targetElement.style.display = "block";
+          targetElement.style.opacity = "0";
+
+          let opacity = 0;
+          const fadeIn = setInterval(() => {
+            if (opacity >= 1) {
+              clearInterval(fadeIn);
+            }
+            targetElement.style.opacity = opacity.toString();
+            opacity += 0.1;
+          }, 60);
+        }
+      });
+    });
+
+    // Asegurar que solo se muestre el tab continental inicialmente
+    document.getElementById("continental").style.display = "block";
+    document.getElementById("marina").style.display = "none";
   });
 }

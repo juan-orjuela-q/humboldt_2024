@@ -1,0 +1,321 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "rubik", sans-serif;
+  background-image: url("./input/img/ficha-204_cambios-complejo-cenagoso-zapatosa_imagen-6.jpg") !important;
+  height: 190vh;
+}
+
+/* Título principal */
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+/* Contenedor de información */
+.info-container {
+  min-height: 300px;
+}
+
+/* Tabs de navegación */
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 40px;
+  background: #fff;
+  color: #747474;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.tab-group .active a {
+  background: #00748b;
+  color: #fff;
+}
+
+.line-tabs {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #00748b;
+  margin-top: 8px;
+}
+
+/* Contenido de tabs */
+.tab-content {
+  margin-top: 24px;
+}
+
+.tab-content > div {
+  display: none;
+}
+
+.tab-content > div.active {
+  display: grid;
+}
+
+/* Contenedor de temporadas */
+.container-temporadas {
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Filtros del mapa */
+.map-filters {
+  margin-bottom: 20px;
+}
+
+.filters-table {
+  max-width: 100%;
+  width: fit-content;
+  border-collapse: collapse;
+  border: 1px solid #000;
+  z-index: 150;
+  position: relative;
+}
+
+.filters-table td {
+  padding: 12px;
+  border-bottom: 1px solid #000;
+}
+
+.filters-table tr:last-child td {
+  border-bottom: none;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #111;
+}
+
+/* Indicadores de color */
+.first-element label:before {
+  content: "";
+  border-radius: 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #73b2ff;
+  margin-right: 0.5rem;
+}
+
+.second-element label:before {
+  content: "";
+  border-radius: 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #ffd37f;
+  margin-right: 0.5rem;
+}
+
+/* Totales */
+.total-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Mapa */
+.map-container {
+  position: relative;
+  max-width: 65vh;
+  transform: scale(1.2);
+  margin: 0 auto;
+  z-index: 50;
+}
+
+.map-container > img {
+  max-width: 100%;
+}
+
+/* Imagen de fondo */
+.imagen-bg {
+  padding: 0 !important;
+}
+
+.imagen-bg img {
+  height: 100%;
+  position: fixed;
+  object-fit: cover;
+}
+
+/* Layout responsivo */
+.col-group_container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 900px) {
+  .col-group_container {
+    flex-direction: column;
+  }
+
+  .tab-group {
+    overflow-x: auto;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 60px 0px;
+}
+
+.container_title {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.title-filter {
+  font-size: 28px !important;
+  font-weight: bold;
+}
+
+.subtitle-group {
+  font-size: 16px !important;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  height: auto !important;
+}
+
+.card h4 {
+  font-size: 18px;
+}
+
+.card .category {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.card .conservation-category {
+  color: white;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 330px));
+  gap: 20px;
+  justify-items: center;
+  margin: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.species-group {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 2px 6px;
+  border-radius: 8px;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.species-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.scientific-name {
+  font-size: 16px;
+  font-style: italic;
+  color: #333333;
+}
+
+.species-description {
+  font-size: 14px;
+  color: #333333;
+}
+
+.status-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.uses-section {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+}
+
+.uses-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+.uses-list li {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}

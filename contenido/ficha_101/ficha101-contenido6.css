@@ -1,0 +1,211 @@
+/* ===== ESTILOS GENERALES ===== */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5 !important;
+}
+
+/* ===== CONTENEDORES ===== */
+.container {
+  padding: 60px 0px;
+}
+
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0 50px 0;
+}
+
+/* ===== SISTEMA DE TABS ===== */
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+}
+
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tab-group li {
+  min-width: 200px;
+  max-width: 100%;
+}
+
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 12px 40px;
+  background: #fff;
+  color: #747474;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+  width: 100%;
+}
+
+.tab-group .active a {
+  background: #008493;
+  color: #ffffff;
+}
+
+.line-tabs {
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: #008493;
+}
+
+.tab-content {
+  display: flex;
+  padding: 20px 0;
+}
+
+.tab-container {
+  display: none;
+  width: 100%;
+}
+
+/* ===== TABLAS DE RANKING ===== */
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Rubik, sans-serif;
+  margin: 18px 0;
+}
+
+.ranking-table thead th {
+  text-align: left;
+  padding: 14px 12px;
+  font-weight: 700;
+  color: #1b2b36;
+  border-bottom: 4px solid #111;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.ranking-table thead th:hover {
+  color: #008493;
+}
+
+.ranking-table thead th.active {
+  color: #008493;
+}
+
+.ranking-table tbody td {
+  padding: 12px 12px;
+  vertical-align: middle;
+  color: #33414a;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+/* ===== COLUMNA DE ESPECIES CON BARRA ===== */
+.ranking-table td.especies {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ranking-table td.especies .value {
+  min-width: 60px;
+  text-align: left;
+  font-weight: 700;
+  color: #0b2230;
+}
+
+.ranking-table td.especies .bar {
+  flex: 1 1 auto;
+  height: 12px;
+  background: #f2f2f2;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ranking-table td.especies .bar span {
+  display: block;
+  height: 100%;
+  background: #008493;
+  transition: width 350ms ease;
+}
+
+/* ===== COLUMNA DE OBSERVACIONES ===== */
+.ranking-table td.observaciones {
+  font-weight: 600;
+  color: #1b2b36;
+}
+
+/* ===== INDICADORES DE ORDENAMIENTO ===== */
+.ranking-table thead th .caret {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c0c0c0;
+  display: none;
+}
+
+.ranking-table thead th.active .caret {
+  color: #008493;
+  display: inline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 750px) {
+  .tab-group {
+    display: block;
+    gap: 20px;
+  }
+
+  .tab-group li {
+    min-width: 200px;
+    max-width: 50%;
+  }
+
+  .tab-group li a {
+    width: 50%;
+  }
+}
+
+@media (max-width: 700px) {
+  .ranking-table thead th {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+  
+  .ranking-table tbody td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+  
+  .ranking-table td.especies {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .ranking-table td.especies .value {
+    min-width: auto;
+  }
+  
+  .ranking-table td.especies .bar {
+    width: 100%;
+  }
+}
+
+/* ===== MODO OSCURO ===== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #141414;
+    color: #ffffff;
+  }
+}

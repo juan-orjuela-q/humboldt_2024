@@ -1,0 +1,117 @@
+body {
+  background-image: url("./input/img/ficha-205_retos-conservacion-sierra-nevada-santa-marta_imagen7.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  height: 130vh;
+}
+
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+.species-table {
+  width: fit-content;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+
+
+}
+
+.species-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: bold;
+
+}
+
+.species-table td {
+  padding: 12px 15px;
+}
+
+.species-table tr:last-child td {
+  border-bottom: none;
+}
+
+
+td,
+th {
+  border-bottom: none !important;
+}
+
+/* Contenedor de la barra de progreso */
+.progress-container {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Barra de progreso morada */
+.progress-bar {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(90deg, #8b5fbf, #6a0dad);
+  border-radius: 15px;
+  transition: width 0.5s ease-in-out;
+  width: 0%;
+}
+
+/* Valor numérico superpuesto */
+.progress-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: #333;
+  z-index: 2;
+  text-shadow: 0 0 2px white;
+}
+
+/* Efecto hover para las barras */
+.progress-bar:hover {
+  background: linear-gradient(90deg, #9b6fcf, #7a1dcd);
+  box-shadow: 0 0 5px rgba(106, 13, 173, 0.5);
+}
+
+.progress-container {
+  position: relative;
+  width: 100%;
+  height: 30px;
+
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Barra de progreso morada */
+.progress-bar {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(90deg, #8b5fbf, #6a0dad);
+  border-radius: 15px;
+  transition: width 0.5s ease-in-out;
+  width: 0%; /* Inicialmente en 0, se llenará con JavaScript */
+}
+
+/* Valor numérico superpuesto */
+.progress-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: #333;
+  z-index: 2;
+  text-shadow: 0 0 2px white;
+}
+
+/* Efecto hover para las barras */
+.progress-bar:hover {
+  background: linear-gradient(90deg, #9b6fcf, #7a1dcd);
+  box-shadow: 0 0 5px rgba(106, 13, 173, 0.5);
+}
