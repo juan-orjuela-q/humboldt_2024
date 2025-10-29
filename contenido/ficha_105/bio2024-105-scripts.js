@@ -314,17 +314,7 @@ if (container) {
       },
     },
     legend: {
-      align: "center",
-      verticalAlign: "bottom",
-      layout: "horizontal",
-      itemStyle: {
-        color: "#000",
-        fontFamily: "Rubik, sans-serif",
-        fontSize: "12px",
-      },
-      itemHoverStyle: {
-        color: "#333",
-      },
+      enabled: false, 
     },
     plotOptions: {
       pie: {
@@ -443,7 +433,7 @@ Highcharts.chart("sankey-container", {
         // Actividades Cocreado
         {
           id: "Análisis documental",
-          name: "1. Análisis documental",
+          name: "1. Análisis documental (actores y territorial)",
           color: "#4A90E2",
           column: 1,
           dataLabels: {
@@ -485,7 +475,7 @@ Highcharts.chart("sankey-container", {
         },
         {
           id: "Alcance",
-          name: "4. Alcance",
+          name: "4. Alcance (objetivos y área de estudio)",
           color: "#4A90E2",
           column: 1,
           dataLabels: {
@@ -687,7 +677,7 @@ Highcharts.chart("sankey-container", {
         },
       ],
       data: [
-        // Conexiones desde Cocreado
+        // Conexiones desde Cocreado (solo las primeras 6 actividades)
         ["Cocreado", "Análisis documental", 1],
         ["Cocreado", "Acercamiento territorial", 1],
         ["Cocreado", "Diagnóstico", 1],
@@ -695,7 +685,7 @@ Highcharts.chart("sankey-container", {
         ["Cocreado", "Variables e indicadores", 1],
         ["Cocreado", "Diseño metodológico", 1],
 
-        // Conexiones desde Colaborativo
+        // Conexiones desde Colaborativo (actividades 7-13)
         ["Colaborativo", "Sistema de monitoreo", 1],
         ["Colaborativo", "Fortalecimiento capacidades", 1],
         ["Colaborativo", "Implementación", 1],
@@ -704,28 +694,24 @@ Highcharts.chart("sankey-container", {
         ["Colaborativo", "Socialización", 1],
         ["Colaborativo", "Evaluación decisiones", 1],
 
-        // Conexiones desde Contributivo
+        // Conexiones desde Contributivo (solo actividad 14)
         ["Contributivo", "Uso de resultados", 1],
 
-        // Conexiones a categorías de importancia - Cocreado
+        // Conexiones a categorías de importancia - TODAS las actividades van a Fundamental
         ["Análisis documental", "Fundamental", 1],
-        ["Acercamiento territorial", "Opcional", 1],
+        ["Acercamiento territorial", "Fundamental", 1],
         ["Diagnóstico", "Fundamental", 1],
         ["Alcance", "Fundamental", 1],
         ["Variables e indicadores", "Fundamental", 1],
         ["Diseño metodológico", "Fundamental", 1],
-
-        // Conexiones a categorías de importancia - Colaborativo
         ["Sistema de monitoreo", "Fundamental", 1],
-        ["Fortalecimiento capacidades", "Opcional", 1],
+        ["Fortalecimiento capacidades", "Fundamental", 1],
         ["Implementación", "Fundamental", 1],
         ["Sistematización datos", "Fundamental", 1],
         ["Análisis de datos", "Fundamental", 1],
-        ["Socialización", "Opcional", 1],
-        ["Evaluación decisiones", "Opcional", 1],
-
-        // Conexiones a categorías de importancia - Contributivo
-        ["Uso de resultados", "Proyectado", 1],
+        ["Socialización", "Fundamental", 1],
+        ["Evaluación decisiones", "Fundamental", 1],
+        ["Uso de resultados", "Fundamental", 1],
       ],
       name: "Proceso de Investigación",
       dataLabels: {

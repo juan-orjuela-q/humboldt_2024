@@ -1,0 +1,117 @@
+/* Keep Highcharts-related rules plus only the layout rules used by ficha203-contenido3.html */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  background-image: url("./input/img/libelula.jpg") !important;
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.container {
+  height: 100vh;
+  position: relative;
+}
+
+/* Layout used by ficha203-contenido3.html */
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+.container-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.species-card {
+  width: 350px;
+  overflow: hidden;
+}
+
+.card-header {
+  color: #000;
+}
+
+.card-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.species-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.species-label {
+  font-weight: 600;
+  color: white;
+  font-size: 16px;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.species-label.lc {
+  background-color: #3a6811;
+}
+.species-label.dd {
+  background-color: #747474;
+}
+.species-label.en {
+  background-color: #f59c00;
+}
+.species-label.nt {
+  background-color: #689f38;
+}
+.species-label.vu {
+  background-color: #e9c101;
+}
+
+.progress-container {
+  flex: 1;
+  height: 24px;
+  background-color: #f0f0f0;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #1c2445, #2c5aa0);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  transition: width 0.8s ease;
+}
+
+.progress-value {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-container {
+  max-width: 300px;
+}

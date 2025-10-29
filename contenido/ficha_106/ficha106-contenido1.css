@@ -108,79 +108,123 @@ body {
   position: relative;
   z-index: 100;
 }
-  :root{
-    --bg:#f4f2ea;
-    --circle-stroke:#8b8b8b;
-    --box-bg:#deec3a; /* verde claro de caja */
-    --box-text:#123418;
-    --region-label-bg:#639b46;
-    --region-label-text:#fff;
-  }
-  body{
-    margin:0;
-    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-    background: var(--bg);
-    padding:20px;
-  }
-  .wrap{
-    max-width:1100px;
-    margin:0 auto;
-    text-align:center;
-  }
-  h1{ margin-bottom:6px; }
-  p.note{ margin-top:4px; color:#666; font-size:14px; }
+:root {
+  --bg: #f4f2ea;
+  --circle-stroke: #8b8b8b;
+  --box-bg: #deec3a; /* verde claro de caja */
+  --box-text: #123418;
+  --region-label-bg: #639b46;
+  --region-label-text: #fff;
+}
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  padding: 20px;
+}
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 6px;
+}
+p.note {
+  margin-top: 4px;
+  color: #666;
+  font-size: 14px;
+}
 
-  /* svg responsivo */
-  .venn-svg{
-    width:100%;
-    height:auto;
-    display:block;
-    margin: 18px auto;
-    background: transparent;
-  }
-
-  /* estilo caja verde (rect) y texto dentro */
-  .label-rect{
-    rx:8;
-    ry:8;
-    fill: var(--box-bg);
-    stroke: none;
-  }
-  .label-text{
-    fill: var(--box-text);
-    font-size:16px;
-    font-weight:600;
-    pointer-events:none;
-  }
-
-  /* etiqueta de las regiones */
-  .region-pill{
-    fill: var(--region-label-bg);
-    rx:8; ry:8;
-  }
-  .region-pill-text{
-    fill: var(--region-label-text);
-    font-weight:700;
-    font-size:15px;
-    pointer-events:none;
-  }
-
-  /* tooltip simple */
-  .tooltip{
-    position: absolute;
-    background:white;
-    border-radius:6px;
-    padding:8px 12px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.12);
-    display:none;
-    font-size:13px;
-    text-align: left;
-  }
-  .venn-svg {
-  width:100%;
-  max-width:700px;
-  height:auto;
-  display:block;
-  margin:18px auto;
+/* svg responsivo */
+.venn-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 18px auto;
   background: transparent;
+}
+
+/* estilo caja verde (rect) y texto dentro */
+.label-rect {
+  rx: 8;
+  ry: 8;
+  fill: var(--box-bg);
+  stroke: none;
+}
+.label-text {
+  fill: var(--box-text);
+  font-size: 16px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* etiqueta de las regiones */
+.region-pill {
+  fill: var(--region-label-bg);
+  rx: 8;
+  ry: 8;
+}
+.region-pill-text {
+  fill: var(--region-label-text);
+  font-weight: 700;
+  font-size: 15px;
+  pointer-events: none;
+}
+
+/* tooltip simple */
+.tooltip {
+  position: absolute;
+  background: white;
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  display: none;
+  font-size: 13px;
+  text-align: left;
+}
+.venn-svg {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 18px auto;
+  background: transparent;
+}
+
+.especies-leyenda {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding: 15px;
+  font-family: "Rubik", sans-serif;
+  margin-left: 30px;
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.color-indicator.nativa {
+  background-color: #deec3a;
+}
+
+.color-indicator.introducida {
+  background-color: #fc7268;
+}
+
+.leyenda-texto {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
 }

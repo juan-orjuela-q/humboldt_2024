@@ -45,6 +45,13 @@ body {
   height: auto !important;
 }
 
+.card-header img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
 .card h4 {
   font-size: 18px;
 }
@@ -80,7 +87,7 @@ body {
 
 #species-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 220px));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
   gap: 20px;
   justify-items: center;
   margin: 20px;
@@ -142,4 +149,11 @@ body {
   font-size: 14px;
   line-height: 1.4;
   margin-bottom: 4px;
+  display: flex;  align-items: center;
+  gap: 8px;
+}
+
+.uses-list li img {
+  height: 20px;
+  width: 20px;
 }

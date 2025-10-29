@@ -191,14 +191,15 @@ if (contenido4) {
       speciesName: "Rhizophora mangle",
       uses: [
         "Construcción",
-        "Medicinal",
+        "Medicinal", 
         "Carbón vegetal",
         "Industria manufacturera",
       ],
       category: "LC",
+      icon: "./input/img/ficha-203-icono-mangle-rojo.png" 
     },
     {
-      group: "Mangle negro",
+      group: "Mangle negro", 
       speciesName: "Avicennia germinana",
       uses: [
         "Construcción",
@@ -207,10 +208,11 @@ if (contenido4) {
         "Combustible",
       ],
       category: "LC",
+      icon: "./input/img/ficha-203-icono-mangle-negro.png"
     },
     {
       group: "Mangle blanco",
-      speciesName: "Laguncularia racemosa",
+      speciesName: "Laguncularia racemosa", 
       uses: [
         "Moderable",
         "Construcción",
@@ -220,20 +222,37 @@ if (contenido4) {
         "Industria manufacturera",
       ],
       category: "LC",
+      icon: "./input/img/ficha-203-icono-mangle-blanco.png"
     },
     {
       group: "Mangle zaragoza",
       speciesName: "Conocarpus erectus",
       uses: ["Moderable", "Construcción", "Combustible", "Horticultura"],
       category: "LC",
+      icon: "./input/img/ficha-203-icono-mangle-zaragoza.png"
     },
     {
       group: "Mangle pifluelo",
       speciesName: "Pelliciera rhizophorae",
       uses: ["Construcción", "Combustible"],
-      category: "VU",
+      category: "VU", 
+      icon: "./input/img/ficha-203-icono-mangle-pinuelo.png"
     },
   ];
+
+  // Mapeo de imágenes para cada uso
+  const useImages = {
+    "Construcción": "./input/img/ficha-203-icono-construccion.png",
+    "Medicinal": "./input/img/ficha-203-icono-medicinal.png", 
+    "Carbón vegetal": "./input/img/ficha-203-icono-carbon.png",
+    "Industria manufacturera": "./input/img/ficha-203-icono-industra.png",
+    "Alimento para animales": "./input/img/ficha-203-icono-alimento.png",
+    "Combustible": "./input/img/ficha-203-icono-combustible.png",
+    "Moderable": "./input/img/ficha-203-icono-maderable.png",
+    "Medicina humana": "./input/img/ficha-203-icono-medicinal.png",
+    "Medicina veterinaria": "./input/img/ficha-203-icono-veterinaria.png",
+    "Horticultura": "./input/img/ficha-203-icono-horticultura.png"
+  };
 
   function loadSpecies(speciesList) {
     const speciesContainer = document.getElementById("species-cards");
@@ -246,22 +265,32 @@ if (contenido4) {
       const card = document.createElement("div");
       card.classList.add("card");
 
-      // Crear lista de usos
-      const usesList = species.uses.map((use) => `<li>${use}</li>`).join("");
+      // Crear lista de usos con imágenes
+      const usesList = species.uses.map((use) => 
+        `<li>
+          <img src="${useImages[use] || './images/uses/default.png'}" alt="${use}" class="use-icon">
+          <span class="use-text">${use}</span>
+        </li>`
+      ).join("");
 
       card.innerHTML = `
-        <span class="species-group ${modifiedGroup}">${species.group}</span>
-        <p class="scientific-name">${species.speciesName}</p>
+        <div class="card-header">
+          <img src="${species.icon}" alt="${species.group}" class="species-image">
+          <div class="header-text">
+            <span class="species-group ${modifiedGroup}">${species.group}</span>
+            <p class="scientific-name">${species.speciesName}</p>
+          </div>
+        </div>
         <hr>
         <div class="uses-section">
-          <p class="species-description"><strong>Usos asociados:</strong></p>
+          <p class="section-title">Usos asociados:</p>
           <ul class="uses-list">
             ${usesList}
           </ul>
         </div>
         <hr>
         <div class="category-section">
-          <p class="species-description"><strong>Categoría de conservación:</strong></p>
+          <p class="section-title">Categoría de conservación:</p>
           <span class="conservation-category ${species.category}">${species.category}</span>
         </div>
       `;

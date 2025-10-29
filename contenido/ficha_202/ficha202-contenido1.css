@@ -64,7 +64,7 @@ body {
 }
 .map-container {
   position: relative;
-  max-width: 65vh;
+  max-width: 95vh;
   margin: 0 auto;
   z-index: 50;
   margin-bottom: 100px;
@@ -127,37 +127,33 @@ body {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
-  border: 2px solid #333;
 }
 
 .map-table th,
 .map-table td {
-  border: 1px solid #333;
-  padding: 12px;
   text-align: center;
 }
 
 .map-table th {
   background-color: #f2f2f2;
   font-weight: bold;
-  border-bottom: 2px solid #333;
 }
 
 .filters-table {
   width: 40%;
   border-collapse: collapse;
-  border: 1px solid #000;
+
   z-index: 150;
   position: relative;
 }
 
 .filters-table td {
   padding: 12px;
-  border-bottom: 1px solid #000;
 }
 
-.filters-table tr:last-child td {
-  border-bottom: none;
+td {
+  border-bottom: none !important;
+  padding: 0 !important;
 }
 
 .checkbox-container {
@@ -200,4 +196,12 @@ body {
 
 #img-parcela_permanente {
   z-index: 200;
+}
+
+.mapa-colombia {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  width: 60px;
+  height: 80px;
 }
