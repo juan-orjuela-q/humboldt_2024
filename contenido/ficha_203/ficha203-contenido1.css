@@ -1,5 +1,16 @@
 body {
-  background-image: url("./input/img/ficha-203_transformacion-estado.jpg") !important;
+  background-image: url("./input/img/ficha-203-imagen-manglar.jpeg") !important;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 .title-container {
   display: flex;
@@ -7,7 +18,7 @@ body {
   margin: 40px 0;
   color: #fff;
 }
-.info-container{
+.info-container {
   background-color: #fff;
   padding: 40px 20px;
   border-radius: 16px;
@@ -85,48 +96,7 @@ body {
 
 .map-filters .manglares input:checked + label:before {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
-  background-color: #5B9F27;
-}
-
-
-/* Estilos para la tabla de leyenda */
-.map-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 16px;
-}
-.map-table th,
-.map-table td {
-  padding: 8px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  vertical-align: middle;
-}
-.map-table th {
-  background: rgba(0, 0, 0, 0.05);
-  text-align: left;
-}
-
-.map-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-  border: 2px solid #333;
-}
-
-.map-table th,
-.map-table td {
-  border: 1px solid #333;
-  text-align: center;
-}
-
-td {
-  padding: 0 !important;
-}
-
-.map-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  border-bottom: 2px solid #333;
+  background-color: #5b9f27;
 }
 
 .filters-table {
@@ -201,4 +171,12 @@ td {
 
 .img-caiman {
   margin-top: -150px;
+}
+
+.mapa-colombia {
+  position: absolute;
+  top: 60%;
+  right: 15%;
+  width: 85px;
+  height: 110px;
 }
