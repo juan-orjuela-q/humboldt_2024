@@ -71,7 +71,6 @@ body {
   display: flex;
   gap: 10px;
   margin: 40px 0;
-  align-items: center;
 }
 .col-group_container {
   display: flex;
@@ -102,4 +101,106 @@ body {
   .col-dt-6 {
     width: 100%;
   }
+}
+
+.col-dt-6 {
+  width: 50%;
+}
+
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.map-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-point {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.map-point:hover {
+  z-index: 100;
+}
+
+/* Actualización: Mejorar el tooltip para mostrar más información */
+.map-point:hover::after {
+  content: attr(data-tooltip) "\A" "Área: " attr(data-hectareas) " ha" "\A" "Porcentaje: " attr(data-porcentaje) "%";
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  white-space: pre;
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  min-width: 180px;
+  max-width: 250px;
+}
+
+/* Posiciones de los puntos (ajustar según necesidad) */
+.point-1 {
+  top: 9%;
+  right: 20%;
+  background-color: #00748b;
+  width: 50px;
+  height: 50px;
+  opacity: 0.8;
+}
+.point-2 {
+  top: 13%;
+  right: 30%;
+  width: 120px;
+  height: 120px;
+  opacity: 0.8;
+  background-color: #f59c00;
+}
+.point-3 {
+  top: 26%;
+  left: 39%;
+  background-color: #79ab2b;
+
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+}
+.point-4 {
+  top: 45%;
+  right: 55%;
+  width: 60px;
+  height: 60px;
+  opacity: 0.8;
+  background-color: #5c8120ff;
+}
+.point-5 {
+  top: 73%;
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  opacity: 0.8;
+  background-color: #695da6;
+}
+.point-6 {
+  top: 57%;
+  left: 29%;
+  width: 60px;
+  height: 60px;
+  opacity: 0.8;
+  background-color: #75c8da;
 }

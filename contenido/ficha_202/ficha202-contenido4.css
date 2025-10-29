@@ -79,6 +79,10 @@
   position: relative;
 }
 
+.info-container img {
+  border-radius: 16px;
+}
+
 .description {
   display: flex;
   flex-direction: column;

@@ -77,6 +77,8 @@
 .info-container {
   min-height: 300px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .description {
@@ -84,7 +86,7 @@
   gap: 10px;
   justify-content: end;
   position: absolute;
-  left: 15%;
+  left: 2%;
   top: 60%;
 }
 

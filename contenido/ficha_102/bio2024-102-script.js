@@ -917,10 +917,10 @@ if (container) {
         );
       }
 
-      // Aplicar filtro de categoría local (status-filter)
+      // Aplicar filtro de estatus (status-filter) - CORREGIDO
       if (currentFilters.status !== "all") {
         filteredSpecies = filteredSpecies.filter(
-          (species) => species.category === currentFilters.status
+          (species) => species.status === currentFilters.status
         );
       }
 
@@ -952,7 +952,7 @@ if (container) {
       });
     });
 
-    // Event listener para status-filter (categoría local)
+    // Event listener para status-filter (estatus) - CORREGIDO
     statusFilter.addEventListener("change", () => {
       currentFilters.status = statusFilter.value;
       applyFilters();
@@ -969,40 +969,40 @@ if (container) {
       countDisplay.textContent = `Mostrando ${count} especies`;
     }
 
-    // Aplicar filtros al cargar la página (sin simular click)
+    // Función para cargar las especies
+    function loadSpecies(speciesList) {
+      const speciesContainer = document.getElementById("species-cards");
+      speciesContainer.innerHTML = ""; // Limpiar los resultados previos
+
+      speciesList.forEach((species) => {
+        // Reemplazar espacios por guiones en species.group
+        const modifiedGroup = species.group.replace(/\s+/g, "-");
+
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        card.innerHTML = `
+        <span class="species-group ${modifiedGroup}">${species.group}</span>
+        <p class="species-name">${species.speciesName}</p>
+        <p class="scientific-name">${species.scientificName}</p>
+        <hr>
+        <p class="species-description"><strong>Orden:</strong> ${species.order}</p>
+        <p class="species-description"><strong>Familia:</strong> ${species.family}</p>
+        <p class="species-description"><strong>Categoría local:</strong> ${species.category}</p>
+        <hr>
+        <div class="status-container">
+          <span class="species-description"><strong>Estatus:</strong> ${species.status}</span>
+          <span class="status ${species.statusClass}">${species.statusClass}</span>
+        </div>
+      `;
+
+        speciesContainer.appendChild(card);
+      });
+    }
+
+    // Aplicar filtros al cargar la página
     applyFilters();
   });
-
-  function loadSpecies(speciesList) {
-    const speciesContainer = document.getElementById("species-cards");
-    speciesContainer.innerHTML = ""; // Limpiar los resultados previos
-
-    speciesList.forEach((species) => {
-      // Reemplazar espacios por guiones en species.group
-      const modifiedGroup = species.group.replace(/\s+/g, "-");
-
-      const card = document.createElement("div");
-      card.classList.add("card");
-
-      card.innerHTML = `
-      <span class="species-group ${modifiedGroup}">${species.group}</span>
-      <p class="species-name">${species.speciesName}</p>
-      <p class="scientific-name">${species.scientificName}</p>
-      <hr>
-      <p class="species-description"><strong>Orden:</strong> ${species.order}</p>
-      <p class="species-description"><strong>Familia:</strong> ${species.family}</p>
-      <p class="species-description"><strong>Categoría local:</strong> ${species.category}</p>
-      <hr>
-      <div class="status-container">
-        <span class="species-description"><strong>Estatus:</strong> ${species.status}</span>
-        <span class="status ${species.statusClass}">${species.statusClass}</span>
-      </div>
-    `;
-
-      speciesContainer.appendChild(card);
-    });
-  }
-
 }
 
 const contenido3 = document.getElementById("contenido3");
@@ -1022,10 +1022,10 @@ if (contenido3) {
           if (!customImage) {
             customImage = chart.options.chart.custom.image = chart.renderer
               .image(
-                "./input/pajaro-centro.png",
+                "./input/patos-afines-descrpcion.png",
                 series.center[0] + chart.plotLeft - 40,
                 series.center[1] + chart.plotTop - 40,
-                400,
+                380,
                 290
               )
               .add();
