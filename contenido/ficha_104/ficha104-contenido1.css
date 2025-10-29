@@ -1,0 +1,158 @@
+/* Keep Highcharts-related rules plus only the layout rules used by ficha203-contenido3.html */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5 !important;
+}
+
+/* Layout used by ficha203-contenido3.html */
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+}
+.col-group_container {
+  display: flex;
+  gap: 20px;
+}
+.col-dt-6 {
+  width: 50%;
+}
+.img-container {
+  display: block;
+  width: 100%;
+}
+.map-img img {
+  max-width: 100%;
+  max-height: 600px;
+  border-radius: 20px;
+  display: block;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .col-group {
+    display: block !important;
+  }
+  .col-group_container {
+    flex-direction: column;
+  }
+  .col-dt-6 {
+    width: 100%;
+  }
+}
+
+.col-dt-6 {
+  width: 50%;
+}
+
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.map-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-point {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #1c2445;
+  opacity: 0.7;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: fff;
+}
+
+.map-point:hover {
+  z-index: 100;
+  opacity: 1;
+}
+
+/* Actualización: Mejorar el tooltip para mostrar más información */
+.map-point:hover::after {
+  content: attr(data-tooltip) "\A""Registros: " attr(data-registros) "\A""Especies: "
+    attr(data-especies);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1c2445;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  white-space: pre;
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  min-width: 180px;
+  max-width: max-content;
+}
+
+/* Posiciones de los puntos (ajustar según necesidad) */
+.point-1 {
+  top: 8%;
+  right: 16%;
+  width: 40px;
+  height: 40px;
+}
+.point-2 {
+  top: 16%;
+  right: 30%;
+  width: 110px;
+  height: 110px;
+}
+.point-3 {
+  top: 23%;
+  left: 49%;
+  width: 70px;
+  height: 70px;
+}
+.point-4 {
+  top: 42%;
+  right: 48%;
+  width: 120px;
+  height: 120px;
+}
+.point-5 {
+  top: 18%;
+  left: 22%;
+  width: 50px;
+  height: 50px;
+}
+.point-6 {
+  top: 63%;
+  left: 43%;
+  width: 60px;
+  height: 60px;
+}
+
+.point-7 {
+  top: 32%;
+  left: 43%;
+  width: 45px;
+  height: 45px;
+}
+
+.point-8 {
+  top: 37%;
+  right: 28%;
+  width: 30px;
+  height: 30px;
+}
