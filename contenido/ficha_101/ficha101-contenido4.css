@@ -1,14 +1,11 @@
-.container-height {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
+  padding: 60px 0 !important;
 }
 
-.container-info {
-  min-height: 400px !important;
+.title-container {
   display: flex;
-  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
 .highcharts-figure,
