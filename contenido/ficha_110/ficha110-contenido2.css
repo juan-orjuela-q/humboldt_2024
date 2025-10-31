@@ -1,0 +1,181 @@
+/* Estilos para la línea del tiempo horizontal */
+:root {
+  --bg: #f6f6f6;
+  --panel: #ffffff;
+  --accent: #a1c600; /* verde mostaza similar a la imagen */
+  --text: #111;
+}
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 40px 0;
+}
+
+.container_title {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+.timeline-section {
+  padding: 28px 40px;
+  border-radius: 6px;
+}
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+.timeline-header h2 {
+  margin: 0;
+  color: #666;
+  font-weight: 600;
+}
+.timeline-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+  padding: 40px 20px;
+  overflow-x: auto;
+  height: 80vh;
+}
+
+.event {
+  position: relative;
+  flex: 0 0 220px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 35vh;
+}
+.event .marker {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(161, 198, 0, 0.06);
+}
+
+.event.marker.top {
+  top: 15%;
+}
+
+.event.marker.bottom {
+  top: 35%;
+}
+
+.year-marker-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.event .year {
+  font-weight: 700;
+  text-align: center;
+}
+.event .meta {
+  font-size: 0.88rem;
+  color: #333;
+  text-align: center;
+}
+
+/* cajas posicionadas arriba/abajo (evita duplicados y mantiene el marcador visible)
+   cada .box se centra horizontalmente respecto al marcador */
+.event .box-top,
+.event .box-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  text-align: center;
+}
+.event .box-top {
+  bottom: calc(100% + 12px);
+}
+.event .box-bottom {
+  top: calc(100% + 12px);
+}
+
+/* imágenes circulares que sobresalen */
+.event .circle-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 12px auto;
+  object-fit: cover;
+  display: block;
+  border: 6px solid var(--panel);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Alternar posicionamiento de texto (arriba/abajo) */
+.event.top {
+  transform: translateY(-110px);
+}
+.event.bottom {
+  transform: translateY(40px);
+}
+
+/* Texto a la izquierda/derecha del punto (para pantallas grandes) */
+.event .content {
+  max-width: 200px;
+  margin-top: 8px;
+  color: #222;
+  position: relative;
+}
+.event .title {
+  font-weight: 700;
+}
+.event .desc {
+  font-size: 0.85rem;
+  color: #444;
+  margin-top: 6px;
+}
+
+/* Responsive: apilar vertical en pantallas pequeñas */
+@media (max-width: 720px) {
+  .timeline {
+    flex-direction: column;
+    gap: 28px;
+    padding: 0;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event .circle-img {
+    margin: 0 0 10px 0;
+  }
+  .event {
+    flex: 0 0 auto;
+  }
+
+  .event.top,
+  .event.bottom {
+    transform: none;
+  }
+  .event.marker.bottom {
+    top: 0;
+  }
+  .event.marker.top {
+    top: 0;
+  }
+}

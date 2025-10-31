@@ -86,14 +86,17 @@
   max-width: 100%;
   width: fit-content;
   border-collapse: collapse;
-  border: 1px solid #000;
   z-index: 150;
   position: relative;
 }
 
 .filters-table td {
   padding: 12px;
-  border-bottom: 1px solid #000;
+
+}
+
+td {
+  border-bottom: none !important;
 }
 
 .filters-table tr:last-child td {
@@ -152,7 +155,6 @@
 .map-container {
   position: relative;
   max-width: 65vh;
-  transform: scale(1.2);
   margin: 0 auto;
   z-index: 50;
 }
