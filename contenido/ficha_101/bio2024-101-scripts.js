@@ -978,7 +978,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // Mostrar el contenido objetivo con fadeIn
       const targetElement = document.querySelector(target);
       if (targetElement) {
-        targetElement.style.display = "flex";
+        if (container) {
+          targetElement.style.display = "block";
+        } else {
+          targetElement.style.display = "flex";
+        }
+
         targetElement.style.opacity = "0";
 
         let opacity = 0;
@@ -1822,9 +1827,7 @@ if (contenido5) {
 }
 
 // Contenido 6 - Ranking de organizaciones
-const contenido6 =
-  document.getElementById("data-table-continental") ||
-  document.getElementById("data-table-marina");
+const contenido6 = document.getElementById("data-table-marina");
 if (contenido6) {
   // Datos de organizaciones continentales (del Excel)
   const dataContinental = [
@@ -1963,6 +1966,8 @@ if (contenido6) {
 
     // Encontrar máximo de especies para la barra de progreso
     const maxEspecies = Math.max(...data.map((row) => row[1]));
+    // Encontrar máximo de observaciones para la barra de progreso
+    const maxObservaciones = Math.max(...data.map((row) => row[2]));
 
     data.forEach((row) => {
       const tr = document.createElement("tr");
@@ -1988,9 +1993,23 @@ if (contenido6) {
           td.appendChild(val);
           td.appendChild(bar);
         } else if (idx === 2) {
-          // Columna de observaciones - solo formatear número
-          td.textContent = formatearNumero(cell);
+          // Columna de observaciones - mostrar con barra naranja
           td.className = "observaciones";
+          td.setAttribute("data-value", cell);
+
+          const val = document.createElement("div");
+          val.className = "value";
+          val.textContent = formatearNumero(cell);
+
+          const bar = document.createElement("div");
+          bar.className = "bar bar-observaciones";
+          const span = document.createElement("span");
+          const pct = Math.round((cell / maxObservaciones) * 100);
+          span.style.width = pct + "%";
+          bar.appendChild(span);
+
+          td.appendChild(val);
+          td.appendChild(bar);
         } else {
           // Columnas de texto
           td.textContent = cell;

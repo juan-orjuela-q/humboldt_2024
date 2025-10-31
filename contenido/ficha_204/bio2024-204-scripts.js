@@ -21,8 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Mostrar el contenido objetivo con fadeIn
       const targetElement = document.querySelector(target);
-      if (targetElement ) {
-        targetElement.style.display = "grid";
+      if (targetElement) {
+        const contenido1 = document.getElementById("temporada-seca");
+        if (contenido1) {
+          targetElement.style.display = "flex";
+        } else {
+          targetElement.style.display = "grid";
+        }
+
         targetElement.style.opacity = "0";
 
         let opacity = 0;

@@ -137,13 +137,7 @@ p.note {
 }
 
 /* svg responsivo */
-.venn-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 18px auto;
-  background: transparent;
-}
+
 
 /* estilo caja verde (rect) y texto dentro */
 .label-rect {
@@ -190,6 +184,7 @@ p.note {
   display: block;
   margin: 18px auto;
   background: transparent;
+  margin-top: -50px;
 }
 
 .especies-leyenda {
