@@ -56,11 +56,17 @@ const contenido3 = document.getElementById("instituciones-involucradas");
 if (contenido3) {
   // Procesar datos del Excel
   const instituciones = [
-    { nombre: "Fundacion ProSierra Nevada de Santa Marta", tipos: ["ONG", "Privada", "Nacional"] },
+    {
+      nombre: "Fundacion ProSierra Nevada de Santa Marta",
+      tipos: ["ONG", "Privada", "Nacional"],
+    },
     { nombre: "Fundación Santodomingo", tipos: ["ONG", "Privada", "Nacional"] },
     { nombre: "Environomica", tipos: ["ONG", "Privada", "Nacional"] },
     { nombre: "Salva tu Río", tipos: ["ONG", "Privada", "Nacional"] },
-    { nombre: "Fundación Tras La Perla", tipos: ["ONG", "Privada", "Nacional"] },
+    {
+      nombre: "Fundación Tras La Perla",
+      tipos: ["ONG", "Privada", "Nacional"],
+    },
     { nombre: "Fundación Nativa", tipos: ["ONG", "Privada", "Nacional"] },
     { nombre: "Fundación Atelopus", tipos: ["ONG", "Privada", "Nacional"] },
     { nombre: "Fundación Bachaqueros", tipos: ["ONG", "Privada", "Nacional"] },
@@ -81,14 +87,29 @@ if (contenido3) {
     { nombre: "Instituto Humboldt", tipos: ["Pública"] },
     { nombre: "WWF", tipos: ["ONG", "Privada", "Internacional"] },
     { nombre: "TNC", tipos: ["ONG", "Privada", "Internacional"] },
-    { nombre: "Conservation International", tipos: ["ONG", "Privada", "Internacional"] },
+    {
+      nombre: "Conservation International",
+      tipos: ["ONG", "Privada", "Internacional"],
+    },
     { nombre: "WCS", tipos: ["ONG", "Privada", "Internacional"] },
-    { nombre: "Global Conservation", tipos: ["ONG", "Privada", "Internacional"] },
+    {
+      nombre: "Global Conservation",
+      tipos: ["ONG", "Privada", "Internacional"],
+    },
     { nombre: "Sacred Forests", tipos: ["ONG", "Privada", "Internacional"] },
-    { nombre: "Chantecaille Conservation Foundation", tipos: ["ONG", "Privada", "Internacional"] },
+    {
+      nombre: "Chantecaille Conservation Foundation",
+      tipos: ["ONG", "Privada", "Internacional"],
+    },
     { nombre: "ACDI/Voca", tipos: ["ONG", "Privada", "Internacional"] },
-    { nombre: "Gordon and Betty Moore Foundation", tipos: ["ONG", "Privada", "Internacional"] },
-    { nombre: "MacArthur Foundation", tipos: ["ONG", "Privada", "Internacional"] },
+    {
+      nombre: "Gordon and Betty Moore Foundation",
+      tipos: ["ONG", "Privada", "Internacional"],
+    },
+    {
+      nombre: "MacArthur Foundation",
+      tipos: ["ONG", "Privada", "Internacional"],
+    },
     { nombre: "FUPAD", tipos: ["ONG", "Privada", "Internacional"] },
     { nombre: "USAID", tipos: ["Pública", "Internacional"] },
     { nombre: "GTZ", tipos: ["Pública", "Internacional"] },
@@ -96,35 +117,74 @@ if (contenido3) {
     { nombre: "AFD", tipos: ["Pública", "Internacional"] },
     { nombre: "AECID", tipos: ["Pública", "Internacional"] },
     { nombre: "Embrapa", tipos: ["Pública", "Internacional"] },
-    { nombre: "Misión diplomática - Países Bajos", tipos: ["Pública", "Misión diplomática", "Internacional"] },
-    { nombre: "Misión diplomática - Estados Unidos", tipos: ["Pública", "Misión diplomática", "Internacional"] },
-    { nombre: "Misión diplomática - Reino Unido", tipos: ["Pública", "Misión diplomática", "Internacional"] },
-    { nombre: "Misión diplomática - Japón", tipos: ["Pública", "Misión diplomática", "Internacional"] },
-    { nombre: "Misión diplomática - Suiza", tipos: ["Pública", "Misión diplomática", "Internacional"] },
-    { nombre: "Misión diplomática - Alemania", tipos: ["Pública", "Misión diplomática", "Internacional"] },
-    { nombre: "Misión diplomática - Francia", tipos: ["Pública", "Misión diplomática", "Internacional"] },
-    { nombre: "Misión diplomática - España", tipos: ["Pública", "Misión diplomática", "Internacional"] },
+    {
+      nombre: "Misión diplomática - Países Bajos",
+      tipos: ["Pública", "Misión diplomática", "Internacional"],
+    },
+    {
+      nombre: "Misión diplomática - Estados Unidos",
+      tipos: ["Pública", "Misión diplomática", "Internacional"],
+    },
+    {
+      nombre: "Misión diplomática - Reino Unido",
+      tipos: ["Pública", "Misión diplomática", "Internacional"],
+    },
+    {
+      nombre: "Misión diplomática - Japón",
+      tipos: ["Pública", "Misión diplomática", "Internacional"],
+    },
+    {
+      nombre: "Misión diplomática - Suiza",
+      tipos: ["Pública", "Misión diplomática", "Internacional"],
+    },
+    {
+      nombre: "Misión diplomática - Alemania",
+      tipos: ["Pública", "Misión diplomática", "Internacional"],
+    },
+    {
+      nombre: "Misión diplomática - Francia",
+      tipos: ["Pública", "Misión diplomática", "Internacional"],
+    },
+    {
+      nombre: "Misión diplomática - España",
+      tipos: ["Pública", "Misión diplomática", "Internacional"],
+    },
     { nombre: "Banco Mundial", tipos: ["Multilateral"] },
     { nombre: "BID", tipos: ["Multilateral"] },
     { nombre: "GEF", tipos: ["Multilateral"] },
-    { nombre: "CAF", tipos: ["Multilateral"] }
+    { nombre: "CAF", tipos: ["Multilateral"] },
   ];
 
   // Contar instituciones por tipo
   const tiposCount = {
-    "ONG": 0,
-    "Indígena": 0,
-    "Privada": 0,
-    "Pública": 0,
+    ONG: 0,
+    Indígena: 0,
+    Privada: 0,
+    Pública: 0,
     "Misión diplomática": 0,
-    "Nacional": 0,
-    "Multilateral": 0,
-    "Internacional": 0
+    Nacional: 0,
+    Multilateral: 0,
+    Internacional: 0,
   };
 
-  instituciones.forEach(inst => {
-    inst.tipos.forEach(tipo => {
+  // Obtener instituciones por tipo para el tooltip
+  const institucionesPorTipo = {
+    ONG: [],
+    Indígena: [],
+    Privada: [],
+    Pública: [],
+    "Misión diplomática": [],
+    Nacional: [],
+    Multilateral: [],
+    Internacional: [],
+  };
+
+  instituciones.forEach((inst) => {
+    inst.tipos.forEach((tipo) => {
       tiposCount[tipo]++;
+      if (!institucionesPorTipo[tipo].includes(inst.nombre)) {
+        institucionesPorTipo[tipo].push(inst.nombre);
+      }
     });
   });
 
@@ -134,8 +194,9 @@ if (contenido3) {
     .map(([tipo, count]) => ({
       name: `${tipo} (${count})`,
       y: count,
-      percentage: (count / instituciones.length * 100).toFixed(1),
-      originalName: tipo // Mantener el nombre original para el tooltip
+      percentage: ((count / instituciones.length) * 100).toFixed(1),
+      originalName: tipo, // Mantener el nombre original para el tooltip
+      instituciones: institucionesPorTipo[tipo], // Lista de instituciones para el tooltip
     }));
 
   // Crear el gráfico
@@ -151,19 +212,40 @@ if (contenido3) {
       },
       spacingTop: 0, // Eliminar espacio superior
       spacingBottom: 10,
-      marginTop: 0 // Margen superior en 0
+      marginTop: 0, // Margen superior en 0
     },
     title: {
-      text: null
+      text: null,
     },
     tooltip: {
       backgroundColor: "#FFFFFF",
       borderColor: "#CCCCCC",
       borderRadius: 8,
       borderWidth: 1,
-      pointFormat: '<span style="color:{point.color}">●</span> {point.originalName}<br/>' +
-                   'Cantidad: <b>{point.y}</b><br/>' +
-                   'Porcentaje: <b>{point.percentage}%</b>',
+      useHTML: true, // Habilitar HTML para el tooltip
+      formatter: function () {
+        const institucionesList = this.point.instituciones
+          .map(
+            (inst) =>
+              `<li style="margin-bottom: 3px; font-size: 11px;">${inst}</li>`
+          )
+          .join("");
+
+        return `
+          <div style="min-width: 200px;">
+            <div style="color:${this.point.color}; font-weight: bold; margin-bottom: 8px;">
+              ● ${this.point.originalName}
+            </div>
+            <div style="margin-bottom: 8px;">
+              <span style="font-weight: bold;">Cantidad:</span> ${this.point.y}<br/>             
+            </div>
+            <hr style="margin: 0 !important;" />
+            <ul style="margin: 0; padding-left: 15px; ">
+              ${institucionesList}
+            </ul>
+          </div>
+        `;
+      },
       style: {
         color: "#000",
         fontFamily: "Rubik, sans-serif",
@@ -184,7 +266,7 @@ if (contenido3) {
         color: "#000",
         fontFamily: "Rubik, sans-serif",
         fontSize: "11px",
-        fontWeight: "normal"
+        fontWeight: "normal",
       },
       itemHoverStyle: {
         color: "#333",
@@ -192,7 +274,7 @@ if (contenido3) {
       itemMarginTop: 3,
       itemMarginBottom: 3,
       symbolHeight: 10,
-      symbolWidth: 10
+      symbolWidth: 10,
     },
     plotOptions: {
       pie: {
@@ -202,14 +284,16 @@ if (contenido3) {
           enabled: false,
         },
         showInLegend: true,
-        center: ['45%', '50%'], // Mover hacia arriba (segundo valor más bajo)
-        size: '100%'
+        center: ["45%", "50%"], // Mover hacia arriba (segundo valor más bajo)
+        size: "100%",
       },
     },
-    series: [{
-      name: "Instituciones",
-      colorByPoint: true,
-      data: chartData
-    }]
+    series: [
+      {
+        name: "Instituciones",
+        colorByPoint: true,
+        data: chartData,
+      },
+    ],
   });
 }

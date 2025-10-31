@@ -1,0 +1,115 @@
+<meta charset="UTF-8" />
+<!-- Estilos generales -->
+<link rel="stylesheet" href="../../general/animate.css" />
+<link rel="stylesheet" href="../../general/chapters.css" />
+<link rel="stylesheet" href="../../general/colors-v3.css" />
+<link rel="stylesheet" href="../../general/commerce-js.css" />
+<link rel="stylesheet" href="../../general/fluidable-min.css" />
+<link rel="stylesheet" href="../../general/icons-v3.css" />
+<link rel="stylesheet" href="../../general/jquery.fullPage.css" />
+<link rel="stylesheet" href="../../general/main-v3.css" />
+<link rel="stylesheet" href="../../general/sonar.min.css" />
+
+<!-- Estilos específicos -->
+<link rel="stylesheet" href="ficha110-contenido3.css" />
+<script src="./bio2024-110-script.js" defer></script>
+
+<div class="container">
+  <!-- Bloque superior agregado: historia y enlace -->
+  <div class="col-group description-container">
+    <div class=" align-l col-dt-5">
+      <div class="intro-icon">
+        <i class="icon icon_h2 bookmark bg-green_clear"></i>
+      </div>
+      <div class="intro-text">
+        <p>
+          El Jardín Botánico de Cartagena nace gracias a la generosa donación de
+          tierras por parte de María Jiménez de Piñeres, en memoria de su
+          esposo, Guillermo Piñeres. Este acto tuvo como propósito principal
+          preservar el ecosistema de posibles explotaciones. Con el respaldo del
+          Banco de la República, se formalizó la creación de la Fundación Jardín
+          Botánico “Guillermo Piñeres” y se abrió el espacio al público.
+        </p>
+        <div class="intro-card">
+          <img src="./input/img/ficha-110-jardin-botanico.jpg" alt="Mono" class="intro-card-img" />
+          <div class="intro-card-content">
+            <span class="intro-card-label">Conoce más</span>
+            <h4>Jardín Botánico de Cartagena</h4>
+            <a
+              href="https://jbgp.org.co/"
+              target="_blank"
+              class="intro-card-link"
+              ><i class="icon icon_h5 markermap bg-green_clear"></i>jbgp.org.co</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-dt-7 img-container">
+      <img
+        src="./input/img/ficha-10-imagen.jpg"
+        alt="Frasco"
+        class="intro-img frasco"
+      />
+    </div>
+  </div>
+  <div class="container_title">
+    <i class="icon icon_h2 markerbars bg-green_clear"></i>
+    <h2 class="align-l color-gris-osc">
+      Especies de plantas amenazadas presentes en la región Caribe
+    </h2>
+  </div>
+  <div class="col-group">
+    <div class="filters col-dt-4">
+      <h3 class="align-l color-gris-osc title-filter">Filtra por:</h3>
+      <div class="filter-buttons">
+        <h4 class="align-l color-gris-osc subtitle-group">distribución</h4>
+        <button class="filter-btn active" data-filter="Endémica">
+          <div class="icon-container bg-blue_pacific">
+            <img src="./input/img/ficha-201-icono-acuatica.png" alt="icono" />
+          </div>
+          <span>Endémica</span>
+        </button>
+        <button class="filter-btn" data-filter="Sierra Nevada de Santa Marta">
+          <div class="icon-container bg-green">
+            <img src="./input/img/ficha-201-icono-acuatica.png" alt="icono" />
+          </div>
+          <span>Sierra Nevada de Sta Marta</span>
+        </button>
+        <button class="filter-btn" data-filter="Llanura del Caribe">
+          <div class="icon-container bg-brown_wine">
+            <img src="./input/img/ficha-201-icono-acuatica.png" alt="icono" />
+          </div>
+          <span>Llanura del Caribe</span>
+        </button>
+        <button class="filter-btn" data-filter="Colombia">
+          <div class="icon-container bg-orange">
+            <img src="./input/img/ficha-201-icono-acuatica.png" alt="icono" />
+          </div>
+          <span>Colombia</span>
+        </button>
+        <button class="filter-btn" data-filter="Nativa">
+          <div class="icon-container bg-salmon">
+            <img src="./input/img/ficha-201-icono-acuatica.png" alt="icono" />
+          </div>
+          <span>Nativa</span>
+        </button>
+      </div>
+      <hr />
+      <div class="filter-group">
+        <div class="filter-select-container">
+          <select id="iucn-filter" class="filter-select">
+            <option value="all">Todas las categorías IUCN</option>
+            <option value="CR">CR - En Peligro Crítico</option>
+            <option value="EN">EN - En Peligro</option>
+            <option value="VU">VU - Vulnerable</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="cards col-dt-8">
+      <h3 id="count" class="align-l color-gris-osc"></h3>
+      <div id="species-cards"></div>
+    </div>
+  </div>
+</div>

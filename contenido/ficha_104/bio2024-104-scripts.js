@@ -2,7 +2,7 @@ Highcharts.chart("habitat-terrestre", {
   chart: {
     type: "column",
     height: 500,
-    backgroundColor: "#fff",
+    backgroundColor: "none",
     style: {
       fontFamily: "Rubik, sans-serif",
     },
@@ -94,7 +94,7 @@ Highcharts.chart("habitat-acuatico", {
   chart: {
     type: "column",
     height: 500,
-    backgroundColor: "#fff",
+    backgroundColor: "none",
     style: {
       fontFamily: "Rubik, sans-serif",
     },

@@ -1,5 +1,7 @@
 /* ===== ESTILOS GENERALES ===== */
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -111,11 +113,7 @@ body {
 }
 
 /* ===== COLUMNA DE ESPECIES CON BARRA ===== */
-.ranking-table td.especies {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+
 
 .ranking-table td.especies .value {
   min-width: 60px;
@@ -143,6 +141,14 @@ body {
 .ranking-table td.observaciones {
   font-weight: 600;
   color: #1b2b36;
+
+}
+
+.bar-observaciones span {
+  background-color: #ff9800; /* Color naranja */
+  display: block;
+  height: 12px;
+  border-radius: 8px;
 }
 
 /* ===== INDICADORES DE ORDENAMIENTO ===== */
@@ -159,6 +165,7 @@ body {
   color: #008493;
   display: inline;
 }
+
 
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 750px) {
@@ -182,21 +189,21 @@ body {
     padding: 10px 8px;
     font-size: 12px;
   }
-  
+
   .ranking-table tbody td {
     padding: 10px 8px;
     font-size: 12px;
   }
-  
+
   .ranking-table td.especies {
     flex-direction: column;
     gap: 5px;
   }
-  
+
   .ranking-table td.especies .value {
     min-width: auto;
   }
-  
+
   .ranking-table td.especies .bar {
     width: 100%;
   }

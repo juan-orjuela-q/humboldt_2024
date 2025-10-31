@@ -1,5 +1,7 @@
 body {
   background-image: url("./input/img/ficha-203-imagen-manglar.jpeg") !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 body::before {

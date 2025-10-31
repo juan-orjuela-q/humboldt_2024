@@ -199,6 +199,12 @@ td {
   left: 2%;
 }
 
-.img-caiman {
-  margin-top: -150px;
+.map-colombia {
+  position: absolute;
+  bottom: 0;
+  right: 0%;
+  height: 300px;
+  width: 225px;
 }
+
+
