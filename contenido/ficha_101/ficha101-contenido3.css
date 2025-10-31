@@ -6,11 +6,10 @@
 }
 
 .container-info {
-
   min-height: 400px !important;
-  display: flex;
-  align-items: baseline;
 }
-
-
-
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}

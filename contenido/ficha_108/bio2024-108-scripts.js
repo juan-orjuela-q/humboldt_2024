@@ -491,7 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     yAxis: {
       min: 0,
-      max: 0,
+      // max: 0, // ← ESTA LÍNEA ERA EL ERROR
       title: {
         text: null,
         style: {

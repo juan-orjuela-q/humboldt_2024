@@ -1026,7 +1026,7 @@ if (contenido3) {
                 series.center[0] + chart.plotLeft - 40,
                 series.center[1] + chart.plotTop - 40,
                 380,
-                290
+                317
               )
               .add();
           }
