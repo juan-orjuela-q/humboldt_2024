@@ -69,7 +69,7 @@ if (container) {
       family: "Phoenicopteridae",
       category: "EN",
       status: "Migratorio",
-      statusClass: "LC",
+      statusClass: "EN",
     },
     {
       group: "Vadeadoras",
@@ -368,7 +368,7 @@ if (container) {
       order: "Charadriiformes",
       family: "Laridae",
       category: "",
-      status: "Residente y migratorio",
+      status: "Residente",
       statusClass: "LC",
     },
     {
@@ -449,7 +449,7 @@ if (container) {
       family: "Sulidae",
       category: "EN",
       status: "Residente",
-      statusClass: "LC",
+      statusClass: "EN",
     },
     {
       group: "Marino costeras",
@@ -559,7 +559,7 @@ if (container) {
       family: "Scolopacidae",
       category: "",
       status: "Migratorio",
-      statusClass: "LC",
+      statusClass: "NT",
     },
     {
       group: "Limícolas",
@@ -699,7 +699,7 @@ if (container) {
       family: "Anhimidae",
       category: "VU",
       status: "Residente",
-      statusClass: "LC",
+      statusClass: "VU",
     },
     {
       group: "Otros",
@@ -738,7 +738,7 @@ if (container) {
       order: "Gruiformes",
       family: "Rallidae",
       category: "",
-      status: "Residente y migratorio",
+      status: "Residente",
       statusClass: "LC",
     },
     {
