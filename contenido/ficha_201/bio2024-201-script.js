@@ -91,7 +91,7 @@ const speciesData = [
   },
   {
     type: "Semiacuática",
-    speciesName: "Tapaculo",
+    speciesName: "Galápago",
     scientificName: "Kinosternon (Kinosternon) scorpioides",
     endemica: "",
     family: "Kinosternidae",
