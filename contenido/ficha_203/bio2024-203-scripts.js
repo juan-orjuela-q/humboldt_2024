@@ -141,6 +141,8 @@ if (contenido3) {
     },
     series: [
       {
+        borderColor: "#ffffff",
+        borderWidth: 1,
         name: "Departamentos",
         colorByPoint: true,
         data: [
@@ -191,15 +193,15 @@ if (contenido4) {
       speciesName: "Rhizophora mangle",
       uses: [
         "Construcción",
-        "Medicinal", 
+        "Medicinal",
         "Carbón vegetal",
         "Industria manufacturera",
       ],
       category: "LC",
-      icon: "./input/img/ficha-203-icono-mangle-rojo.png" 
+      icon: "./input/img/ficha-203-icono-mangle-rojo.png",
     },
     {
-      group: "Mangle negro", 
+      group: "Mangle negro",
       speciesName: "Avicennia germinana",
       uses: [
         "Construcción",
@@ -208,11 +210,11 @@ if (contenido4) {
         "Combustible",
       ],
       category: "LC",
-      icon: "./input/img/ficha-203-icono-mangle-negro.png"
+      icon: "./input/img/ficha-203-icono-mangle-negro.png",
     },
     {
       group: "Mangle blanco",
-      speciesName: "Laguncularia racemosa", 
+      speciesName: "Laguncularia racemosa",
       uses: [
         "Moderable",
         "Construcción",
@@ -222,36 +224,36 @@ if (contenido4) {
         "Industria manufacturera",
       ],
       category: "LC",
-      icon: "./input/img/ficha-203-icono-mangle-blanco.png"
+      icon: "./input/img/ficha-203-icono-mangle-blanco.png",
     },
     {
       group: "Mangle zaragoza",
       speciesName: "Conocarpus erectus",
       uses: ["Moderable", "Construcción", "Combustible", "Horticultura"],
       category: "LC",
-      icon: "./input/img/ficha-203-icono-mangle-zaragoza.png"
+      icon: "./input/img/ficha-203-icono-mangle-zaragoza.png",
     },
     {
       group: "Mangle pifluelo",
       speciesName: "Pelliciera rhizophorae",
       uses: ["Construcción", "Combustible"],
-      category: "VU", 
-      icon: "./input/img/ficha-203-icono-mangle-pinuelo.png"
+      category: "VU",
+      icon: "./input/img/ficha-203-icono-mangle-pinuelo.png",
     },
   ];
 
   // Mapeo de imágenes para cada uso
   const useImages = {
-    "Construcción": "./input/img/ficha-203-icono-construccion.png",
-    "Medicinal": "./input/img/ficha-203-icono-medicinal.png", 
+    Construcción: "./input/img/ficha-203-icono-construccion.png",
+    Medicinal: "./input/img/ficha-203-icono-medicinal.png",
     "Carbón vegetal": "./input/img/ficha-203-icono-carbon.png",
     "Industria manufacturera": "./input/img/ficha-203-icono-industra.png",
     "Alimento para animales": "./input/img/ficha-203-icono-alimento.png",
-    "Combustible": "./input/img/ficha-203-icono-combustible.png",
-    "Moderable": "./input/img/ficha-203-icono-maderable.png",
+    Combustible: "./input/img/ficha-203-icono-combustible.png",
+    Moderable: "./input/img/ficha-203-icono-maderable.png",
     "Medicina humana": "./input/img/ficha-203-icono-medicinal.png",
     "Medicina veterinaria": "./input/img/ficha-203-icono-veterinaria.png",
-    "Horticultura": "./input/img/ficha-203-icono-horticultura.png"
+    Horticultura: "./input/img/ficha-203-icono-horticultura.png",
   };
 
   function loadSpecies(speciesList) {
@@ -266,12 +268,17 @@ if (contenido4) {
       card.classList.add("card");
 
       // Crear lista de usos con imágenes
-      const usesList = species.uses.map((use) => 
-        `<li>
-          <img src="${useImages[use] || './images/uses/default.png'}" alt="${use}" class="use-icon">
+      const usesList = species.uses
+        .map(
+          (use) =>
+            `<li>
+          <img src="${
+            useImages[use] || "./images/uses/default.png"
+          }" alt="${use}" class="use-icon">
           <span class="use-text">${use}</span>
         </li>`
-      ).join("");
+        )
+        .join("");
 
       card.innerHTML = `
         <div class="card-header">

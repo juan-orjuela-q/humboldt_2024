@@ -111,6 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     plotOptions: {
       series: {
+        borderColor: "#ffffff",
+        borderWidth: 1,
         allowPointSelect: false,
         cursor: "pointer",
         borderRadius: 8,

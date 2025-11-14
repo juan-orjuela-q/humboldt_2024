@@ -11,9 +11,16 @@
 <link rel="stylesheet" href="../../general/sonar.min.css" />
 <meta charset="UTF-8" />
 
-<div class=" align-l element-container">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/sunburst.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/themes/adaptive.js"></script>
+
+<div class="align-l container">
   <div class="col-group info-container">
-    <div class="col-dt-7">
+    <div class="col-dt-6">
       <div class="title-container">
         <div>
           <i class="icon icon_h2 markermap bg-green_blue_dark"></i>
@@ -108,8 +115,23 @@
         </div>
       </div>
     </div>
-    <div class="col-dt-5 imagen-bg">
-      <img src="./input/img/ficha-204-imagen.jpg" alt="pajaros en humedal" />
+    <div class="col-dt-6">
+      <div class="title-container">
+        <div>
+          <i class="icon icon_h2 markerbars bg-green_blue_dark"></i>
+        </div>
+        <h2 class="color-gris-osc align-l">
+          Representatividad de motores de transformación identificados por las
+          comunidades locales
+        </h2>
+      </div>
+      <div class="col-group col-group_container">
+        <div class="col-dt-12">
+          <figure class="highcharts-figure">
+            <div id="motores-de-transformacion"></div>
+          </figure>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -539,7 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.classList.add("card");
 
       card.innerHTML = `
-          <p class="species-name">${species.especie}</p>
+          <p class="species-name"><i>${species.especie}</i></p>
           <hr>
           <div class="species-description">
             <strong>Distribución:</strong> ${species.distribucion}

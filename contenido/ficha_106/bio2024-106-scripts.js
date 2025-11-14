@@ -153,7 +153,13 @@ document.addEventListener("DOMContentLoaded", function () {
       tooltip: "<h3>Batata</h3><p><em>Ipomoea batatas</em></p>",
     },
 
-    { text: "Zarzaparrilla", x: 600, y: 480, region: "Barranquilla" },
+    {
+      text: "Zarzaparrilla",
+      x: 600,
+      y: 480,
+      region: "Barranquilla",
+      tooltip: "<h3>Zarzaparrilla</h3><p><em>Smilax sp</em></p>",
+    },
 
     // Becerril (inferior)
     {
@@ -170,7 +176,13 @@ document.addEventListener("DOMContentLoaded", function () {
       region: "Becerril",
       tooltip: "<h3>Caracolí</h3><p><em>Anacardium excelsum</em></p>",
     },
-    { text: "Guáimaro", x: 480, y: 670, region: "Becerril" },
+    {
+      text: "Guáimaro",
+      x: 480,
+      y: 670,
+      region: "Becerril",
+      tooltip: "<h3>Guáimaro</h3><p><em> Brosimum alicastrum</em></p>",
+    },
     {
       text: "Orejero",
       x: 480,
@@ -413,6 +425,8 @@ if (container) {
       },
       series: [
         {
+          borderColor: "#ffffff",
+          borderWidth: 1,
           name: "Categorías",
           colorByPoint: true,
           data: [
@@ -481,6 +495,8 @@ if (container) {
       },
       series: [
         {
+          borderColor: "#ffffff",
+          borderWidth: 1,
           name: "Categorías",
           colorByPoint: true,
           data: [
@@ -549,6 +565,8 @@ if (container) {
       },
       series: [
         {
+          borderColor: "#ffffff",
+          borderWidth: 1,
           name: "Categorías",
           colorByPoint: true,
           data: [

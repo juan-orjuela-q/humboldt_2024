@@ -290,7 +290,11 @@ if (contenido3) {
     },
     series: [
       {
+        borderColor: "#ffffff",
+        borderWidth: 1,
         name: "Instituciones",
+        borderColor: "#ffffff",
+        borderWidth: 1,
         colorByPoint: true,
         data: chartData,
       },
