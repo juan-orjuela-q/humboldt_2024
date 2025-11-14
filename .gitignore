@@ -16,3 +16,7 @@ Thumbs.db
 general/Ilustraciones alta/
 # Archivos ZIP grandes
 *.zip
+# Archivos TIF grandes (imágenes geoespaciales)
+*.tif
+*.tiff
+*.tifz
