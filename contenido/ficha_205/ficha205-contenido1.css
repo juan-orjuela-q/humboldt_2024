@@ -196,3 +196,12 @@ body {
   gap: 10px;
   margin: 40px 0;
 }
+
+.map-colombia {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 120px;
+  height: 170px;
+}
