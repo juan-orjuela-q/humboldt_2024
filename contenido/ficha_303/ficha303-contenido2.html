@@ -1,0 +1,66 @@
+<meta charset="UTF-8" />
+<!-- Estilos generales -->
+<link rel="stylesheet" href="../../general/animate.css" />
+<link rel="stylesheet" href="../../general/chapters.css" />
+<link rel="stylesheet" href="../../general/colors-v3.css" />
+<link rel="stylesheet" href="../../general/commerce-js.css" />
+<link rel="stylesheet" href="../../general/fluidable-min.css" />
+<link rel="stylesheet" href="../../general/icons-v3.css" />
+<link rel="stylesheet" href="../../general/jquery.fullPage.css" />
+<link rel="stylesheet" href="../../general/main-v3.css" />
+<link rel="stylesheet" href="../../general/sonar.min.css" />
+
+<!-- Estilos específicos -->
+<link rel="stylesheet" href="ficha303-contenido2.css" />
+<script src="bio2024-303-scripts.js" defer></script>
+
+<div class="container">
+  <div class="container_title">
+    <i class="icon icon_h2 markerbars bg-blue_pacific"></i>
+    <h2 class="align-l color-gris-osc">
+      Índice de importancia cultural y usos por especie
+    </h2>
+  </div>
+  <div class="col-group">
+    <div class="filters col-dt-4">
+      <h3 class="align-l color-gris-osc title-filter">Filtra por:</h3>
+      <div class="filter-buttons">
+        <h4 class="align-l color-gris-osc subtitle-group">Grupo funcional</h4>
+        <button
+          class="filter-btn active bg-blue_pacific"
+          data-filter="Acuática"
+        >
+          <img class="filter-acuatica" src="" alt="Acuática" />
+          <span>Acuática</span>
+        </button>
+        <button class="filter-btn" data-filter="Semiacuática">
+          <img class="filter-semiacuatica" src="" alt="Semiacuática" />
+          <span>Semiacuática</span>
+        </button>
+        <button class="filter-btn" data-filter="Terrestre">
+          <img class="filter-terrestre" src="" alt="Terrestre" />
+          <span>Terrestre</span>
+        </button>
+      </div>
+      <hr />
+      <div class="filter-group">
+        <div class="filter-select-container">
+          <div class="filter-select-container">
+            <select id="iucn-filter" class="filter-select">
+              <option value="all">Todas las categorías IUCN</option>
+              <option value="LC">LC</option>
+              <option value="NT">NT</option>
+              <option value="VU">VU</option>
+              <option value="EN">EN</option>
+              <option value="CR">CR</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards col-dt-8">
+      <h3 id="count" class="align-l color-gris-osc"></h3>
+      <div id="species-cards"></div>
+    </div>
+  </div>
+</div>
