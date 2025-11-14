@@ -1,4 +1,4 @@
-/* Estilos para la línea del tiempo horizontal */
+/* Estilos para la línea del tiempo horizontal - MEJORAS */
 :root {
   --bg: #f6f6f6;
   --panel: #ffffff;
@@ -16,7 +16,6 @@
 .container_title {
   display: flex;
   gap: 10px;
-  margin-bottom: 50px;
 }
 .timeline-section {
   padding: 28px 40px;
@@ -43,9 +42,7 @@
   display: flex;
   align-items: flex-start;
   gap: 100px;
-  padding: 40px 20px;
   overflow-x: auto;
-  height: 80vh;
 }
 
 .event {
@@ -57,12 +54,65 @@
   justify-content: center;
   min-height: 35vh;
 }
+.marker:nth-child(odd)::after {
+  content: "";
+  width: 1px;
+  height: 700px;
+  background: #b9b9b9;
+  margin-left: -73px;
+}
+
+.marker:nth-child(even)::after {
+  content: "";
+  width: 1px;
+  height: 800px;
+  background: #b9b9b9;
+  margin-left: -125px;
+}
+
+.marker:nth-child(3n)::after {
+  content: "";
+  width: 1px;
+  background: #b9b9b9;
+  margin-left: -123px;
+}
+
+.marker:nth-child(4n)::after {
+  content: "";
+  width: 1px;
+  background: #b9b9b9;
+  margin-left: -105px;
+}
+
+.marker:nth-child(5n)::after {
+  content: "";
+  width: 1px;
+  background: #b9b9b9;
+  margin-left: -90px;
+}
+
+.marker:nth-child(7n)::after {
+  content: "";
+  width: 1px;
+  background: #b9b9b9;
+  margin-left: -94px;
+}
+
+.marker:nth-child(8n)::after {
+  content: "";
+  width: 1px;
+  background: #b9b9b9;
+  margin-left: -125px;
+}
+
 .event .marker {
   width: 18px;
   height: 18px;
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 6px rgba(161, 198, 0, 0.06);
+  position: relative;
+  z-index: 3; /* Asegura que el marcador esté sobre la línea */
 }
 
 .event.marker.top {
@@ -107,10 +157,8 @@
   top: calc(100% + 12px);
 }
 
-/* imágenes circulares que sobresalen */
+/* VARIACIÓN DE TAMAÑO DE IMÁGENES CIRCULARES - MEJORADO */
 .event .circle-img {
-  width: 120px;
-  height: 120px;
   border-radius: 50%;
   overflow: hidden;
   margin: 12px auto;
@@ -118,6 +166,28 @@
   display: block;
   border: 6px solid var(--panel);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+/* Tamaños variados para las imágenes - NUEVO */
+.event:nth-child(odd) .circle-img {
+  width: 100px;
+  height: 100px;
+}
+
+.event:nth-child(even) .circle-img {
+  width: 160px;
+  height: 160px;
+}
+
+.event:nth-child(3n) .circle-img {
+  width: 200px;
+  height: 200px;
+}
+
+.event:nth-child(5n) .circle-img {
+  width: 130px;
+  height: 130px;
 }
 
 /* Alternar posicionamiento de texto (arriba/abajo) */
@@ -155,6 +225,12 @@
     align-items: center;
   }
 
+  /* Ocultar líneas verticales en móvil */
+  .timeline::before,
+  .event::before {
+    display: none;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
@@ -177,5 +253,39 @@
   }
   .event.marker.top {
     top: 0;
+  }
+
+  /* Tamaños uniformes en móvil */
+  .event .circle-img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .marker:nth-child(odd)::after {
+    display: none;
+  }
+
+  .marker:nth-child(even)::after {
+    display: none;
+  }
+
+  .marker:nth-child(3n)::after {
+    display: none;
+  }
+
+  .marker:nth-child(4n)::after {
+    display: none;
+  }
+
+  .marker:nth-child(5n)::after {
+    display: none;
+  }
+
+  .marker:nth-child(7n)::after {
+    display: none;
+  }
+
+  .marker:nth-child(8n)::after {
+    display: none;
   }
 }

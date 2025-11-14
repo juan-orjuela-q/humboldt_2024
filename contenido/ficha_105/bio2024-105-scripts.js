@@ -56,6 +56,8 @@ if (container) {
 
       series: [
         {
+          borderColor: "#ffffff",
+          borderWidth: 1,
           type: "sunburst",
           data: data,
           name: "Categorías de Amenaza",
@@ -314,7 +316,7 @@ if (container) {
       },
     },
     legend: {
-      enabled: false, 
+      enabled: false,
     },
     plotOptions: {
       pie: {
@@ -328,6 +330,8 @@ if (container) {
     },
     series: [
       {
+        borderColor: "#ffffff",
+        borderWidth: 1,
         name: "Categorías",
         colorByPoint: true,
         data: [
@@ -384,6 +388,8 @@ Highcharts.chart("sankey-container", {
   },
   series: [
     {
+      borderColor: "#ffffff",
+      borderWidth: 1,
       keys: ["from", "to", "weight"],
       nodes: [
         // Nodos principales

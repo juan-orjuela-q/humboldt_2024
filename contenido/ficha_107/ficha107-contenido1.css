@@ -5,9 +5,6 @@ body {
   display: flex;
   gap: 10px;
 }
-.title-container i {
-  min-width: 23px;
-}
 .container {
   padding: 60px 0px;
 }
@@ -20,7 +17,7 @@ body {
   max-width: 65vh;
   margin: 0 auto;
   z-index: 50;
-  margin-bottom: 100px;
+  margin: 120px 0;
 }
 .map-container > img {
   max-width: 100%;
@@ -42,6 +39,12 @@ body {
   transition: opacity 0.3s ease;
   object-fit: contain;
 }
+
+.map-filters {
+  display: flex;
+  justify-content: end;
+}
+
 .map-filters input {
   display: none;
 }
@@ -150,7 +153,141 @@ body {
   justify-content: center;
 }
 
-
 #img-parcela_permanente {
   z-index: 200;
+}
+
+.map-colombia {
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  z-index: 100;
+  width: 120px;
+  height: 170px;
+}
+
+/*arbol*/
+
+.container {
+  padding: 40px 0;
+}
+.img-container-bg {
+  position: relative;
+}
+.img-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(10%, -100%);
+}
+
+/* Hidden state for the circular image, toggled via JS */
+.img-circle.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(10%, -100%) scale(0.9);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms;
+}
+
+.img-circle {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.more {
+  position: absolute;
+  bottom: 45%;
+  left: 55%;
+  cursor: pointer; /* indicate clickable */
+  user-select: none;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 28px !important;
+  height: 28px !important;
+  padding-left: 0 !important;
+  /* Animación de radar */
+  animation: radar 2s infinite ease-in-out;
+}
+
+/* Efecto de radar */
+@keyframes radar {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 199, 52, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(255, 199, 52, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 199, 52, 0);
+  }
+}
+
+.description {
+  position: absolute;
+  bottom: 20%;
+  left: 70%;
+  display: flex;
+  gap: 10px;
+}
+
+.description .scientific-name {
+  font-style: italic;
+}
+
+.text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  text-align: left;
+  height: 100%;
+}
+
+.text-col .container-tetx {
+  width: 60%;
+}
+
+.container-text {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+}
+
+.toggle-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: radar 2s infinite ease-in-out;
+}
+
+.toggle-icon:hover {
+  transform: scale(1.1);
+}
+
+.text-content {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px;
+  max-width: 250px;
+}
+
+.text-content.hidden {
+  display: none;
+}
+
+.text-content.visible {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

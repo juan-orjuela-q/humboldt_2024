@@ -1,18 +1,11 @@
 body {
-  background-image: url("./input/img/ficha-203-imagen-manglar.jpeg") !important;
+  background-image: url("./input/img/ficha-203_transformacion-estado.jpg") !important;
+  background-position: center !important;
   background-repeat: no-repeat !important;
+  min-height: 300px;
+  max-height: 1450px;
+  height: 100%;
   background-size: cover !important;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 1;
 }
 .title-container {
   display: flex;

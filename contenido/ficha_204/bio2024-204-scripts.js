@@ -108,6 +108,8 @@ if (contenido2) {
     },
     series: [
       {
+        borderColor: "#ffffff",
+        borderWidth: 1,
         name: "Amenazas",
         colorByPoint: true,
         data: [

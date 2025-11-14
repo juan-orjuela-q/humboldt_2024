@@ -169,13 +169,17 @@ p.note {
 /* tooltip simple */
 .tooltip {
   position: absolute;
-  background: white;
+  background: white !important;
   border-radius: 6px;
   padding: 8px 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   display: none;
-  font-size: 13px;
+  color: #fff;
   text-align: left;
+}
+
+.tooltip::after {
+  border-top: 10px solid #fff !important;
 }
 .venn-svg {
   width: 100%;
@@ -185,6 +189,18 @@ p.note {
   margin: 18px auto;
   background: transparent;
   margin-top: -50px;
+}
+
+.tooltip h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+.tooltip p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
 }
 
 .especies-leyenda {

@@ -43,6 +43,8 @@ if (container) {
           allowTraversingTree: true,
           borderRadius: 3,
           cursor: "pointer",
+          borderColor: "#ffffff",
+          borderWidth: 1,
           dataLabels: {
             format: "{point.name}",
             filter: {
@@ -531,6 +533,8 @@ if (container) {
           allowTraversingTree: true,
           borderRadius: 3,
           cursor: "pointer",
+          borderColor: "#ffffff",
+          borderWidth: 1,
           dataLabels: {
             format: "{point.name}",
             filter: {
@@ -1001,18 +1005,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const container3 = document.getElementById("container-3");
 if (container3) {
-  // Datos en formato JSON
+  // Datos en formato JSON - SIN columna "Total" y SIN fila "Total de especies amenazadas"
   const chartData = {
     categories: {
-      xAxis: [
-        "Animales",
-        "Plantas",
-        "Hongos",
-        "Total Caribe Continental",
-        "Total",
-      ],
+      xAxis: ["Animales", "Plantas", "Hongos", "Total Caribe Continental"],
       yAxis: [
-        "Total de especies amenazadas",
         "Especies amenazadas total",
         "Especies Amenazadas VU",
         "Especies Amenazadas EN",
@@ -1021,58 +1018,43 @@ if (container3) {
     },
     series: [
       {
-        name: "Total de especies amenazadas",
-        color: "#ffffff00",
-        data: [
-          { x: 0, y: 0, z: 760, name: "Animales" },
-          { x: 1, y: 0, z: 1262, name: "Plantas" },
-          { x: 2, y: 0, z: 82, name: "Hongos" },
-          { x: 3, y: 0, z: null, name: "Caribe" }, // No hay dato en la tabla
-          { x: 4, y: 0, z: null, name: "Total" }, // No hay dato en la tabla
-        ],
-      },
-      {
         name: "Especies amenazadas total",
         color: "#ffffff00",
         data: [
-          { x: 0, y: 1, z: 195, name: "Animales" },
-          { x: 1, y: 1, z: 130, name: "Plantas" },
-          { x: 2, y: 1, z: 5, name: "Hongos" },
-          { x: 3, y: 1, z: 330, name: "Caribe" },
-          { x: 4, y: 1, z: 2104, name: "Total" },
+          { x: 0, y: 0, z: 195, name: "Animales" },
+          { x: 1, y: 0, z: 130, name: "Plantas" },
+          { x: 2, y: 0, z: 5, name: "Hongos" },
+          { x: 3, y: 0, z: 330, name: "Caribe" },
         ],
       },
       {
         name: "Especies Amenazadas (VU)",
         color: "#E9C101",
         data: [
-          { x: 0, y: 2, z: 112, name: "Animales" },
-          { x: 1, y: 2, z: 53, name: "Plantas" },
-          { x: 2, y: 2, z: 0, name: "Hongos" },
-          { x: 3, y: 2, z: 165, name: "Caribe" },
-          { x: 4, y: 2, z: 838, name: "Total" },
+          { x: 0, y: 1, z: 112, name: "Animales" },
+          { x: 1, y: 1, z: 53, name: "Plantas" },
+          { x: 2, y: 1, z: 0, name: "Hongos" },
+          { x: 3, y: 1, z: 165, name: "Caribe" },
         ],
       },
       {
         name: "Especies Amenazadas (EN)",
         color: "#F59C00",
         data: [
-          { x: 0, y: 3, z: 60, name: "Animales" },
-          { x: 1, y: 3, z: 59, name: "Plantas" },
-          { x: 2, y: 3, z: 1, name: "Hongos" },
-          { x: 3, y: 3, z: 120, name: "Caribe" },
-          { x: 4, y: 3, z: 800, name: "Total" },
+          { x: 0, y: 2, z: 60, name: "Animales" },
+          { x: 1, y: 2, z: 59, name: "Plantas" },
+          { x: 2, y: 2, z: 1, name: "Hongos" },
+          { x: 3, y: 2, z: 120, name: "Caribe" },
         ],
       },
       {
         name: "Especies Amenazadas (CR)",
         color: "#D50000",
         data: [
-          { x: 0, y: 4, z: 23, name: "Animales" },
-          { x: 1, y: 4, z: 18, name: "Plantas" },
-          { x: 2, y: 4, z: 4, name: "Hongos" },
-          { x: 3, y: 4, z: 45, name: "Caribe" },
-          { x: 4, y: 4, z: 466, name: "Total" },
+          { x: 0, y: 3, z: 23, name: "Animales" },
+          { x: 1, y: 3, z: 18, name: "Plantas" },
+          { x: 2, y: 3, z: 4, name: "Hongos" },
+          { x: 3, y: 3, z: 45, name: "Caribe" },
         ],
       },
     ],
@@ -1131,7 +1113,7 @@ if (container3) {
       },
       gridLineWidth: 1,
       min: -0.5,
-      max: 4.5,
+      max: 3.5, // Actualizado porque ahora tenemos 4 categorías en lugar de 5
       plotLines: chartData.categories.yAxis.map((_, index) => ({
         color: "#666666",
         width: 1,
@@ -1145,14 +1127,14 @@ if (container3) {
           const index = this.pos;
           let label = chartData.categories.yAxis[index];
 
-          if (index === 2) {
-            // VU
+          if (index === 1) {
+            // VU ahora está en posición 1
             return 'Especies Amenazadas <span style="color: #fff; background:#E9C101; font-weight: bold; border-radius:50%; padding: 8px;">VU</span>';
-          } else if (index === 3) {
-            // EN
+          } else if (index === 2) {
+            // EN ahora está en posición 2
             return 'Especies Amenazadas <span style="color: #fff; background:#F59C00; font-weight: bold; border-radius:50%; padding: 8px;">EN</span>';
-          } else if (index === 4) {
-            // CR
+          } else if (index === 3) {
+            // CR ahora está en posición 3
             return 'Especies Amenazadas <span style="color: #fff; background:#D50000; font-weight: bold; border-radius:50%; padding: 8px;">CR</span>';
           } else {
             return label;
@@ -1231,11 +1213,11 @@ if (container3) {
     },
   });
 
+  // Segundo gráfico - también actualizado sin "Total" y sin "Total de especies amenazadas"
   const chartData2 = {
     categories: {
-      xAxis: ["Animales", "Plantas", "Hongos", "Total Caribe", "Total"],
+      xAxis: ["Animales", "Plantas", "Hongos", "Total Caribe"],
       yAxis: [
-        "Total de especies amenazadas",
         "Especies amenazadas total",
         "Especies Amenazadas VU",
         "Especies Amenazadas EN",
@@ -1244,58 +1226,43 @@ if (container3) {
     },
     series: [
       {
-        name: "Total de especies amenazadas",
-        color: "#ffffff00",
-        data: [
-          { x: 0, y: 0, z: 760, name: "Animales" },
-          { x: 1, y: 0, z: 1262, name: "Plantas" },
-          { x: 2, y: 0, z: 82, name: "Hongos" },
-          { x: 3, y: 0, z: null, name: "Total Caribe" }, // No hay dato
-          { x: 4, y: 0, z: null, name: "Total" }, // No hay dato
-        ],
-      },
-      {
         name: "Especies amenazadas total",
         color: "#ffffff00",
         data: [
-          { x: 0, y: 1, z: 120, name: "Animales" },
-          { x: 1, y: 1, z: 11, name: "Plantas" },
-          { x: 2, y: 1, z: 0, name: "Hongos" },
-          { x: 3, y: 1, z: 131, name: "Total Caribe" },
-          { x: 4, y: 1, z: 2104, name: "Total" },
+          { x: 0, y: 0, z: 120, name: "Animales" },
+          { x: 1, y: 0, z: 11, name: "Plantas" },
+          { x: 2, y: 0, z: 0, name: "Hongos" },
+          { x: 3, y: 0, z: 131, name: "Total Caribe" },
         ],
       },
       {
         name: "Especies Amenazadas (VU)",
         color: "#E9C101",
         data: [
-          { x: 0, y: 2, z: 76, name: "Animales" },
-          { x: 1, y: 2, z: 4, name: "Plantas" },
-          { x: 2, y: 2, z: 0, name: "Hongos" },
-          { x: 3, y: 2, z: 80, name: "Total Caribe" },
-          { x: 4, y: 2, z: 838, name: "Total" },
+          { x: 0, y: 1, z: 76, name: "Animales" },
+          { x: 1, y: 1, z: 4, name: "Plantas" },
+          { x: 2, y: 1, z: 0, name: "Hongos" },
+          { x: 3, y: 1, z: 80, name: "Total Caribe" },
         ],
       },
       {
         name: "Especies Amenazadas (EN)",
         color: "#F59C00",
         data: [
-          { x: 0, y: 3, z: 28, name: "Animales" },
-          { x: 1, y: 3, z: 5, name: "Plantas" },
-          { x: 2, y: 3, z: 0, name: "Hongos" },
-          { x: 3, y: 3, z: 33, name: "Total Caribe" },
-          { x: 4, y: 3, z: 800, name: "Total" },
+          { x: 0, y: 2, z: 28, name: "Animales" },
+          { x: 1, y: 2, z: 5, name: "Plantas" },
+          { x: 2, y: 2, z: 0, name: "Hongos" },
+          { x: 3, y: 2, z: 33, name: "Total Caribe" },
         ],
       },
       {
         name: "Especies Amenazadas (CR)",
         color: "#D50000",
         data: [
-          { x: 0, y: 4, z: 16, name: "Animales" },
-          { x: 1, y: 4, z: 2, name: "Plantas" },
-          { x: 2, y: 4, z: 0, name: "Hongos" },
-          { x: 3, y: 4, z: 18, name: "Total Caribe" },
-          { x: 4, y: 4, z: 466, name: "Total" },
+          { x: 0, y: 3, z: 16, name: "Animales" },
+          { x: 1, y: 3, z: 2, name: "Plantas" },
+          { x: 2, y: 3, z: 0, name: "Hongos" },
+          { x: 3, y: 3, z: 18, name: "Total Caribe" },
         ],
       },
     ],
@@ -1353,7 +1320,7 @@ if (container3) {
       },
       gridLineWidth: 1,
       min: -0.5,
-      max: 4.5,
+      max: 3.5, // Actualizado porque ahora tenemos 4 categorías en lugar de 5
       plotLines: chartData2.categories.yAxis.map((_, index) => ({
         color: "#666666",
         width: 1,
@@ -1367,14 +1334,14 @@ if (container3) {
           const index = this.pos;
           let label = chartData2.categories.yAxis[index];
 
-          if (index === 2) {
-            // VU
+          if (index === 1) {
+            // VU ahora está en posición 1
             return 'Especies Amenazadas <span style="color: #fff; background:#E9C101; font-weight: bold; border-radius:50%; padding: 10px;">VU</span>';
-          } else if (index === 3) {
-            // EN
+          } else if (index === 2) {
+            // EN ahora está en posición 2
             return 'Especies Amenazadas <span style="color: #fff; background:#F59C00; font-weight: bold; border-radius:50%; padding: 10px;">EN</span>';
-          } else if (index === 4) {
-            // CR
+          } else if (index === 3) {
+            // CR ahora está en posición 3
             return 'Especies Amenazadas <span style="color: #fff; background:#D50000; font-weight: bold; border-radius:50%; padding: 10px;">CR</span>';
           } else {
             return label;
@@ -1513,6 +1480,8 @@ if (container4) {
       {
         name: "Categorías",
         colorByPoint: true,
+        borderColor: "#ffffff",
+        borderWidth: 1,
         data: [
           {
             name: "CONTINENTAL",
@@ -1586,7 +1555,10 @@ if (container4) {
     series: [
       {
         name: "Categorías",
+        borderColor: "#ffffff",
+        borderWidth: 1,
         colorByPoint: true,
+
         data: [
           {
             name: "CONTINENTAL",
@@ -1651,6 +1623,8 @@ if (contenido5) {
       series: {
         allowPointSelect: true,
         cursor: "pointer",
+        borderColor: "#ffffff",
+        borderWidth: 1,
         borderRadius: 8,
         size: "85%", // Reducido ligeramente para dar espacio al título
         dataLabels: {
