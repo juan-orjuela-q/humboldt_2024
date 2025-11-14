@@ -1,0 +1,142 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff !important;
+}
+
+/* Contenedor principal */
+
+/* Título principal */
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+  position: relative;
+  z-index: 20;
+}
+
+.title-container i {
+  margin: 5px;
+}
+
+/* Contenedor de información */
+.info-container {
+  background-color: #fff;
+  border-radius: 16px;
+  min-height: 400px;
+}
+
+/* Mapa y contenedor */
+.map-container {
+  position: relative;
+  padding: 40px 0;
+}
+
+ul {
+  padding: 0;
+}
+
+.map-container > img {
+  max-width: 100%;
+}
+
+.map-layers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-layers img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  object-fit: contain;
+}
+
+.mapa-colombia {
+  position: absolute;
+  right: 0;
+  bottom: -100px;
+}
+/* Contenedores de checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container:last-child {
+  border-bottom: none;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.locations-section {
+  flex: 0 0 300px;
+}
+
+.locations-container h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: bold;
+}
+
+.locations-columns {
+  display: flex;
+  gap: 20px;
+  width: fit-content;
+}
+
+.locations-column {
+  flex: 1;
+}
+
+.locations-column ul {
+  list-style-type: none;
+}
+
+.locations-column li {
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  display: flex;
+  gap: 10px;
+  width: max-content;
+}
+
+.ubication-number {
+  width: 20px;
+  height: 20px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .locations-section {
+    flex: 1;
+  }
+}
