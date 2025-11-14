@@ -19,4 +19,4 @@ general/Ilustraciones alta/
 # Archivos TIF grandes (imágenes geoespaciales)
 *.tif
 *.tiff
-*.tif
+*.tifz
