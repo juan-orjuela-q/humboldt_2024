@@ -110,7 +110,6 @@
 .elemento-gradiente {
   text-align: center;
   margin-top: 20px;
-  width: 122px;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -168,12 +167,5 @@
 
   .tab-group li a {
     width: 50%;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #141414;
-    color: #ffffff;
   }
 }

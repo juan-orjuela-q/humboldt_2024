@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../../general/jquery.fullPage.css" />
 <link rel="stylesheet" href="../../general/main-v3.css" />
 <link rel="stylesheet" href="../../general/sonar.min.css" />
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
@@ -18,39 +18,52 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/themes/adaptive.js"></script>
 
-
-<div class="container col-group">
-  <h2 class="align-l padding-2 color-gris-osc"><i class="icon icon_h2 markermap bg-green_blue"></i>Especies amenazadas en la región</h2>
-    <div class="col-dt-4 ">
-      <div class="align-l culumn-info">
-        <i class="icon icon_h2 markermap bg-green_blue space-circle"></i>
-        <p class="align-l">
-          De acuerdo con la Resolución 0126 de 2024 del Ministerio de Ambiente y Desarrollo Sostenible6 y los datos publicados a través del SiB Colombia, en la región Caribe hay evidencia de 356 especies categorizadas en algún grado de amenaza, de las cuales el 14 % se encuentra en peligro crítico (CR), el 35 % en peligro (EN) y el 51 % en estado vulnerable (VU). Estas especies representan un 16,8 % del total de especies amenazadas en el país.
-        </p>
-      </div>
-  </div>
-  <div class="col-dt-8 ">
+<div class="container col-group ficha101-contenido2">
+  <div class="title-container">
     <div>
-      <ul class="tab-group">
-        <li class="tab active "><a href="#contienental">Zona Continental</a></li>
-        <li class="tab"><a href="#marina">Zona marina</a></li>
+      <i class="icon icon_h2 markermap bg-green_blue"></i>
+    </div>
+    <h2 class="color-gris-osc align-l">Especies amenazadas en la región</h2>
+  </div>
+  <div class="col-dt-4">
+    <div class="align-l culumn-info">
+      <i class="icon icon_h2 markermap bg-green_blue space-circle"></i>
+      <p class="align-l">
+        De acuerdo con la Resolución 0126 de 2024 del Ministerio de Ambiente y
+        Desarrollo Sostenible6 y los datos publicados a través del SiB Colombia,
+        en la región Caribe hay evidencia de 356 especies categorizadas en algún
+        grado de amenaza, de las cuales el 14 % se encuentra en peligro crítico
+        (CR), el 35 % en peligro (EN) y el 51 % en estado vulnerable (VU). Estas
+        especies representan un 16,8 % del total de especies amenazadas en el
+        país.
+      </p>
+    </div>
+  </div>
+  <div class="col-dt-8">
+    <div>
+      <ul class="tab-group" data-tab-group="grupo2">
+        <li class="tab active">
+          <a href="#" data-tab-target="#contienental">Zona Continental</a>
+        </li>
+        <li class="tab">
+          <a href="#" data-tab-target="#marina">Zona marina</a>
+        </li>
       </ul>
       <div class="line-tabs bg-green_blue"></div>
     </div>
 
-    <div class="tab-content">
-      <div id="contienental">  
+    <div class="tab-content" data-tab-content-group="grupo2">
+      <div id="contienental" data-tab-content style="display: block">
         <figure class="highcharts-figure">
-            <div id="container-3"></div>
+          <div id="ficha-101-contenido2-grafica1"></div>
         </figure>
       </div>
-      
-      <div id="marina">  
+
+      <div id="marina" data-tab-content style="display: none">
         <figure class="highcharts-figure">
-            <div id="container-4"></div>
+          <div id="ficha-101-contenido2-grafica2"></div>
         </figure>
       </div>
-      
     </div>
   </div>
 </div>

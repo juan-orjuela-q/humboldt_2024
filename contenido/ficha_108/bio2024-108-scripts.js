@@ -48,16 +48,32 @@ document.addEventListener("DOMContentLoaded", function () {
             series = chart.series[0];
           let customLabel = chart.options.chart.custom.label;
 
+          // Calcular el total dinámico sumando todos los valores
+          const total = series.data.reduce((sum, point) => {
+            // Convertir el valor string a número (eliminar espacios y convertir)
+            const valorNumerico =
+              parseInt(point.options.valor.replace(/\s/g, "")) || 0;
+            return sum + valorNumerico;
+          }, 0);
+
+          // Formatear el total con separadores de miles
+          const totalFormateado = total.toLocaleString("es-ES");
+
           if (!customLabel) {
             customLabel = chart.options.chart.custom.label = chart.renderer
-              .label("Total<br/>" + "<strong>576 276</strong>")
+              .label("Total<br/>" + `<strong>${totalFormateado}</strong>`)
               .css({
-                color: "var(--highcharts-neutral-color-100, #000)",
+                color: "#333",
                 textAnchor: "middle",
                 fontFamily: "Rubik, sans-serif",
                 fontSize: "16px",
               })
               .add();
+          } else {
+            // Actualizar el texto del label existente
+            customLabel.attr({
+              text: "Total<br/>" + `<strong>${totalFormateado}</strong>`,
+            });
           }
 
           const x = series.center[0] + chart.plotLeft,
@@ -68,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
             x,
             y,
           });
+
           // Set font size based on chart diameter
           customLabel.css({
             fontSize: `${series.center[2] / 12}px`,
@@ -493,7 +510,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     yAxis: {
       min: 0,
-      // max: 0, // ← ESTA LÍNEA ERA EL ERROR
       title: {
         text: null,
         style: {
@@ -555,6 +571,8 @@ document.addEventListener("DOMContentLoaded", function () {
     plotOptions: {
       column: {
         stacking: "normal",
+        borderColor: "#FFFFFF", // Cambiado a blanco
+        borderWidth: 1, // Grosor del borde
         dataLabels: {
           enabled: true,
           format: "{y}%",

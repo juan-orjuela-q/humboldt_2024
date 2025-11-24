@@ -11,31 +11,46 @@
 <link rel="stylesheet" href="../../general/sonar.min.css" />
 <meta charset="UTF-8" />
 
-<div class="container align-l">
+<div class="container align-l ficha101-contenido6">
   <div class="title-container">
     <div>
-      <i class="icon icon_h2 markerbars bg-green_blue"></i>
+      <i class="icon icon_h2 bars bg-green_blue"></i>
     </div>
-    <h2 class="color-gris-osc">Top 10 de organizaciones nacionales con mayor número de especies observadas.</h2>
+    <h2 class="color-gris-osc">
+      Top 10 de organizaciones nacionales con mayor número de especies
+      observadas.
+    </h2>
   </div>
   <div>
     <div>
-      <ul class="tab-group">
-        <li class="tab active"><a href="#continental">Zona Continental</a></li>
-        <li class="tab"><a href="#marina">Zona marina</a></li>
+      <ul class="tab-group" data-tab-group="grupo4">
+        <li class="tab active">
+          <a href="#" data-tab-target="#continental-organizaciones"
+            >Zona Continental</a
+          >
+        </li>
+        <li class="tab">
+          <a href="#" data-tab-target="#marina-organizaciones">Zona marina</a>
+        </li>
       </ul>
       <div class="line-tabs bg-green_blue"></div>
     </div>
 
-    <div class="tab-content">
-      <div id="continental" class="tab-container">
+    <div class="tab-content" data-tab-content-group="grupo4">
+      <div
+        id="continental-organizaciones"
+        data-tab-content
+        style="display: block"
+      >
         <table id="data-table-continental" class="ranking-table">
           <thead>
             <tr>
-              <th onclick="sortTable(0, 'continental')">Organización</th>
-              <th onclick="sortTable(1, 'continental')">Número de especies</th>
-              <th onclick="sortTable(2, 'continental')">Número de observaciones</th>
-              <th onclick="sortTable(3, 'continental')">Tipo</th>
+              <th onclick="sortTable(0, `continental`)">Organización</th>
+              <th onclick="sortTable(1, `continental`)">Número de especies</th>
+              <th onclick="sortTable(2, `continental`)">
+                Número de observaciones
+              </th>
+              <th onclick="sortTable(3, `continental`)">Tipo</th>
             </tr>
           </thead>
           <tbody>
@@ -44,14 +59,14 @@
         </table>
       </div>
 
-      <div id="marina" class="tab-container" style="display:none;">
+      <div id="marina-organizaciones" data-tab-content style="display: none">
         <table id="data-table-marina" class="ranking-table">
           <thead>
             <tr>
-              <th onclick="sortTable(0, 'marina')">Organización</th>
-              <th onclick="sortTable(1, 'marina')">Número de especies</th>
-              <th onclick="sortTable(2, 'marina')">Número de observaciones</th>
-              <th onclick="sortTable(3, 'marina')">Tipo</th>
+              <th onclick="sortTable(0, `marina`)">Organización</th>
+              <th onclick="sortTable(1, `marina`)">Número de especies</th>
+              <th onclick="sortTable(2, `marina`)">Número de observaciones</th>
+              <th onclick="sortTable(3, `marina`)">Tipo</th>
             </tr>
           </thead>
           <tbody>

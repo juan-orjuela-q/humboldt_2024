@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Mostrar el contenido objetivo con fadeIn
       const targetElement = document.querySelector(target);
       if (targetElement) {
-        targetElement.style.display = "block";
+        targetElement.style.display = "flex";
         targetElement.style.opacity = "0";
 
         let opacity = 0;
@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
         else if (especie.local === "VU") localClass = "status-vu";
 
         row.innerHTML = `
-          <td>${especie.especie}</td>
+          <td class= "scientific-name">${especie.especie}</td>
           <td>${especie.nombreComun}</td>
           <td class="${estadoClass}">${especie.uicn}</td>
           <td class="${localClass}">${especie.local || "-"}</td>

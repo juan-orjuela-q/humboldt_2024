@@ -3,47 +3,47 @@ const timelineEvents = [
   {
     year: "1978",
     title: "Fundación",
-    img: "./input/img/ficha-110-linea-tiempo-1.png",
+    img: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-linea-tiempo-1.png",
   },
   {
     year: "2004",
     title: "Administración pasa a Comfenalco",
-    img: "./input/img/ficha-110-linea-tiempo-2.png",
+    img: "https://reporte.humboldt.org.co/assets/img/2024/1/101/ficha-110-linea-tiempo-2.png",
   },
   {
     year: "2015",
     title: "Designación de Santiago Madriñán",
-    img: "./input/img/ficha-110-linea-tiempo-3.png",
+    img: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-linea-tiempo-3.png",
   },
   {
     year: "2020",
     title: "Acreditación BGCI",
-    img: "./input/img/ficha-110-linea-tiempo-4.png",
+    img: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-linea-tiempo-4.png",
   },
   {
     year: "2020",
     title: "Premio BIBO",
-    img: "./input/img/ficha-110-linea-tiempo-5.png",
+    img: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-linea-tiempo-5.png",
   },
   {
     year: "2021",
     title: "Reconocimiento como Centro de Ciencia (Minciencias)",
-    img: "./input/img/ficha-110-linea-tiempo-6.png",
+    img: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-linea-tiempo-6.png",
   },
   {
     year: "2022",
     title: "Acreditación ArbNet",
-    img: "./input/img/ficha-110-linea-tiempo-7.png",
+    img: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-linea-tiempo-7.png",
   },
   {
     year: "2024",
     title: "Sede del congreso de jardines botánicos",
-    img: "./input/img/ficha-110-linea-tiempo-8.png",
+    img: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-linea-tiempo-8.png",
   },
   {
     year: "2024",
     title: "Premio GEMAS",
-    img: "./input/img/ficha-110-linea-tiempo-9.png",
+    img: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-linea-tiempo-9.png",
   },
 ];
 
@@ -560,27 +560,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Contenido 4: Carrusel simple para ficha110 - independiente de bio2024-110-script.js
 (function () {
-  const carousel = document.getElementById("carousel");
+  const carousel = document.getElementById("ficha110-contenido4-carousel");
   if (!carousel) return;
-  const track = carousel.querySelector(".carousel-track");
-  const prevBtn = carousel.querySelector(".carousel-control.prev");
-  const nextBtn = carousel.querySelector(".carousel-control.next");
-  const dotsContainer = carousel.querySelector(".carousel-dots");
+  const track = carousel.querySelector(".ficha110-contenido4-carousel-track");
+  const prevBtn = carousel.querySelector(".ficha110-contenido4-carousel-control.prev");
+  const nextBtn = carousel.querySelector(".ficha110-contenido4-carousel-control.next");
+  const dotsContainer = carousel.querySelector(".ficha110-contenido4-carousel-dots");
 
   // Arreglo de imágenes (editar rutas aquí)
   const slidesData = [
-    { src: "./input/img/ficha-110-jardin-botanico.jpg", alt: "Slide 1" },
-    { src: "./input/img/ficha-110-jardin-botanico.jpg", alt: "Slide 2" },
-    { src: "./input/img/ficha-110-jardin-botanico.jpg", alt: "Slide 3" },
-    { src: "./input/img/ficha-110-jardin-botanico.jpg", alt: "Slide 4" },
-    { src: "./input/img/ficha-110-jardin-botanico.jpg", alt: "Slide 5" },
+    {
+      src: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-galeria-1.jpg",
+      alt: "Slide 1",
+    },
+    {
+      src: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-galeria-2.jpg",
+      alt: "Slide 2",
+    },
+    {
+      src: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-galeria-3.jpg",
+      alt: "Slide 3",
+    },
+    {
+      src: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-galeria-4.jpg",
+      alt: "Slide 4",
+    },
+    {
+      src: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-galeria-5.jpg",
+      alt: "Slide 5",
+    },
+    {
+      src: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-galeria-6.jpg",
+      alt: "Slide 6",
+    },
+    {
+      src: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-galeria-7.jpg",
+      alt: "Slide 7",
+    },
+    {
+      src: "https://reporte.humboldt.org.co/assets/img/2024/1/110/ficha-110-galeria-8.jpg",
+      alt: "Slide 8",
+    },
   ];
 
   // Generar slides dinámicamente
   track.innerHTML = "";
   slidesData.forEach((s, i) => {
     const div = document.createElement("div");
-    div.className = "slide" + (i === 0 ? " active" : "");
+    div.className = "ficha110-contenido4-slide" + (i === 0 ? " active" : "");
     div.setAttribute("role", "tabpanel");
     div.setAttribute("aria-hidden", i !== 0);
     div.setAttribute("aria-label", `Slide ${i + 1} of ${slidesData.length}`);
@@ -606,7 +633,7 @@ document.addEventListener("DOMContentLoaded", () => {
     track.appendChild(div);
   });
 
-  let slides = Array.from(track.querySelectorAll(".slide"));
+  let slides = Array.from(track.querySelectorAll(".ficha110-contenido4-slide"));
   let current = slides.findIndex((s) => s.classList.contains("active"));
   if (current < 0) current = 0;
 

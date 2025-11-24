@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../../general/sonar.min.css" />
 <meta charset="UTF-8" />
 
-<body>
+<div class="bg-img-body">
   <div class="container align-l">
     <div class="title-container">
       <div>
@@ -21,6 +21,18 @@
     </div>
     <div class="col-group">
       <div class="col-dt-6 info-container">
+        <label
+          class="text-grey wow flipInX"
+          data-wow-delay="0.7s"
+          style="
+            visibility: visible;
+            animation-delay: 0.7s;
+            animation-name: flipInX;
+          "
+          ><i class="icon icon_h5 warning"></i>Interactúa con las capas del
+          mapa</label
+        >
+        <br />
         <div id="bio2024-layerMap-203-map_3-filters" class="map-filters">
           <div class="checkbox-container humedales">
             <input type="checkbox" id="humedales" checked />
@@ -34,26 +46,26 @@
         </div>
         <div id="bio2024-layerMap-203-map_3-content" class="map-container">
           <img
-            src="./input/img/ficha-203-mapa-manglares-fondo.png"
+            src="https://reporte.humboldt.org.co/assets/img/2024/2/203/ficha-203-mapa-manglares-fondo.png"
             alt="Mapa"
           />
           <div class="map-layers">
             <img
-              src="./input/img/ficha-203-mapa-manglares-humedales.png"
+              src="https://reporte.humboldt.org.co/assets/img/2024/2/203/ficha-203-mapa-manglares-humedales.png"
               id="img-humedales"
             />
             <img
-              src="./input/img/ficha-203-mapa-manglares-manglares.png"
+              src="https://reporte.humboldt.org.co/assets/img/2024/2/203/ficha-203-mapa-manglares-manglares.png"
               id="img-manglares"
             />
           </div>
           <img
             class="mapa-colombia"
-            src="./input/img/ficha-203-mapa-general.png"
+            src="https://reporte.humboldt.org.co/assets/img/2024/2/203/ficha-203-mapa-general.png"
             alt="mapa de colombia"
           />
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>

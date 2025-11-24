@@ -1,5 +1,3 @@
-/* Keep Highcharts-related rules plus only the layout rules used by ficha203-contenido3.html */
-
 *,
 *:before,
 *:after {
@@ -75,7 +73,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: fff;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .map-point:hover {
@@ -83,27 +83,7 @@ body {
   opacity: 1;
 }
 
-/* Actualización: Mejorar el tooltip para mostrar más información */
-.map-point:hover::after {
-  content: attr(data-tooltip) "\A""Registros: " attr(data-registros) "\A""Especies: "
-    attr(data-especies);
-  position: absolute;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #1c2445;
-  color: white;
-  padding: 12px 16px;
-  border-radius: 8px;
-  white-space: pre;
-  font-size: 14px;
-  line-height: 1.4;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  min-width: 180px;
-  max-width: max-content;
-}
+/* Eliminamos el tooltip CSS original que usaba \A */
 
 /* Posiciones de los puntos (ajustar según necesidad) */
 .point-1 {
@@ -155,4 +135,21 @@ body {
   right: 28%;
   width: 30px;
   height: 30px;
+}
+
+/* Estilos para el tooltip creado por JavaScript */
+.map-tooltip {
+  position: absolute;
+  background-color: #1c2445;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  min-width: 180px;
+  max-width: max-content;
+  pointer-events: none;
 }

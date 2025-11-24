@@ -1,5 +1,5 @@
 /* Estilos para el carrusel de ficha110 contenido4 */
-.carousel-wrapper {
+.ficha110-contenido4-carousel-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-.carousel {
+.ficha110-contenido4-carousel {
   position: relative;
   width: 90%;
   max-width: 800px;
@@ -26,7 +26,7 @@
   justify-content: space-between;
 }
 
-.carousel-track {
+.ficha110-contenido4-carousel-track {
   position: relative;
   overflow: hidden;
   height: calc(100% - 50px); /* Resta espacio para los dots */
@@ -37,7 +37,7 @@
   border-radius: 4px;
 }
 
-.slide {
+.ficha110-contenido4-slide {
   position: absolute;
   inset: 0;
   display: flex;
@@ -52,12 +52,12 @@
   box-sizing: border-box;
 }
 
-.slide.active {
+.ficha110-contenido4-slide.active {
   opacity: 1;
   transform: scale(1);
 }
 
-.slide img {
+.ficha110-contenido4-slide img {
   max-width: 100%;
   max-height: 100%;
   display: block;
@@ -65,12 +65,12 @@
   object-fit: contain;
 }
 
-.carousel-control {
+.ficha110-contenido4-carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   border: 0;
-  color: var(--accent);
+  color: var(--ficha110-accent);
   background-color: transparent;
   font-size: 70px;
   line-height: 1;
@@ -86,21 +86,21 @@
   z-index: 10;
 }
 
-.carousel-control:hover {
-  color: var(--accent);
+.ficha110-contenido4-carousel-control:hover {
+  color: var(--ficha110-accent);
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
 
-.carousel-control.prev {
+.ficha110-contenido4-carousel-control.prev {
   left: -40px; /* Fuera del contenedor del carrusel */
 }
 
-.carousel-control.next {
+.ficha110-contenido4-carousel-control.next {
   right: -40px; /* Fuera del contenedor del carrusel */
 }
 
-.carousel-dots {
+.ficha110-contenido4-carousel-dots {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -108,7 +108,7 @@
   height: 30px;
 }
 
-.carousel-dots button {
+.ficha110-contenido4-carousel-dots button {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -119,32 +119,32 @@
   transition: all 0.3s ease;
 }
 
-.carousel-dots button:hover {
+.ficha110-contenido4-carousel-dots button:hover {
   opacity: 0.9;
 }
 
-.carousel-dots button.active {
-  background: var(--accent);
+.ficha110-contenido4-carousel-dots button.active {
+  background: var(--ficha110-accent);
   opacity: 1;
   transform: scale(1.2);
 }
 
 /* Small decorative arrows color variable */
 :root {
-  --accent: #d6e24a;
+  --ficha110-accent: #d6e24a;
 }
 
 /* Responsive: adjust for small screens */
 @media (max-width: 1024px) {
-  .carousel-control.prev {
+  .ficha110-contenido4-carousel-control.prev {
     left: -40px;
   }
 
-  .carousel-control.next {
+  .ficha110-contenido4-carousel-control.next {
     right: -40px;
   }
 
-  .carousel-control {
+  .ficha110-contenido4-carousel-control {
     width: 55px;
     height: 55px;
     font-size: 70px;
@@ -152,21 +152,21 @@
 }
 
 @media (max-width: 768px) {
-  .carousel {
+  .ficha110-contenido4-carousel {
     width: 95%;
     height: 85%;
     padding: 15px;
   }
 
-  .carousel-control.prev {
+  .ficha110-contenido4-carousel-control.prev {
     left: -60px;
   }
 
-  .carousel-control.next {
+  .ficha110-contenido4-carousel-control.next {
     right: -60px;
   }
 
-  .carousel-control {
+  .ficha110-contenido4-carousel-control {
     width: 50px;
     height: 50px;
     font-size: 36px;
@@ -174,19 +174,19 @@
 }
 
 @media (max-width: 640px) {
-  .carousel-wrapper {
+  .ficha110-contenido4-carousel-wrapper {
     padding: 0 10px;
   }
 
-  .carousel-control.prev {
+  .ficha110-contenido4-carousel-control.prev {
     left: -50px;
   }
 
-  .carousel-control.next {
+  .ficha110-contenido4-carousel-control.next {
     right: -50px;
   }
 
-  .carousel-control {
+  .ficha110-contenido4-carousel-control {
     width: 45px;
     height: 45px;
     font-size: 32px;
@@ -194,25 +194,25 @@
 }
 
 @media (max-width: 480px) {
-  .carousel {
+  .ficha110-contenido4-carousel {
     padding: 10px;
   }
 
-  .carousel-control.prev {
+  .ficha110-contenido4-carousel-control.prev {
     left: -40px;
   }
 
-  .carousel-control.next {
+  .ficha110-contenido4-carousel-control.next {
     right: -40px;
   }
 
-  .carousel-control {
+  .ficha110-contenido4-carousel-control {
     width: 40px;
     height: 40px;
     font-size: 28px;
   }
 
-  .carousel-dots button {
+  .ficha110-contenido4-carousel-dots button {
     width: 10px;
     height: 10px;
   }

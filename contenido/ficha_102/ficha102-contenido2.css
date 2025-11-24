@@ -1,50 +1,51 @@
-* {
+/* Estilos específicos para la ficha 102 contenido 2 */
+.ficha102-contenido2 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+.ficha102-contenido2 body {
   font-family: "rubik", sans-serif;
   background-color: #f5f5f5;
 }
 
-.container {
+.ficha102-contenido2 .main-content {
   padding: 60px 0px;
 }
 
-.container_title {
+.ficha102-contenido2 .container_title {
   display: flex;
   gap: 10px;
   margin-bottom: 50px;
 }
 
-.title-filter {
+.ficha102-contenido2 .title-filter {
   font-size: 28px !important;
   font-weight: bold;
 }
 
-.subtitle-group {
+.ficha102-contenido2 .subtitle-group {
   font-size: 16px !important;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-.filters {
+.ficha102-contenido2 .filters {
   width: 25%;
 }
 
-.filters h3 {
+.ficha102-contenido2 .filters h3 {
   font-size: 18px;
   margin-bottom: 20px;
 }
 
-.filter-buttons {
+.ficha102-contenido2 .filter-buttons {
   display: flex;
   flex-direction: column;
 }
 
-.filter-btn {
+.ficha102-contenido2 .filter-btn {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -59,28 +60,29 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.filter-btn img {
+.ficha102-contenido2 .filter-btn img {
   width: 56px;
   height: 56px;
   border-radius: 8px 0 0 8px;
 }
 
-.filter-btn:hover {
+.ficha102-contenido2 .filter-btn:hover {
   background-color: #b6d8e3;
 }
 
-.filter-btn.active {
+.ficha102-contenido2 .filter-btn.active {
   background-color: #b6d8e3;
 }
 
-.cards {
+.ficha102-contenido2 .cards {
   width: 75%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  padding-left: 50px;
 }
 
-.card {
+.ficha102-contenido2 .card {
   width: 100%;
   background-color: white;
   padding: 15px;
@@ -88,18 +90,22 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card h4 {
+.ficha102-contenido2 .card h4 {
   font-size: 18px;
 }
 
-.card .category {
+.ficha102-contenido2 .card  p{
+	margin: 0;
+}
+
+.ficha102-contenido2 .card .category {
   background-color: #f0f0f0;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 14px;
 }
 
-.card .status {
+.ficha102-contenido2 .card .status {
   color: white;
   height: 36px;
   width: 36px;
@@ -109,19 +115,19 @@ body {
   align-items: center;
 }
 
-.card .status.LC {
+.ficha102-contenido2 .card .status.LC {
   background-color: #3a6811;
 }
 
-.card .status.NT {
+.ficha102-contenido2 .card .status.NT {
   background-color: #1c2445;
 }
 
-.card .status.VU {
+.ficha102-contenido2 .card .status.VU {
   background-color: #e9c101;
 }
 
-#species-cards {
+.ficha102-contenido2 #species-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 240px));
   gap: 20px;
@@ -130,7 +136,7 @@ body {
   width: 100%;
 }
 
-.species-group {
+.ficha102-contenido2 .species-group {
   display: flex;
   align-items: center;
   width: fit-content;
@@ -144,62 +150,62 @@ body {
   margin-bottom: 16px;
 }
 
-.species-group.patos-y-afines {
+.ficha102-contenido2 .species-group.Patos-y-afines {
   background: #1c2445;
 }
 
-.species-group.vadeadoras {
+.ficha102-contenido2 .species-group.Vadeadoras {
   background: #79ab2b;
 }
 
-.species-group.limícolas {
+.ficha102-contenido2 .species-group.Limícolas {
   background: #692940;
 }
 
-.species-group.marino-costeras {
+.ficha102-contenido2 .species-group.Marino-costeras {
   background: #f59c00;
 }
 
-.species-group.otros {
+.ficha102-contenido2 .species-group.Otros {
   background: #fc7268;
 }
 
-.species-name {
+.ficha102-contenido2 .species-name {
   font-size: 16px;
   font-weight: bold;
   color: #333333;
 }
 
-.scientific-name {
+.ficha102-contenido2 .scientific-name {
   font-size: 16px;
   font-style: italic;
   color: #333333;
 }
 
-.species-description {
+.ficha102-contenido2 .species-description {
   font-size: 14px;
   color: #333333;
 }
 
-.status-container {
+.ficha102-contenido2 .status-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.filter-group {
+.ficha102-contenido2 .filter-group {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.filter-select-container {
+.ficha102-contenido2 .filter-select-container {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
-.filter-select {
+.ficha102-contenido2 .filter-select {
   font-size: 18px;
   font-family: "Rubik";
   background-color: #fff;
@@ -209,6 +215,5 @@ body {
   padding: 10px 5px;
   height: 56px;
   cursor: pointer;
-
-  
+  width: 100%;
 }

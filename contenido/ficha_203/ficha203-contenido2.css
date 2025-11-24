@@ -236,7 +236,8 @@
 
 #species-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+  place-content: center;
   gap: 20px;
   justify-items: center;
   margin: 20px;
