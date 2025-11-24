@@ -89,60 +89,6 @@ body {
   background-color: #b6b5b1;
 }
 
-/* Estilos para la tabla de leyenda */
-.map-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 16px;
-}
-.map-table th,
-.map-table td {
-  padding: 8px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  vertical-align: middle;
-}
-.map-table th {
-  background: rgba(0, 0, 0, 0.05);
-  text-align: left;
-}
-
-.map-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-  border: 2px solid #333;
-}
-
-.map-table th,
-.map-table td {
-  border: 1px solid #333;
-  text-align: center;
-}
-
-td {
-  padding: 0 !important;
-}
-
-.map-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  border-bottom: 2px solid #333;
-}
-
-.filters-table {
-  width: 20%;
-  border-collapse: collapse;
-  border: 1px solid #000;
-  margin-left: 40px;
-}
-
-.filters-table td {
-  border-bottom: 1px solid #000;
-}
-
-.filters-table tr:last-child td {
-  border-bottom: none;
-}
 
 .checkbox-container {
   display: flex;
@@ -203,8 +149,8 @@ td {
   position: absolute;
   bottom: 0;
   right: 0%;
-  height: 170px;
-  width: 120px;
+  height: 255px;
+  width: 180px;
 }
 
 

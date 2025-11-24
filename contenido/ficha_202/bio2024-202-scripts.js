@@ -416,7 +416,7 @@ if (container) {
           fontFamily: "Rubik, sans-serif",
           fontSize: "14px",
         },
-        format: '{value}%'
+        format: "{value}%",
       },
     },
     legend: {
@@ -456,47 +456,47 @@ if (container) {
         colorByPoint: false,
         data: [
           {
-            name: "0-0.1%",
+            name: "0-1%",
             y: 9.5,
             percentage: "9.5%",
           },
           {
-            name: "0.1-0.2%",
+            name: "1-2%",
             y: 16.7,
             percentage: "16.7%",
           },
           {
-            name: "0.2-0.3%",
+            name: "2-3%",
             y: 38.1,
             percentage: "38.1%",
           },
           {
-            name: "0.3-0.4%",
+            name: "3-4%",
             y: 21.4,
             percentage: "21.4%",
           },
           {
-            name: "0.4-0.5%",
+            name: "4-5%",
             y: 9.5,
             percentage: "9.5%",
           },
           {
-            name: "0.5-0.6%",
+            name: "5-6%",
             y: 7.1,
             percentage: "7.1%",
           },
           {
-            name: "0.6-0.7%",
+            name: "6-7%",
             y: 3.6,
             percentage: "3.6%",
           },
           {
-            name: "0.7-0.8%",
+            name: "7-8%",
             y: 2.4,
             percentage: "2.4%",
           },
           {
-            name: "0.7-0.9%",
+            name: "7-9%",
             y: 1.2,
             percentage: "1.2%",
           },

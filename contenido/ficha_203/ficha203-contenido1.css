@@ -1,11 +1,12 @@
-body {
-  background-image: url("./input/img/ficha-203_transformacion-estado.jpg") !important;
+.bg-img-body {
+  background-image: url("https://reporte.humboldt.org.co/assets/js/2024/2/203/ficha-203-transformacion-estado.jpg") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   min-height: 300px;
   max-height: 1450px;
   height: 100%;
   background-size: cover !important;
+  padding: 50px 0;
 }
 .title-container {
   display: flex;
@@ -85,12 +86,12 @@ body {
   background-position: center;
 }
 .map-filters .humedales input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-image: url();
   background-color: #00647a;
 }
 
 .map-filters .manglares input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-image: url();
   background-color: #5b9f27;
 }
 
@@ -170,8 +171,8 @@ body {
 
 .mapa-colombia {
   position: absolute;
-  top: 60%;
-  right: 15%;
+  top: 50%;
+  right: 8%;
   width: 85px;
   height: 110px;
 }

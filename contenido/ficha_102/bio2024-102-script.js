@@ -932,7 +932,7 @@ if (contenido3) {
           if (!customImage) {
             customImage = chart.options.chart.custom.image = chart.renderer
               .image(
-                "./input/patos-afines-descrpcion.png",
+                "https://reporte.humboldt.org.co/assets/img/2024/1/102/patos-afines-descrpcion.png",
                 series.center[0] + chart.plotLeft - 40,
                 series.center[1] + chart.plotTop - 40,
                 380,

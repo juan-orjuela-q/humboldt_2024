@@ -29,17 +29,17 @@
           Extensión de superficies del CCZ en temporada seca y de lluvias
         </h2>
       </div>
-      <ul class="tab-group">
+      <ul class="tab-group" data-tab-group="grupo7">
         <li class="tab active">
-          <a href="#temporada-seca">Temporada seca</a>
+          <a href="#" data-tab-target="#temporada-seca">Temporada seca</a>
         </li>
         <li class="tab">
-          <a href="#temporada-lluvias">Temporada de lluvias</a>
+          <a href="#" data-tab-target="#temporada-lluvias">Temporada de lluvias</a>
         </li>
       </ul>
       <div class="line-tabs bg-green_blue_dark"></div>
-      <div class="tab-content">
-        <div id="temporada-seca" class="active container-temporadas">
+      <div class="tab-content" data-tab-content-group="grupo7">
+        <div id="temporada-seca" data-tab-content style="display: block;" class="container-temporadas">
           <div class="map-filters">
             <table class="filters-table">
               <tr>
@@ -71,12 +71,12 @@
           </div>
           <div id="bio2024-layerMap-204-map_3-content" class="map-container">
             <img
-              src="./input/img/ficha-204-mapa-temporada-seca.png"
+              src="https://reporte.humboldt.org.co/assets/img/2024/2/204/ficha-204-mapa-temporada-seca.png"
               alt="Mapa de temporada seca"
             />
           </div>
         </div>
-        <div id="temporada-lluvias" class="container-temporadas">
+        <div id="temporada-lluvias" data-tab-content style="display: none;" class="container-temporadas">
           <div class="map-filters">
             <table class="filters-table">
               <tr>
@@ -106,9 +106,9 @@
               </span>
             </div>
           </div>
-          <div id="bio2024-layerMap-204-map_3-content" class="map-container">
+          <div id="bio2024-layerMap-204-map_3-content-lluvias" class="map-container">
             <img
-              src="./input/img/ficha-204-mapa-temporada-lluvias.png"
+              src="https://reporte.humboldt.org.co/assets/js/2024/2/204/ficha-204-mapa-temporada-lluvias.png"
               alt="Mapa de temporada de lluvias"
             />
           </div>
@@ -118,7 +118,7 @@
     <div class="col-dt-6">
       <div class="title-container">
         <div>
-          <i class="icon icon_h2 markerbars bg-green_blue_dark"></i>
+          <i class="icon icon_h2 bars bg-green_blue_dark"></i>
         </div>
         <h2 class="color-gris-osc align-l">
           Representatividad de motores de transformación identificados por las
