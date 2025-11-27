@@ -126,6 +126,10 @@ tr:hover {
   background-color: #beb2fc;
 }
 
+.scientific-name {
+  font-style: italic;
+}
+
 /* Estados de amenaza en negro */
 .status-cr,
 .status-en,

@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   Highcharts.chart("container", {
     chart: {
       type: "line",
-      margin: [70, 50, 60, 80],
+      margin: [90, 50, 60, 80], // Aumenté el margen superior de 70 a 90
       backgroundColor: "transparent",
       style: {
         fontFamily: "Rubik, sans-serif",
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       plotLines: [
         {
-          color: "#d3d3d3",
+          color: "#FDEEED",
           width: 60,
           value: 47,
           zIndex: 0,
@@ -134,10 +134,15 @@ document.addEventListener("DOMContentLoaded", function () {
       align: "center",
       verticalAlign: "top",
       layout: "horizontal",
+      // AÑADIR ESTAS PROPIEDADES PARA ALEJAR LA LEYENDA
+      y: -5, // Mueve la leyenda hacia arriba (valores negativos)
+      margin: 30, // Aumenta el margen entre la leyenda y la gráfica
+      itemMarginTop: 0, // Espacio adicional entre elementos
       itemStyle: {
         fontSize: "14px",
         fontFamily: "Rubik, sans-serif",
         color: "#000000",
+        padding: "5px 0", // Espacio interno adicional
       },
       itemHoverStyle: {
         color: "#000000",
@@ -175,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     series: [
       {
-        name: "Buen regulador",
+        name: "Campylorhynchus griseus - Buen regulador",
         type: "line",
         color: "#008493",
         data: [
@@ -187,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
       {
-        name: "Buen regulador",
+        name: "Megarynchus pitangua - Buen regulador",
         type: "line",
         color: "#008493",
         data: [
@@ -199,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
       {
-        name: "Mal regulador",
+        name: "Nesotriccus incomtus - Mal regulador",
         type: "line",
         color: "#930E14",
         data: [
@@ -211,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
       {
-        name: "Mal regulador",
+        name: "Sublegatus arenarum - Mal regulador",
         type: "line",
         color: "#930E14",
         data: [
@@ -225,7 +230,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ],
   });
 });
-
 const contenido2 = document.getElementById("data-table");
 if (contenido2) {
   //contenido 2
@@ -412,6 +416,7 @@ if (container) {
           fontFamily: "Rubik, sans-serif",
           fontSize: "14px",
         },
+        format: "{value}%",
       },
     },
     legend: {
@@ -423,7 +428,7 @@ if (container) {
         color: "#00748B",
         dataLabels: {
           enabled: false,
-          format: "{point.y:,.1f}",
+          format: "{point.y:,.1f}%",
           style: {
             color: "#000",
             fontFamily: "Rubik, sans-serif",
@@ -443,7 +448,7 @@ if (container) {
       headerFormat:
         '<span style="font-size:11px; color:#000; font-family: Rubik, sans-serif">{series.name}</span><br>',
       pointFormat:
-        '<span style="color:#00748B; font-family: Rubik, sans-serif">{point.name}</span>: <b style="color:#000; font-family: Rubik, sans-serif">{point.y}</b><br/>Porcentaje: <b style="color:#000; font-family: Rubik, sans-serif">{point.percentage}</b>',
+        '<span style="color:#00748B; font-family: Rubik, sans-serif">{point.name}</span>: <b style="color:#000; font-family: Rubik, sans-serif">{point.y}%</b><br/>Porcentaje: <b style="color:#000; font-family: Rubik, sans-serif">{point.percentage}</b>',
     },
     series: [
       {
@@ -451,48 +456,48 @@ if (container) {
         colorByPoint: false,
         data: [
           {
-            name: "0-0.1",
-            y: 8,
+            name: "0-1%",
+            y: 9.5,
             percentage: "9.5%",
           },
           {
-            name: "0.01-0.02",
-            y: 14,
+            name: "1-2%",
+            y: 16.7,
             percentage: "16.7%",
           },
           {
-            name: "0.02-0.03",
-            y: 32,
+            name: "2-3%",
+            y: 38.1,
             percentage: "38.1%",
           },
           {
-            name: "0.03-0.04",
-            y: 18,
+            name: "3-4%",
+            y: 21.4,
             percentage: "21.4%",
           },
           {
-            name: "0.04-0.05",
-            y: 8,
+            name: "4-5%",
+            y: 9.5,
             percentage: "9.5%",
           },
           {
-            name: "0.05-0.06",
-            y: 6,
+            name: "5-6%",
+            y: 7.1,
             percentage: "7.1%",
           },
           {
-            name: "0.06-0.07",
-            y: 3,
+            name: "6-7%",
+            y: 3.6,
             percentage: "3.6%",
           },
           {
-            name: "0.07-0.08",
-            y: 2,
+            name: "7-8%",
+            y: 2.4,
             percentage: "2.4%",
           },
           {
-            name: "0.07-0.09",
-            y: 1,
+            name: "7-9%",
+            y: 1.2,
             percentage: "1.2%",
           },
         ],

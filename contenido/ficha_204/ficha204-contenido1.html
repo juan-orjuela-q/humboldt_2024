@@ -11,9 +11,16 @@
 <link rel="stylesheet" href="../../general/sonar.min.css" />
 <meta charset="UTF-8" />
 
-<div class=" align-l element-container">
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/sunburst.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/themes/adaptive.js"></script>
+
+<div class="align-l container">
   <div class="col-group info-container">
-    <div class="col-dt-7">
+    <div class="col-dt-6">
       <div class="title-container">
         <div>
           <i class="icon icon_h2 markermap bg-green_blue_dark"></i>
@@ -22,17 +29,17 @@
           Extensión de superficies del CCZ en temporada seca y de lluvias
         </h2>
       </div>
-      <ul class="tab-group">
+      <ul class="tab-group" data-tab-group="grupo7">
         <li class="tab active">
-          <a href="#temporada-seca">Temporada seca</a>
+          <a href="#" data-tab-target="#temporada-seca">Temporada seca</a>
         </li>
         <li class="tab">
-          <a href="#temporada-lluvias">Temporada de lluvias</a>
+          <a href="#" data-tab-target="#temporada-lluvias">Temporada de lluvias</a>
         </li>
       </ul>
       <div class="line-tabs bg-green_blue_dark"></div>
-      <div class="tab-content">
-        <div id="temporada-seca" class="active container-temporadas">
+      <div class="tab-content" data-tab-content-group="grupo7">
+        <div id="temporada-seca" data-tab-content style="display: block;" class="container-temporadas">
           <div class="map-filters">
             <table class="filters-table">
               <tr>
@@ -64,12 +71,12 @@
           </div>
           <div id="bio2024-layerMap-204-map_3-content" class="map-container">
             <img
-              src="./input/img/ficha-204-mapa-temporada-seca.png"
+              src="https://reporte.humboldt.org.co/assets/img/2024/2/204/ficha-204-mapa-temporada-seca.png"
               alt="Mapa de temporada seca"
             />
           </div>
         </div>
-        <div id="temporada-lluvias" class="container-temporadas">
+        <div id="temporada-lluvias" data-tab-content style="display: none;" class="container-temporadas">
           <div class="map-filters">
             <table class="filters-table">
               <tr>
@@ -99,17 +106,32 @@
               </span>
             </div>
           </div>
-          <div id="bio2024-layerMap-204-map_3-content" class="map-container">
+          <div id="bio2024-layerMap-204-map_3-content-lluvias" class="map-container">
             <img
-              src="./input/img/ficha-204-mapa-temporada-lluvias.png"
+              src="https://reporte.humboldt.org.co/assets/js/2024/2/204/ficha-204-mapa-temporada-lluvias.png"
               alt="Mapa de temporada de lluvias"
             />
           </div>
         </div>
       </div>
     </div>
-    <div class="col-dt-5 imagen-bg">
-      <img src="./input/img/ficha-204-imagen.jpg" alt="pajaros en humedal" />
+    <div class="col-dt-6">
+      <div class="title-container">
+        <div>
+          <i class="icon icon_h2 bars bg-green_blue_dark"></i>
+        </div>
+        <h2 class="color-gris-osc align-l">
+          Representatividad de motores de transformación identificados por las
+          comunidades locales
+        </h2>
+      </div>
+      <div class="col-group col-group_container">
+        <div class="col-dt-12">
+          <figure class="highcharts-figure">
+            <div id="motores-de-transformacion"></div>
+          </figure>
+        </div>
+      </div>
     </div>
   </div>
 </div>

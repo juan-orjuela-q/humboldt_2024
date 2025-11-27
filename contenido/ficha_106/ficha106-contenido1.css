@@ -52,17 +52,17 @@ body {
   background-position: center;
 }
 .map-filters .barranquilla input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-image: url();
   background-color: #d6075b;
 }
 
 .map-filters .montes_maria input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-image: url();
   background-color: #689f38;
 }
 
 .map-filters .becerril input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+  background-image: url();
   background-color: #f59c00;
 }
 
@@ -169,13 +169,17 @@ p.note {
 /* tooltip simple */
 .tooltip {
   position: absolute;
-  background: white;
+  background: white !important;
   border-radius: 6px;
   padding: 8px 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   display: none;
-  font-size: 13px;
+  color: #fff;
   text-align: left;
+}
+
+.tooltip::after {
+  border-top: 10px solid #fff !important;
 }
 .venn-svg {
   width: 100%;
@@ -185,6 +189,18 @@ p.note {
   margin: 18px auto;
   background: transparent;
   margin-top: -50px;
+}
+
+.tooltip h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+.tooltip p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
 }
 
 .especies-leyenda {

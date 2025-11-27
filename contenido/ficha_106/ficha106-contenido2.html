@@ -19,35 +19,45 @@
 <script src="https://code.highcharts.com/themes/adaptive.js"></script>
 
 <div class="container">
-  <h2 class="align-l padding-2 color-gris-osc">
-    <i class="icon icon_h2 markerbars bg-orange"> </i>Tipos de uso de las
-    plantas útiles del Caribe colombiano
-  </h2>
+  <div class="container_title padding-2">
+    <div>
+      <i class="icon icon_h2 bars bg-orange"></i>
+    </div>
+    <h2 class="align-l color-gris-osc">
+      Tipos de uso de las plantas útiles del Caribe colombiano
+    </h2>
+  </div>
   <div class="col-group col-group_container">
     <div class="col-dt-8">
-      <div>
+      <div data-tab-group="grupo106">
         <ul class="tab-group">
-          <li class="tab active"><a href="#barranquilla">Barranquilla</a></li>
-          <li class="tab"><a href="#montes">Montes de María</a></li>
-          <li class="tab"><a href="#becerril">Becerril</a></li>
+          <li class="tab active">
+            <a href="#" data-tab-target="#barranquilla">Barranquilla</a>
+          </li>
+          <li class="tab">
+            <a href="#" data-tab-target="#montes">Montes de María</a>
+          </li>
+          <li class="tab">
+            <a href="#" data-tab-target="#becerril">Becerril</a>
+          </li>
         </ul>
         <div class="line-tabs bg-orange"></div>
       </div>
 
-      <div class="tab-content">
-        <div id="barranquilla">
+      <div data-tab-content-group="grupo106">
+        <div id="barranquilla" data-tab-content style="display: none">
           <figure class="highcharts-figure">
             <div id="barranquilla-graphic"></div>
           </figure>
         </div>
 
-        <div id="montes">
+        <div id="montes" data-tab-content style="display: none">
           <figure class="highcharts-figure">
             <div id="montes-graphic"></div>
           </figure>
         </div>
 
-        <div id="becerril">
+        <div id="becerril" data-tab-content style="display: none">
           <figure class="highcharts-figure">
             <div id="becerril-graphic"></div>
           </figure>
