@@ -1,47 +1,130 @@
 // Contenido 1
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".tab a").forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
+  // Namespace para evitar conflictos
+  const GlobalTabs = {
+    init: function () {
+      this.bindEvents();
+      this.initializeTabs();
+    },
 
-      // Remover clase active de todos los padres
-      document.querySelectorAll(".tab").forEach((tab) => {
-        tab.classList.remove("active");
-      });
-
-      // Agregar clase active al padre del enlace clickeado
-      this.parentElement.classList.add("active");
-
-      const target = this.getAttribute("href");
-
-      // Ocultar todos los contenidos de pestañas
-      document.querySelectorAll(".tab-content > div").forEach((content) => {
-        content.style.display = "none";
-      });
-
-      // Mostrar el contenido objetivo con fadeIn
-      const targetElement = document.querySelector(target);
-      if (targetElement) {
-        const contenido1 = document.getElementById("temporada-seca");
-        if (contenido1) {
-          targetElement.style.display = "flex";
-        } else {
-          targetElement.style.display = "grid";
+    bindEvents: function () {
+      // Usar event delegation para mejor performance
+      document.addEventListener("click", function (e) {
+        const tabLink = e.target.closest("[data-tab-target]");
+        if (tabLink) {
+          e.preventDefault();
+          GlobalTabs.switchTab(tabLink);
         }
+      });
+    },
 
-        targetElement.style.opacity = "0";
+    initializeTabs: function () {
+      // Inicializar el primer tab de cada grupo como activo
+      document.querySelectorAll("[data-tab-group]").forEach((group) => {
+        const firstTab = group.querySelector(".tab.active, .tab:first-child");
+        const firstContent = document.querySelector(
+          firstTab
+            ?.querySelector("[data-tab-target]")
+            ?.getAttribute("data-tab-target")
+        );
 
-        let opacity = 0;
-        const fadeIn = setInterval(() => {
-          if (opacity >= 1) {
-            clearInterval(fadeIn);
-          }
-          targetElement.style.opacity = opacity.toString();
-          opacity += 0.1;
-        }, 60);
+        if (firstContent) {
+          // Determinar si usar block o flex según el grupo
+          const displayType = GlobalTabs.getDisplayType(firstContent);
+          firstContent.style.display = displayType;
+          firstContent.style.opacity = "1";
+        }
+      });
+    },
+
+    switchTab: function (tabLink) {
+      const tabContainer = tabLink.closest("[data-tab-group]");
+      const targetId = tabLink.getAttribute("data-tab-target");
+
+      if (!tabContainer || !targetId) return;
+
+      // Activar tab clickeado y desactivar otros en el mismo grupo
+      const tabGroup = tabContainer.getAttribute("data-tab-group") || "default";
+      GlobalTabs.activateTab(tabLink, tabGroup);
+
+      // Mostrar contenido correspondiente
+      GlobalTabs.showContent(targetId, tabGroup);
+    },
+
+    activateTab: function (activeTab, group) {
+      // Desactivar todos los tabs del mismo grupo
+      const selector =
+        group === "default"
+          ? "[data-tab-target]"
+          : `[data-tab-group="${group}"] [data-tab-target]`;
+
+      document.querySelectorAll(selector).forEach((tab) => {
+        tab.parentElement.classList.remove("active");
+      });
+
+      // Activar tab actual
+      activeTab.parentElement.classList.add("active");
+    },
+
+    showContent: function (targetId, group) {
+      // Ocultar todos los contenidos del mismo grupo
+      const contentSelector =
+        group === "default"
+          ? "[data-tab-content]"
+          : `[data-tab-content-group="${group}"] [data-tab-content]`;
+
+      document.querySelectorAll(contentSelector).forEach((content) => {
+        content.style.display = "none";
+        content.style.opacity = "0";
+        content.classList.remove("active");
+      });
+
+      // Mostrar contenido objetivo
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        GlobalTabs.fadeInContent(targetElement, group);
       }
-    });
-  });
+    },
+
+    fadeInContent: function (element, group) {
+      // Determinar si usar block o flex según el grupo
+      const displayType = GlobalTabs.getDisplayType(element, group);
+      element.style.display = displayType;
+      element.style.opacity = "0";
+
+      let opacity = 0;
+      const fadeIn = setInterval(() => {
+        if (opacity >= 1) {
+          clearInterval(fadeIn);
+          element.style.opacity = "1";
+        }
+        element.style.opacity = opacity.toString();
+        opacity += 0.1;
+      }, 60);
+    },
+
+    getDisplayType: function (element, group) {
+      // Si el elemento tiene data-tab-content-group="grupo3", usar flex
+      const contentGroup = element.closest("[data-tab-content-group]");
+      if (
+        contentGroup &&
+        contentGroup.getAttribute("data-tab-content-group") === "grupo6"
+      ) {
+        return "grid";
+      }
+
+      // Si se proporciona el grupo como parámetro, verificar también
+      if (group === "grupo6") {
+        return "grid";
+      }
+
+      // Por defecto usar block
+      return "flex";
+    },
+  };
+
+  // Inicializar el sistema de tabs
+  GlobalTabs.init();
 });
 
 const contenido2 = document.getElementById("motores-de-transformacion");
@@ -108,6 +191,8 @@ if (contenido2) {
     },
     series: [
       {
+        borderColor: "#ffffff",
+        borderWidth: 1,
         name: "Amenazas",
         colorByPoint: true,
         data: [

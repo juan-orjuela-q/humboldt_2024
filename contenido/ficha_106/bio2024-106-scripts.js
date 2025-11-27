@@ -153,7 +153,13 @@ document.addEventListener("DOMContentLoaded", function () {
       tooltip: "<h3>Batata</h3><p><em>Ipomoea batatas</em></p>",
     },
 
-    { text: "Zarzaparrilla", x: 600, y: 480, region: "Barranquilla", tooltip: "<h3>Zarzaparrilla</h3><p><em>Smilax</em> sp.</p>" },
+    {
+      text: "Zarzaparrilla",
+      x: 600,
+      y: 480,
+      region: "Barranquilla",
+      tooltip: "<h3>Zarzaparrilla</h3><p><em>Smilax sp</em></p>",
+    },
 
     // Becerril (inferior)
     {
@@ -170,7 +176,13 @@ document.addEventListener("DOMContentLoaded", function () {
       region: "Becerril",
       tooltip: "<h3>Caracolí</h3><p><em>Anacardium excelsum</em></p>",
     },
-    { text: "Guáimaro", x: 480, y: 670, region: "Becerril", tooltip: "<h3>Guáimaro</h3><p><em>Brosimum alicastrum</em></p>" },
+    {
+      text: "Guáimaro",
+      x: 480,
+      y: 670,
+      region: "Becerril",
+      tooltip: "<h3>Guáimaro</h3><p><em> Brosimum alicastrum</em></p>",
+    },
     {
       text: "Orejero",
       x: 480,
@@ -265,47 +277,60 @@ document.addEventListener("DOMContentLoaded", function () {
     g.insertBefore(rect, text);
 
     // hover: mostrar tooltip con el texto (opcional)
-    // --- TOOLTIP PERSONALIZADO ---
+    // --- TOOLTIP PERSONALIZADO CORREGIDO ---
     g.addEventListener("mouseenter", (e) => {
-      showTooltip(item.tooltip || "Sin información", e.pageX, e.pageY);
+      const point = getEventPoint(e);
+      showTooltip(item.tooltip || "Sin información", point.x, point.y);
     });
     g.addEventListener("mousemove", (e) => {
-      moveTooltip(e.pageX, e.pageY);
+      const point = getEventPoint(e);
+      moveTooltip(point.x, point.y);
     });
     g.addEventListener("mouseleave", hideTooltip);
     return g;
   }
 
-  // color por región (puedes ajustar)
-  function getBoxColor(region) {
-    switch (region) {
-      case "Montes de María":
-        return "#f1f97e"; // amarillo-verde
-      case "Barranquilla":
-        return "#f7e199"; // distinto tono
-      case "Becerril":
-        return "#d3f2c5";
-      case "Centro":
-        return "#dff0b8";
-      default:
-        return "#eaf6d6";
+  // Función auxiliar para obtener coordenadas del evento de forma segura
+  function getEventPoint(e) {
+    let point = { x: 0, y: 0 };
+
+    if (e.type.includes("touch")) {
+      // Para eventos táctiles
+      if (e.touches && e.touches[0]) {
+        point.x = e.touches[0].clientX;
+        point.y = e.touches[0].clientY;
+      }
+    } else {
+      // Para eventos de ratón
+      point.x = e.clientX !== undefined ? e.clientX : 0;
+      point.y = e.clientY !== undefined ? e.clientY : 0;
     }
+
+    return point;
   }
 
-  // tooltip helpers
+  // tooltip helpers CORREGIDOS
   const tooltip = document.getElementById("tooltip");
   function showTooltip(text, cx, cy) {
+    if (!tooltip) return;
+
     tooltip.style.display = "block";
     tooltip.innerHTML = text;
     // posicionar con pequeño offset
     tooltip.style.left = cx + 14 + "px";
     tooltip.style.top = cy - 18 + "px";
   }
+
   function moveTooltip(cx, cy) {
+    if (!tooltip) return;
+
     tooltip.style.left = cx + 14 + "px";
     tooltip.style.top = cy - 18 + "px";
   }
+
   function hideTooltip() {
+    if (!tooltip) return;
+
     tooltip.style.display = "none";
   }
 
@@ -315,7 +340,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-/* contenido 2 */
+// ... el resto del código permanece igual (contenido 2 y sistema de tabs)
+/* contenido 2 - Gráficas Highcharts */
 
 const container = document.getElementById("barranquilla-graphic");
 if (container) {
@@ -338,7 +364,7 @@ if (container) {
       plotBackgroundColor: null,
       plotBorderWidth: null,
       plotShadow: false,
-      height: 400,
+      height: 600,
       type: "pie",
       style: {
         fontFamily: "Rubik, sans-serif",
@@ -413,6 +439,8 @@ if (container) {
       },
       series: [
         {
+          borderColor: "#ffffff",
+          borderWidth: 1,
           name: "Categorías",
           colorByPoint: true,
           data: [
@@ -469,86 +497,20 @@ if (container) {
     })
   );
 
-  // Gráfica Montes de María
-  Highcharts.chart(
-    "montes-graphic",
-    Highcharts.merge(commonChartConfig, {
-      title: {
-        text: "Expedición agroBiodiversidad en Montes de María: Territorios de paz",
-      },
-      subtitle: {
-        text: "Número de plantas útiles: 111 <br /> Número de plantas útiles nativas: 76 ",
-      },
-      series: [
-        {
-          name: "Categorías",
-          colorByPoint: true,
-          data: [
-            {
-              name: "Medicinal",
-              y: 21,
-              color: unifiedColors["Medicinal"],
-            },
-            {
-              name: "Alimentos",
-              y: 37,
-              color: unifiedColors["Alimentos"],
-            },
-            {
-              name: "Materiales",
-              y: 59,
-              sliced: false,
-              selected: true,
-              color: unifiedColors["Materiales"],
-            },
-            {
-              name: "Usos ambientales",
-              y: 8,
-              color: unifiedColors["Usos ambientales"],
-            },
-            {
-              name: "Alimento de animales",
-              y: 10,
-              color: unifiedColors["Alimento de animales"],
-            },
-            {
-              name: "Cosméticos",
-              y: 1,
-              color: unifiedColors["Cosméticos"],
-            },
-            {
-              name: "Sociales (incluye espir)",
-              y: 3,
-              color: unifiedColors["Sociales (incluye espiritual y religioso)"],
-            },
-            {
-              name: "Veneno o tóxico",
-              y: 0,
-              color: unifiedColors["Veneno o tóxico"],
-            },
-            {
-              name: "Leña o combustible",
-              y: 0,
-              color: unifiedColors["Leña o combustible"],
-            },
-          ],
-        },
-      ],
-    })
-  );
-
   // Gráfica Becerril
   Highcharts.chart(
     "becerril-graphic",
     Highcharts.merge(commonChartConfig, {
       title: {
-        text: "Expedición científica piloto a una biodiverciudad con enfoque de bioeconomía",
+        text: "Plantas y hongos útiles de Colombia (KEW",
       },
       subtitle: {
         text: "Número de plantas útiles: 208 <br /> Número de plantas útiles nativas: 137 ",
       },
       series: [
         {
+          borderColor: "#ffffff",
+          borderWidth: 1,
           name: "Categorías",
           colorByPoint: true,
           data: [
@@ -604,43 +566,206 @@ if (container) {
       ],
     })
   );
+  // Gráfica Montes de María
+  Highcharts.chart(
+    "montes-graphic",
+    Highcharts.merge(commonChartConfig, {
+      title: {
+        text: "Expedición agroBiodiversidad en Montes de María: Territorios de paz",
+      },
+      subtitle: {
+        text: "Número de plantas útiles: 111 <br /> Número de plantas útiles nativas: 76 ",
+      },
+      series: [
+        {
+          borderColor: "#ffffff",
+          borderWidth: 1,
+          name: "Categorías",
+          colorByPoint: true,
+          data: [
+            {
+              name: "Medicinal",
+              y: 21,
+              color: unifiedColors["Medicinal"],
+            },
+            {
+              name: "Alimentos",
+              y: 37,
+              color: unifiedColors["Alimentos"],
+            },
+            {
+              name: "Materiales",
+              y: 59,
+              sliced: false,
+              selected: true,
+              color: unifiedColors["Materiales"],
+            },
+            {
+              name: "Usos ambientales",
+              y: 8,
+              color: unifiedColors["Usos ambientales"],
+            },
+            {
+              name: "Alimento de animales",
+              y: 10,
+              color: unifiedColors["Alimento de animales"],
+            },
+            {
+              name: "Cosméticos",
+              y: 1,
+              color: unifiedColors["Cosméticos"],
+            },
+            {
+              name: "Sociales (incluye espir)",
+              y: 3,
+              color: unifiedColors["Sociales (incluye espiritual y religioso)"],
+            },
+            {
+              name: "Veneno o tóxico",
+              y: 0,
+              color: unifiedColors["Veneno o tóxico"],
+            },
+            {
+              name: "Leña o combustible",
+              y: 0,
+              color: unifiedColors["Leña o combustible"],
+            },
+          ],
+        },
+      ],
+    })
+  );
 }
 
+// SISTEMA DE TABS UNIFICADO (igual que en ficha 101)
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".tab a").forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
+  // Namespace para evitar conflictos
+  const GlobalTabs = {
+    init: function () {
+      this.bindEvents();
+      this.initializeTabs();
+    },
 
-      // Remover clase active de todos los padres
-      document.querySelectorAll(".tab").forEach((tab) => {
-        tab.classList.remove("active");
+    bindEvents: function () {
+      // Usar event delegation para mejor performance
+      document.addEventListener("click", function (e) {
+        const tabLink = e.target.closest("[data-tab-target]");
+        if (tabLink) {
+          e.preventDefault();
+          GlobalTabs.switchTab(tabLink);
+        }
       });
+    },
 
-      // Agregar clase active al padre del enlace clickeado
-      this.parentElement.classList.add("active");
+    initializeTabs: function () {
+      // Inicializar el primer tab de cada grupo como activo
+      document.querySelectorAll("[data-tab-group]").forEach((group) => {
+        const firstTab = group.querySelector(".tab.active, .tab:first-child");
+        if (firstTab) {
+          const firstTabLink = firstTab.querySelector("[data-tab-target]");
+          if (firstTabLink) {
+            const targetId = firstTabLink.getAttribute("data-tab-target");
+            const firstContent = document.querySelector(targetId);
 
-      const target = this.getAttribute("href");
-
-      // Ocultar todos los contenidos de pestañas
-      document.querySelectorAll(".tab-content > div").forEach((content) => {
-        content.style.display = "none";
-      });
-
-      // Mostrar el contenido objetivo con fadeIn
-      const targetElement = document.querySelector(target);
-      if (targetElement) {
-        targetElement.style.display = "block";
-        targetElement.style.opacity = "0";
-
-        let opacity = 0;
-        const fadeIn = setInterval(() => {
-          if (opacity >= 1) {
-            clearInterval(fadeIn);
+            if (firstContent) {
+              // Determinar si usar block o flex según el grupo
+              const displayType = GlobalTabs.getDisplayType(firstContent);
+              firstContent.style.display = displayType;
+              firstContent.style.opacity = "1";
+              firstContent.classList.add("active");
+            }
           }
-          targetElement.style.opacity = opacity.toString();
-          opacity += 0.1;
-        }, 60); // 600ms total (60ms * 10 steps)
+        }
+      });
+    },
+
+    switchTab: function (tabLink) {
+      const tabContainer = tabLink.closest("[data-tab-group]");
+      const targetId = tabLink.getAttribute("data-tab-target");
+
+      if (!tabContainer || !targetId) return;
+
+      // Activar tab clickeado y desactivar otros en el mismo grupo
+      const tabGroup = tabContainer.getAttribute("data-tab-group") || "default";
+      GlobalTabs.activateTab(tabLink, tabGroup);
+
+      // Mostrar contenido correspondiente
+      GlobalTabs.showContent(targetId, tabGroup);
+    },
+
+    activateTab: function (activeTab, group) {
+      // Desactivar todos los tabs del mismo grupo
+      const selector =
+        group === "default"
+          ? "[data-tab-target]"
+          : `[data-tab-group="${group}"] [data-tab-target]`;
+
+      document.querySelectorAll(selector).forEach((tab) => {
+        tab.parentElement.classList.remove("active");
+      });
+
+      // Activar tab actual
+      activeTab.parentElement.classList.add("active");
+    },
+
+    showContent: function (targetId, group) {
+      // Ocultar todos los contenidos del mismo grupo
+      const contentSelector =
+        group === "default"
+          ? "[data-tab-content]"
+          : `[data-tab-content-group="${group}"] [data-tab-content]`;
+
+      document.querySelectorAll(contentSelector).forEach((content) => {
+        content.style.display = "none";
+        content.style.opacity = "0";
+        content.classList.remove("active");
+      });
+
+      // Mostrar contenido objetivo
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        GlobalTabs.fadeInContent(targetElement, group);
       }
-    });
-  });
+    },
+
+    fadeInContent: function (element, group) {
+      // Determinar si usar block o flex según el grupo
+      const displayType = GlobalTabs.getDisplayType(element, group);
+      element.style.display = displayType;
+      element.style.opacity = "0";
+      element.classList.add("active");
+
+      let opacity = 0;
+      const fadeIn = setInterval(() => {
+        if (opacity >= 1) {
+          clearInterval(fadeIn);
+          element.style.opacity = "1";
+        }
+        element.style.opacity = opacity.toString();
+        opacity += 0.1;
+      }, 60);
+    },
+
+    getDisplayType: function (element, group) {
+      // Si el elemento tiene data-tab-content-group="grupo3", usar flex
+      const contentGroup = element.closest("[data-tab-content-group]");
+      if (
+        contentGroup &&
+        contentGroup.getAttribute("data-tab-content-group") === "grupo3"
+      ) {
+        return "flex";
+      }
+
+      // Si se proporciona el grupo como parámetro, verificar también
+      if (group === "grupo3") {
+        return "flex";
+      }
+
+      // Por defecto usar block
+      return "block";
+    },
+  };
+
+  // Inicializar el sistema de tabs
+  GlobalTabs.init();
 });

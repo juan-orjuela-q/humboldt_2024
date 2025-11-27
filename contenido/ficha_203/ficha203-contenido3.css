@@ -130,21 +130,23 @@ body {
 }
 
 .map-point:hover {
+  transform: scale(1.2);
   z-index: 100;
 }
 
-/* Actualización: Mejorar el tooltip para mostrar más información */
-.map-point:hover::after {
+/* REMOVEMOS LOS TOOLTIPS CSS ORIGINALES */
+/* .map-point:hover::after {
   content: attr(data-tooltip) "\A" "Área: " attr(data-hectareas) " ha" "\A" "Porcentaje: " attr(data-porcentaje) "%";
+  ...
+} */
+
+/* Estilos para el tooltip JS */
+.map-tooltip {
   position: absolute;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
   background-color: #2c3e50;
   color: white;
   padding: 12px 16px;
   border-radius: 8px;
-  white-space: pre;
   font-size: 14px;
   line-height: 1.4;
   z-index: 1000;
@@ -152,6 +154,25 @@ body {
   text-align: center;
   min-width: 180px;
   max-width: 250px;
+  white-space: normal;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.map-tooltip.show {
+  opacity: 1;
+}
+
+.map-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #2c3e50 transparent transparent transparent;
 }
 
 /* Posiciones de los puntos (ajustar según necesidad) */
@@ -175,7 +196,6 @@ body {
   top: 26%;
   left: 39%;
   background-color: #79ab2b;
-
   width: 40px;
   height: 40px;
   opacity: 0.8;

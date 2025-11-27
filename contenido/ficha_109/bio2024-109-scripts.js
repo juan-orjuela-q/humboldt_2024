@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Mostrar el contenido objetivo con fadeIn
       const targetElement = document.querySelector(target);
       if (targetElement) {
-        targetElement.style.display = "block";
+        targetElement.style.display = "flex";
         targetElement.style.opacity = "0";
 
         let opacity = 0;
@@ -37,206 +37,260 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Datos de las especies
+  // Datos de las especies basados en el Excel
   const especiesData = [
     {
       especie: "Acanthemblemaria stephensi",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Blenio tubícola",
+      uicn: "VU",
+      local: "VU",
     },
     {
       especie: "Acropora cervicornis",
-      filo: "Chordata",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Coral cachito de venado",
+      uicn: "CR",
+      local: "CR",
     },
     {
       especie: "Acropora palmata",
-      filo: "Chordata",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Coral cuerno de alce",
+      uicn: "CR",
+      local: "EN",
     },
     {
       especie: "Aetobatus narinari",
-      filo: "Chordata",
-      estado: "En Peligro (EN)",
+      nombreComun: "Raya águila o Chucho moteado",
+      uicn: "EN",
+      local: "",
     },
     {
       especie: "Axoclinus rubinoffi",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Pez tres aletas ojo negro",
+      uicn: "VU",
+      local: "VU",
     },
     {
       especie: "Carcharhinus acronotus",
-      filo: "Chordata",
-      estado: "En Peligro (EN)",
+      nombreComun: "Tiburón de morro negro",
+      uicn: "EN",
+      local: "",
     },
     {
       especie: "Carcharhinus falciformis",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Tiburón sedoso",
+      uicn: "VU",
+      local: "VU",
     },
     {
       especie: "Carcharhinus leucas",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Tiburón toro",
+      uicn: "VU",
+      local: "",
     },
     {
       especie: "Carcharhinus limbatus",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Tiburón de puntas negras",
+      uicn: "VU",
+      local: "VU",
     },
     {
       especie: "Carcharhinus longimanus",
-      filo: "Chordata",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Tiburón oceánico de puntas blancas",
+      uicn: "CR",
+      local: "VU",
     },
     {
       especie: "Carcharhinus obscurus",
-      filo: "Chordata",
-      estado: "En Peligro (EN)",
+      nombreComun: "Tiburón arenero",
+      uicn: "EN",
+      local: "",
     },
     {
       especie: "Carcharhinus perezii",
-      filo: "Chordata",
-      estado: "En Peligro (EN)",
+      nombreComun: "Tiburón de arrecife del Caribe",
+      uicn: "EN",
+      local: "",
     },
     {
       especie: "Carcharhinus porosus",
-      filo: "Chordata",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Tiburón cacique",
+      uicn: "CR",
+      local: "",
     },
     {
       especie: "Dendrogyra cylindrus",
-      filo: "Chordata",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Coral pilar o de columnas",
+      uicn: "CR",
+      local: "EN",
     },
     {
       especie: "Diplobatis colombiensis",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Raya eléctrica colombiana",
+      uicn: "VU",
+      local: "EN",
     },
     {
       especie: "Epinephelus itajara",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Mero guasa",
+      uicn: "VU",
+      local: "CR",
     },
     {
       especie: "Epinephelus striatus",
-      filo: "Chordata",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Mero de Nassau",
+      uicn: "CR",
+      local: "CR",
     },
     {
       especie: "Eusmilia fastigiata",
-      filo: "Chordata",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Coral flor suave",
+      uicn: "CR",
+      local: "",
     },
     {
       especie: "Ginglymostoma cirratum",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Tiburón gato o nodriza",
+      uicn: "VU",
+      local: "VU",
     },
     {
       especie: "Halichoeres malpelo",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Doncella de Malpelo",
+      uicn: "VU",
+      local: "VU",
     },
     {
       especie: "Hippocampus ingens",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Caballito de mar del Pacífico",
+      uicn: "VU",
+      local: "VU",
     },
-    { especie: "Hypanus longus", filo: "Chordata", estado: "Vulnerable (VU)" },
+    {
+      especie: "Hypanus longus",
+      nombreComun: "Raya látigo de cola larga",
+      uicn: "VU",
+      local: "VU",
+    },
     {
       especie: "Hyporthodus acanthistius",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Mero rojo o buchón",
+      uicn: "VU",
+      local: "",
     },
     {
       especie: "Isostichopus fuscus",
-      filo: "Chordata",
-      estado: "En Peligro (EN)",
+      nombreComun: "Pepino de mar",
+      uicn: "EN",
+      local: "",
     },
     {
       especie: "Isurus oxyrinchus",
-      filo: "Chordata",
-      estado: "En Peligro (EN)",
+      nombreComun: "Tiburón mako",
+      uicn: "EN",
+      local: "",
     },
     {
       especie: "Lachnolaimus maximus",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Pargo pluma",
+      uicn: "VU",
+      local: "EN",
     },
     {
       especie: "Lepidonectes bimaculatus",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Pez candela",
+      uicn: "VU",
+      local: "VU",
     },
     {
       especie: "Lutjanus cyanopterus",
-      filo: "Chordata",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Pargo cubera",
+      uicn: "VU",
+      local: "VU",
     },
     {
       especie: "Megalops atlanticus",
-      filo: "Cnidaria",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Sábalo",
+      uicn: "VU",
+      local: "CR",
     },
     {
       especie: "Millepora complanata",
-      filo: "Mollusca",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Coral fuego",
+      uicn: "CR",
+      local: "",
     },
     {
       especie: "Mycetophyllia ferox",
-      filo: "Mollusca",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Coral hongo",
+      uicn: "CR",
+      local: "",
     },
     {
       especie: "Mycteroperca olfax",
-      filo: "Mollusca",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Mero bacalao",
+      uicn: "EN",
+      local: "VU",
     },
     {
       especie: "Narcine leoparda",
-      filo: "Cnidaria",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Raya eléctrica leopardo",
+      uicn: "VU",
+      local: "",
     },
     {
       especie: "Orbicella annularis",
-      filo: "Arthropoda",
-      estado: "En Peligro (EN)",
+      nombreComun: "Coral papa",
+      uicn: "EN",
+      local: "",
     },
     {
       especie: "Orbicella faveolata",
-      filo: "Arthropoda",
-      estado: "En Peligro (EN)",
+      nombreComun: "Coral estrella montañosa",
+      uicn: "EN",
+      local: "",
     },
     {
       especie: "Rhizoprionodon lalandii",
-      filo: "Cnidaria",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Tiburon cazón picudo chino",
+      uicn: "VU",
+      local: "",
     },
     {
       especie: "Rhizoprionodon porosus",
-      filo: "Cnidaria",
-      estado: "Vulnerable (VU)",
+      nombreComun: "Tiburón cazón antillano",
+      uicn: "VU",
+      local: "",
     },
     {
       especie: "Sphyrna corona",
-      filo: "Mollusca",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Cornuda coronada",
+      uicn: "CR",
+      local: "",
     },
     {
       especie: "Sphyrna lewini",
-      filo: "Cnidaria",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Tiburón martillo común",
+      uicn: "CR",
+      local: "VU",
     },
     {
       especie: "Sphyrna mokarran",
-      filo: "Mollusca",
-      estado: "En Peligro Crítico (CR)",
+      nombreComun: "Tiburón martillo gigante",
+      uicn: "CR",
+      local: "VU",
     },
-    { especie: "Sphyrna tiburo", filo: "Mollusca", estado: "En Peligro (EN)" },
-    { especie: "Zapteryx xyster", filo: "Cnidaria", estado: "Vulnerable (VU)" },
+    {
+      especie: "Sphyrna tiburo",
+      nombreComun: "Tiburón cabeza de pala",
+      uicn: "EN",
+      local: "",
+    },
+    {
+      especie: "Zapteryx xyster",
+      nombreComun: "Raya guitarra",
+      uicn: "VU",
+      local: "",
+    },
   ];
 
   // Función para cargar la tabla
@@ -256,18 +310,24 @@ document.addEventListener("DOMContentLoaded", function () {
       paginatedData.forEach((especie) => {
         const row = document.createElement("tr");
 
-        // Determinar la clase CSS según el estado
+        // Determinar la clase CSS según el estado UICN
         let estadoClass = "";
-        if (especie.estado.includes("Crítico")) estadoClass = "status-cr";
-        else if (especie.estado.includes("Peligro")) estadoClass = "status-en";
-        else if (especie.estado.includes("Vulnerable"))
-          estadoClass = "status-vu";
+        if (especie.uicn === "CR") estadoClass = "status-cr";
+        else if (especie.uicn === "EN") estadoClass = "status-en";
+        else if (especie.uicn === "VU") estadoClass = "status-vu";
+
+        // Determinar la clase CSS para la categoría local
+        let localClass = "";
+        if (especie.local === "CR") localClass = "status-cr";
+        else if (especie.local === "EN") localClass = "status-en";
+        else if (especie.local === "VU") localClass = "status-vu";
 
         row.innerHTML = `
-                <td>${especie.especie}</td>
-                <td>${especie.filo}</td>
-                <td class="${estadoClass}">${especie.estado}</td>
-            `;
+          <td class= "scientific-name">${especie.especie}</td>
+          <td>${especie.nombreComun}</td>
+          <td class="${estadoClass}">${especie.uicn}</td>
+          <td class="${localClass}">${especie.local || "-"}</td>
+        `;
 
         tableBody.appendChild(row);
       });
@@ -292,25 +352,25 @@ document.addEventListener("DOMContentLoaded", function () {
       const totalPages = Math.ceil(especiesData.length / itemsPerPage);
 
       paginationContainer.innerHTML = `
-            <div class="pagination-info">
-                Página ${page} de ${totalPages} - Total: ${
+        <div class="pagination-info">
+          Página ${page} de ${totalPages} - Total: ${
         especiesData.length
       } especies
-            </div>
-            <div class="pagination-controls">
-                <button class="pagination-btn" ${
-                  page === 1 ? "disabled" : ""
-                } onclick="cambiarPagina(${page - 1})">
-                    Anterior
-                </button>
-                ${generarNumerosPagina(page, totalPages)}
-                <button class="pagination-btn" ${
-                  page === totalPages ? "disabled" : ""
-                } onclick="cambiarPagina(${page + 1})">
-                    Siguiente
-                </button>
-            </div>
-        `;
+        </div>
+        <div class="pagination-controls">
+          <button class="pagination-btn" ${
+            page === 1 ? "disabled" : ""
+          } onclick="cambiarPagina(${page - 1})">
+            Anterior
+          </button>
+          ${generarNumerosPagina(page, totalPages)}
+          <button class="pagination-btn" ${
+            page === totalPages ? "disabled" : ""
+          } onclick="cambiarPagina(${page + 1})">
+            Siguiente
+          </button>
+        </div>
+      `;
     }
 
     // Función para generar los números de página
@@ -331,12 +391,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       for (let i = startPage; i <= endPage; i++) {
         paginationHTML += `
-                <button class="pagination-btn ${
-                  i === currentPage ? "active" : ""
-                }" onclick="cambiarPagina(${i})">
-                    ${i}
-                </button>
-            `;
+          <button class="pagination-btn ${
+            i === currentPage ? "active" : ""
+          }" onclick="cambiarPagina(${i})">
+            ${i}
+          </button>
+        `;
       }
 
       return paginationHTML;
@@ -355,12 +415,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cargar la tabla cuando el DOM esté listo
   cargarTabla();
 
-  // Gráfico Highcharts
+  // Gráfico Highcharts - actualizado con datos reales
+  const conteoUICN = especiesData.reduce((acc, especie) => {
+    acc[especie.uicn] = (acc[especie.uicn] || 0) + 1;
+    return acc;
+  }, {});
+
+  const totalEspecies = especiesData.length;
+
   Highcharts.chart("especies-amenaza", {
     chart: {
       type: "column",
       backgroundColor: "none",
-      height:550,
+      height: 550,
       style: {
         fontFamily: "Rubik, sans-serif",
         color: "#000",
@@ -441,7 +508,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       backgroundColor: "#FFFFFF",
       headerFormat:
-        '<span style="font-size:12px; color:#000; font-family: Rubik, sans-serif">{series.name}</span><br>',
+        '<span style="font-size:12px; color:#000; font-family: Rubik, sans-serif">Estado UICN</span><br>',
       pointFormat:
         '<span style="color:#00748B; font-family: Rubik, sans-serif">{point.name}</span>: <b style="color:#000; font-family: Rubik, sans-serif">{point.y} especies</b><br/>Porcentaje: <b style="color:#000; font-family: Rubik, sans-serif">{point.percentage:.1f}%</b>',
     },
@@ -452,20 +519,20 @@ document.addEventListener("DOMContentLoaded", function () {
         data: [
           {
             name: "En Peligro Crítico (CR)",
-            y: 12,
-            percentage: 26.7,
+            y: conteoUICN.CR || 0,
+            percentage: ((conteoUICN.CR || 0) / totalEspecies) * 100,
             color: "#FF0000",
           },
           {
             name: "En Peligro (EN)",
-            y: 9,
-            percentage: 20.0,
+            y: conteoUICN.EN || 0,
+            percentage: ((conteoUICN.EN || 0) / totalEspecies) * 100,
             color: "#E9C101",
           },
           {
             name: "Vulnerable (VU)",
-            y: 24,
-            percentage: 53.3,
+            y: conteoUICN.VU || 0,
+            percentage: ((conteoUICN.VU || 0) / totalEspecies) * 100,
             color: "#F59C00",
           },
         ],

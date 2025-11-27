@@ -18,10 +18,10 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/themes/adaptive.js"></script>
 
-<div class="container col-group">
+<div class="container col-group ficha101-contenido5">
   <div class="title-container">
     <div>
-      <i class="icon icon_h2 markerbars bg-green_blue"></i>
+      <i class="icon icon_h2 bars bg-green_blue"></i>
     </div>
     <h2 class="color-gris-osc">
       Organizaciones nacionales que aportan datos de la región Caribe
@@ -29,15 +29,27 @@
   </div>
   <div class="col-dt-12">
     <div>
-      <ul class="tab-group">
-        <li class="tab active"><a href="#contienental">Zona Continental</a></li>
-        <li class="tab"><a href="#marina">Zona marina</a></li>
+      <ul class="tab-group" data-tab-group="grupo3">
+        <li class="tab active">
+          <a href="#" data-tab-target="#continental-organizaciones-datos"
+            >Zona Continental</a
+          >
+        </li>
+        <li class="tab">
+          <a href="#" data-tab-target="#marina-organizaciones-datos"
+            >Zona marina</a
+          >
+        </li>
       </ul>
       <div class="line-tabs bg-green_blue"></div>
     </div>
 
-    <div class="tab-content">
-      <div id="contienental" class="tab-container">
+    <div class="tab-content" data-tab-content-group="grupo3">
+      <div
+        id="continental-organizaciones-datos"
+        data-tab-content
+        style="display: flex"
+      >
         <figure class="highcharts-figure">
           <div id="organizaciones-nacionales_socios"></div>
         </figure>
@@ -46,7 +58,11 @@
         </figure>
       </div>
 
-      <div id="marina" class="tab-container">
+      <div
+        id="marina-organizaciones-datos"
+        data-tab-content
+        style="display: none"
+      >
         <figure class="highcharts-figure">
           <div id="marina-organizaciones-nacionales_socios"></div>
         </figure>

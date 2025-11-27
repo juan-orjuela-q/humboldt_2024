@@ -14,14 +14,14 @@ body {
   padding: 60px 0px;
 }
 
-.title-container {
+.ficha101-contenido6 .title-container {
   display: flex;
   gap: 10px;
   margin: 40px 0 50px 0;
 }
 
 /* ===== SISTEMA DE TABS ===== */
-.tab-group {
+.ficha101-contenido6 .tab-group {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -30,18 +30,18 @@ body {
   justify-content: center;
 }
 
-.tab-group:after {
+.ficha101-contenido6 .tab-group:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.tab-group li {
+.ficha101-contenido6 .tab-group li {
   min-width: 200px;
   max-width: 100%;
 }
 
-.tab-group li a {
+.ficha101-contenido6 .tab-group li a {
   display: block;
   text-decoration: none;
   padding: 12px 40px;
@@ -55,37 +55,42 @@ body {
   width: 100%;
 }
 
-.tab-group .active a {
+.ficha101-contenido6 .tab-group .active a {
   background: #008493;
   color: #ffffff;
 }
 
-.line-tabs {
+.ficha101-contenido6 .line-tabs {
   width: 100%;
   height: 2px;
   border-radius: 2px;
   background: #008493;
 }
 
-.tab-content {
+.ficha101-contenido6 .tab-content {
   display: flex;
   padding: 20px 0;
 }
 
-.tab-container {
+.ficha101-contenido6 .tab-container {
   display: none;
   width: 100%;
 }
 
+#marina-organizaciones,
+#continental-organizaciones{
+      width: 100%;
+}
+
 /* ===== TABLAS DE RANKING ===== */
-.ranking-table {
+.ficha101-contenido6 .ranking-table {
   width: 100%;
   border-collapse: collapse;
   font-family: Rubik, sans-serif;
   margin: 18px 0;
 }
 
-.ranking-table thead th {
+.ficha101-contenido6 .ranking-table thead th {
   text-align: left;
   padding: 14px 12px;
   font-weight: 700;
@@ -96,15 +101,15 @@ body {
   cursor: pointer;
 }
 
-.ranking-table thead th:hover {
+.ficha101-contenido6 .ranking-table thead th:hover {
   color: #008493;
 }
 
-.ranking-table thead th.active {
+.ficha101-contenido6 .ranking-table thead th.active {
   color: #008493;
 }
 
-.ranking-table tbody td {
+.ficha101-contenido6 .ranking-table tbody td {
   padding: 12px 12px;
   vertical-align: middle;
   color: #33414a;
@@ -115,14 +120,14 @@ body {
 /* ===== COLUMNA DE ESPECIES CON BARRA ===== */
 
 
-.ranking-table td.especies .value {
+.ficha101-contenido6 .ranking-table td.especies .value {
   min-width: 60px;
   text-align: left;
   font-weight: 700;
   color: #0b2230;
 }
 
-.ranking-table td.especies .bar {
+.ficha101-contenido6 .ranking-table td.especies .bar {
   flex: 1 1 auto;
   height: 12px;
   background: #f2f2f2;
@@ -130,7 +135,7 @@ body {
   overflow: hidden;
 }
 
-.ranking-table td.especies .bar span {
+.ficha101-contenido6 .ranking-table td.especies .bar span {
   display: block;
   height: 100%;
   background: #008493;
@@ -138,13 +143,13 @@ body {
 }
 
 /* ===== COLUMNA DE OBSERVACIONES ===== */
-.ranking-table td.observaciones {
+.ficha101-contenido6 .ranking-table td.observaciones {
   font-weight: 600;
   color: #1b2b36;
 
 }
 
-.bar-observaciones span {
+.ficha101-contenido6 .bar-observaciones span {
   background-color: #ff9800; /* Color naranja */
   display: block;
   height: 12px;
@@ -152,7 +157,7 @@ body {
 }
 
 /* ===== INDICADORES DE ORDENAMIENTO ===== */
-.ranking-table thead th .caret {
+.ficha101-contenido6 .ficha101-contenido6 .ranking-table thead th .caret {
   position: absolute;
   right: 12px;
   top: 50%;
@@ -161,7 +166,7 @@ body {
   display: none;
 }
 
-.ranking-table thead th.active .caret {
+.ficha101-contenido6 .ficha101-contenido6 .ranking-table thead th.active .caret {
   color: #008493;
   display: inline;
 }
@@ -169,50 +174,44 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 750px) {
-  .tab-group {
+  .ficha101-contenido6 .tab-group {
     display: block;
     gap: 20px;
   }
 
-  .tab-group li {
+  .ficha101-contenido6 .tab-group li {
     min-width: 200px;
     max-width: 50%;
   }
 
-  .tab-group li a {
+  .ficha101-contenido6 .tab-group li a {
     width: 50%;
   }
 }
 
 @media (max-width: 700px) {
-  .ranking-table thead th {
+  .ficha101-contenido6 .ranking-table thead th {
     padding: 10px 8px;
     font-size: 12px;
   }
 
-  .ranking-table tbody td {
+  .ficha101-contenido6 .ranking-table tbody td {
     padding: 10px 8px;
     font-size: 12px;
   }
 
-  .ranking-table td.especies {
+  .ficha101-contenido6 .ranking-table td.especies {
     flex-direction: column;
     gap: 5px;
   }
 
-  .ranking-table td.especies .value {
+  .ficha101-contenido6 .ranking-table td.especies .value {
     min-width: auto;
   }
 
-  .ranking-table td.especies .bar {
+  .ficha101-contenido6 .ranking-table td.especies .bar {
     width: 100%;
   }
 }
 
-/* ===== MODO OSCURO ===== */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #141414;
-    color: #ffffff;
-  }
-}
+

@@ -67,7 +67,7 @@
   display: none;
 }
 
-.highcharts-no-tooltip {
+.ficha101-contenido5  .highcharts-no-tooltip {
   display: none;
 }
 
@@ -187,9 +187,3 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #141414;
-    color: #ffffff;
-  }
-}
