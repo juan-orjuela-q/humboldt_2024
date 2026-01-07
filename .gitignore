@@ -20,3 +20,5 @@ general/Ilustraciones alta/
 *.tif
 *.tiff
 *.tifz
+# Archivos Adobe illustrator grandes
+*.ai
