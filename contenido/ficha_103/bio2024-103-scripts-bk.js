@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = document.getElementById(`img-${layerId}`);
 
             if (!img) {
-                console.warn(`No se encontró la imagen para ${layerId}`);
+                console.warn(`No se encontrÃ³ la imagen para ${layerId}`);
                 return;
             }
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Configurar todos los mapas en la página
+    // Configurar todos los mapas en la pÃ¡gina
     document.querySelectorAll("[id^=bio2024-layerMap]").forEach(mapElement => {
         setupMap(mapElement.id.replace("-filters", "").replace("-content", ""));
     });
@@ -57,7 +57,7 @@ Highcharts.chart('container', {
 
     yAxis: {
         title: {
-            text: 'Abundancia (individuo/km)',
+            text: 'Abundancia (individuo/kmÂ²)',
             style: {
                 color: '#000000'
             }
@@ -75,7 +75,7 @@ Highcharts.chart('container', {
 
     xAxis: {
         title: {
-            text: 'Año',
+            text: 'AÃ±o',
             style: {
                 color: '#000000'
             }
@@ -117,13 +117,13 @@ Highcharts.chart('container', {
     },
 
     series: [{
-        name: 'Ciénaga de Zapatosa Ciénaga Costila - Cesar',
+        name: 'CiÃ©naga de Zapatosa CiÃ©naga Costila - Cesar',
         color: '#689F38', 
         data: [
             { x: 2011, y: 0.00 }
         ]
     }, {
-        name: 'Bahía Portete - La Guajira',
+        name: 'BahÃ­a Portete - La Guajira',
         color: '#F59C00', 
         data: [
             { x: 1992, y: 0.09 },
@@ -131,13 +131,13 @@ Highcharts.chart('container', {
             { x: 2007, y: 1.37 }
         ]
     }, {
-        name: 'Vía Parque Isla Salamanca - Magdalena',
+        name: 'VÃ­a Parque Isla Salamanca - Magdalena',
         color: '#695DA6', 
         data: [
             { x: 2006, y: 7.78 }
         ]
     }, {
-        name: 'Bahía de Cispatá - Córdoba',
+        name: 'BahÃ­a de CispatÃ¡ - CÃ³rdoba',
         color: '#D50000',
         data: [
             { x: 2001, y: 0.5 },

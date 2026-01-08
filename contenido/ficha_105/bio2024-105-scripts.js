@@ -73,6 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 operator: ">",
                 value: 16,
               },
+              style: {
+                textOutline: "none",
+                fontFamily: "Rubik, sans-serif",
+              },
             },
             levels: [
               {

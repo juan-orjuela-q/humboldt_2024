@@ -3,31 +3,10 @@ const contenido1Grafica1 = document.getElementById(
 );
 if (contenido1Grafica1) {
   const createChart = (data) => {
-    // Función para formatear números con separadores de miles
+    // FunciÃ³n para formatear nÃºmeros con separadores de miles
     function formatearNumero(numero) {
       return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
-
-    // Función para ajustar valores mínimos visibles en el gráfico
-    function ajustarValoresMinimos(datos) {
-      const totalValue = datos[0].value;
-      const minPercentage = 1.5; // 1.5% del total como mínimo visible
-      const minValue = totalValue * (minPercentage / 100);
-      
-      return datos.map(item => {
-        if (item.value && item.value > 0 && item.value < minValue) {
-          // Mantener el valor original para el tooltip pero ajustar para visualización
-          return {
-            ...item,
-            displayValue: item.value, // Guardar valor original
-            value: minValue // Valor mínimo para visualización
-          };
-        }
-        return { ...item, displayValue: item.value };
-      });
-    }
-
-    const adjustedData = ajustarValoresMinimos(data);
 
     // Acceder a los valores del objeto datas
     const totalRegistros = data[0].value;
@@ -58,31 +37,22 @@ if (contenido1Grafica1) {
         text: "",
       },
 
-      plotOptions: {
-        sunburst: {
-          levelSize: {
-            unit: 'weight',
-            value: 1
-          },
-        },
-      },
-
       series: [
         {
           type: "sunburst",
-          data: adjustedData,
+          data: data,
           name: "Root",
           allowTraversingTree: true,
           borderRadius: 3,
           cursor: "pointer",
           borderColor: "#ffffff",
-          borderWidth: 1, // Aumentado de 1 a 2 para hacer más visibles los segmentos pequeños
+          borderWidth: 1,
           dataLabels: {
             format: "{point.name}",
             filter: {
               property: "innerArcLength",
               operator: ">",
-              value: 32, // Aumentado de 16 a 32 para ocultar etiquetas en segmentos pequeños
+              value: 16,
             },
           },
           levels: [
@@ -93,7 +63,7 @@ if (contenido1Grafica1) {
                 filter: {
                   property: "outerArcLength",
                   operator: ">",
-                  value: 80, // Aumentado de 64 a 80 para mejor visibilidad
+                  value: 64,
                 },
               },
             },
@@ -121,10 +91,8 @@ if (contenido1Grafica1) {
 
       tooltip: {
         headerFormat: "",
-        pointFormatter: function() {
-          const value = this.displayValue || this.value;
-          return `En <b>${this.name}</b> el número de registros es <b>${formatearNumero(Math.round(value))}</b> y el número de especies es <b>${this.especies}</b>.`;
-        },
+        pointFormat:
+          "En <b>{point.name}</b> el nÃºmero de registros es <b>{point.value}</b> y el nÃºmero de especies es <b>{point.especies}</b>.",
       },
     });
   };
@@ -235,14 +203,14 @@ if (contenido1Grafica1) {
     {
       id: "3.2",
       parent: "2.0",
-      name: "Mamíferos",
+      name: "MamÃ­feros",
       value: 56622,
       especies: 246,
     },
     {
       id: "3.3",
       parent: "2.0",
-      name: "Mamíferos marinos",
+      name: "MamÃ­feros marinos",
       value: null,
       especies: null,
     },
@@ -270,7 +238,7 @@ if (contenido1Grafica1) {
     {
       id: "3.7",
       parent: "3.6",
-      name: "Peces dulceacuícolas",
+      name: "Peces dulceacuÃ­colas",
       value: 220042,
       especies: 224,
     },
@@ -306,7 +274,7 @@ if (contenido1Grafica1) {
     {
       id: "4.1",
       parent: "3.9",
-      name: "Dípteros",
+      name: "DÃ­pteros",
       value: 22013,
       especies: 278,
     },
@@ -333,8 +301,8 @@ if (contenido1Grafica1) {
     },
     {
       id: "4.5",
-      parent: "2.1",
-      name: "Arácnidos",
+      parent: "3.9",
+      name: "ArÃ¡cnidos",
       value: 4454,
       especies: 229,
     },
@@ -348,14 +316,14 @@ if (contenido1Grafica1) {
     {
       id: "4.7",
       parent: "2.1",
-      name: "Decápodos",
+      name: "DecÃ¡podos",
       value: 467034,
       especies: 229,
     },
     {
       id: "4.8",
       parent: "2.1",
-      name: "Crustáceos",
+      name: "CrustÃ¡ceos",
       value: 468833,
       especies: 335,
     },
@@ -383,131 +351,152 @@ if (contenido1Grafica1) {
     {
       id: "2.2",
       parent: "1.1",
-      name: "Fanerógamas",
-      value: 4252,
-      especies: 53,
-    },
-    {
-      id: "2.3",
-      parent: "2.2",
       name: "Angiospermas",
       value: 590803,
       especies: 5982,
     },
     {
-      id: "3.10",
-      parent: "2.3",
-      name: "Orquídeas",
-      value: 1620,
-      especies: 246,
-    },
-    {
-      id: "3.11",
-      parent: "2.3",
-      name: "Bromelias - Labiadas - Pasifloras",
-      value: 11549,
-      especies: 231,
-    },
-    {
-      id: "3.12",
-      parent: "2.3",
-      name: "Epífitas",
-      value: 8172,
-      especies: 289,
-    },
-    {
-      id: "3.13",
-      parent: "2.3",
-      name: "Frailejones",
-      value: 81,
-      especies: 7,
-    },
-    {
-      id: "3.14",
-      parent: "2.3",
-      name: "Magnolias",
-      value: 337,
-      especies: 23,
-    },
-    {
-      id: "3.15",
-      parent: "2.3",
-      name: "Palmas",
-      value: 10428,
-      especies: 81,
-    },
-    {
-      id: "2.4",
-      parent: "2.2",
+      id: "2.3",
+      parent: "1.1",
       name: "Gimnospermas",
       value: 128,
       especies: 18,
     },
     {
-      id: "3.16",
-      parent: "2.4",
-      name: "Zamias",
-      value: 41,
+      id: "2.4",
+      parent: "1.1",
+      name: "Frailejones",
+      value: 81,
       especies: 7,
     },
     {
       id: "2.5",
-      parent: "1.1",
-      name: "Helechos",
-      value: 3693,
-      especies: 460,
-    },
-    {
-      id: "2.6",
-      parent: "1.1",
-      name: "Hepáticas",
-      value: 4290,
-      especies: 209,
-    },
-    {
-      id: "2.7",
       parent: "1.1",
       name: "Musgos",
       value: 4594,
       especies: 299,
     },
     {
+      id: "2.6",
+      parent: "1.1",
+      name: "EpÃ­fitas",
+      value: 8172,
+      especies: 289,
+    },
+    {
+      id: "2.7",
+      parent: "1.1",
+      name: "Helechos",
+      value: 3693,
+      especies: 460,
+    },
+    {
       id: "2.8",
+      parent: "1.1",
+      name: "OrquÃ­deas",
+      value: 1620,
+      especies: 246,
+    },
+    {
+      id: "2.9",
+      parent: "1.1",
+      name: "HepÃ¡ticas",
+      value: 4290,
+      especies: 209,
+    },
+    {
+      id: "2.10",
+      parent: "1.1",
+      name: "Bromelias - Labiadas - Pasifloras",
+      value: 11549,
+      especies: 231,
+    },
+    {
+      id: "2.11",
+      parent: "1.1",
+      name: "FanerÃ³gamas",
+      value: 4252,
+      especies: 53,
+    },
+    {
+      id: "2.12",
+      parent: "1.1",
+      name: "Palmas",
+      value: 10428,
+      especies: 81,
+    },
+    {
+      id: "2.13",
+      parent: "1.1",
+      name: "Magnolias",
+      value: 337,
+      especies: 23,
+    },
+    {
+      id: "2.14",
+      parent: "1.1",
+      name: "Zamias",
+      value: 41,
+      especies: 7,
+    },
+    {
+      id: "2.15",
       parent: "1.1",
       name: "Mangles",
       value: 37808,
       especies: 5,
+    },
+    {
+      id: "2.16",
+      parent: "1.2",
+      name: "Cromistas",
+      value: 21904,
+      especies: 189,
+    },
+    {
+      id: "2.17",
+      parent: "1.2",
+      name: "Protozoos",
+      value: 6059,
+      especies: 78,
+    },
+    {
+      id: "2.18",
+      parent: "1.2",
+      name: "Virus",
+      value: 81,
+      especies: 5,
+    },
+    {
+      id: "2.19",
+      parent: "1.2",
+      name: "Bacterias",
+      value: 17537,
+      especies: 128,
+    },
+    {
+      id: "2.20",
+      parent: "1.2",
+      name: "Incertae sedis",
+      value: 3336,
+      especies: 0,
+    },
+    {
+      id: "2.21",
+      parent: "1.2",
+      name: "Arqueas",
+      value: 168,
+      especies: 0,
     },
   ];
 
   createChart(data);
 
   const createChart2 = (datas) => {
-    // Función para formatear números con separadores de miles
+    // FunciÃ³n para formatear nÃºmeros con separadores de miles
     function formatearNumero(numero) {
       return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
-
-    // Función para ajustar valores mínimos visibles en el gráfico
-    function ajustarValoresMinimos(datos) {
-      const totalValue = datos[0].value;
-      const minPercentage = 1.5; // 1.5% del total como mínimo visible
-      const minValue = totalValue * (minPercentage / 100);
-      
-      return datos.map(item => {
-        if (item.value && item.value > 0 && item.value < minValue) {
-          // Mantener el valor original para el tooltip pero ajustar para visualización
-          return {
-            ...item,
-            displayValue: item.value, // Guardar valor original
-            value: minValue // Valor mínimo para visualización
-          };
-        }
-        return { ...item, displayValue: item.value };
-      });
-    }
-
-    const adjustedDatas = ajustarValoresMinimos(datas);
 
     // Acceder a los valores del objeto datas
     const totalRegistros = datas[0].value;
@@ -538,31 +527,22 @@ if (contenido1Grafica1) {
         text: "",
       },
 
-      plotOptions: {
-        sunburst: {
-          levelSize: {
-            unit: 'weight',
-            value: 1
-          },
-        },
-      },
-
       series: [
         {
           type: "sunburst",
-          data: adjustedDatas,
+          data: datas,
           name: "Root",
           allowTraversingTree: true,
           borderRadius: 3,
           cursor: "pointer",
           borderColor: "#ffffff",
-          borderWidth: 1, // Aumentado de 1 a 2 para hacer más visibles los segmentos pequeños
+          borderWidth: 1,
           dataLabels: {
             format: "{point.name}",
             filter: {
               property: "innerArcLength",
               operator: ">",
-              value: 32, // Aumentado de 16 a 32 para ocultar etiquetas en segmentos pequeños
+              value: 16,
             },
           },
           levels: [
@@ -573,7 +553,7 @@ if (contenido1Grafica1) {
                 filter: {
                   property: "outerArcLength",
                   operator: ">",
-                  value: 80, // Aumentado de 64 a 80 para mejor visibilidad
+                  value: 64,
                 },
               },
             },
@@ -601,10 +581,8 @@ if (contenido1Grafica1) {
 
       tooltip: {
         headerFormat: "",
-        pointFormatter: function() {
-          const value = this.displayValue || this.value;
-          return `En <b>${this.name}</b> el número de registros es <b>${formatearNumero(Math.round(value))}</b> y el número de especies es <b>${this.especies}</b>.`;
-        },
+        pointFormat:
+          "En <b>{point.name}</b> el nÃºmero de registros es <b>{point.value}</b> y el nÃºmero de especies es <b>{point.especies}</b>.",
       },
     });
   };
@@ -715,14 +693,14 @@ if (contenido1Grafica1) {
     {
       id: "3.2",
       parent: "2.0",
-      name: "Mamíferos",
+      name: "MamÃ­feros",
       value: 1656,
       especies: 82,
     },
     {
       id: "3.3",
       parent: "2.0",
-      name: "Mamíferos marinos",
+      name: "MamÃ­feros marinos",
       value: 70,
       especies: 10,
     },
@@ -750,7 +728,7 @@ if (contenido1Grafica1) {
     {
       id: "3.7",
       parent: "3.6",
-      name: "Peces dulceacuícolas",
+      name: "Peces dulceacuÃ­colas",
       value: 539,
       especies: 49,
     },
@@ -786,7 +764,7 @@ if (contenido1Grafica1) {
     {
       id: "4.1",
       parent: "3.9",
-      name: "Dípteros",
+      name: "DÃ­pteros",
       value: 422,
       especies: 17,
     },
@@ -813,8 +791,8 @@ if (contenido1Grafica1) {
     },
     {
       id: "4.5",
-      parent: "2.1",
-      name: "Arácnidos",
+      parent: "3.9",
+      name: "ArÃ¡cnidos",
       value: 127,
       especies: 18,
     },
@@ -828,14 +806,14 @@ if (contenido1Grafica1) {
     {
       id: "4.7",
       parent: "2.1",
-      name: "Decápodos",
+      name: "DecÃ¡podos",
       value: 10638,
       especies: 695,
     },
     {
       id: "4.8",
       parent: "2.1",
-      name: "Crustáceos",
+      name: "CrustÃ¡ceos",
       value: 15354,
       especies: 873,
     },
@@ -863,121 +841,121 @@ if (contenido1Grafica1) {
     {
       id: "2.2",
       parent: "1.1",
-      name: "Fanerógamas",
-      value: 66,
-      especies: 7,
-    },
-    {
-      id: "2.3",
-      parent: "2.2",
       name: "Angiospermas",
       value: 8928,
       especies: 879,
     },
     {
-      id: "3.10",
-      parent: "2.3",
-      name: "Orquídeas",
-      value: 12,
-      especies: 8,
-    },
-    {
-      id: "3.11",
-      parent: "2.3",
-      name: "Bromelias - Labiadas - Pasifloras",
-      value: 133,
-      especies: 31,
-    },
-    {
-      id: "3.12",
-      parent: "2.3",
-      name: "Epífitas",
-      value: 55,
-      especies: 25,
-    },
-    {
-      id: "3.13",
-      parent: "2.3",
-      name: "Frailejones",
-      value: null,
-      especies: null,
-    },
-    {
-      id: "3.14",
-      parent: "2.3",
-      name: "Magnolias",
-      value: 1,
-      especies: 1,
-    },
-    {
-      id: "3.15",
-      parent: "2.3",
-      name: "Palmas",
-      value: 66,
-      especies: 10,
-    },
-    {
-      id: "2.4",
-      parent: "2.2",
+      id: "2.3",
+      parent: "1.1",
       name: "Gimnospermas",
       value: 1,
       especies: 1,
     },
     {
-      id: "3.16",
-      parent: "2.4",
-      name: "Zamias",
+      id: "2.4",
+      parent: "1.1",
+      name: "Frailejones",
       value: null,
       especies: null,
     },
     {
       id: "2.5",
       parent: "1.1",
-      name: "Helechos",
-      value: 13,
-      especies: 9,
-    },
-    {
-      id: "2.6",
-      parent: "1.1",
-      name: "Hepáticas",
-      value: 6,
-      especies: 4,
-    },
-    {
-      id: "2.7",
-      parent: "1.1",
       name: "Musgos",
       value: 2,
       especies: 2,
     },
     {
+      id: "2.6",
+      parent: "1.1",
+      name: "EpÃ­fitas",
+      value: 55,
+      especies: 25,
+    },
+    {
+      id: "2.7",
+      parent: "1.1",
+      name: "Helechos",
+      value: 13,
+      especies: 9,
+    },
+    {
       id: "2.8",
       parent: "1.1",
-      name: "Líquenes",
-      value: 7,
-      especies: 4,
+      name: "OrquÃ­deas",
+      value: 12,
+      especies: 8,
     },
     {
       id: "2.9",
+      parent: "1.1",
+      name: "HepÃ¡ticas",
+      value: 6,
+      especies: 4,
+    },
+    {
+      id: "2.10",
+      parent: "1.1",
+      name: "Bromelias - Labiadas - Pasifloras",
+      value: 133,
+      especies: 31,
+    },
+    {
+      id: "2.11",
+      parent: "1.1",
+      name: "FanerÃ³gamas",
+      value: 66,
+      especies: 7,
+    },
+    {
+      id: "2.12",
+      parent: "1.1",
+      name: "Palmas",
+      value: 66,
+      especies: 10,
+    },
+    {
+      id: "2.13",
+      parent: "1.1",
+      name: "Magnolias",
+      value: 1,
+      especies: 1,
+    },
+    {
+      id: "2.14",
+      parent: "1.1",
+      name: "Zamias",
+      value: null,
+      especies: null,
+    },
+    {
+      id: "2.15",
       parent: "1.1",
       name: "Mangles",
       value: 2287,
       especies: 5,
     },
     {
-      id: "2.10",
+      id: "2.16",
       parent: "1.1",
       name: "Pastos marinos",
       value: 2063,
       especies: 3,
     },
     {
-      id: "2.11",
+      id: "2.17",
       parent: "1.1",
       name: "Algas",
       value: 59948,
       especies: 309,
+    },
+    {
+      id: "2.18",
+      parent: "1.1",
+      name: "LÃ­quenes",
+      value: 7,
+      especies: 4,
     },
   ];
 
@@ -1014,7 +992,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         if (firstContent) {
-          // Determinar si usar block o flex según el grupo
+          // Determinar si usar block o flex segÃºn el grupo
           const displayType = GlobalTabs.getDisplayType(firstContent);
           firstContent.style.display = displayType;
           firstContent.style.opacity = "1";
@@ -1072,7 +1050,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
 
     fadeInContent: function (element, group) {
-      // Determinar si usar block o flex según el grupo
+      // Determinar si usar block o flex segÃºn el grupo
       const displayType = GlobalTabs.getDisplayType(element, group);
       element.style.display = displayType;
       element.style.opacity = "0";
@@ -1098,7 +1076,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return "flex";
       }
 
-      // Si se proporciona el grupo como parámetro, verificar también
+      // Si se proporciona el grupo como parÃ¡metro, verificar tambiÃ©n
       if (group === "grupo3") {
         return "flex";
       }
@@ -1122,9 +1100,9 @@ if (contenido2Grafica1) {
       xAxis: ["Animales", "Plantas", "Hongos", "Total Caribe Continental"],
       yAxis: [
         "Especies amenazadas total",
-        "Vulnerable VU",
-        "En Peligro EN",
-        "En Peligro Crítico CR",
+        "Especies Amenazadas VU",
+        "Especies Amenazadas EN",
+        "Especies Amenazadas CR",
       ],
     },
     series: [
@@ -1139,7 +1117,7 @@ if (contenido2Grafica1) {
         ],
       },
       {
-        name: "Vulnerable (VU)",
+        name: "Especies Amenazadas (VU)",
         color: "#E9C101",
         data: [
           { x: 0, y: 1, z: 112, name: "Animales" },
@@ -1149,7 +1127,7 @@ if (contenido2Grafica1) {
         ],
       },
       {
-        name: "En Peligro (EN)",
+        name: "Especies Amenazadas (EN)",
         color: "#F59C00",
         data: [
           { x: 0, y: 2, z: 60, name: "Animales" },
@@ -1159,7 +1137,7 @@ if (contenido2Grafica1) {
         ],
       },
       {
-        name: "En Peligro Crítico (CR)",
+        name: "Especies Amenazadas (CR)",
         color: "#D50000",
         data: [
           { x: 0, y: 3, z: 23, name: "Animales" },
@@ -1171,7 +1149,7 @@ if (contenido2Grafica1) {
     ],
   };
 
-  // Configuración del gráfico
+  // ConfiguraciÃ³n del grÃ¡fico
   Highcharts.chart("ficha-101-contenido2-grafica1", {
     chart: {
       type: "bubble",
@@ -1198,7 +1176,7 @@ if (contenido2Grafica1) {
       },
       accessibility: {
         rangeDescription:
-          "Categorías: " + chartData.categories.xAxis.join(", "),
+          "CategorÃ­as: " + chartData.categories.xAxis.join(", "),
       },
       opposite: true,
       lineWidth: 1,
@@ -1224,7 +1202,7 @@ if (contenido2Grafica1) {
       },
       gridLineWidth: 1,
       min: -0.5,
-      max: 3.5, // Actualizado porque ahora tenemos 4 categorías en lugar de 5
+      max: 3.5, // Actualizado porque ahora tenemos 4 categorÃ­as en lugar de 5
       plotLines: chartData.categories.yAxis.map((_, index) => ({
         color: "#666666",
         width: 1,
@@ -1239,14 +1217,14 @@ if (contenido2Grafica1) {
           let label = chartData.categories.yAxis[index];
 
           if (index === 1) {
-            // VU ahora está en posición 1
-            return 'Vulnerable <span style="color: #fff; background:#E9C101; font-weight: bold; border-radius:50%; padding: 8px;">VU</span>';
+            // VU ahora estÃ¡ en posiciÃ³n 1
+            return 'Especies Amenazadas <span style="color: #fff; background:#E9C101; font-weight: bold; border-radius:50%; padding: 8px;">VU</span>';
           } else if (index === 2) {
-            // EN ahora está en posición 2
-            return 'En Peligro <span style="color: #fff; background:#F59C00; font-weight: bold; border-radius:50%; padding: 8px;">EN</span>';
+            // EN ahora estÃ¡ en posiciÃ³n 2
+            return 'Especies Amenazadas <span style="color: #fff; background:#F59C00; font-weight: bold; border-radius:50%; padding: 8px;">EN</span>';
           } else if (index === 3) {
-            // CR ahora está en posición 3
-            return 'En Peligro Crítico <span style="color: #fff; background:#D50000; font-weight: bold; border-radius:50%; padding: 8px;">CR</span>';
+            // CR ahora estÃ¡ en posiciÃ³n 3
+            return 'Especies Amenazadas <span style="color: #fff; background:#D50000; font-weight: bold; border-radius:50%; padding: 8px;">CR</span>';
           } else {
             return label;
           }
@@ -1266,7 +1244,7 @@ if (contenido2Grafica1) {
         '<div style="font-weight: bold; margin-bottom: 5px; color: #000">{point.series.name}</div>',
       pointFormat:
         '<div style="margin: 3px 0; color: #000">' +
-        '<span style="font-weight: bold; color: #000">Categoría:</br></span> {point.xCategory}<br/>' +
+        '<span style="font-weight: bold; color: #000">CategorÃ­a:</br></span> {point.xCategory}<br/>' +
         '<span style="font-weight: bold; color: #000">Nivel de amenaza:</br></span> {point.yCategory}<br/>' +
         '<span style="font-weight: bold; color: #000">Cantidad:</br></span> {point.z} especies<br/>' +
         '<span style="font-weight: bold; color: #000">Nombre:</br></span> {point.name}' +
@@ -1285,7 +1263,13 @@ if (contenido2Grafica1) {
         yCategory: chartData.categories.yAxis[point.y],
       })),
       marker: {
-        fillColor: series.color,
+        fillColor: {
+          radialGradient: { cx: 0.4, cy: 0.3, r: 0.7 },
+          stops: [
+            [0, "rgba(255,255,255,0.8)"],
+            [1, series.color],
+          ],
+        },
         lineColor: series.color,
         lineWidth: 1,
       },
@@ -1318,15 +1302,15 @@ if (contenido2Grafica1) {
     },
   });
 
-  // Segundo gráfico - también actualizado sin "Total" y sin "Total de especies amenazadas"
+  // Segundo grÃ¡fico - tambiÃ©n actualizado sin "Total" y sin "Total de especies amenazadas"
   const chartData2 = {
     categories: {
       xAxis: ["Animales", "Plantas", "Hongos", "Total Caribe"],
       yAxis: [
         "Especies amenazadas total",
-        "Vulnerable VU",
-        "En Peligro EN",
-        "En Peligro Crítico CR",
+        "Especies Amenazadas VU",
+        "Especies Amenazadas EN",
+        "Especies Amenazadas CR",
       ],
     },
     series: [
@@ -1341,7 +1325,7 @@ if (contenido2Grafica1) {
         ],
       },
       {
-        name: "Vulnerable (VU)",
+        name: "Especies Amenazadas (VU)",
         color: "#E9C101",
         data: [
           { x: 0, y: 1, z: 76, name: "Animales" },
@@ -1351,7 +1335,7 @@ if (contenido2Grafica1) {
         ],
       },
       {
-        name: "En Peligro (EN)",
+        name: "Especies Amenazadas (EN)",
         color: "#F59C00",
         data: [
           { x: 0, y: 2, z: 28, name: "Animales" },
@@ -1361,7 +1345,7 @@ if (contenido2Grafica1) {
         ],
       },
       {
-        name: "En Peligro Crítico (CR)",
+        name: "Especies Amenazadas (CR)",
         color: "#D50000",
         data: [
           { x: 0, y: 3, z: 16, name: "Animales" },
@@ -1399,7 +1383,7 @@ if (contenido2Grafica1) {
       },
       accessibility: {
         rangeDescription:
-          "Categorías: " + chartData2.categories.xAxis.join(", "),
+          "CategorÃ­as: " + chartData2.categories.xAxis.join(", "),
       },
       opposite: true,
       lineWidth: 1,
@@ -1425,7 +1409,7 @@ if (contenido2Grafica1) {
       },
       gridLineWidth: 1,
       min: -0.5,
-      max: 3.5, // Actualizado porque ahora tenemos 4 categorías en lugar de 5
+      max: 3.5, // Actualizado porque ahora tenemos 4 categorÃ­as en lugar de 5
       plotLines: chartData2.categories.yAxis.map((_, index) => ({
         color: "#666666",
         width: 1,
@@ -1440,14 +1424,14 @@ if (contenido2Grafica1) {
           let label = chartData2.categories.yAxis[index];
 
           if (index === 1) {
-            // VU ahora está en posición 1
-            return 'Vulnerable <span style="color: #fff; background:#E9C101; font-weight: bold; border-radius:50%; padding: 10px;">VU</span>';
+            // VU ahora estÃ¡ en posiciÃ³n 1
+            return 'Especies Amenazadas <span style="color: #fff; background:#E9C101; font-weight: bold; border-radius:50%; padding: 10px;">VU</span>';
           } else if (index === 2) {
-            // EN ahora está en posición 2
-            return 'En Peligro <span style="color: #fff; background:#F59C00; font-weight: bold; border-radius:50%; padding: 10px;">EN</span>';
+            // EN ahora estÃ¡ en posiciÃ³n 2
+            return 'Especies Amenazadas <span style="color: #fff; background:#F59C00; font-weight: bold; border-radius:50%; padding: 10px;">EN</span>';
           } else if (index === 3) {
-            // CR ahora está en posición 3
-            return 'En Peligro Crítico <span style="color: #fff; background:#D50000; font-weight: bold; border-radius:50%; padding: 10px;">CR</span>';
+            // CR ahora estÃ¡ en posiciÃ³n 3
+            return 'Especies Amenazadas <span style="color: #fff; background:#D50000; font-weight: bold; border-radius:50%; padding: 10px;">CR</span>';
           } else {
             return label;
           }
@@ -1467,7 +1451,7 @@ if (contenido2Grafica1) {
         '<div style="font-weight: bold; margin-bottom: 5px; color: #000">{point.series.name}</div>',
       pointFormat:
         '<div style="margin: 3px 0; color: #000">' +
-        '<span style="font-weight: bold; color: #000">Categoría:</br></span> {point.xCategory}<br/>' +
+        '<span style="font-weight: bold; color: #000">CategorÃ­a:</br></span> {point.xCategory}<br/>' +
         '<span style="font-weight: bold; color: #000">Nivel de amenaza:</br></span> {point.yCategory}<br/>' +
         '<span style="font-weight: bold; color: #000">Cantidad:</br></span> {point.z} especies<br/>' +
         '<span style="font-weight: bold; color: #000">Nombre:</br></span> {point.name}' +
@@ -1486,7 +1470,13 @@ if (contenido2Grafica1) {
         yCategory: chartData2.categories.yAxis[point.y],
       })),
       marker: {
-        fillColor: series.color,
+        fillColor: {
+          radialGradient: { cx: 0.4, cy: 0.3, r: 0.7 },
+          stops: [
+            [0, "rgba(255,255,255,0.8)"],
+            [1, series.color],
+          ],
+        },
         lineColor: series.color,
         lineWidth: 1,
       },
@@ -1536,7 +1526,7 @@ if (sociosContenido4Grafica1) {
       },
     },
     title: {
-      text: "Número de socios",
+      text: "NÃºmero de socios",
       style: {
         color: "#000",
         fontFamily: "Rubik, sans-serif",
@@ -1549,7 +1539,9 @@ if (sociosContenido4Grafica1) {
       borderRadius: 8,
       borderWidth: 1,
       pointFormat:
-        "Cantidad: <b>{point.y}</b><br/>",
+        '<span style="color:{point.color}">â—</span> {point.name}<br/>' +
+        "Cantidad: <b>{point.y}</b><br/>" +
+        "Porcentaje: <b>{point.percentage:.1f}%</b>",
       style: {
         color: "#000",
         fontFamily: "Rubik, sans-serif",
@@ -1575,7 +1567,7 @@ if (sociosContenido4Grafica1) {
     },
     series: [
       {
-        name: "Categorías",
+        name: "CategorÃ­as",
         colorByPoint: true,
         borderColor: "#ffffff",
         borderWidth: 1,
@@ -1610,7 +1602,7 @@ if (sociosContenido4Grafica1) {
       },
     },
     title: {
-      text: "Número de observaciones",
+      text: "NÃºmero de observaciones",
       style: {
         color: "#000",
         fontFamily: "Rubik, sans-serif",
@@ -1623,7 +1615,9 @@ if (sociosContenido4Grafica1) {
       borderRadius: 8,
       borderWidth: 1,
       pointFormat:
-        "Cantidad: <b>{point.y}</b><br/>" ,
+        '<span style="color:{point.color}">â—</span> {point.name}<br/>' +
+        "Cantidad: <b>{point.y}</b><br/>" +
+        "Porcentaje: <b>{point.percentage:.1f}%</b>",
       style: {
         color: "#000",
         fontFamily: "Rubik, sans-serif",
@@ -1649,7 +1643,7 @@ if (sociosContenido4Grafica1) {
     },
     series: [
       {
-        name: "Categorías",
+        name: "CategorÃ­as",
         borderColor: "#ffffff",
         borderWidth: 1,
         colorByPoint: true,
@@ -1677,13 +1671,13 @@ if (sociosContenido4Grafica1) {
 
 const contenido5 = document.getElementById("organizaciones-nacionales_socios");
 if (contenido5) {
-  // Configuración común para ambos gráficos
+  // ConfiguraciÃ³n comÃºn para ambos grÃ¡ficos
   const commonConfig = {
     chart: {
       type: "pie",
       backgroundColor: "none",
       height: "100%",
-      spacing: [0, 20, 20, 20], // Aumenté el spacing superior para los títulos
+      spacing: [0, 20, 20, 20], // AumentÃ© el spacing superior para los tÃ­tulos
       margin: [0, 0, 0, 0],
     },
     accessibility: {
@@ -1693,7 +1687,7 @@ if (contenido5) {
     },
     tooltip: {
       pointFormat:
-        "<b>{point.cantidad}</b> ({point.percentage:.1f}%)",
+        "{point.name}: <b>{point.cantidad}</b> ({point.percentage:.1f}%)",
       style: {
         fontFamily: "Rubik, sans-serif",
         fontSize: "14px",
@@ -1703,13 +1697,13 @@ if (contenido5) {
       align: "center",
       verticalAlign: "top",
       style: {
-        color: "#000000", // Color negro para los títulos
+        color: "#000000", // Color negro para los tÃ­tulos
         fontWeight: "bold",
         fontSize: "24px",
         fontFamily: "Rubik, sans-serif",
       },
-      margin: 30, // Margen adicional para separar del gráfico
-      y: 20, // Posición vertical del título
+      margin: 30, // Margen adicional para separar del grÃ¡fico
+      y: 20, // PosiciÃ³n vertical del tÃ­tulo
     },
     legend: {
       enabled: false,
@@ -1721,15 +1715,15 @@ if (contenido5) {
         borderColor: "#ffffff",
         borderWidth: 1,
         borderRadius: 8,
-        size: "85%", // Reducido ligeramente para dar espacio al título
+        size: "85%", // Reducido ligeramente para dar espacio al tÃ­tulo
         dataLabels: {
           enabled: false,
         },
         showInLegend: false,
       },
       pie: {
-        size: "90%", // Reducido para dar más espacio al título
-        center: ["50%", "55%"], // Centrado verticalmente para compensar el título
+        size: "90%", // Reducido para dar mÃ¡s espacio al tÃ­tulo
+        center: ["50%", "55%"], // Centrado verticalmente para compensar el tÃ­tulo
       },
     },
   };
@@ -1738,19 +1732,19 @@ if (contenido5) {
   const categories = [
     { name: "Academia", color: "#1C2445" },
     { name: "Autoridades ambientales", color: "#79AB2B" },
-    { name: "Centros de investigación", color: "#692940" },
+    { name: "Centros de investigaciÃ³n", color: "#692940" },
     { name: "Empresas", color: "#F59C00" },
     { name: "Entidades territoriales", color: "#FC7268" },
     { name: "ONG", color: "#75C8DA" },
     { name: "Redes e iniciativas", color: "#E9C101" },
   ];
 
-  // Primer gráfico - Socios
+  // Primer grÃ¡fico - Socios
   Highcharts.chart(
     "organizaciones-nacionales_socios",
     Highcharts.merge(commonConfig, {
       title: {
-        text: "Número de socios",
+        text: "NÃºmero de socios",
       },
       series: [
         {
@@ -1768,12 +1762,12 @@ if (contenido5) {
     })
   );
 
-  // Segundo gráfico - Observaciones
+  // Segundo grÃ¡fico - Observaciones
   Highcharts.chart(
     "organizaciones-nacionales_observaciones",
     Highcharts.merge(commonConfig, {
       title: {
-        text: "Número de observaciones",
+        text: "NÃºmero de observaciones",
       },
       series: [
         {
@@ -1793,12 +1787,12 @@ if (contenido5) {
     })
   );
 
-  // tercer gráfico - Socios MARINA
+  // tercer grÃ¡fico - Socios MARINA
   Highcharts.chart(
     "marina-organizaciones-nacionales_socios",
     Highcharts.merge(commonConfig, {
       title: {
-        text: "Número de socios",
+        text: "NÃºmero de socios",
       },
       series: [
         {
@@ -1816,12 +1810,12 @@ if (contenido5) {
     })
   );
 
-  // cuarto gráfico - Observaciones MARINA
+  // cuarto grÃ¡fico - Observaciones MARINA
   Highcharts.chart(
     "marina-organizaciones-nacionales_observaciones",
     Highcharts.merge(commonConfig, {
       title: {
-        text: "Número de observaciones",
+        text: "NÃºmero de observaciones",
       },
       series: [
         {
@@ -1881,8 +1875,8 @@ if (contenido5) {
     });
 
     // Insertar la leyenda donde la necesites
-    // Por ejemplo, después del contenedor de gráficos
-    const chartsContainer = document.querySelector(".ficha101-contenido5 .tab-content"); // Ajusta este selector
+    // Por ejemplo, despuÃ©s del contenedor de grÃ¡ficos
+    const chartsContainer = document.querySelector(".tab-content"); // Ajusta este selector
     if (chartsContainer) {
       chartsContainer.parentNode.insertBefore(
         legendContainer,
@@ -1891,7 +1885,7 @@ if (contenido5) {
     }
   }
 
-  // Llamar la función después de que se carguen los gráficos
+  // Llamar la funciÃ³n despuÃ©s de que se carguen los grÃ¡ficos
   setTimeout(createSharedLegend, 100);
 }
 
@@ -1902,15 +1896,15 @@ if (contenido6) {
   const dataContinental = [
     ["Universidad Nacional de Colombia", 4118, 26819, "Academia"],
     [
-      "Instituto de Investigación de Recursos Biológicos Alexander von Humboldt",
+      "Instituto de InvestigaciÃ³n de Recursos BiolÃ³gicos Alexander von Humboldt",
       3733,
       110031,
-      "Centros de investigación",
+      "Centros de investigaciÃ³n",
     ],
     ["Naturalista Colombia", 3620, 53530, "Redes e iniciativas"],
-    ['Jardín Botánico de Cartagena "Guillermo Piñeres"', 2005, 14980, "ONG"],
+    ['JardÃ­n BotÃ¡nico de Cartagena "Guillermo PiÃ±eres"', 2005, 14980, "ONG"],
     ["Universidad de Antioquia", 1771, 17562, "Academia"],
-    ["Carbones del Cerrejón Limited", 1262, 135277, "Empresas"],
+    ["Carbones del CerrejÃ³n Limited", 1262, 135277, "Empresas"],
     ["Promigas S.A E.S.P", 1217, 182883, "Empresas"],
     ["Universidad del Magdalena", 1150, 95406, "Academia"],
     ["eBird Colombia", 944, 2215425, "Redes e iniciativas"],
@@ -1923,7 +1917,7 @@ if (contenido6) {
       "Instituto de Investigaciones Marinas y Costeras - Invemar",
       2599,
       329218,
-      "Centros de investigación",
+      "Centros de investigaciÃ³n",
     ],
     ["Universidad Nacional de Colombia", 1241, 8858, "Academia"],
     ["Naturalista Colombia", 955, 5059, "Redes e iniciativas"],
@@ -1935,18 +1929,18 @@ if (contenido6) {
       "Redes e iniciativas",
     ],
     [
-      "Instituto de Investigación de Recursos Biológicos Alexander von Humboldt",
+      "Instituto de InvestigaciÃ³n de Recursos BiolÃ³gicos Alexander von Humboldt",
       444,
       5645,
-      "Centros de investigación",
+      "Centros de investigaciÃ³n",
     ],
     ["Universidad del Valle", 425, 1278, "Academia"],
     ["Universidad de Antioquia", 423, 4354, "Academia"],
     ["Universidad del Magdalena", 300, 6359, "Academia"],
-    ['Jardín Botánico de Cartagena "Guillermo Piñeres"', 263, 993, "ONG"],
+    ['JardÃ­n BotÃ¡nico de Cartagena "Guillermo PiÃ±eres"', 263, 993, "ONG"],
   ];
 
-  // Función para formatear números con separadores de miles
+  // FunciÃ³n para formatear nÃºmeros con separadores de miles
   function formatearNumero(numero) {
     return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
@@ -1957,19 +1951,19 @@ if (contenido6) {
     marina: [null, null, null, null],
   };
 
-  // Función para ordenar la tabla
+  // FunciÃ³n para ordenar la tabla
   function sortTable(columnIndex, tableType) {
     const tableId = `data-table-${tableType}`;
     const table = document.getElementById(tableId);
     const tbody = table.tBodies[0] || table;
     const rows = Array.from(tbody.querySelectorAll("tr"));
 
-    // Determinar dirección
+    // Determinar direcciÃ³n
     if (
       typeof sortState[tableType][columnIndex] === "undefined" ||
       sortState[tableType][columnIndex] === null
     ) {
-      // Para columnas numéricas (1 y 2), orden descendente por defecto
+      // Para columnas numÃ©ricas (1 y 2), orden descendente por defecto
       sortState[tableType][columnIndex] =
         columnIndex === 1 || columnIndex === 2 ? false : true;
     }
@@ -1982,12 +1976,12 @@ if (contenido6) {
       const bValue = bCell ? bCell.textContent.trim() : "";
 
       if (columnIndex === 1 || columnIndex === 2) {
-        // Columnas numéricas (Número de especies y observaciones)
+        // Columnas numÃ©ricas (NÃºmero de especies y observaciones)
         const na = parseInt(aValue.replace(/\./g, "")) || 0;
         const nb = parseInt(bValue.replace(/\./g, "")) || 0;
         return asc ? na - nb : nb - na;
       }
-      // Columnas de texto (Organización y Tipo)
+      // Columnas de texto (OrganizaciÃ³n y Tipo)
       return asc
         ? aValue.localeCompare(bValue, undefined, { sensitivity: "base" })
         : bValue.localeCompare(aValue, undefined, { sensitivity: "base" });
@@ -1996,14 +1990,14 @@ if (contenido6) {
     // Reinsertar en tbody
     rows.forEach((row) => tbody.appendChild(row));
 
-    // Alternar estado para próximos clicks
+    // Alternar estado para prÃ³ximos clicks
     sortState[tableType][columnIndex] = !asc;
 
     // Actualizar indicadores visuales
     updateSortIndicators(table, columnIndex, asc);
   }
 
-  // Función para actualizar indicadores visuales de ordenamiento
+  // FunciÃ³n para actualizar indicadores visuales de ordenamiento
   function updateSortIndicators(table, columnIndex, asc) {
     const ths = table.querySelectorAll("th");
     ths.forEach((th, idx) => {
@@ -2017,25 +2011,25 @@ if (contenido6) {
 
       const caret = th.querySelector(".caret");
       if (idx === columnIndex) {
-        caret.textContent = asc ? "▲" : "▼";
+        caret.textContent = asc ? "â–²" : "â–¼";
         caret.style.display = "inline";
       } else {
-        caret.textContent = "▾";
+        caret.textContent = "â–¾";
         caret.style.display = "none";
       }
     });
   }
 
-  // Función para cargar datos en una tabla
+  // FunciÃ³n para cargar datos en una tabla
   function loadTableData(tableId, data) {
     const tableBody = document
       .getElementById(tableId)
       .getElementsByTagName("tbody")[0];
     tableBody.innerHTML = ""; // Limpiar tabla
 
-    // Encontrar máximo de especies para la barra de progreso
+    // Encontrar mÃ¡ximo de especies para la barra de progreso
     const maxEspecies = Math.max(...data.map((row) => row[1]));
-    // Encontrar máximo de observaciones para la barra de progreso
+    // Encontrar mÃ¡ximo de observaciones para la barra de progreso
     const maxObservaciones = Math.max(...data.map((row) => row[2]));
 
     data.forEach((row) => {
@@ -2044,7 +2038,7 @@ if (contenido6) {
         const td = document.createElement("td");
 
         if (idx === 1) {
-          // Columna de número de especies - mostrar con barra
+          // Columna de nÃºmero de especies - mostrar con barra
           td.className = "especies";
           td.setAttribute("data-value", cell);
 
