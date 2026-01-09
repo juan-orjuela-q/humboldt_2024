@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
     legend: {
-      enabled: false,
+      enabled: true,
       align: "center",
       verticalAlign: "top",
       layout: "horizontal",
@@ -167,8 +167,9 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         tooltip: {
           headerFormat:
-            '<b style="font-size: 14px; font-style: italic; color: #000000; font-family: Rubik, sans-serif">{series.name}</b><br>',
-          pointFormat: null,
+            '<b style="font-size: 14px; color: #000000; font-family: Rubik, sans-serif">{series.name}</b><br>',
+          pointFormat:
+            '<span style="color: #000000; font-family: Rubik, sans-serif">Regresión lineal</span>',
           style: {
             fontSize: "14px",
             fontFamily: "Rubik, sans-serif",

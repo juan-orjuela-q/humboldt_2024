@@ -22,263 +22,45 @@
     </h2>
   </div>
   <div class="col-group">
-    <div class="filters col-dt-3">
+    <div class="filters col-dt-4">
       <h3 class="align-l color-gris-osc title-filter">Filtra por:</h3>
-
-      <!-- Grupo biológico -->
-      <div class="filter-section">
-        <h4 class="align-l color-gris-osc subtitle-group">Grupo biológico</h4>
-        <div class="filter-options biological-filters">
-          <label class="filter-option biological">
-            <input
-              type="radio"
-              name="biological-group"
-              value="Reptil"
-              checked
-            />
-            <div class="custom-radio reptil">
-              <img
-                src="./input/img/Ficha-303-icono-reptil.png"
-                alt="Reptil"
-                class="filter-icon"
-              />
-            </div>
-            <span class="filter-label">Reptil</span>
-          </label>
-          <label class="filter-option biological">
-            <input type="radio" name="biological-group" value="Ave" />
-            <div class="custom-radio ave">
-              <img
-                src="./input/img/Ficha-303-icono-ave.png"
-                alt="Ave"
-                class="filter-icon"
-              />
-            </div>
-            <span class="filter-label">Ave</span>
-          </label>
-          <label class="filter-option biological">
-            <input type="radio" name="biological-group" value="Mamífero" />
-            <div class="custom-radio mamifero">
-              <img
-                src="./input/img/Ficha-303-icono-mamifero.png"
-                alt="Mamífero"
-                class="filter-icon"
-              />
-            </div>
-            <span class="filter-label">Mamífero</span>
-          </label>
-        </div>
+      <div class="filter-buttons">
+        <h4 class="align-l color-gris-osc subtitle-group">Grupo funcional</h4>
+        <button
+          class="filter-btn active bg-blue_pacific"
+          data-filter="Acuática"
+        >
+          <img class="filter-acuatica" src="" alt="Acuática" />
+          <span>Acuática</span>
+        </button>
+        <button class="filter-btn" data-filter="Semiacuática">
+          <img class="filter-semiacuatica" src="" alt="Semiacuática" />
+          <span>Semiacuática</span>
+        </button>
+        <button class="filter-btn" data-filter="Terrestre">
+          <img class="filter-terrestre" src="" alt="Terrestre" />
+          <span>Terrestre</span>
+        </button>
       </div>
-
-      <hr class="divider" />
-
-      <!-- Filtro de usos - Desplegable con Checkboxes Sí/No -->
-      <div class="filter-section">
-        <div class="dropdown-header" id="usos-dropdown-header">
-          <div class="dropdown-title">
-            <span>Usos</span>
-          </div>
-          <div class="dropdown-icon" id="usos-dropdown-icon">▼</div>
-        </div>
-        <div class="dropdown-content" id="usos-dropdown-content">
-          <!-- Alimento -->
-          <div class="use-toggle-group">
-            <div class="use-toggle-header">
-              <div class="use-icon-header">
-                <img
-                  src="./input/img/Ficha-303-icono-alimento.png"
-                  alt="Alimento"
-                  class="use-header-icon"
-                />
-                <span>Alimento:</span>
-                <div class="use-toggle-buttons">
-                  <button
-                    class="use-toggle-btn active"
-                    data-use="alimento"
-                    data-value="true"
-                  >
-                    Sí
-                  </button>
-                  <button
-                    class="use-toggle-btn"
-                    data-use="alimento"
-                    data-value="false"
-                  >
-                    No
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Comercio -->
-          <div class="use-toggle-group">
-            <div class="use-toggle-header">
-              <div class="use-icon-header">
-                <img
-                  src="./input/img/Ficha-303-icono-comercio.png"
-                  alt="Comercio"
-                  class="use-header-icon"
-                />
-                <span>Comercio:</span>
-                <div class="use-toggle-buttons">
-                  <button
-                    class="use-toggle-btn active"
-                    data-use="comercio"
-                    data-value="true"
-                  >
-                    Sí
-                  </button>
-                  <button
-                    class="use-toggle-btn"
-                    data-use="comercio"
-                    data-value="false"
-                  >
-                    No
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mascota -->
-          <div class="use-toggle-group">
-            <div class="use-toggle-header">
-              <div class="use-icon-header">
-                <img
-                  src="./input/img/Ficha-303-icono-mascota.png"
-                  alt="Mascota"
-                  class="use-header-icon"
-                />
-                <span>Mascota:</span>
-                <div class="use-toggle-buttons">
-                  <button
-                    class="use-toggle-btn active"
-                    data-use="mascota"
-                    data-value="true"
-                  >
-                    Sí
-                  </button>
-                  <button
-                    class="use-toggle-btn"
-                    data-use="mascota"
-                    data-value="false"
-                  >
-                    No
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Artesanía -->
-          <div class="use-toggle-group">
-            <div class="use-toggle-header">
-              <div class="use-icon-header">
-                <img
-                  src="./input/img/Ficha-303-icono-artesania.png"
-                  alt="Artesanía"
-                  class="use-header-icon"
-                />
-                <span>Artesanía:</span>
-                <div class="use-toggle-buttons">
-                  <button
-                    class="use-toggle-btn active"
-                    data-use="artesania"
-                    data-value="true"
-                  >
-                    Sí
-                  </button>
-                  <button
-                    class="use-toggle-btn"
-                    data-use="artesania"
-                    data-value="false"
-                  >
-                    No
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Medicina -->
-          <div class="use-toggle-group">
-            <div class="use-toggle-header">
-              <div class="use-icon-header">
-                <img
-                  src="./input/img/Ficha-303-icono-medicinal.png"
-                  alt="Medicina"
-                  class="use-header-icon"
-                />
-                <span>Medicina:</span>
-                <div class="use-toggle-buttons">
-                  <button
-                    class="use-toggle-btn active"
-                    data-use="medicina"
-                    data-value="true"
-                  >
-                    Sí
-                  </button>
-                  <button
-                    class="use-toggle-btn"
-                    data-use="medicina"
-                    data-value="false"
-                  >
-                    No
-                  </button>
-                </div>
-              </div>
-            </div>
+      <hr />
+      <div class="filter-group">
+        <div class="filter-select-container">
+          <div class="filter-select-container">
+            <select id="iucn-filter" class="filter-select">
+              <option value="all">Todas las categorías IUCN</option>
+              <option value="LC">LC</option>
+              <option value="NT">NT</option>
+              <option value="VU">VU</option>
+              <option value="EN">EN</option>
+              <option value="CR">CR</option>
+            </select>
           </div>
         </div>
       </div>
-
-      <hr class="divider" />
-
-      <!-- Filtro de índice de importancia cultural - Desplegable -->
-      <div class="filter-section">
-        <div class="dropdown-header" id="iic-dropdown-header">
-          <div class="dropdown-title">
-            <span>Índice de importancia cultural</span>
-          </div>
-          <div class="dropdown-icon" id="iic-dropdown-icon">▼</div>
-        </div>
-        <div class="dropdown-content" id="iic-dropdown-content">
-          <div class="filter-options iic-filters">
-            <label class="iic-filter-option">
-              <input type="checkbox" name="iic-filter" value="Alto" />
-              <div class="iic-color-circle alto"></div>
-              <span class="iic-filter-label">Alto</span>
-            </label>
-            <label class="iic-filter-option">
-              <input type="checkbox" name="iic-filter" value="Medio" />
-              <div class="iic-color-circle medio"></div>
-              <span class="iic-filter-label">Medio</span>
-            </label>
-            <label class="iic-filter-option">
-              <input type="checkbox" name="iic-filter" value="Bajo" />
-              <div class="iic-color-circle bajo"></div>
-              <span class="iic-filter-label">Bajo</span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- Botón para limpiar filtros -->
-      <button id="clear-filters" class="clear-filters-btn">
-        Limpiar filtros
-      </button>
     </div>
-
-    <div class="cards col-dt-9">
-      <h3 id="count" class="align-l color-gris-osc count-display">
-        Mostrando 0 especies
-      </h3>
-      <div id="species-cards" class="species-grid"></div>
+    <div class="cards col-dt-8">
+      <h3 id="count" class="align-l color-gris-osc"></h3>
+      <div id="species-cards"></div>
     </div>
   </div>
-</div>
-
-<div>
-  <img src="" alt="">
 </div>
