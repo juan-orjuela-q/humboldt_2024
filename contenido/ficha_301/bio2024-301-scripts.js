@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Contenido 2
-//Contenido 2
 const container = document.getElementById("proporcion-masa");
 if (container) {
   // Función para determinar el alto según el ancho de pantalla
@@ -43,11 +42,16 @@ if (container) {
     return window.innerWidth < 1175 ? "75%" : "90%";
   };
 
+  // Función para verificar si estamos en móvil
+  const isMobile = () => {
+    return window.innerWidth < 768; // Cambia este valor según tu breakpoint
+  };
+
   Highcharts.chart("proporcion-masa", {
     chart: {
       type: "column",
       backgroundColor: "none",
-      height: getChartHeight(), // Alto dinámico
+      height: getChartHeight(),
       style: {
         fontFamily: "Rubik, sans-serif",
         color: "#000",
@@ -55,8 +59,13 @@ if (container) {
       },
       events: {
         render: function() {
-          // Agregar iconos después de que el chart se renderice
-          addCustomIcons(this);
+          // Agregar iconos después de que el chart se renderice solo si NO es móvil
+          if (!isMobile()) {
+            addCustomIcons(this);
+          } else {
+            // Si es móvil, eliminar cualquier icono existente
+            removeCustomIcons(this);
+          }
         }
       }
     },
@@ -107,7 +116,7 @@ if (container) {
       lineWidth: 1
     },
     legend: {
-      enabled: true,
+      enabled: false,
       align: 'center',
       verticalAlign: 'bottom',
       layout: 'horizontal',
@@ -123,19 +132,26 @@ if (container) {
     plotOptions: {
       column: {
         borderWidth: 0,
-        color: "#F59C00",
+        // Cada barra tendrá su propio color
+        colors: ["#EC7A44", "#6DC6DA", "#D3FFBE", "#73B273"],
         dataLabels: {
           enabled: true,
           format: '{y}',
           style: {
             color: "#000",
             fontFamily: "Rubik, sans-serif",
-            fontSize: "14px",
+            fontSize: window.innerWidth < 768 ? "12px" : "14px", // Tamaño de fuente responsive
             textOutline: "none",
             fontWeight: "bold"
           },
           verticalAlign: 'top',
-          y: -20
+          y: window.innerWidth < 768 ? -20 : -25 // Ajustar posición en móvil
+        },
+        states: {
+          hover: {
+            enabled: true,
+            brightness: -0.1,
+          }
         }
       }
     },
@@ -144,37 +160,71 @@ if (container) {
         color: "#000",
         fontFamily: "Rubik, sans-serif",
         fontSize: "14px",
+        zIndex: 9999
       },
       backgroundColor: "#FFFFFF",
+      borderColor: "#ddd",
+      borderRadius: 8,
+      borderWidth: 1,
+      shadow: true,
+      useHTML: true,
       headerFormat:
-        '<span style="font-size:11px; color:#000; font-family: Rubik, sans-serif">{series.name}</span><br>',
+        '<div style="font-size:12px; color:#000; font-weight:bold; margin-bottom:5px;">{series.name}</div>',
       pointFormat:
-        '<span style="color:#00748B; font-family: Rubik, sans-serif">{point.name}</span>: <b style="color:#000; font-family: Rubik, sans-serif">{point.y}</b>',
+        '<div style="display:flex; align-items:center; gap:8px;">' +
+        '<div style="width:12px; height:12px; background-color:{point.color}; border-radius:2px;"></div>' +
+        '<span style="color:#00748B">{point.name}</span>: ' +
+        '<b style="color:#000">{point.y}</b>' +
+        '</div>',
+      positioner: function(labelWidth, labelHeight, point) {
+        var tooltipX, tooltipY;
+        var chart = this.chart;
+        var plotLeft = chart.plotLeft;
+        var plotTop = chart.plotTop;
+        var plotWidth = chart.plotWidth;
+        
+        if (point.plotX + labelWidth > plotWidth) {
+          tooltipX = point.plotX + plotLeft - labelWidth - 10;
+        } else {
+          tooltipX = point.plotX + plotLeft + 30;
+        }
+        
+        tooltipY = point.plotY + plotTop - labelHeight - 10;
+        
+        return {
+          x: tooltipX,
+          y: tooltipY
+        };
+      }
     },
     series: [
       {
         name: "Clase de animal depredado",
-        colorByPoint: false,
+        colorByPoint: true,
         data: [
           {
             name: "Cerdo",
             y: 34,
-            iconUrl: "./input/img/image 141.svg"
+            color: "#EC7A44",
+            iconUrl: "./input/img/ficha-301-icono-cerdo.png"
           },
           {
-            name: "Camero",
+            name: "Carnero",
             y: 27,
-            iconUrl: "./input/img/image 142.svg"
+            color: "#6DC6DA",
+            iconUrl: "./input/img/ficha-301-icono-carnero.png"
           },
           {
             name: "Perro",
             y: 22,
-            iconUrl: "./input/img/image 143.svg"
+            color: "#D3FFBE",
+            iconUrl: "./input/img/ficha-301-icono-perro.png"
           },
           {
             name: "Bovino",
             y: 12,
-            iconUrl: "./input/img/image 144.svg"
+            color: "#73B273",
+            iconUrl: "./input/img/ficha-301-icono-bovino.png"
           }
         ],
       },
@@ -185,8 +235,7 @@ if (container) {
 // Función para agregar iconos personalizados encima de cada barra
 function addCustomIcons(chart) {
   // Limpiar iconos anteriores
-  const existingIcons = chart.container.querySelectorAll('.custom-bar-icon');
-  existingIcons.forEach(icon => icon.remove());
+  removeCustomIcons(chart);
   
   // Agregar nuevos iconos
   chart.series[0].data.forEach((point, index) => {
@@ -200,19 +249,36 @@ function addCustomIcons(chart) {
       icon.src = point.options.iconUrl || 'default-icon.png';
       icon.alt = point.name;
       icon.style.position = 'absolute';
-      icon.style.width = '60px';
-      icon.style.height = '60px';
+      
+      // Tamaño responsive de los iconos
+      const iconSize = window.innerWidth < 1175 ? '30px' : '38px';
+      icon.style.width = iconSize;
+      icon.style.height = iconSize;
+      
       icon.style.objectFit = 'contain';
       icon.style.pointerEvents = 'none';
+      icon.style.zIndex = '5';
       
       // Posicionar el icono encima de la barra
-      icon.style.left = (barBox.x + barBox.width / 1.5) + 'px';
-      icon.style.top = (barBox.y - 70) + 'px';
+      const positionAdjustment = window.innerWidth < 1175 ? 1.3 : 1.2;
+      icon.style.left = (barBox.x + barBox.width / positionAdjustment) + 'px';
+      icon.style.top = (barBox.y - (window.innerWidth < 1175 ? 50 : 60)) + 'px';
       
       // Agregar el icono al contenedor del chart
       chart.container.appendChild(icon);
     }
   });
+}
+
+// Función para eliminar iconos personalizados
+function removeCustomIcons(chart) {
+  const existingIcons = chart.container.querySelectorAll('.custom-bar-icon');
+  existingIcons.forEach(icon => icon.remove());
+}
+
+// Función para verificar si estamos en móvil
+function isMobile() {
+  return window.innerWidth < 768; // Cambia este valor según tu breakpoint
 }
 
 // Función para redimensionar el chart cuando cambie el tamaño de la ventana
@@ -224,11 +290,27 @@ function handleResize() {
     chart.update({
       chart: {
         height: newHeight
+      },
+      plotOptions: {
+        column: {
+          dataLabels: {
+            style: {
+              fontSize: window.innerWidth < 768 ? "12px" : "14px"
+            },
+            y: window.innerWidth < 768 ? -20 : -25
+          }
+        }
       }
     });
     
-    // Re-renderizar los iconos
-    setTimeout(() => addCustomIcons(chart), 100);
+    // Re-renderizar los iconos solo si NO es móvil
+    setTimeout(() => {
+      if (!isMobile()) {
+        addCustomIcons(chart);
+      } else {
+        removeCustomIcons(chart);
+      }
+    }, 100);
   }
 }
 

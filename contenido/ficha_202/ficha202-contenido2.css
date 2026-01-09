@@ -34,6 +34,11 @@
   color: #33414a;
   font-size: 14px;
 }
+
+#data-table tbody td:first-child {
+  font-style: italic;
+}
+
 td{
   border-bottom: none !important;
 }
@@ -130,7 +135,7 @@ td{
 }
 .info-btn[data-tooltip]:hover::before,
 .info-btn[data-tooltip]:focus::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

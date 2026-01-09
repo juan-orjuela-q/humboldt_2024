@@ -20,105 +20,156 @@
   </div>
   <div class="col-dt-12 container-tabs">
     <div class="container-content">
-      <div>
-        <ul class="tab-group">
-          <li class="tab active">
-            <a href="#actual">Escenario actual</a>
+      <!-- Checkboxes a la izquierda -->
+      <div class="checkbox-container">
+        <ul class="checkbox-group">
+          <li>
+            <input type="radio" id="radio-actual" name="escenario" checked />
+            <label for="radio-actual">
+              <span class="checkbox-custom"></span>
+              Escenario actual
+            </label>
           </li>
-          <li class="tab">
-            <a href="#tendencial">Escenario tendencial</a>
+          <li>
+            <input type="radio" id="radio-tendencial" name="escenario" />
+            <label for="radio-tendencial">
+              <span class="checkbox-custom"></span>
+              Escenario tendencial
+            </label>
           </li>
-          <li class="tab">
-            <a href="#pesimista">Escenario pesimista</a>
+          <li>
+            <input type="radio" id="radio-pesimista" name="escenario" />
+            <label for="radio-pesimista">
+              <span class="checkbox-custom"></span>
+              Escenario pesimista
+            </label>
           </li>
         </ul>
-        <div class="line-tabs bg-green_clear"></div>
       </div>
 
-      <div class="tab-content">
-        <div id="tendencial" class="tab-container">
-          <div class="text-container">
-            <h3>(2021-2040)</h3>
-            <p>
-              Este escenario supone cumplir la meta de 2 °C en la temperatura
-              media.
-            </p>
-          </div>
-          <div class="img-container col-group">
-            <div class="elemento-gradiente col-dt-1">
-              <div class="texto-superior">Mayor</div>
-              <div class="cuadro-gradiente tendencial"></div>
-              <div class="texto-inferior">Menor</div>
+      <!-- Contenido principal a la derecha -->
+      <div class="main-content">
+        <div class="tab-content">
+          <!-- Escenario Tendencial -->
+          <div id="tendencial" class="tab-container">
+            <div class="text-container">
+              <h3>Escenario tendencial</h3>
             </div>
-            <div class="map-container col-dt-11">
-              <img
-                class=""
-                src="./input/img/ficha-206-mapa-escenario-tendencial.png"
-                alt="mapa tendencial"
-              />
-              <img
-                class="map-colombia"
-                src="./input/img/ficha-206-mapa-general.png"
-                alt="mapa Colombia"
-              />
-            </div>
-          </div>
-        </div>
-        <div id="pesimista" class="tab-container">
-          <div class="text-container">
-            <h3>(2021-2040)</h3>
-            <p>
-              Este escenario supone un incremento superior a 2 °C en la
-              temperatura media. Mayor
-            </p>
-          </div>
-          <div class="img-container col-group">
-            <div class="elemento-gradiente col-dt-1">
-              <div class="texto-superior">Mayor</div>
-              <div class="cuadro-gradiente pesimista"></div>
-              <div class="texto-inferior">Menor</div>
-            </div>
-            <div class="map-container col-dt-11">
-              <img
-                class=""
-                src="./input/img/ficha-206-mapa-escenario-pesimista.png"
-                alt="mapa pesimista"
-              />
-              <img
-                class="map-colombia"
-                src="./input/img/ficha-206-mapa-general.png"
-                alt="mapa Colombia"
-              />
+            <div class="img-container col-group">
+              <div class="map-container col-dt-9">
+                <img
+                  src="./input/img/ficha-206-mapa-escenario-tendencial.png"
+                  alt="mapa tendencial"
+                />
+              </div>
+              <div class="container-info col-dt-3">
+                <div class="departamentos-lista">
+                  <h4>Departamentos</h4>
+                  <ul>
+                    <li>San Andrés y Providencia</li>
+                    <li>La Guajira</li>
+                    <li>Atlántico</li>
+                    <li>Magdalena</li>
+                    <li>César</li>
+                    <li>Sucre</li>
+                    <li>Bolívar</li>
+                    <li>Córdoba</li>
+                    <li>Antioquia</li>
+                  </ul>
+                </div>
+                <div class="elemento-gradiente">
+                  <div class="texto-superior">Mayor</div>
+                  <div class="cuadro-gradiente gradient-color"></div>
+                  <div class="texto-inferior">Menor</div>
+                </div>
+                <img
+                  class="map-colombia"
+                  src="./input/img/ficha-206-mapa-general.png"
+                  alt="mapa Colombia"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div id="actual" class="tab-container">
-          <div class="text-container">
-            <h3>(2021-2040)</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Blanditiis eveniet nesciunt at unde maiores cumque delectus odit
-              veritatis, perferendis numquam, quaerat voluptas magnam, dolorem
-              illum facilis molestias ratione molestiae! Nesciunt?
-            </p>
-          </div>
-          <div class="img-container col-group">
-            <div class="elemento-gradiente col-dt-1">
-              <div class="texto-superior">Mayor</div>
-              <div class="cuadro-gradiente actual"></div>
-              <div class="texto-inferior">Menor</div>
+
+          <!-- Escenario Pesimista -->
+          <div id="pesimista" class="tab-container">
+            <div class="text-container">
+              <h3>Escenario pesimista</h3>            
             </div>
-            <div class="map-container col-dt-11">
-              <img
-                class=""
-                src="./input/img/ficha-206-mapa-escenario-actual.png"
-                alt="mapa actual"
-              />
-              <img
-                class="map-colombia"
-                src="./input/img/ficha-206-mapa-general.png"
-                alt="mapa Colombia"
-              />
+            <div class="img-container col-group">
+              <div class="map-container col-dt-9">
+                <img
+                  src="./input/img/ficha-206-mapa-escenario-pesimista.png"
+                  alt="mapa pesimista"
+                />
+              </div>
+              <div class="container-info col-dt-3">
+                <div class="departamentos-lista">
+                  <h4>Departamentos</h4>
+                  <ul>
+                    <li>San Andrés y Providencia</li>
+                    <li>La Guajira</li>
+                    <li>Atlántico</li>
+                    <li>Magdalena</li>
+                    <li>César</li>
+                    <li>Sucre</li>
+                    <li>Bolívar</li>
+                    <li>Córdoba</li>
+                    <li>Antioquia</li>
+                  </ul>
+                </div>
+                <div class="elemento-gradiente">
+                  <div class="texto-superior">Mayor</div>
+                  <div class="cuadro-gradiente gradient-color"></div>
+                  <div class="texto-inferior">Menor</div>
+                </div>
+                <img
+                  class="map-colombia"
+                  src="./input/img/ficha-206-mapa-general.png"
+                  alt="mapa Colombia"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Escenario Actual -->
+          <div id="actual" class="tab-container">
+            <div class="text-container">
+              <h3>Escenario actual</h3>             
+            </div>
+            <div class="img-container col-group">
+              <div class="map-container col-dt-9">
+                <img
+                  src="./input/img/ficha-206-mapa-escenario-actual.png"
+                  alt="mapa actual"
+                />
+              </div>
+              <div class="container-info col-dt-3">
+                <div class="departamentos-lista">
+                  <h4>Departamentos</h4>
+                  <ul>
+                    <li>San Andrés y Providencia</li>
+                    <li>La Guajira</li>
+                    <li>Atlántico</li>
+                    <li>Magdalena</li>
+                    <li>César</li>
+                    <li>Sucre</li>
+                    <li>Bolívar</li>
+                    <li>Córdoba</li>
+                    <li>Antioquia</li>
+                  </ul>
+                </div>
+                <div class="elemento-gradiente">
+                  <div class="texto-superior">Mayor</div>
+                  <div class="cuadro-gradiente gradient-color"></div>
+                  <div class="texto-inferior">Menor</div>
+                </div>
+                <img
+                  class="map-colombia"
+                  src="./input/img/ficha-206-mapa-general.png"
+                  alt="mapa Colombia"
+                />
+              </div>
             </div>
           </div>
         </div>

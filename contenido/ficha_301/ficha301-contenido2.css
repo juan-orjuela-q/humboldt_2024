@@ -65,8 +65,7 @@
 }
 
 body {
-  background-image: url("./input/img/ficha-301-imagen.png") !important;
-  background-position: center !important;
+  background-image: url("./input/img/ficha-301-fondo.jpg") !important;
   background-repeat: no-repeat !important;
   min-height: 300px;
   max-height: 1450px;
@@ -74,6 +73,13 @@ body {
   background-size: cover !important;
 }
 
+.info-container {
+  background-color: #fff;
+  padding: 30px 20px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 700px;
+}
 .title-container {
   display: flex;
   gap: 10px;
@@ -81,8 +87,17 @@ body {
   max-width: 550px;
 }
 
-@media screen and (max-width: 1175px) {
-  
-  
-
+@media screen and (max-width: 450px) {
+  body {
+    background-size: contain !important;
+  }
+  .info-container {
+    padding: 10px !important;
+  }
+  .highcharts-root{
+    width: 290px !important;
+  }
+  .highcharts-figure{
+    margin: 0 !important;
+  }
 }
