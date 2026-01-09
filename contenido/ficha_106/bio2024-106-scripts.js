@@ -432,7 +432,7 @@ if (container) {
     "barranquilla-graphic",
     Highcharts.merge(commonChartConfig, {
       title: {
-        text: "Expedición científica sobre la biodiversidad funcional en agroecosistemas",
+        text: "Expedición científica piloto a una biodiverciudad con enfoque de bioeconomía",
       },
       subtitle: {
         text: "Número de plantas útiles: 145 <br /> Número de plantas útiles nativas: 56 ",
@@ -446,49 +446,49 @@ if (container) {
           data: [
             {
               name: "Medicinal",
-              y: 1080,
+              y: 66,
               sliced: false,
               selected: true,
               color: unifiedColors["Medicinal"],
             },
             {
               name: "Alimentos",
-              y: 585,
+              y: 33,
               color: unifiedColors["Alimentos"],
             },
             {
               name: "Materiales",
-              y: 412,
+              y: 9,
               color: unifiedColors["Materiales"],
             },
             {
               name: "Usos ambientales",
-              y: 279,
+              y: 2,
               color: unifiedColors["Usos ambientales"],
             },
             {
               name: "Alimento de animales",
-              y: 170,
+              y: 3,
               color: unifiedColors["Alimento de animales"],
             },
             {
               name: "Cosméticos",
-              y: 157,
+              y: 2,
               color: unifiedColors["Cosméticos"],
             },
             {
               name: "Sociales (incluye espiritual y religioso)",
-              y: 110,
+              y: 23,
               color: unifiedColors["Sociales (incluye espiritual y religioso)"],
             },
             {
               name: "Veneno o tóxico",
-              y: 66,
+              y: 1,
               color: unifiedColors["Veneno o tóxico"],
             },
             {
               name: "Leña o combustible",
-              y: 50,
+              y: 0,
               color: unifiedColors["Leña o combustible"],
             },
           ],
@@ -502,7 +502,7 @@ if (container) {
     "becerril-graphic",
     Highcharts.merge(commonChartConfig, {
       title: {
-        text: "Plantas y hongos útiles de Colombia (KEW",
+        text: "Plantas y hongos útiles de Colombia (KEW)",
       },
       subtitle: {
         text: "Número de plantas útiles: 208 <br /> Número de plantas útiles nativas: 137 ",
