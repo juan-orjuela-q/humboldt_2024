@@ -1,30 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Sistema de tabs
-  document.querySelectorAll(".tab a").forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      // Remover clase active de todos los padres
-      document.querySelectorAll(".tab").forEach((tab) => {
-        tab.classList.remove("active");
-      });
-
-      // Agregar clase active al padre del enlace clickeado
-      this.parentElement.classList.add("active");
-
-      const target = this.getAttribute("href");
-
+  // Sistema de radio buttons para cambiar entre pestañas
+  document.querySelectorAll('input[name="escenario"]').forEach((radio) => {
+    radio.addEventListener("change", function () {
       // Ocultar todos los contenidos de pestañas
       document.querySelectorAll(".tab-content > div").forEach((content) => {
         content.style.display = "none";
+        content.style.opacity = "0";
       });
 
-      // Mostrar el contenido objetivo con fadeIn
-      const targetElement = document.querySelector(target);
+      // Mostrar el contenido correspondiente al radio button seleccionado
+      let targetId = "";
+      switch (this.id) {
+        case "radio-actual":
+          targetId = "actual";
+          break;
+        case "radio-tendencial":
+          targetId = "tendencial";
+          break;
+        case "radio-pesimista":
+          targetId = "pesimista";
+          break;
+      }
+
+      const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.style.display = "block";
-        targetElement.style.opacity = "0";
-
+        
+        // Efecto fadeIn
         let opacity = 0;
         const fadeIn = setInterval(() => {
           if (opacity >= 1) {
@@ -36,6 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Activar el primer radio button por defecto
+  document.getElementById("radio-actual").checked = true;
+  const actualElement = document.getElementById("actual");
+  if (actualElement) {
+    actualElement.style.display = "block";
+    actualElement.style.opacity = "1";
+  }
 });
 
 
@@ -121,17 +131,17 @@ if (contenido2) {
       {
         name: "Actual",
         data: [3147, 3456, 1796, 3151, 2668, 1975, 1285],
-        color: "#00748B",
+        color: "#176B71",
       },
       {
         name: "Escenario tendencial",
         data: [3000, 3263, 1421, 2894, 2490, 1448, 1224],
-        color: "#F59C00",
+        color: "#4AB9AD",
       },
       {
         name: "Escenario pesimista",
         data: [2980, 3301, 1420, 2928, 2458, 1441, 1232],
-        color: "#E74C3C",
+        color: "#E9C101",
       },
     ],
   });
@@ -219,7 +229,7 @@ if (contenido3) {
       {
         name: "Escenario tendencial",
         data: [60.68, 46.58, 53.42, 38.64, 57.13, 56.86, 70.87],
-        color: "#00748B",
+        color: "#176B71",
       },
       {
         name: "Escenario pesimista",

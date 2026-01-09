@@ -1,213 +1,279 @@
-// Datos de la fauna silvestre
+// Datos de la fauna silvestre exactamente como en la imagen
 const faunaData = [
   {
     id: 1,
-    nombre: "Zaino",
-    nombreCientifico: "Dicotyles tajacu",
-    familia: "Tayassuidae",
-    imagen: "./input/img/ficha-302-zaino.png",
+    orden: "Artiodactyla",
+    familia: "Tayas-suldae",
+    especie: "Dicotyles tajecu",
+    nombreComun: "Zaino",
     precioCompra: "$ 18 000",
     precioVenta: "$ 22 000",
-    unidad: "(kg)"
+    imagen: "./input/img/ficha-302-zaino.png", // Ruta de ejemplo
   },
   {
     id: 2,
-    nombre: "Venado",
-    nombreCientifico: "Mazama americana",
+    orden: "Artiodactyla",
     familia: "Cervidae",
-    imagen: "./input/img/ficha-302-venado.png",
+    especie: "Mazama americana",
+    nombreComun: "Venado",
     precioCompra: "$ 12 000",
     precioVenta: "$ 25 000",
-    unidad: "(kg)"
+    imagen: "./input/img/ficha-302-venado.png",
   },
   {
     id: 3,
-    nombre: "Ñeque",
-    nombreCientifico: "Dasyprocta punctata",
-    familia: "Dasyproctidae",
-    imagen: "./input/img/ficha-302-neque.png",
-    precioCompra: "$ 13 000",
-    precioVenta: "$ 18 000",
-    unidad: "(kg)"
+    orden: "Anseriformes",
+    familia: "Anatidae",
+    especie: "Dendrocygna autumnalis",
+    nombreComun: "Pisingo",
+    precioCompra: "$ 4000 c/u",
+    precioVenta: "$ 6000 c/u",
+    imagen: "./input/img/ficha-302-pisingo.png",
   },
   {
     id: 4,
-    nombre: "Ponche",
-    nombreCientifico: "Hydrochoenus isthmius",
-    familia: "Caviidae",
-    imagen: "./input/img/ficha-302-ponche.png",
-    precioCompra: "$ 13 000",
-    precioVenta: "$ 18 000",
-    unidad: "(kg)"
+    orden: "Rodentia",
+    familia: "Caviidae", 
+    especie: "Anas discors",
+    nombreComun: "Barraquete",
+    precioCompra: "$ 2000 c/u",
+    precioVenta: "$ 4000 c/u",
+    imagen: "./input/img/ficha-302-barraquete.png",
   },
   {
     id: 5,
-    nombre: "Guartinaja",
-    nombreCientifico: "Cuniculus paca",
-    familia: "Cuniculidae",
-    imagen: "./input/img/ficha-302-guartinaja.png",
-    precioCompra: "$ 20 000",
-    precioVenta: "$ 25 000",
-    unidad: "(kg)"
+    orden: "Cingulata",
+    familia: "Dasypodidae",
+    especie: "Dasypus novemcinctus",
+    nombreComun: "Armadillo",
+    precioCompra: "$ 24 000",
+    precioVenta: "$ 30 000",
+    imagen: "./input/img/ficha-302-armadillo.png",
   },
   {
     id: 6,
-    nombre: "Armadillo",
-    nombreCientifico: "Dasypus novemcinctus",
-    familia: "Dasypodidae",
-    imagen: "./input/img/ficha-302-armadillo.png",
-    precioCompra: "$ 24 000",
-    precioVenta: "$ 30 000",
-    unidad: "(kg)"
+    orden: "Rodentia",
+    familia: "Dasyproctidae",
+    especie: "Dasyprocta punctata",
+    nombreComun: "Neque",
+    precioCompra: "$ 13 000",
+    precioVenta: "$ 18 000",
+    imagen: "./input/img/ficha-302-neque.png",
   },
   {
     id: 7,
-    nombre: "Conejo",
-    nombreCientifico: "Sylvilagus floridanus",
-    familia: "Leporidae",
-    imagen: "./input/img/ficha-302-conejo.png",
-    precioCompra: "$ 24 000",
-    precioVenta: "$ 30 000",
-    unidad: "(kg)"
+    orden: "Rodentia", 
+    familia: "Cavilidae",
+    especie: "Hydrochoerus sthmius",
+    nombreComun: "Ponche",
+    precioCompra: "$ 13 000",
+    precioVenta: "$ 18 000",
+    imagen: "./input/img/ficha-302-ponche.png",
   },
   {
     id: 8,
-    nombre: "Morrocoyo",
-    nombreCientifico: "Chelonoidis carbonarius",
-    familia: "Testudinidae",
-    imagen: "./input/img/ficha-302-morrocoyo.png",
-    precioCompra: "$ 6 000",
-    precioVenta: "$ 10 000",
-    unidad: "(kg)"
+    orden: "Rodentia",
+    familia: "Cuniculidae",
+    especie: "Cuniculus paca",
+    nombreComun: "Guartinaja",
+    precioCompra: "$ 20 000",
+    precioVenta: "$ 25 000",
+    imagen: "./input/img/ficha-302-guartinaja.png",
   },
   {
     id: 9,
-    nombre: "Hicotea",
-    nombreCientifico: "Trachemys callirostris",
-    familia: "Emydidae",
-    imagen: "./input/img/ficha-302-Hicotea.png",
-    precioCompra: "$ 6 000",
-    precioVenta: "$ 10 000",
-    unidad: "c/u"
+    orden: "Lagomorpha",
+    familia: "Leporidae",
+    especie: "Sylvilagus floridanus",
+    nombreComun: "Conejo",
+    precioCompra: "$ 24 000",
+    precioVenta: "$ 30 000",
+    imagen: "./input/img/ficha-302-conejo.png",
   },
   {
     id: 10,
-    nombre: "Pisingo",
-    nombreCientifico: "Dendrocygna autumnalis",
-    familia: "Anatidae",
-    imagen: "./input/img/ficha-302-pisingo.png",
-    precioCompra: "$ 4 000",
-    precioVenta: "$ 6 000",
-    unidad: "c/u"
+    orden: "Pelecaniformes",
+    familia: "Phalacroconacidae",
+    especie: "Phalacroconax brasilianus",
+    nombreComun: "Pato yuyo",
+    precioCompra: "$ 3000 c/u",
+    precioVenta: "$ 7000 c/u",
+    imagen: "./input/img/ficha-302-pato.png",
   },
   {
     id: 11,
-    nombre: "Barraquete",
-    nombreCientifico: "Anas discors",
-    familia: "Anatidae",
-    imagen: "./input/img/ficha-302-barraquete.png",
-    precioCompra: "$ 2 000",
-    precioVenta: "$ 4 000",
-    unidad: "c/u"
+    orden: "Testudines",
+    familia: "Testudinidae",
+    especie: "Chelonoidis carbonarius",
+    nombreComun: "Morrocoyo",
+    precioCompra: "$ 6000",
+    precioVenta: "$ 10 000",
+    imagen: "./input/img/ficha-302-morrocoyo.png",
   },
   {
     id: 12,
-    nombre: "Pato yuyo",
-    nombreCientifico: "Phalacrocorax brasilianus",
-    familia: "Phalacrocoracidae",
-    imagen: "./input/img/ficha-302-pato.png",
-    precioCompra: "$ 3 000",
-    precioVenta: "$ 7 000",
-    unidad: "c/u"
-  }
+    orden: "Testudines",
+    familia: "Emydidae",
+    especie: "Trachemys callirostris",
+    nombreComun: "Hicotea",
+    precioCompra: "$ 6000",
+    precioVenta: "$ 10 000",
+    imagen: "./input/img/ficha-302-Hicotea.png",
+  },
 ];
 
-// Variables de paginación
-let currentPage = 1;
-const itemsPerPage = 6;
-let totalPages = Math.ceil(faunaData.length / itemsPerPage);
+// Variables de ordenación
+let currentSort = { column: null, direction: "asc" };
+let sortedData = [...faunaData];
+
+// Mapeo de imágenes por especie (aquí puedes cambiar las rutas)
+const imageMap = {
+  "Dicotyles tajecu": "./input/img/ficha-302-zaino.png",
+  "Mazama americana": "./input/img/ficha-302-venado.png",
+  "Dendrocygna autumnalis": "./input/img/ficha-302-pisingo.png",
+  "Anas discors": "./input/img/ficha-302-barraquete.png",
+  "Dasypus novemcinctus": "./input/img/ficha-302-armadillo.png",
+  "Dasyprocta punctata": "./input/img/ficha-302-neque.png",
+  "Hydrochoerus sthmius": "./input/img/ficha-302-ponche.png",
+  "Cuniculus paca": "./input/img/ficha-302-guartinaja.png",
+  "Sylvilagus floridanus": "./input/img/ficha-302-conejo.png",
+  "Phalacroconax brasilianus": "./input/img/ficha-302-pato.png",
+  "Chelonoidis carbonarius": "./input/img/ficha-302-morrocoyo.png",
+  "Trachemys callirostris": "./input/img/ficha-302-Hicotea.png",
+};
 
 // Función para generar las filas de la tabla
 function generarFilasTabla() {
-  const tbody = document.getElementById('fauna-tbody');
-  tbody.innerHTML = '';
+  const tbody = document.getElementById("fauna-tbody");
+  tbody.innerHTML = "";
 
-  faunaData.forEach((animal, index) => {
-    const row = document.createElement('tr');
-    row.className = 'simple-table fauna-row';
-    row.setAttribute('data-id', animal.id);
-    
-    row.innerHTML = `
-      <td class="img-column">
-        <img src="${animal.imagen}" alt="${animal.nombre}" />
-        <div>
-          <p class="name">${animal.nombre}</p>
-          <p class="scientific-name">${animal.nombreCientifico}</p>
-          <p class="family">Familia: ${animal.familia}</p>
+  sortedData.forEach((animal, index) => {
+    const row = document.createElement("tr");
+    row.className = "fauna-row";
+    row.setAttribute("data-id", animal.id);
+
+    // Determinar la clase para la celda de orden
+    const ordenClass =
+      animal.orden === "" ? "orden-column empty-orden" : "orden-column";
+
+    // Obtener imagen para esta especie
+    const animalImage = animal.imagen || imageMap[animal.especie] || "";
+
+    // Crear contenido de la celda de orden
+    let ordenContent = animal.orden;
+    if (animalImage && animal.orden !== "") {
+      ordenContent = `
+        <div class="orden-cell">
+          <img src="${animalImage}" alt="${animal.nombreComun}" />
+          <span class="orden-text">${animal.orden}</span>
         </div>
-      </td>
-      <td>
-        <p class="price-label">Precio de compra ${animal.unidad}</p>
-        <p class="price-value">${animal.precioCompra}</p>
-      </td>
-      <td>
-        <p class="price-label">Precio de venta ${animal.unidad}</p>
-        <p class="price-value">${animal.precioVenta}</p>
-      </td>
+      `;
+    }
+
+    row.innerHTML = `
+      <td class="${ordenClass}">${ordenContent}</td>
+      <td class="familia-column">${animal.familia}</td>
+      <td class="especie-column"><em>${animal.especie}</em></td>
+      <td class="nombre-column"><strong>${animal.nombreComun}</strong></td>
+      <td class="precio-column">${animal.precioCompra}</td>
+      <td class="precio-column">${animal.precioVenta}</td>
     `;
-    
+
     tbody.appendChild(row);
   });
-
-  actualizarPaginacion();
 }
 
-// Función para actualizar la paginación
-function actualizarPaginacion() {
-  // Ocultar todas las filas
-  const todasLasFilas = document.querySelectorAll('.fauna-row');
-  todasLasFilas.forEach(row => row.classList.remove('active'));
-  
-  // Mostrar solo las filas de la página actual
-  const inicio = (currentPage - 1) * itemsPerPage;
-  const fin = inicio + itemsPerPage;
-  
-  for (let i = inicio; i < fin && i < todasLasFilas.length; i++) {
-    todasLasFilas[i].classList.add('active');
+// Función para ordenar los datos
+function sortData(column) {
+  // Remover clase active-sort de todos los encabezados
+  document.querySelectorAll(".fauna-table th").forEach((th) => {
+    th.classList.remove("active-sort");
+  });
+
+  // Si es la misma columna, invertir dirección
+  if (currentSort.column === column) {
+    currentSort.direction = currentSort.direction === "asc" ? "desc" : "asc";
+  } else {
+    // Nueva columna, orden ascendente por defecto
+    currentSort.column = column;
+    currentSort.direction = "asc";
   }
-  
-  // Actualizar información de página
-  document.getElementById('page-info').textContent = `Página ${currentPage} de ${totalPages}`;
-  
-  // Actualizar estado de los botones
-  document.getElementById('prev-page').disabled = currentPage === 1;
-  document.getElementById('next-page').disabled = currentPage === totalPages;
+
+  // Añadir clase active-sort al encabezado actual
+  const currentTh = document.querySelector(
+    `.fauna-table th[data-column="${column}"]`
+  );
+  if (currentTh) {
+    currentTh.classList.add("active-sort");
+  }
+
+  // Ordenar los datos
+  sortedData.sort((a, b) => {
+    let aValue = a[column];
+    let bValue = b[column];
+
+    // Para manejar celdas vacías
+    if (aValue === "") aValue = "zzzzzzzzzz"; // Colocar al final
+    if (bValue === "") bValue = "zzzzzzzzzz"; // Colocar al final
+
+    // Para orden alfabético
+    if (typeof aValue === "string") {
+      aValue = aValue.toLowerCase();
+      bValue = bValue.toLowerCase();
+    }
+
+    if (aValue < bValue) {
+      return currentSort.direction === "asc" ? -1 : 1;
+    }
+    if (aValue > bValue) {
+      return currentSort.direction === "asc" ? 1 : -1;
+    }
+    return 0;
+  });
+
+  // Actualizar indicadores visuales
+  updateSortHeaders();
+
+  // Regenerar la tabla
+  generarFilasTabla();
 }
 
-// Función para cambiar de página
-function cambiarPagina(direccion) {
-  if (direccion === 'next' && currentPage < totalPages) {
-    currentPage++;
-  } else if (direccion === 'prev' && currentPage > 1) {
-    currentPage--;
+// Función para actualizar indicadores de ordenación
+function updateSortHeaders() {
+  // Remover todas las clases de ordenación
+  document.querySelectorAll(".fauna-table th").forEach((th) => {
+    th.classList.remove("sorted-asc", "sorted-desc");
+  });
+
+  // Añadir clase a la columna actualmente ordenada
+  if (currentSort.column) {
+    const currentTh = document.querySelector(
+      `.fauna-table th[data-column="${currentSort.column}"]`
+    );
+    if (currentTh) {
+      currentTh.classList.add(
+        currentSort.direction === "asc" ? "sorted-asc" : "sorted-desc"
+      );
+    }
   }
-  actualizarPaginacion();
 }
 
 // Inicializar cuando el DOM esté cargado
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
+  // Generar la tabla inicial
   generarFilasTabla();
-  
-  // Event listeners para los botones de paginación
-  document.getElementById('prev-page').addEventListener('click', () => cambiarPagina('prev'));
-  document.getElementById('next-page').addEventListener('click', () => cambiarPagina('next'));
+
+  // Event listeners para ordenación de columnas
+  document.querySelectorAll(".fauna-table th.sortable").forEach((th) => {
+    th.addEventListener("click", () => {
+      const column = th.getAttribute("data-column");
+      sortData(column);
+    });
+  });
 });
 
-// También exportar funciones para uso externo si es necesario
-window.faunaPaginacion = {
-  cambiarPagina,
-  actualizarPaginacion,
-  generarFilasTabla
+// Exportar funciones para uso externo
+window.faunaOrdenacion = {
+  sortData,
+  generarFilasTabla,
 };
-
-

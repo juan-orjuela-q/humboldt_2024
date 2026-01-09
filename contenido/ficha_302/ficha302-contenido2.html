@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="ficha302-contenido2.css" />
 <script src="bio2024-302-scripts.js" defer></script>
-<script src="fauna-paginacion.js" defer></script>
 <link rel="stylesheet" href="../../general/animate.css" />
 <link rel="stylesheet" href="../../general/chapters.css" />
 <link rel="stylesheet" href="../../general/colors-v3.css" />
@@ -11,6 +10,7 @@
 <link rel="stylesheet" href="../../general/main-v3.css" />
 <link rel="stylesheet" href="../../general/sonar.min.css" />
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <div class="align-l container">
   <div class="col-group info-container">
@@ -22,22 +22,45 @@
         Fauna silvestre comercializada en la región Caribe
       </h2>
     </div>
-    <div class="col-dt-6">
-      <!-- Contenedor de la tabla con paginación -->
-      <div id="fauna-table-container">
-        <table>
-          <tbody id="fauna-tbody">
-            <!-- Las filas se generarán dinámicamente con JavaScript -->
-          </tbody>
-        </table>
 
-        <!-- Controles de paginación -->
-        <div class="pagination-controls">
-          <button id="prev-page" class="pagination-btn">Anterior</button>
-          <span id="page-info" class="page-info">Página 1 de 2</span>
-          <button id="next-page" class="pagination-btn">Siguiente</button>
-        </div>
+    <div class="col-dt-12">
+      <!-- Tabla con encabezados ordenables -->
+      <table class="fauna-table">
+        <thead>
+          <tr>
+            <th class="sortable" data-column="orden"><span>Orden</span></th>
+            <th class="sortable" data-column="familia"><span>Familia</span></th>
+            <th class="sortable" data-column="especie"><span>Especie</span></th>
+            <th class="sortable" data-column="nombreComun">
+              <span>Nombre común</span>
+            </th>
+            <th class="sortable" data-column="precioCompra">
+              <span>Precio de compra (kg)</span>
+            </th>
+            <th class="sortable" data-column="precioVenta">
+              <span>Precio de venta (kg)</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="fauna-tbody">
+          <!-- Las filas se generarán dinámicamente con JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="img-container">
+  <img src="./input/img/ficha-302-fondo.png" alt="Comercio fauna silvestre" />
+  <div class="cerdo-description">
+    <div class="gris-texto align-l">
+      <div class="cerdo-description-category">
+        <img src="./input/img/ficha-302-zaino.png" alt="Zaino" />
+        <span class="status-cerdo">LC</span>
       </div>
+      <span><strong>Zaino</strong></span>
+      <br />
+      <span class="scientific-name">Dicotyles tajacu</span>
     </div>
   </div>
 </div>

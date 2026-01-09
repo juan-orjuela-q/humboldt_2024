@@ -1,6 +1,9 @@
-// Contenido 1
-const contenido2 = document.getElementById("tendencia-perdida");
-if (contenido2) {
+// ============================================
+// CONTENIDO 1 - GRÁFICO DE COLUMNAS
+// ============================================
+
+const contenido1 = document.getElementById("tendencia-perdida");
+if (contenido1) {
   Highcharts.chart("tendencia-perdida", {
     chart: {
       type: "column",
@@ -11,7 +14,7 @@ if (contenido2) {
       },
     },
     title: {
-      text: "Frecuencia de uso de especies por tipo y grupo biológico",
+      text: null,
       style: {
         color: "#000",
         fontSize: "16px",
@@ -22,7 +25,7 @@ if (contenido2) {
       text: null,
     },
     xAxis: {
-      categories: ["Mascota", "Tipo de uso"],
+      categories: ["Consumo", "Comercio", "Mascota", "Artesanía", "Medicina"],
       crosshair: true,
       labels: {
         style: {
@@ -79,424 +82,1163 @@ if (contenido2) {
     series: [
       {
         name: "Aves",
-        data: [773, 534],
-        color: "#00748B",
+        data: [621, 387, 773, 5, 1],
+        color: "#EC7A44",
       },
       {
         name: "Mamíferos",
-        data: [621, 487],
-        color: "#F59C00",
+        data: [642, 454, 534, 63, 15],
+        color: "#4AB9AD",
       },
       {
         name: "Reptiles",
-        data: [642, 454],
-        color: "#E74C3C",
+        data: [289, 239, 128, 93, 38],
+        color: "#056C88",
       },
     ],
   });
 }
 
-// Contenido 2
+// ============================================
+// CONTENIDO 2 - SISTEMA DE FILTROS
+// ============================================
+
+// Datos de especies
 const speciesData = [
   {
-    type: "Acuática",
-    speciesName: "Pímpano",
-    scientificName: "Chelydra acutirostris",
-    endemica: "No",
-    family: "Chelydridae",
-    habitat: "Cuerpos pequeños de agua",
-    status: "",
-    statusClass: "NT",
-    uses: {
-      alimento: true,
-      mascota: false,
-      medicina: true,
-      comercio: true,
-      artesania: true,
-    },
-    iic: 1,
+    grupo: "Reptil",
+    nombreCientifico: "Boa constrictor",
+    nombreComun: "Boa",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: true,
+    iic: 1.0,
     iicLevel: "Alto",
   },
   {
-    type: "Terrestre",
-    speciesName: "Montañera",
-    scientificName: "Rhinoclemmys annulata",
-    endemica: "No",
-    family: "Geoemydidae",
-    habitat: "Bosques húmedos",
-    status: "",
-    statusClass: "NT",
-    uses: {
-      alimento: false,
-      mascota: true,
-      medicina: true,
-      comercio: true,
-      artesania: false,
-    },
-    iic: 0.7,
+    grupo: "Reptil",
+    nombreCientifico: "Bothrops asper",
+    nombreComun: "Mapaná",
+    alimento: false,
+    comercio: true,
+    mascota: false,
+    artesania: false,
+    medicina: true,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Reptil",
+    nombreCientifico: "Crocodylus acutus",
+    nombreComun: "Caimán aguja",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: true,
+    iic: 0.51,
     iicLevel: "Medio",
   },
   {
-    type: "Semiacuática",
-    speciesName: "Palmera",
-    scientificName: "Rhinoclemmys melanosterna",
-    endemica: "No",
-    family: "Geoemydidae",
-    habitat: "Ríos, arroyos, ciénagas y manglares",
-    status: "",
-    statusClass: "NT",
-    uses: {
-      alimento: true,
-      mascota: true,
-      medicina: false,
-      comercio: false,
-      artesania: true,
-    },
-    iic: 0.5,
-    iicLevel: "Bajo",
-  },
-  {
-    type: "Semiacuática",
-    speciesName: "Tortuga de río chocoana",
-    scientificName: "Rhinoclemmys nasuta",
-    endemica: "No",
-    family: "Geoemydidae",
-    habitat: "Ríos, arroyos, ciénagas y manglares",
-    status: "",
-    statusClass: "VU",
-    uses: {
-      alimento: true,
-      mascota: true,
-      medicina: true,
-      comercio: true,
-      artesania: true,
-    },
-    iic: 1,
+    grupo: "Reptil",
+    nombreCientifico: "Caiman crocodylus fuscus",
+    nombreComun: "Babilla",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
     iicLevel: "Alto",
   },
   {
-    type: "Acuática",
-    speciesName: "Hicotea",
-    scientificName: "Trachemys callirostris",
-    endemica: "No",
-    family: "Emydidae",
-    habitat: "Arroyos y ciénagas",
-    status: "",
-    statusClass: "VU",
-    uses: {
-      alimento: true,
-      mascota: false,
-      medicina: false,
-      comercio: false,
-      artesania: true,
-    },
-    iic: 0.3,
-    iicLevel: "Bajo",
+    grupo: "Reptil",
+    nombreCientifico: "Chelonoidis carbonarius",
+    nombreComun: "Morrocoyo",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: true,
+    iic: 1.0,
+    iicLevel: "Alto",
   },
   {
-    type: "Acuática",
-    speciesName: "Hicotea del Atrato",
-    scientificName: "Trachemys medemi",
-    endemica: "Si",
-    family: "Emydidae",
-    habitat: "Arroyos y ciénagas",
-    status: "",
-    statusClass: "EN",
-    uses: {
-      alimento: false,
-      mascota: true,
-      medicina: true,
-      comercio: true,
-      artesania: false,
-    },
-    iic: 0.8,
+    grupo: "Reptil",
+    nombreCientifico: "Crotalus durissus",
+    nombreComun: "Cascabel",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: true,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Reptil",
+    nombreCientifico: "Helicops danieli",
+    nombreComun: "Mapaná agua",
+    alimento: false,
+    comercio: false,
+    mascota: false,
+    artesania: false,
+    medicina: true,
+    iic: 0.81,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Reptil",
+    nombreCientifico: "Iguana iguana",
+    nombreComun: "Iguana",
+    alimento: true,
+    comercio: true,
+    mascota: false,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Reptil",
+    nombreCientifico: "Kinosternon scorpioides",
+    nombreComun: "Tapaculo",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Reptil",
+    nombreCientifico: "Micrurus sp.",
+    nombreComun: "Coral",
+    alimento: false,
+    comercio: false,
+    mascota: false,
+    artesania: false,
+    medicina: true,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Reptil",
+    nombreCientifico: "Podocnemis lewyana",
+    nombreComun: "Nuca torcía",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: true,
+    iic: 0.93,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Reptil",
+    nombreCientifico: "Trachemys callirostris",
+    nombreComun: "Hicotea",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Amazona ochrocephala",
+    nombreComun: "Loro",
+    alimento: false,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Ara ararauna",
+    nombreComun: "Guacamaya",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Ara macao",
+    nombreComun: "Colombiana",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Ardea alba",
+    nombreComun: "Garza blanca",
+    alimento: true,
+    comercio: false,
+    mascota: false,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Ardea cocoi",
+    nombreComun: "Garza morena",
+    alimento: true,
+    comercio: false,
+    mascota: false,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Ardea herodias",
+    nombreComun: "Garza",
+    alimento: true,
+    comercio: true,
+    mascota: false,
+    artesania: false,
+    medicina: false,
+    iic: 0.84,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Brotogeris jugularis",
+    nombreComun: "Perico cardon",
+    alimento: false,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Burhinus bistriatus",
+    nombreComun: "Galán",
+    alimento: false,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.82,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Cathartes aura",
+    nombreComun: "Laura",
+    alimento: false,
+    comercio: false,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Chauna chavaria",
+    nombreComun: "Chavarrí",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.66,
     iicLevel: "Medio",
   },
   {
-    type: "Acuática",
-    speciesName: "Cabeza de trozo",
-    scientificName: "Kinosternon (Cryptochelys) dunni",
-    endemica: "Si",
-    family: "Kinosternidae",
-    habitat: "Cuerpos pequeños de agua",
-    status: "",
-    statusClass: "EN",
-    uses: {
-      alimento: true,
-      mascota: true,
-      medicina: true,
-      comercio: true,
-      artesania: true,
-    },
-    iic: 1,
+    grupo: "Ave",
+    nombreCientifico: "Colinus cristatus",
+    nombreComun: "Codorniz",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: true,
+    iic: 1.0,
     iicLevel: "Alto",
   },
   {
-    type: "Semiacuática",
-    speciesName: "Tapaculo",
-    scientificName: "Kinosternon (Cryptochelys) leucostomum",
-    endemica: "No",
-    family: "Kinosternidae",
-    habitat: "Cuerpos pequeños de agua",
-    status: "",
-    statusClass: "LC",
-    uses: {
-      alimento: false,
-      mascota: true,
-      medicina: false,
-      comercio: false,
-      artesania: false,
-    },
-    iic: 0.2,
-    iicLevel: "Bajo",
+    grupo: "Ave",
+    nombreCientifico: "Columbina minuta",
+    nombreComun: "Cascaberlita",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
   },
   {
-    type: "Semiacuática",
-    speciesName: "Swanka",
-    scientificName: "Kinosternon (Kinosternon) albogulare",
-    endemica: "No",
-    family: "Kinosternidae",
-    habitat: "Cuerpos pequeños de agua",
-    status: "",
-    statusClass: "LC",
-    uses: {
-      alimento: true,
-      mascota: false,
-      medicina: false,
-      comercio: false,
-      artesania: true,
-    },
-    iic: 0.4,
-    iicLevel: "Bajo",
+    grupo: "Ave",
+    nombreCientifico: "Columbina talpacoti",
+    nombreComun: "Tierrerita",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
   },
   {
-    type: "Semiacuática",
-    speciesName: "Tapaculo",
-    scientificName: "Kinosternon (Kinosternon) scorpioides",
-    endemica: "No",
-    family: "Kinosternidae",
-    habitat: "Cuerpos pequeños de agua",
-    status: "",
-    statusClass: "LC",
-    uses: {
-      alimento: true,
-      mascota: false,
-      medicina: true,
-      comercio: true,
-      artesania: false,
-    },
-    iic: 0.6,
+    grupo: "Ave",
+    nombreCientifico: "Coragyps atratus",
+    nombreComun: "Golero",
+    alimento: false,
+    comercio: false,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Dendrocygna autumnalis",
+    nombreComun: "Pisingo",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Dendrocygna viduata",
+    nombreComun: "Viudita",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.66,
     iicLevel: "Medio",
   },
   {
-    type: "Terrestre",
-    speciesName: "Morrocoy",
-    scientificName: "Chelonoidis carbonarius",
-    endemica: "No",
-    family: "Testudinidae",
-    habitat: "Bosques secos y sabanas",
-    status: "",
-    statusClass: "EN",
-    uses: {
-      alimento: true,
-      mascota: true,
-      medicina: true,
-      comercio: true,
-      artesania: true,
-    },
-    iic: 1,
+    grupo: "Ave",
+    nombreCientifico: "Eupsittula pertinax",
+    nombreComun: "Cotorra",
+    alimento: false,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
     iicLevel: "Alto",
   },
   {
-    type: "Semiacuática",
-    speciesName: "Carranchina",
-    scientificName: "Mesoclemmys dahli",
-    endemica: "Si",
-    family: "Chelidae",
-    habitat: "Arroyos y jagüeyes en bosques secos",
-    status: "",
-    statusClass: "CR",
-    uses: {
-      alimento: false,
-      mascota: true,
-      medicina: false,
-      comercio: true,
-      artesania: false,
-    },
-    iic: 0.5,
-    iicLevel: "Bajo",
+    grupo: "Ave",
+    nombreCientifico: "Icterus nigrogularis",
+    nombreComun: "Toche",
+    alimento: false,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
   },
   {
-    type: "Acuática",
-    speciesName: "Tortuga de río",
-    scientificName: "Podocnemis lewyana",
-    endemica: "Si",
-    family: "Podocnemidae",
-    habitat: "Ríos y en menor medida ciénagas",
-    status: "",
-    statusClass: "CR",
-    uses: {
-      alimento: true,
-      mascota: false,
-      medicina: true,
-      comercio: true,
-      artesania: true,
-    },
+    grupo: "Ave",
+    nombreCientifico: "Leptotila verreauxi",
+    nombreComun: "Turca",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Mycteria americana",
+    nombreComun: "Coyongo",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
     iic: 0.9,
     iicLevel: "Alto",
   },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Ortalis garrula",
+    nombreComun: "Guacharaca",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Patagioenas cayennensis",
+    nombreComun: "Guarumera",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.99,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Penelope purpurascens",
+    nombreComun: "Pava congona",
+    alimento: true,
+    comercio: true,
+    mascota: false,
+    artesania: false,
+    medicina: false,
+    iic: 0.37,
+    iicLevel: "Bajo",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Phalacrocorax brasilianus",
+    nombreComun: "Pato yuyo",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.96,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Sicalis flaveola",
+    nombreComun: "Canario",
+    alimento: false,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Thraupis episcopus",
+    nombreComun: "Azulejo",
+    alimento: false,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.91,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Vanellus chilensis",
+    nombreComun: "Tanga",
+    alimento: true,
+    comercio: false,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Ave",
+    nombreCientifico: "Volatinia jacarina",
+    nombreComun: "Chirrió",
+    alimento: false,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.57,
+    iicLevel: "Medio",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Alouatta seniculus",
+    nombreComun: "Mono arroyero",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Aotus griseimembra",
+    nombreComun: "Martica",
+    alimento: true,
+    comercio: false,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.78,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Ateles hybridus",
+    nombreComun: "Marimonda",
+    alimento: false,
+    comercio: false,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.12,
+    iicLevel: "Bajo",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Bradypus variegatus",
+    nombreComun: "Perico ligero",
+    alimento: true,
+    comercio: false,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.93,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Cabassous centralis",
+    nombreComun: "Mojan",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: true,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Cebus versicolor",
+    nombreComun: "Mico carablanc",
+    alimento: false,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Coendou longicaudatus",
+    nombreComun: "Puerco espín",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Cuniculus paca",
+    nombreComun: "Guartinaja",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 0.99,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Dasyprocta punctata",
+    nombreComun: "Ñeque",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Dasypus novemcinctus",
+    nombreComun: "Jerre-jerre",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: true,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Didelphis marsupialis",
+    nombreComun: "Zorra chusca",
+    alimento: true,
+    comercio: false,
+    mascota: false,
+    artesania: false,
+    medicina: true,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Eira barbara",
+    nombreComun: "Guacharo",
+    alimento: true,
+    comercio: false,
+    mascota: true,
+    artesania: false,
+    medicina: true,
+    iic: 0.76,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Herpailurus yagouaroundi",
+    nombreComun: "Gato pardo",
+    alimento: true,
+    comercio: false,
+    mascota: false,
+    artesania: false,
+    medicina: false,
+    iic: 0.99,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Hydrochoerus h. isthmius",
+    nombreComun: "Ponche, cacó",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Leopardus pardalis",
+    nombreComun: "Tigrillo",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Lontra longicaudis",
+    nombreComun: "Perro de agua",
+    alimento: true,
+    comercio: false,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 0.45,
+    iicLevel: "Medio",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Mazama sanctaemartae",
+    nombreComun: "Venado",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Myrmecophaga tridactyla",
+    nombreComun: "Rabo decaballo",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Notosciurus granatensis",
+    nombreComun: "Ardita",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Odocoileus virginianus",
+    nombreComun: "Venado racimo",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.39,
+    iicLevel: "Bajo",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Panthera onca",
+    nombreComun: "Tigre jaguar",
+    alimento: false,
+    comercio: true,
+    mascota: false,
+    artesania: true,
+    medicina: false,
+    iic: 0.51,
+    iicLevel: "Medio",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Pecari tajacu",
+    nombreComun: "Zaino",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 0.99,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Puma concolor",
+    nombreComun: "Puma",
+    alimento: false,
+    comercio: false,
+    mascota: false,
+    artesania: true,
+    medicina: false,
+    iic: 0.31,
+    iicLevel: "Bajo",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Sylvilagus floridanus",
+    nombreComun: "Conejo",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: true,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Tamandua mexicana",
+    nombreComun: "Pundungo",
+    alimento: true,
+    comercio: false,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 1.0,
+    iicLevel: "Alto",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Tapirus terrestris",
+    nombreComun: "Danta",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.24,
+    iicLevel: "Bajo",
+  },
+  {
+    grupo: "Mamífero",
+    nombreCientifico: "Tayassu pecari",
+    nombreComun: "Puerco manao",
+    alimento: true,
+    comercio: true,
+    mascota: true,
+    artesania: false,
+    medicina: false,
+    iic: 0.28,
+    iicLevel: "Bajo",
+  },
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const iucnFilter = document.getElementById("iucn-filter");
-  const countDisplay = document.getElementById("count");
+// Sistema de filtros simplificado y funcional
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Inicializando sistema de filtros...");
 
-  // Estado de los filtros actuales
+  // Elementos del DOM
+  const countDisplay = document.getElementById("count");
+  const speciesContainer = document.getElementById("species-cards");
+  const clearFiltersBtn = document.getElementById("clear-filters");
+
+  if (!countDisplay || !speciesContainer) {
+    console.error("Elementos críticos no encontrados");
+    return;
+  }
+
+  // Estado de filtros
   let currentFilters = {
-    type: "Acuática", // Valor por defecto del primer botón activo
-    iucn: "all",
+    grupo: "Reptil",
+    usos: [], // Array de objetos {uso, valor}
+    iicLevels: [],
   };
 
-  // Función para aplicar todos los filtros
+  // Función para obtener el radio button seleccionado
+  function getSelectedRadio(name) {
+    const radio = document.querySelector(`input[name="${name}"]:checked`);
+    return radio ? radio.value : "Reptil";
+  }
+
+  // Función para obtener los usos seleccionados (versión con botones)
+  function getSelectedCheckboxes(name) {
+    if (name === "use-filter") {
+      const activeButtons = document.querySelectorAll(".use-toggle-btn.active");
+      const selectedUses = [];
+
+      Array.from(activeButtons).forEach((btn) => {
+        selectedUses.push({
+          uso: btn.dataset.use,
+          valor: btn.dataset.value === "true",
+        });
+      });
+
+      return selectedUses;
+    } else {
+      const checkboxes = document.querySelectorAll(
+        `input[name="${name}"]:checked`
+      );
+      return Array.from(checkboxes).map((cb) => cb.value);
+    }
+  }
+
+  // Aplicar filtros
   function applyFilters() {
-    let filteredSpecies = speciesData;
+    console.log("Aplicando filtros...");
 
-    // Aplicar filtro de tipo (grupo funcional)
-    if (currentFilters.type !== "all") {
-      filteredSpecies = filteredSpecies.filter(
-        (species) => species.type === currentFilters.type
-      );
-    }
+    // Actualizar filtros actuales
+    currentFilters.grupo = getSelectedRadio("biological-group");
+    currentFilters.usos = getSelectedCheckboxes("use-filter");
+    currentFilters.iicLevels = getSelectedCheckboxes("iic-filter");
 
-    // Aplicar filtro de categoría IUCN (iucn-filter)
-    if (currentFilters.iucn !== "all") {
-      filteredSpecies = filteredSpecies.filter(
-        (species) => species.statusClass === currentFilters.iucn
-      );
-    }
+    console.log("Filtros actuales:", currentFilters);
 
-    loadSpecies(filteredSpecies);
+    // Filtrar especies
+    let filteredSpecies = speciesData.filter((species) => {
+      // Filtrar por grupo
+      if (species.grupo !== currentFilters.grupo) return false;
+
+      // Filtrar por usos (Sí/No)
+      if (currentFilters.usos.length > 0) {
+        for (const usoFilter of currentFilters.usos) {
+          if (species[usoFilter.uso] !== usoFilter.valor) return false;
+        }
+      }
+
+      // Filtrar por IIC (OR - al menos uno debe coincidir)
+      if (currentFilters.iicLevels.length > 0) {
+        if (!currentFilters.iicLevels.includes(species.iicLevel)) return false;
+      }
+
+      return true;
+    });
+
+    // Mostrar resultados
+    displaySpecies(filteredSpecies);
     updateCount(filteredSpecies.length);
   }
 
-  // Event listeners para los botones de grupo funcional
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      // Eliminar la clase 'active' de todos los botones
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
-
-      // Agregar la clase 'active' al botón clicado
-      button.classList.add("active");
-
-      // Actualizar filtro de tipo
-      currentFilters.type = button.dataset.filter;
-
-      // Aplicar todos los filtros
-      applyFilters();
-    });
-  });
-
-  // Event listener para iucn-filter (categoría IUCN)
-  iucnFilter.addEventListener("change", () => {
-    currentFilters.iucn = iucnFilter.value;
-    applyFilters();
-  });
-
-  // Función para actualizar el conteo
+  // Actualizar contador
   function updateCount(count) {
     countDisplay.textContent = `Mostrando ${count} especies`;
   }
 
-  // Función para cargar las especies
-  function loadSpecies(speciesList) {
-    const speciesContainer = document.getElementById("species-cards");
-    speciesContainer.innerHTML = ""; // Limpiar los resultados previos
+  // Mostrar especies
+  function displaySpecies(speciesList) {
+    speciesContainer.innerHTML = "";
+
+    if (speciesList.length === 0) {
+      speciesContainer.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          <p style="font-size: 18px; font-weight: 600; color: #333; margin-bottom: 15px;">
+            No se encontraron especies con los filtros seleccionados.
+          </p>
+          <p style="color: #666; font-size: 16px;">
+            Intenta con diferentes criterios de búsqueda.
+          </p>
+        </div>
+      `;
+      return;
+    }
 
     speciesList.forEach((species) => {
       const card = document.createElement("div");
-      card.classList.add("species-card");
+      card.className = "species-card";
 
-      // Crear iconos de usos con imágenes
-      const usesHTML = `
-        <div class="uses-container">
-          <div class="uses-title">Usos:</div>
-          <div class="uses-grid">
-            <div class="use-item">
-              <img src="./input/img/Frame.svg" 
-                   alt="Alimento" 
-                   class="use-icon ">
-              <span><b>Alimento:</b> ${
-                species.uses.alimento ? "sí" : "no"
-              } </span>
-            </div>
-            <div class="use-item">
-              <img src="./input/img/Frame.svg" 
-                   alt="Mascota ${species.uses.mascota ? "sí" : "no"}" 
-                   class="use-icon ${species.uses.mascota ? "yes" : "no"}">
-              <span>Mascota</span>
-            </div>
-            <div class="use-item">
-              <img src="./input/img/icono-medicina-${
-                species.uses.medicina ? "yes" : "no"
-              }.png" 
-                   alt="Medicina ${species.uses.medicina ? "sí" : "no"}" 
-                   class="use-icon ${species.uses.medicina ? "yes" : "no"}">
-              <span>Medicina</span>
-            </div>
-            <div class="use-item">
-              <img src="./input/img/icono-comercio-${
-                species.uses.comercio ? "yes" : "no"
-              }.png" 
-                   alt="Comercio ${species.uses.comercio ? "sí" : "no"}" 
-                   class="use-icon ${species.uses.comercio ? "yes" : "no"}">
-              <span>Comercio</span>
-            </div>
-            <div class="use-item">
-              <img src="./input/img/icono-artesania-${
-                species.uses.artesania ? "yes" : "no"
-              }.png" 
-                   alt="Artesanía ${species.uses.artesania ? "sí" : "no"}" 
-                   class="use-icon ${species.uses.artesania ? "yes" : "no"}">
-              <span>Artesanía</span>
-            </div>
-          </div>
-        </div>
-      `;
+      // Determinar imagen según el grupo
+      let grupoIcon = "";
+      const grupoClass = species.grupo.toLowerCase().replace("í", "i");
+
+      switch (species.grupo) {
+        case "Reptil":
+          grupoIcon = "./input/img/Ficha-303-icono-reptil.png";
+          break;
+        case "Ave":
+          grupoIcon = "./input/img/Ficha-303-icono-ave.png";
+          break;
+        case "Mamífero":
+          grupoIcon = "./input/img/Ficha-303-icono-mamifero.png";
+          break;
+        default:
+          grupoIcon = "./input/img/Frame.svg"; // fallback
+      }
+
+      // Imágenes para los usos
+      const alimentoImg = "./input/img/Ficha-303-icono-alimento.png";
+      const comercioImg = "./input/img/Ficha-303-icono-comercio.png";
+      const mascotaImg = "./input/img/Ficha-303-icono-mascota.png";
+      const artesaniaImg = "./input/img/Ficha-303-icono-artesania.png";
+      const medicinaImg = "./input/img/Ficha-303-icono-medicinal.png";
 
       card.innerHTML = `
-        <div class="species-header"
-        <div class= "card-type-container">
-            <img src="./input/img/Frame.svg" />
-            <span class="species-type">${species.type}</span>
-          </div>  
-          <div>
-            <p class="species-type">${species.type}</p>
-            <h3 class="species-title">${species.speciesName}</h3>
-            <p class="species-subtitle">${species.scientificName}</p>
-          </div>         
-        </div> 
-        <hr class="hr-divider">      
-        ${usesHTML}
-        
-        <hr class="hr-divider">
-        
-        <div class="iic-container">
-          <div>
-            <strong>IIC:</strong> <span class="iic-value">${species.iic}</span>
+    <div class="card-header">
+      <div class="group-icon ${grupoClass}">
+        <img src="${grupoIcon}" alt="${species.grupo}">
+        <div class="species-type">${species.grupo}</div>
+      </div>
+      <div class="species-info">       
+        <h3 class="species-name">${species.nombreComun}</h3>
+        <p class="species-scientific">${species.nombreCientifico}</p>
+      </div>
+    </div>
+    
+    <div class="uses-section">
+      <div class="uses-title"></div>
+      <div class="uses-grid">
+        <div class="use-item">
+          <div class="use-icon">
+            <img src="${alimentoImg}" alt="Alimento">
           </div>
-          <div>
-            <span class="iic-level ${species.iicLevel.toLowerCase()}">${
-        species.iicLevel
-      }</span>
-          </div>
+          <span class="use-label">Alimento:</span>
+          <span class="use-status ${species.alimento ? "yes" : "no"}">
+            ${species.alimento ? "Sí" : "No"}
+          </span>
         </div>
-      `;
+        <div class="use-item">
+          <div class="use-icon">
+            <img src="${comercioImg}" alt="Comercio">
+          </div>
+          <span class="use-label">Comercio:</span>
+          <span class="use-status ${species.comercio ? "yes" : "no"}">
+            ${species.comercio ? "Sí" : "No"}
+          </span>
+        </div>
+        <div class="use-item">
+          <div class="use-icon">
+            <img src="${mascotaImg}" alt="Mascota">
+          </div>
+          <span class="use-label">Mascota:</span>
+          <span class="use-status ${species.mascota ? "yes" : "no"}">
+            ${species.mascota ? "Sí" : "No"}
+          </span>
+        </div>
+        <div class="use-item">
+          <div class="use-icon">
+            <img src="${artesaniaImg}" alt="Artesanía">
+          </div>
+          <span class="use-label">Artesanía:</span>
+          <span class="use-status ${species.artesania ? "yes" : "no"}">
+            ${species.artesania ? "Sí" : "No"}
+          </span>
+        </div>
+        <div class="use-item">
+          <div class="use-icon">
+            <img src="${medicinaImg}" alt="Medicina">
+          </div>
+          <span class="use-label">Medicina:</span>
+          <span class="use-status ${species.medicina ? "yes" : "no"}">
+            ${species.medicina ? "Sí" : "No"}
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="iic-section">
+      <div class="iic-container">
+        <div class="iic-value">
+          <span>IIC:</span> ${species.iic}
+        </div>
+        <div class="iic-badge ${species.iicLevel.toLowerCase()}">
+          <span>IIC:</span> ${species.iicLevel}
+        </div>
+      </div>
+    </div>
+  `;
 
       speciesContainer.appendChild(card);
     });
   }
 
-  // Aplicar filtros al cargar la página
+  // Configurar event listeners
+  function setupEventListeners() {
+    // Radio buttons del grupo biológico
+    const biologicalRadios = document.querySelectorAll(
+      'input[name="biological-group"]'
+    );
+    biologicalRadios.forEach((radio) => {
+      radio.addEventListener("change", applyFilters);
+    });
+
+    // Botones toggle de usos
+    const useToggleButtons = document.querySelectorAll(".use-toggle-btn");
+    useToggleButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const useType = this.dataset.use;
+        const buttonsGroup = document.querySelectorAll(
+          `.use-toggle-btn[data-use="${useType}"]`
+        );
+
+        // Remover activo de todos los botones del mismo grupo
+        buttonsGroup.forEach((btn) => btn.classList.remove("active"));
+
+        // Activar el botón clickeado
+        this.classList.add("active");
+
+        // Aplicar filtros
+        applyFilters();
+      });
+    });
+
+    // Checkboxes de IIC
+    const iicCheckboxes = document.querySelectorAll('input[name="iic-filter"]');
+    iicCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", applyFilters);
+    });
+
+    // Botón limpiar filtros
+    if (clearFiltersBtn) {
+      clearFiltersBtn.addEventListener("click", () => {
+        // Restablecer radio buttons
+        biologicalRadios.forEach((radio) => {
+          radio.checked = radio.value === "Reptil";
+        });
+
+        // Restablecer botones de usos (Sí por defecto)
+        const allUseButtons = document.querySelectorAll(".use-toggle-btn");
+        allUseButtons.forEach((btn) => {
+          btn.classList.remove("active");
+          if (btn.dataset.value === "true") {
+            btn.classList.add("active");
+          }
+        });
+
+        // Desmarcar checkboxes de IIC
+        iicCheckboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+
+        // Aplicar filtros
+        applyFilters();
+      });
+    }
+
+    // Configurar desplegables
+    const usosDropdownHeader = document.getElementById("usos-dropdown-header");
+    const usosDropdownContent = document.getElementById(
+      "usos-dropdown-content"
+    );
+    const usosDropdownIcon = document.getElementById("usos-dropdown-icon");
+
+    usosDropdownHeader.addEventListener("click", function () {
+      usosDropdownContent.classList.toggle("open");
+      usosDropdownIcon.classList.toggle("open");
+    });
+
+    const iicDropdownHeader = document.getElementById("iic-dropdown-header");
+    const iicDropdownContent = document.getElementById("iic-dropdown-content");
+    const iicDropdownIcon = document.getElementById("iic-dropdown-icon");
+
+    iicDropdownHeader.addEventListener("click", function () {
+      iicDropdownContent.classList.toggle("open");
+      iicDropdownIcon.classList.toggle("open");
+    });
+
+    // Abrir desplegables por defecto
+    usosDropdownContent.classList.add("open");
+    usosDropdownIcon.classList.add("open");
+    iicDropdownContent.classList.add("open");
+    iicDropdownIcon.classList.add("open");
+  }
+
+  // Inicializar
+  setupEventListeners();
   applyFilters();
+
+  console.log("Sistema de filtros inicializado correctamente");
+});
+
+// Asegurar que se ejecute incluso si hay problemas con DOMContentLoaded
+window.addEventListener("load", function () {
+  // Reintentar si no se inicializó correctamente
+  if (
+    document.getElementById("species-cards") &&
+    !document.querySelector(".species-card")
+  ) {
+    console.log("Reintentando inicialización...");
+    setTimeout(() => {
+      if (
+        document.querySelectorAll('input[name="biological-group"]').length > 0
+      ) {
+        document.dispatchEvent(new Event("DOMContentLoaded"));
+      }
+    }, 100);
+  }
 });
