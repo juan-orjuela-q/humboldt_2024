@@ -1,0 +1,431 @@
+<link rel="stylesheet" href="ficha304-contenido2.css" />
+<script src="bio2024-304-scripts.js" defer></script>
+<link rel="stylesheet" href="../../general/animate.css" />
+<link rel="stylesheet" href="../../general/chapters.css" />
+<link rel="stylesheet" href="../../general/colors-v3.css" />
+<link rel="stylesheet" href="../../general/commerce-js.css" />
+<link rel="stylesheet" href="../../general/fluidable-min.css" />
+<link rel="stylesheet" href="../../general/icons-v3.css" />
+<link rel="stylesheet" href="../../general/jquery.fullPage.css" />
+<link rel="stylesheet" href="../../general/main-v3.css" />
+<link rel="stylesheet" href="../../general/sonar.min.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<div class="container align-l">
+  <div class="col-group info-container">
+    <div class="col-dt-12">
+      <div class="title-container">
+        <div>
+          <i class="icon icon_h2 bars bg-orange"></i>
+        </div>
+        <h2 class="">
+          Coberturas vegetales en el corredor biológico Wüin-Manna
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-group elements-map-height">
+  <div class="col-dt-10 column">
+    <img
+      class="general-map"
+      src="./input/img/304-mapa-fondo.png"
+      alt="Mapa general"
+    />
+    <div id="bio2024-layerMap-304-map_3-content" class="map-container">
+      <img
+        src="./input/img/304-mapa-bosque-galeria-ripario.png"
+        id="img-bosque_galeria"
+      />
+      <div class="map-layers">
+        <img
+          src="./input/img/304-mapa-arbustal-abierto.png"
+          id="img-arbustal_abierto"
+        />
+        <img
+          src="./input/img/304-mapa-bosque-abierto.png"
+          id="img-bosque_abierto"
+        />
+        <img
+          src="./input/img/304-mapa-bosque-denso.png"
+          id="img-bosque_denso"
+        />
+        <img
+          src="./input/img/304-mapa-cuerpos-agua.png"
+          id="img-aguas_artificiales"
+        />
+        <img
+          src="./input/img/304-mapa-lagunas.png"
+          id="img-lagunas_naturales"
+        />
+        <img
+          src="./input/img/304-mapa-mozaico-cultivo.png"
+          id="img-mosaico_cultivos"
+        />
+        <img
+          src="./input/img/304-mapa-cultivos-transitorios.png"
+          id="img-cultivos_temporales"
+        />
+        <img
+          src="./input/img/304-mapa-pastos-arbolados.png"
+          id="img-pastos_arbolados"
+        />
+        <img
+          src="./input/img/304-mapa-pastos-enmalezados.png"
+          id="img-pastos_enmalezados"
+        />
+        <img
+          src="./input/img/304-mapa-pastos-limpios.png"
+          id="img-pastos_limpios"
+        />
+        <img src="./input/img/304-mapa-rios.png" id="img-rios" class="rios" />
+        <img src="./input/img/304-mapa-red-vial.png" id="img-red_vial" />
+        <img
+          src="./input/img/304-mapa-tierras-desnudas.png"
+          id="img-tierras_degradadas"
+        />
+        <img
+          src="./input/img/304-mapa-territorios.png"
+          id="img-territorios_artificializados"
+        />
+        <img
+          src="./input/img/304-mapa-vegetacion-transicion.png"
+          id="img-vegetacion_transicion"
+        />
+        <img
+          src="./input/img/304-mapa-vegetacion-baja.png"
+          id="img-vegetacion_secundaria_baja"
+        />
+        <img
+          src="./input/img/304-mapa-zonas-industriales.png"
+          id="img-zonas_industriales"
+        />
+      </div>
+    </div>
+  </div>
+  <div id="bio2024-layerMap-304-map_3-filters" class="map-filters">
+    <table class="filters-table">
+      <!-- Cabecera de la tabla -->
+      <thead>
+        <tr>
+          <th>Cobertura</th>
+          <th>Área (ha)</th>
+          <th>%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="checkbox-container bosque_galeria">
+              <input type="checkbox" id="bosque_galeria" checked />
+              <label for="bosque_galeria"> Bosque de galería y ríbalo </label>
+            </div>
+          </td>
+          <td>
+            <span>2.401,8</span>
+          </td>
+          <td>
+            <span>11,24 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container arbustal_abierto">
+              <input type="checkbox" id="arbustal_abierto" checked />
+              <label for="arbustal_abierto"> Arbustal abierto </label>
+            </div>
+          </td>
+          <td>
+            <span>241,3</span>
+          </td>
+          <td>
+            <span>1,09 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container bosque_abierto">
+              <input type="checkbox" id="bosque_abierto" checked />
+              <label for="bosque_abierto"> Bosque abierto </label>
+            </div>
+          </td>
+          <td>
+            <span>7.086,7</span>
+          </td>
+          <td>
+            <span>31,86 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container bosque_denso">
+              <input type="checkbox" id="bosque_denso" checked />
+              <label for="bosque_denso"> Bosque denso </label>
+            </div>
+          </td>
+          <td>
+            <span>1.426,3</span>
+          </td>
+          <td>
+            <span>6,43 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container aguas_artificiales">
+              <input type="checkbox" id="aguas_artificiales" checked />
+              <label for="aguas_artificiales">
+                Cuerpo de aguas artificiales
+              </label>
+            </div>
+          </td>
+          <td>
+            <span>14,6</span>
+          </td>
+          <td>
+            <span>0,07 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container lagunas_naturales">
+              <input type="checkbox" id="lagunas_naturales" checked />
+              <label for="lagunas_naturales">
+                Lagunas, lagos y ciénagas naturales
+              </label>
+            </div>
+          </td>
+          <td>
+            <span>26,6</span>
+          </td>
+          <td>
+            <span>0,12 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container mosaico_cultivos">
+              <input type="checkbox" id="mosaico_cultivos" checked />
+              <label for="mosaico_cultivos">
+                Mosaico de cultivos, pastos y espacios naturales
+              </label>
+            </div>
+          </td>
+          <td>
+            <span>15,2</span>
+          </td>
+          <td>
+            <span>0,07 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container cultivos_temporales">
+              <input type="checkbox" id="cultivos_temporales" checked />
+              <label for="cultivos_temporales"> Cultivos temporales </label>
+            </div>
+          </td>
+          <td>
+            <span>10,9</span>
+          </td>
+          <td>
+            <span>0,05 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container pastos_arbolados">
+              <input type="checkbox" id="pastos_arbolados" checked />
+              <label for="pastos_arbolados"> Pastos arbolados </label>
+            </div>
+          </td>
+          <td>
+            <span>440,0</span>
+          </td>
+          <td>
+            <span>1,68 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container pastos_enmalezados">
+              <input type="checkbox" id="pastos_enmalezados" checked />
+              <label for="pastos_enmalezados"> Pastos enmalezados </label>
+            </div>
+          </td>
+          <td>
+            <span>733,8</span>
+          </td>
+          <td>
+            <span>3,31 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container pastos_limpios">
+              <input type="checkbox" id="pastos_limpios" checked />
+              <label for="pastos_limpios"> Pastos limpios </label>
+            </div>
+          </td>
+          <td>
+            <span>692,3</span>
+          </td>
+          <td>
+            <span>3,08 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container rios">
+              <input type="checkbox" id="rios" checked />
+              <label for="rios"> Ríos </label>
+            </div>
+          </td>
+          <td>
+            <span>77,9</span>
+          </td>
+          <td>
+            <span>0,35 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container red_vial">
+              <input type="checkbox" id="red_vial" checked />
+              <label for="red_vial"> Red vial y territorios asociados </label>
+            </div>
+          </td>
+          <td>
+            <span>78,5</span>
+          </td>
+          <td>
+            <span>0,35 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container tierras_degradadas">
+              <input type="checkbox" id="tierras_degradadas" checked />
+              <label for="tierras_degradadas">
+                Tierras degradadas y degradadas
+              </label>
+            </div>
+          </td>
+          <td>
+            <span>7,5</span>
+          </td>
+          <td>
+            <span>0,03 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container territorios_artificializados">
+              <input
+                type="checkbox"
+                id="territorios_artificializados"
+                checked
+              />
+              <label for="territorios_artificializados">
+                Territorios artificializados
+              </label>
+            </div>
+          </td>
+          <td>
+            <span>60,0</span>
+          </td>
+          <td>
+            <span>0,27 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container vegetacion_transicion">
+              <input type="checkbox" id="vegetacion_transicion" checked />
+              <label for="vegetacion_transicion">
+                Vegetación secundaria o en transición
+              </label>
+            </div>
+          </td>
+          <td>
+            <span>6.618,0</span>
+          </td>
+          <td>
+            <span>29,84 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container vegetacion_secundaria_baja">
+              <input type="checkbox" id="vegetacion_secundaria_baja" checked />
+              <label for="vegetacion_secundaria_baja">
+                Vegetación secundaria baja
+              </label>
+            </div>
+          </td>
+          <td>
+            <span>2.194,0</span>
+          </td>
+          <td>
+            <span>9,85 %</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="checkbox-container zonas_industriales">
+              <input type="checkbox" id="zonas_industriales" checked />
+              <label for="zonas_industriales">
+                Zonas industriales o comerciales
+              </label>
+            </div>
+          </td>
+          <td>
+            <span>3,44</span>
+          </td>
+          <td>
+            <span>0,02 %</span>
+          </td>
+        </tr>
+
+        <!-- Fila de Total -->
+        <tr>
+          <td>
+            <div class="total">
+              <span for="total"> Total </span>
+            </div>
+          </td>
+          <td>
+            <span>22.177,51</span>
+          </td>
+          <td>
+            <span></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="img-container">
+  <img src="./input/img/ficha-304-fondo.jpg" alt="Tigre" />
+  <div class="jaguar-description">
+    <div class="gris-texto align-l">
+      <div class="jaguar-description-category">
+        <img src="" alt="mamifero" />
+        <span class="status-jaguar">LC</span>
+      </div>
+      <span><strong>Jaguar</strong></span>
+      <br />
+      <span class="scientific-name">Panthera onca</span>
+    </div>
+  </div>
+  <div class="container-nota">
+    <div>
+      <i class="icon icon_h2 bookmark bg-orange"></i>
+    </div>
+    <span>
+       El 53,8 % (12 218 ha) del área requiere tratamientos para la restauración
+      activa o pasiva.
+    </span>
+  </div>
+</div>
