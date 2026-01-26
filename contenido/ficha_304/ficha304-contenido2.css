@@ -7,6 +7,10 @@ body {
   margin-top: 40px;
 }
 
+tr {
+  line-height: 15px;
+}
+
 .title-container i {
   margin: 5px;
 }
@@ -80,109 +84,109 @@ body {
 
 /* Bosque de galería y ripario */
 .map-filters .bosque_galeria input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #2e8b57; /* Verde bosque - oscuro */
 }
 
 /* Arbustal abierto */
 .map-filters .arbustal_abierto input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #9acd32; /* Verde amarillento */
 }
 
 /* Bosque abierto */
 .map-filters .bosque_abierto input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #32cd32; /* Verde lime */
 }
 
 /* Bosque denso */
 .map-filters .bosque_denso input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #006400; /* Verde oscuro */
 }
 
 /* Cuerpo de aguas artificiales */
 .map-filters .aguas_artificiales input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #87ceeb; /* Azul cielo claro */
 }
 
 /* Lagunas, lagos y ciénagas naturales */
 .map-filters .lagunas_naturales input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #4682b4; /* Azul acero */
 }
 
 /* Mosaico de cultivos, pastos y espacios naturales */
 .map-filters .mosaico_cultivos input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #d2b48c; /* Marrón claro (tierra) */
 }
 
 /* Cultivos temporales */
 .map-filters .cultivos_temporales input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #8b4513; /* Marrón silla de montar */
 }
 
 /* Pastos arbolados */
 .map-filters .pastos_arbolados input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #90ee90; /* Verde claro */
 }
 
 /* Pastos enmalezados */
 .map-filters .pastos_enmalezados input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #556b2f; /* Verde oliva oscuro */
 }
 
 /* Pastos limpios */
 .map-filters .pastos_limpios input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #7cfc00; /* Verde césped */
 }
 
 /* Ríos */
 .map-filters .rios input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #0000ff; /* Azul puro */
 }
 
 /* Red vial y territorios asociados */
 .map-filters .red_vial input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #a9a9a9; /* Gris oscuro */
 }
 
 /* Tierras degradadas y degradadas */
 .map-filters .tierras_degradadas input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #8b0000; /* Rojo oscuro */
 }
 
 /* Territorios artificializados */
 .map-filters .territorios_artificializados input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #696969; /* Gris medio */
 }
 
 /* Vegetación secundaria o en transición */
 .map-filters .vegetacion_transicion input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #228b22; /* Verde bosque */
 }
 
 /* Vegetación secundaria baja */
 .map-filters .vegetacion_secundaria_baja input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #6b8e23; /* Verde oliva */
 }
 
 /* Zonas industriales o comerciales */
 .map-filters .zonas_industriales input:checked + label:before {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
+ 
   background-color: #b22222; /* Rojo ladrillo */
 }
 
@@ -399,6 +403,10 @@ td {
 
     right: 0%;
     z-index: 100;
+  }
+
+  tr {
+  line-height: 12px;
   }
 
   .checkbox-container label {

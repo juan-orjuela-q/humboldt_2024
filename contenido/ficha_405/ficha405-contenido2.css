@@ -1,0 +1,388 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.element-container {
+  padding-left: 40px;
+  gap: 40px;
+  width: 100vw;
+}
+
+/* Título principal */
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+/* Contenedor de información */
+.container-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.img-container {
+  position: relative;
+  margin-top: 30px;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.status-anfibio {
+  color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a6811;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.anfibio-description {
+  text-align: left;
+}
+
+.anfibio-description-category {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.anfibio-description-category img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.scientific-name {
+  font-style: italic;
+  color: #666;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Estilos para el botón que abre el modal */
+.modal-trigger {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.modal-trigger:hover {
+  border-color: #00748b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 116, 139, 0.1);
+}
+
+.modal-trigger-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-trigger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #00748b;
+  border-radius: 50%;
+  color: white;
+  flex-shrink: 0;
+}
+
+.modal-trigger-icon i {
+  font-size: 20px;
+}
+
+.modal-trigger-text {
+  font-size: 16px;
+  color: #747474;
+  flex-grow: 1;
+}
+
+/* Estilos para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #666;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 30px 20px 30px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #00748b;
+  border-radius: 50%;
+  color: white;
+  flex-shrink: 0;
+}
+
+.modal-header-icon i {
+  font-size: 24px;
+}
+
+.modal-title {
+  margin: 0;
+  color: #00748b;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.modal-content {
+  padding: 25px 30px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.modal-content p {
+  margin-bottom: 15px;
+}
+
+.modal-highlights {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #00748b;
+}
+
+.modal-highlights h4 {
+  color: #00748b;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.modal-highlights ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.modal-highlights li {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding: 20px 30px;
+  border-top: 1px solid #f0f0f0;
+  background-color: #fafafa;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.modal-action-btn,
+.modal-close-btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.modal-action-btn {
+  background-color: #00748b;
+  color: white;
+  border: 2px solid #00748b;
+}
+
+.modal-action-btn:hover {
+  background-color: #005a6b;
+  border-color: #005a6b;
+}
+
+.modal-close-btn {
+  background-color: transparent;
+  color: #666;
+  border: 2px solid #ddd;
+}
+
+.modal-close-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+  color: #333;
+}
+
+/* Responsive para el modal */
+@media (max-width: 768px) {
+  .modal-container {
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  .modal-header {
+    padding: 20px 20px 15px 20px;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-footer {
+    padding: 15px 20px;
+    flex-direction: column;
+  }
+
+  .modal-action-btn,
+  .modal-close-btn {
+    width: 100%;
+  }
+}
+
+/* Estilos para Highcharts */
+.highcharts-figure,
+.highcharts-data-table table {
+  min-width: 310px;
+  max-width: 800px;
+  margin: 1em auto;
+}
+
+#container {
+  height: 400px;
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: var(--highcharts-neutral-color-60, #666);
+}
+
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+  padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tbody tr:nth-child(even) {
+  background: var(--highcharts-neutral-color-3, #f7f7f7);
+}
+
+.highcharts-description {
+  margin: 0.3rem 10px;
+}
+
+.highcharts-no-tooltip {
+  display: none;
+}

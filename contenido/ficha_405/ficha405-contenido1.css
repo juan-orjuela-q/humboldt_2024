@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.element-container {
+  padding-left: 40px;
+  gap: 40px;
+  width: 100vw;
+}
+
+/* Título principal */
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+/* Contenedor de información */
+.info-container {
+  min-height: 300px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}

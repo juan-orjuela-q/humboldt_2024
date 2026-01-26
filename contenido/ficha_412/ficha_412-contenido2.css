@@ -1,0 +1,506 @@
+/* ============================================================
+   FICHA 412 - CONTENIDO 2
+   Estilos para: Uso y distribución de especies vegetales
+   ============================================================ */
+
+/* ============================================================
+   TIPOGRAFÍA GLOBAL - Rubik en todo
+   ============================================================ */
+
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rubik', sans-serif;
+}
+
+body, p, span, div, li, button, input, textarea, select {
+    font-family: 'Rubik', sans-serif;
+}
+
+/* ============================================================
+   SECCIÓN 1: TÍTULO PRINCIPAL
+   ============================================================ */
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0; 
+    padding: 20px 0;
+}
+
+.title-container h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* ============================================================
+   SECCIÓN 2: IMAGEN CON TOOLTIPS
+   ============================================================ */
+
+/* Contenedor principal de la imagen */
+.image-container-with-tooltips {
+    position: relative;
+    margin: 30px 0;
+}
+
+/* Figura principal (imagen de fondo) */
+.main-figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+.background-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* TOOLTIPS - Números circulares superpuestos */
+.tooltip {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.tooltip:hover {
+    background-color: #333;
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip-number {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* SERVICIOS ECOSISTÉMICOS ASOCIADOS */
+.ecosystemic-services {
+    /* position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%); */
+    /* background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+       text-align: left;
+}
+
+.services-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.service-item {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.service-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    width: fit-content;
+}
+
+.service-description {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ============================================================
+   SECCIÓN 3: ESTRATEGIAS URBANAS
+   ============================================================ */
+
+.strategies-section {
+ 
+    padding: 30px 0;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+ 
+}
+
+.strategies-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 800;
+}
+
+.strategies-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.strategies-list {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+}
+
+.strategies-list li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.strategies-list li::marker {
+    /* color: #008493; */
+    font-weight: bold;
+}
+
+.strategies-note {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #008493;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   SECCIÓN 4: CARRUSEL DE TARJETAS
+   ============================================================ */
+
+.carousel-section {
+    margin: 60px 0;
+    position: relative;
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+}
+
+  .carousel-container::-webkit-scrollbar {
+    height: 0px;
+}
+/*
+.carousel-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background: #008493;
+    border-radius: 4px;
+} */
+
+/* TARJETA INDIVIDUAL */
+.carousel-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    transition: all 0.4s ease;
+    background: #ecedee;
+     
+    
+    padding: 20px;
+    border-radius: 10px !important;
+}
+
+@media (min-width: 992px) {
+    .carousel-card {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CÍRCULO VERDE CON ICONO */
+.card-icon-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 50px;
+    flex-shrink: 0;
+}
+
+.card-icon-circle i {
+    font-size: 50px;
+}
+
+/* INFORMACIÓN DE LA TARJETA */
+.card-info {
+    flex: 1;
+    text-align: left;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: #333;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+/* ITEMS DENTRO DE LA TARJETA (imagen + texto) */
+.card-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.card-items li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.card-items img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.card-items span {
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* ============================================================
+   CONTROLES DEL CARRUSEL
+   ============================================================ */
+
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* BOTONES DE NAVEGACIÓN */
+.carousel-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #008493;
+    background-color: #fff;
+    color: #008493;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: #008493;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.carousel-btn-prev,
+.carousel-btn-next {
+    order: 1;
+}
+
+/* INDICADORES (PUNTITOS) */
+.carousel-indicators {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    order: 2;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #008493;
+    transform: scale(1.3);
+}
+
+.indicator:hover {
+    background-color: #008493;
+}
+
+/* ============================================================
+   UTILIDADES Y CLASES GENERALES
+   ============================================================ */
+
+/* Color y alineación */
+.color-gris-osc {
+    color: #333;
+}
+
+.align-l {
+    text-align: left;
+}
+
+/* Espacios */
+.space-circle {
+    margin-right: 15px;
+}
+
+.culumn-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.map-img {
+    margin-top: 20px;
+}
+
+.map-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Contenedor general */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 36px;
+}
+
+/* ============================================================
+   RESPONSIVE - Tablets y dispositivos pequeños
+   ============================================================ */
+
+@media (max-width: 992px) {
+    .ecosystemic-services {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .carousel-card {
+        flex: 0 0 calc(50% - 15px);
+    }
+
+    .title-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .strategies-section {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-card {
+        flex: 0 0 100%;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .card-icon-circle {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+    }
+
+    .card-icon-circle i {
+        font-size: 40px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .carousel-indicators {
+        gap: 8px;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+}

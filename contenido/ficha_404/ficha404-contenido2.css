@@ -1,0 +1,430 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.element-container {
+  padding-left: 40px;
+  gap: 40px;
+  width: 100vw;
+}
+
+/* Título principal */
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+/* Contenedor de información */
+.info-container {
+  min-height: 300px;
+}
+
+/* Tabs de navegación */
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 40px;
+  background: #fff;
+  color: #747474;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+}
+
+.tab-group li a:hover {
+  background: #689F38;
+  color: #fff;
+}
+
+.tab-group .active a {
+  background: #689F38;
+  color: #fff;
+  border-color: #689F38;
+}
+
+.line-tabs {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #689F38;
+}
+
+/* Contenido de tabs */
+.tab-content {
+  margin-top: 24px;
+}
+
+.tab-content > div {
+  display: none;
+}
+
+.tab-content > div.active {
+  display: block;
+}
+
+/* Contenedor de temporadas */
+.container-temporadas {
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Encabezado del mapa */
+.map-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.map-header h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* Contenedor principal del mapa y variables */
+.map-main-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Contenedor del mapa */
+.map-container {
+  position: relative;
+  flex: 1;
+
+  margin: 0 auto;
+  z-index: 50;
+  padding: 20px;
+}
+
+.map-container > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.map-caption {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Panel de variables */
+.variables-panel {
+  flex: 0 0 360px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.variables-panel h4 {
+  color: #2a2a2a;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.variables-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.variables-list li {
+  padding: 6px 0;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.2s ease;
+  list-style: disc;
+}
+
+.variables-list li:hover {
+  background: #e9f7fb;
+  transform: translateX(5px);
+}
+
+/* Escala de colores */
+.color-scale {
+  margin-top: 25px;
+  padding-top: 20px;
+}
+
+.color-scale h5 {
+  color: #00748b;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.scale-bar {
+  height: 20px;
+  background: linear-gradient(
+    90deg,
+    #324a96 0%,
+    #b9458a 25%,
+    #d33858 50%,
+    #dc7139 75%,
+    #f5c945 100%
+  );
+  border-radius: 4px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Escenarios */
+.scenarios-section {
+  margin-top: 30px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.scenarios-section h4 {
+  color: #00748b;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.scenarios-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.scenario-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 2px solid #00748b;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+  transition: all 0.3s ease;
+}
+
+.scenario-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 116, 139, 0.2);
+}
+
+.scenario-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00748b;
+  margin-bottom: 10px;
+}
+
+.scenario-title {
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Totales */
+.total-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.total-container span {
+  display: block;
+  padding: 15px;
+  background: #fff;
+  border-radius: 6px;
+  border-left: 4px solid #00748b;
+}
+
+.total-container strong {
+  color: #00748b;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Filtros del mapa */
+.map-filters {
+  margin-bottom: 20px;
+}
+
+.filters-table {
+  max-width: 100%;
+  width: fit-content;
+  border-collapse: collapse;
+  z-index: 150;
+  position: relative;
+}
+
+.filters-table td {
+  padding: 12px;
+}
+
+td {
+  border-bottom: none !important;
+}
+
+.filters-table tr:last-child td {
+  border-bottom: none;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #111;
+}
+
+/* Indicadores de color */
+.first-element label:before {
+  content: "";
+  border-radius: 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #73b2ff;
+  margin-right: 0.5rem;
+}
+
+.second-element label:before {
+  content: "";
+  border-radius: 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #ffd37f;
+  margin-right: 0.5rem;
+}
+
+/* Layout responsivo */
+@media screen and (max-width: 900px) {
+  .map-main-container {
+    flex-direction: column;
+  }
+
+  .variables-panel {
+    flex: 1;
+    width: 100%;
+  }
+
+  .tab-group {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .scenarios-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scenario-box {
+    max-width: 100%;
+  }
+}
+
+/* Highcharts table / figure helpers (kept) */
+.highcharts-figure,
+.highcharts-data-table table {
+  min-width: 320px;
+  max-width: 100%;
+  margin: 1em auto;
+}
+
+.highcharts-data-table table {
+  border-collapse: collapse;
+  border: 1px solid var(--highcharts-neutral-color-10, #e6e6e6);
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: var(--highcharts-neutral-color-60, #666);
+}
+
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+  padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tbody tr:nth-child(even) {
+  background: var(--highcharts-neutral-color-3, #f7f7f7);
+}
+
+.highcharts-description {
+  margin: 0.3rem 10px;
+}
+
+.highcharts-menu-item:last-child {
+  display: none;
+}
+
+.highcharts-exporting-group {
+  display: none !important;
+}
+
+.highcharts-background {
+  fill-opacity: 0;
+}
+
+.highcharts-no-tooltip[title="Chart context menu"]:last-of-type {
+  display: none;
+}

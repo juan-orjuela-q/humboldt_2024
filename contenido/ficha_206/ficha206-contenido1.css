@@ -1,6 +1,4 @@
-* {
-  font-family: "Rubik", sans-serif;
-}
+
 
 .container {
   padding-bottom: 40px !important;
@@ -278,12 +276,14 @@
   }
 
   .checkbox-group li {
-    width: 45%;
+    width: 100%;
   }
 
   .elemento-gradiente {
     width: 100%;
     margin-bottom: 20px;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .cuadro-gradiente {

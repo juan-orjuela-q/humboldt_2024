@@ -1,0 +1,238 @@
+.info-container {
+  margin-bottom: 90px;
+}
+
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.title-container i {
+  margin: 5px;
+}
+
+.col-group {
+  margin: 0;
+}
+
+.column {
+  position: relative;
+}
+
+.general-map {
+  position: absolute;
+  z-index: 150;
+}
+
+.map-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+.map-container > img {
+  max-width: 100%;
+  z-index: 150;
+}
+
+.map-layers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-layers img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  object-fit: contain;
+}
+
+.map-filters {
+  gap: 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-filters input {
+  display: none;
+}
+
+.map-filters label {
+  position: absolute;
+  color: #000 !important;
+  margin: 0.35rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.map-filters label:before {
+  content: "";
+  border-radius: 4px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Colores personalizados para cada checkbox */
+.map-filters .area-protegida input:checked + label:before {
+  background-color: #797979;
+}
+
+.map-filters .area-ramsar input:checked + label:before {
+  background-color: #b7dff5;
+}
+
+.map-filters .mesa-cienaga input:checked + label:before {
+  background-color: #6eabf5;
+}
+
+.map-filters .mesa-magdalena input:checked + label:before {
+  background-color: #45b7d1;
+}
+
+.map-filters .mesa-sierra-zona input:checked + label:before {
+  background-color: #7588eb;
+}
+
+.map-filters .mesa-pinon input:checked + label:before {
+  background-color: #b7caf5;
+}
+
+.map-filters .mesa-sierra-cuencas input:checked + label:before {
+  background-color: #ba98cf;
+}
+
+.map-filters .checkbox-container label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: block;
+}
+
+.map-filters .checkbox-container label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+}
+
+/* Estilos para la tabla de leyenda */
+.filters-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.filters-table td {
+  padding: 8px 10px;
+  vertical-align: middle;
+  border-bottom: none !important;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.color-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 3px;
+  border: 1px solid #999;
+}
+
+.description-container {
+  display: flex;
+  max-width: 450px;
+  position: absolute;
+  right: 0%;
+  bottom: -20px;
+  gap: 10px;
+  z-index: 150;
+}
+
+.description-container p {
+  margin: 0;
+}
+
+@media screen and (min-width: 980px) and (max-width: 1860px) {
+  .general-map {
+    right: 5px;
+    top: -5px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .description-container {
+    bottom: -100px;
+    padding: 20px 0;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .info-container {
+    margin-bottom: 20px;
+  }
+  .elements-map-height {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .general-map {
+    right: 0px;
+  }
+
+  .filters-table {
+    position: relative;
+    width: 100%;
+  }
+
+  .checkbox-container label {
+    font-size: 12px;
+  }
+
+  .description-container {
+    position: relative;
+    bottom: 0px;
+    padding: 20px 0;
+  }
+}

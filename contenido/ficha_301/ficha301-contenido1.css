@@ -154,6 +154,10 @@ body {
   font-size: 14px;
 }
 
+.map-colombia-container {
+  margin-top: 80px;
+}
+
 @media screen and (max-width: 768px) {
   .info-container {
     padding: 10px;
@@ -162,6 +166,10 @@ body {
   }
   .container {
     padding-left: 0px;
+  }
+
+  .map-colombia-container {
+    margin-top: 0px;
   }
   .map-filters {
     flex-direction: column-reverse;
