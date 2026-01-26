@@ -1,102 +1,144 @@
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.title-container i {
+  margin: 5px;
+}
+
 /* Estilos para la línea de tiempo */
 
 .timeline-container {
-    margin-top: 40px;
-    font-family: Arial, sans-serif;
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
 }
 
 .timeline-section {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .section-title {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e0e0e0;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 34px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
-.timeline-years {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-left: 20px;
+.section-title.isidro {
+  color: #00748b;
+  border-bottom: 2px solid #00748b;
+}
+.section-title.guerra {
+  color: #692940;
+  border-bottom: 2px solid #692940;
+}
+.section-title.retorno {
+  color: #aebc14;
+  border-bottom: 2px solid #aebc14;
 }
 
 .year-group {
-    display: flex;
-    flex-direction: column;
-    min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  max-width: 200px;
 }
 
 .year {
-    font-weight: bold;
-    color: #4a4a4a;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    position: relative;
-    padding-left: 15px;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 0px;
 }
 
-.year::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
-    background-color: #6c5ce7;
-    border-radius: 50%;
+.year.isidro {
+  color: #264d56;
+}
+
+.year.guerra {
+  color: #4c2846;
+}
+
+.year.retorno {
+  color: #8e9353;
+}
+
+.event-list {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0;
+}
+
+.event-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  color: #333;
+  font-size: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px dotted #000;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 0;
+}
+
+.event-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .event {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    padding-left: 15px;
+  flex: 1;
 }
 
 .separator {
-    height: 1px;
-    background-color: #ddd;
-    margin: 30px 0;
-    width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 30px 0;
+  width: 100%;
 }
 
-/* Estilos para los años con corchetes */
-.year-group:nth-child(3) .year {
-    color: #6c5ce7;
-    font-weight: bold;
+
+
+/* Eliminar los puntos de lista anteriores */
+.event-container::before {
+  display: none;
 }
 
-.year-group:nth-child(3) .year::before {
-    background-color: #6c5ce7;
-    width: 10px;
-    height: 10px;
+/* Estilos específicos para la sección de Retorno */
+.timeline-section .timeline-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
 }
 
-/* Estilo para el título principal */
-.title-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
+/* Responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .timeline-years {
+    flex-direction: column;
+    gap: 30px;
+  }
 
-.icon_h2.bars {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    margin-right: 15px;
-}
+  .timeline-section:last-child .year-group {
+    flex: 0 0 100%;
+  }
 
-.bg-violet_dark {
-    background-color: #6c5ce7;
-}
+  .col-group {
+    flex-direction: column;
+  }
 
-h2 {
-    color: #333;
-    font-size: 1.8rem;
-    margin: 0;
+  .col-dt-6 {
+    min-width: 100%;
+  }
 }

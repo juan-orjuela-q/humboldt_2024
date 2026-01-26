@@ -1,0 +1,146 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5 !important;
+}
+
+/* Título principal */
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+  position: relative;
+  z-index: 20;
+}
+
+.title-container i {
+  margin: 5px;
+}
+
+.checkbox-title-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+/* Mapa y contenedor */
+.map-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.map-container > img {
+  max-width: 100%;
+  mix-blend-mode: multiply;
+}
+
+/* Filtros del mapa */
+.map-filters {
+  position: relative;
+  z-index: 100;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Contenedores de filtros por color */
+.filter-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+/* Cuadro de color */
+.color-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Colores específicos para cada filtro */
+.color-box.valor-cultural {
+  background-color: #000; /* Verde para valor cultural */
+}
+
+.color-box.areas-protegidas {
+  background-color: #c9c8c6; /* Gris para áreas protegidas */
+}
+
+.color-box.sinergia-positiva {
+  background-color: #4caf50; /* Verde brillante para sinergia positiva */
+}
+
+.color-box.sinergia-negativa {
+  background-color: #35bce6; /* Rojo para sinergia negativa */
+}
+
+.color-box.conflicto-tipo1 {
+  background-color: #59126e; /* Naranja para conflicto tipo 1 */
+}
+
+.color-box.conflicto-tipo2 {
+  background-color: #be2a2a; /* Azul para conflicto tipo 2 */
+}
+
+/* Contenido del filtro */
+.filter-content {
+  flex: 1;
+}
+
+.filter-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.filter-description {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.map-colombia-container {
+  position: absolute;
+  right: 0%;
+  bottom: 5%;
+  width: 230px;
+  height: 296px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .map-filters {
+    gap: 15px;
+    height: auto;
+  }
+  .title-container {
+    margin-bottom: 0;
+  }
+
+  .filter-item {
+    padding: 10px;
+  }
+
+  .map-colombia-container {
+    position: relative;
+  }
+
+  .map-container {
+    flex-direction: column;
+  }
+}

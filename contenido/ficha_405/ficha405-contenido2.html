@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="ficha405-contenido2.css" />
+<script src="bio2024-405-scripts.js" defer></script>
+<link rel="stylesheet" href="../../general/animate.css" />
+<link rel="stylesheet" href="../../general/chapters.css" />
+<link rel="stylesheet" href="../../general/colors-v3.css" />
+<link rel="stylesheet" href="../../general/commerce-js.css" />
+<link rel="stylesheet" href="../../general/fluidable-min.css" />
+<link rel="stylesheet" href="../../general/icons-v3.css" />
+<link rel="stylesheet" href="../../general/jquery.fullPage.css" />
+<link rel="stylesheet" href="../../general/main-v3.css" />
+<link rel="stylesheet" href="../../general/sonar.min.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/themes/adaptive.js"></script>
+
+<div class="align-l container">
+  <div class="title-container">
+    <div>
+      <i class="icon icon_h2 bars bg-green_blue_dark"></i>
+    </div>
+    <h2 class="color-gris-osc">
+      Hoja de ruta para la implementación de la estrategia de gestión integral
+      de las invasiones biológicas en el archipiélago
+    </h2>
+  </div>
+  <div class="col-group">
+    <div class="col-dt-9">
+      <figure class="highcharts-figure">
+        <div id="container"></div>
+      </figure>
+    </div>
+    <div class="col-dt-3">
+      <div class="container-info">
+        <div>
+          <i class="icon icon_h2 bookmark bg-green_blue_dark"></i>
+        </div>
+        <div class="anfibio-description">
+          <div class="gris-texto align-l">
+            <div class="anfibio-description-category">
+              <img
+                src="./input/img/ficha-305-icono-anfibio.png"
+                alt="anfibio icono"
+              />
+              <span class="status-anfibio">LC</span>
+            </div>
+            <span><strong>Rana chirriadora de invernadero</strong></span>
+            <br />
+            <span class="scientific-name">Eleutherodactylus planirostris</span>
+            <br />
+            <p>
+              Especie exótica con introducción no intencional. Es una de las
+              especies de ranas más pequeñas del continente.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-container">
+        <img src="./input/img/ficha-405-imagen.png" alt="Anfibio" />
+      </div>
+
+      <!-- Botón para abrir el modal -->
+      <button class="modal-trigger" id="modal-trigger">
+        <div class="modal-trigger-content">
+          <div class="modal-trigger-icon">
+            <i class="icon icon_h2 bookmark bg-green_blue_dark"></i>
+          </div>
+          <span class="modal-trigger-text">Toca para ver más información</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-container" id="modal-container">
+    <button class="modal-close" id="modal-close">&times;</button>
+    <div class="modal-header">
+      <div class="modal-header-icon">
+        <i class="icon icon_h2 bookmark bg-green_blue_dark"></i>
+      </div>
+      <h3 class="modal-title">Información Adicional</h3>
+    </div>
+    <div class="modal-content">
+      <p>
+        Marcos globales como la evaluación IPBES sobre especies exóticas y la
+        Meta 6 del Marco Kunming-Montreal proponen una reducción del 50 % de las
+        tasas de introducción y el control de su presencia en sitios
+        prioritarios para 2030. Según el Convenio de Diversidad Biológica, la
+        introducción de estas especies está relacionada con la importación de
+        productos básicos, el transporte mediante vectores y la dispersión desde
+        regiones cercanas.
+      </p>     
+    </div>
+  </div>
+</div>

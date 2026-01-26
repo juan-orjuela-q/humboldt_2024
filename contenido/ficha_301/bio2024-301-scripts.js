@@ -206,25 +206,25 @@ if (container) {
             name: "Cerdo",
             y: 34,
             color: "#EC7A44",
-            iconUrl: "./input/img/ficha-301-icono-cerdo.png"
+            iconUrl: "https://reporte.humboldt.org.co/assets/img/2024/3/301/ficha-301-icono-cerdo.png"
           },
           {
             name: "Carnero",
             y: 27,
             color: "#6DC6DA",
-            iconUrl: "./input/img/ficha-301-icono-carnero.png"
+            iconUrl: "https://reporte.humboldt.org.co/assets/img/2024/3/301/ficha-301-icono-carnero.png"
           },
           {
             name: "Perro",
             y: 22,
             color: "#D3FFBE",
-            iconUrl: "./input/img/ficha-301-icono-perro.png"
+            iconUrl: "https://reporte.humboldt.org.co/assets/img/2024/3/301/ficha-301-icono-perro.png"
           },
           {
             name: "Bovino",
             y: 12,
             color: "#73B273",
-            iconUrl: "./input/img/ficha-301-icono-bovino.png"
+            iconUrl: "https://reporte.humboldt.org.co/assets/img/2024/3/301/ficha-301-icono-bovino.png"
           }
         ],
       },

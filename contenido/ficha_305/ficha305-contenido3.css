@@ -1,5 +1,5 @@
-body {
-  background-image: url("./input/img/Ficha-305-El-Proyecto-Titi.jpg") !important;
+.bg-ilustracion-305 {
+  background-image: url("https://reporte.humboldt.org.co/assets/img/2024/3/305/ficha-305-el-proyecto-titi.jpg") !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   height: 100%;

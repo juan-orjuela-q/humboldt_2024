@@ -1,0 +1,163 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5 !important;
+}
+
+/* Título principal */
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin: 40px 0;
+  position: relative;
+  z-index: 20;
+}
+
+.title-container i {
+  margin: 5px;
+}
+
+.checkbox-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* Mapa y contenedor */
+.map-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.map-container > img {
+  max-width: 100%;
+  mix-blend-mode: multiply;
+}
+
+/* Filtros del mapa */
+.map-filters {
+  position: relative;
+  z-index: 100;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.map-filters input {
+  display: none;
+}
+
+.map-filters label {
+  position: relative;
+  color: #000 !important;
+  margin: 0.35rem 0;
+  gap: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* Cuadro de color */
+.color-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Colores específicos para cada filtro */
+.color-box.bosques {
+  background-color: #3da61c; /* Verde para valor cultural */
+}
+
+/* Contenedores de checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.map-colombia-container {
+  position: absolute;
+  right: 0%;
+  bottom: 5%;
+  width: 269px;
+  height: 326px;
+}
+
+.medidor-container h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.medidor-gradiente {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+  width: fit-content;
+  align-items: center;
+}
+
+.medidor-gradiente span {
+  font-size: 16px;
+}
+
+.medidor-gradiente img {
+  max-height: 130px;
+  max-width: 50px;
+}
+
+.municipios {
+  width: fit-content;
+}
+
+.municipios h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.municipios ul {
+  font-size: 16px;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  .title-container {
+    margin-bottom: 0;
+  }
+  .map-filters {
+    gap: 20px;
+    height: auto;
+  }
+
+  .map-colombia-container {
+    position: relative;
+
+  }
+
+  .map-container {
+    flex-direction: column;
+  }
+}

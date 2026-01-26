@@ -8,7 +8,7 @@ const faunaData = [
     nombreComun: "Zaino",
     precioCompra: "$ 18 000",
     precioVenta: "$ 22 000",
-    imagen: "./input/img/ficha-302-zaino.png", // Ruta de ejemplo
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-zaino.png", // Ruta de ejemplo
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const faunaData = [
     nombreComun: "Venado",
     precioCompra: "$ 12 000",
     precioVenta: "$ 25 000",
-    imagen: "./input/img/ficha-302-venado.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-venado.png",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const faunaData = [
     nombreComun: "Pisingo",
     precioCompra: "$ 4000 c/u",
     precioVenta: "$ 6000 c/u",
-    imagen: "./input/img/ficha-302-pisingo.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-pisingo.png",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const faunaData = [
     nombreComun: "Barraquete",
     precioCompra: "$ 2000 c/u",
     precioVenta: "$ 4000 c/u",
-    imagen: "./input/img/ficha-302-barraquete.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-barraquete.png",
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ const faunaData = [
     nombreComun: "Armadillo",
     precioCompra: "$ 24 000",
     precioVenta: "$ 30 000",
-    imagen: "./input/img/ficha-302-armadillo.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-armadillo.png",
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ const faunaData = [
     nombreComun: "Neque",
     precioCompra: "$ 13 000",
     precioVenta: "$ 18 000",
-    imagen: "./input/img/ficha-302-neque.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-neque.png",
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const faunaData = [
     nombreComun: "Ponche",
     precioCompra: "$ 13 000",
     precioVenta: "$ 18 000",
-    imagen: "./input/img/ficha-302-ponche.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-ponche.png",
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ const faunaData = [
     nombreComun: "Guartinaja",
     precioCompra: "$ 20 000",
     precioVenta: "$ 25 000",
-    imagen: "./input/img/ficha-302-guartinaja.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-guartinaja.png",
   },
   {
     id: 9,
@@ -88,7 +88,7 @@ const faunaData = [
     nombreComun: "Conejo",
     precioCompra: "$ 24 000",
     precioVenta: "$ 30 000",
-    imagen: "./input/img/ficha-302-conejo.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-conejo.png",
   },
   {
     id: 10,
@@ -98,7 +98,7 @@ const faunaData = [
     nombreComun: "Pato yuyo",
     precioCompra: "$ 3000 c/u",
     precioVenta: "$ 7000 c/u",
-    imagen: "./input/img/ficha-302-pato.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-pato.png",
   },
   {
     id: 11,
@@ -108,7 +108,7 @@ const faunaData = [
     nombreComun: "Morrocoyo",
     precioCompra: "$ 6000",
     precioVenta: "$ 10 000",
-    imagen: "./input/img/ficha-302-morrocoyo.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-morrocoyo.png",
   },
   {
     id: 12,
@@ -118,7 +118,7 @@ const faunaData = [
     nombreComun: "Hicotea",
     precioCompra: "$ 6000",
     precioVenta: "$ 10 000",
-    imagen: "./input/img/ficha-302-Hicotea.png",
+    imagen: "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-hicotea.png",
   },
 ];
 
@@ -128,18 +128,18 @@ let sortedData = [...faunaData];
 
 // Mapeo de imágenes por especie (aquí puedes cambiar las rutas)
 const imageMap = {
-  "Dicotyles tajecu": "./input/img/ficha-302-zaino.png",
-  "Mazama americana": "./input/img/ficha-302-venado.png",
-  "Dendrocygna autumnalis": "./input/img/ficha-302-pisingo.png",
-  "Anas discors": "./input/img/ficha-302-barraquete.png",
-  "Dasypus novemcinctus": "./input/img/ficha-302-armadillo.png",
-  "Dasyprocta punctata": "./input/img/ficha-302-neque.png",
-  "Hydrochoerus sthmius": "./input/img/ficha-302-ponche.png",
-  "Cuniculus paca": "./input/img/ficha-302-guartinaja.png",
-  "Sylvilagus floridanus": "./input/img/ficha-302-conejo.png",
-  "Phalacroconax brasilianus": "./input/img/ficha-302-pato.png",
-  "Chelonoidis carbonarius": "./input/img/ficha-302-morrocoyo.png",
-  "Trachemys callirostris": "./input/img/ficha-302-Hicotea.png",
+  "Dicotyles tajecu": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-zaino.png",
+  "Mazama americana": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-venado.png",
+  "Dendrocygna autumnalis": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-pisingo.png",
+  "Anas discors": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-barraquete.png",
+  "Dasypus novemcinctus": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-armadillo.png",
+  "Dasyprocta punctata": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-neque.png",
+  "Hydrochoerus sthmius": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-ponche.png",
+  "Cuniculus paca": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-guartinaja.png",
+  "Sylvilagus floridanus": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-conejo.png",
+  "Phalacroconax brasilianus": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-pato.png",
+  "Chelonoidis carbonarius": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-morrocoyo.png",
+  "Trachemys callirostris": "https://reporte.humboldt.org.co/assets/img/2024/3/302/ficha-302-hicotea.png",
 };
 
 // Función para generar las filas de la tabla

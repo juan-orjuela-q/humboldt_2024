@@ -1,0 +1,168 @@
+.info-container {
+  margin-bottom: 40px;
+}
+
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.title-container i {
+  margin: 5px;
+}
+
+.col-group {
+  margin: 0;
+}
+
+.column {
+  position: relative;
+}
+
+
+.map-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+.map-container > img {
+  max-width: 100%;
+}
+
+.map-layers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-layers img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  object-fit: contain;
+}
+
+.map-filters {
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.map-filters input {
+  display: none;
+}
+
+.sensibilidad-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  padding-bottom: 10px;
+}
+
+/* Elementos estáticos de sensibilidad - SIN interacción */
+.sensibilidad-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.grado-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #000;
+  padding: 8px 0;
+  width: 100%;
+}
+
+.color-indicator {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+/* Estados específicos de cada grado */
+.area-natural .color-indicator  {
+  background-color: #256535;
+}
+
+ .area-transformada .color-indicator {
+  background-color: #DBF4E7;
+}
+
+.area-protegida .color-indicator {
+  background-color: #C226FB;
+}
+
+.description {
+  position: absolute;
+  color: #000;
+  bottom: 10px;
+  right: 2%;
+}
+
+.description h4 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.description li {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/* Responsive */
+@media screen and (max-width: 770px) {
+  .info-container {
+    margin-bottom: 20px;
+  }
+
+  .elements-map-height {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .general-map {
+    position: relative;
+  }
+
+  .sensibilidad-title {
+    font-size: 16px;
+  }
+
+  .grado-item {
+    font-size: 14px;
+  }
+
+  .color-indicator {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .description {
+  position: relative;
+  color: #000;
+  bottom: 10px;
+  right: 2%;
+}
+}
+
+@media screen and (min-width: 980px) and (max-width: 1860px) {
+  .general-map {
+    right: 5px;
+    top: -5px;
+  }
+}

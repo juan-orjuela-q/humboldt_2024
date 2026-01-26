@@ -20,17 +20,14 @@
 .fauna-table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0;
+  border-spacing: 10px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #d0d0d0;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .fauna-table thead {
-  background-color: #e8e8e8;
-  border-bottom: 2px solid #d0d0d0;
+  border-bottom: 2px solid #000;
 }
 
 .fauna-table th {
@@ -42,13 +39,12 @@
   user-select: none;
   position: relative;
   font-size: 15px;
-  border-right: 1px solid #d0d0d0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
   height: 65px;
   vertical-align: middle;
   white-space: nowrap;
+  border-bottom: 2px solid #000;
 }
 
 .fauna-table th:last-child {
@@ -241,17 +237,13 @@
   transform: translateY(-50%);
 }
 
-
-
 /* Celdas del cuerpo */
 .fauna-table td {
   padding: 20px 14px;
   border-bottom: 1px solid #e8e8e8;
   vertical-align: middle;
-  border-right: 1px solid #e8e8e8;
   font-size: 14px;
   color: #333;
-  background-color: white;
   min-height: 75px;
 }
 
@@ -325,7 +317,6 @@
   width: 63px;
   height: 63px;
   object-fit: contain;
-  background-color: white;
   padding: 2px;
   flex-shrink: 0;
 }
@@ -353,14 +344,14 @@
 
 .status-cerdo {
   color: white;
-  height: 26px;
-  width: 26px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #3a6811;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: bold;
 }
 

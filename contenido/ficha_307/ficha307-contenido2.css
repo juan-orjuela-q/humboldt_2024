@@ -1,0 +1,125 @@
+.bg-ficha-307-contenido2 {
+  background-image: url("https://reporte.humboldt.org.co/assets/img/2024/3/307/ficha-307-imagen.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  min-height: 300px;
+  max-height: 1450px;
+  height: 100%;
+  background-size: cover !important;
+}
+
+.title-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.title-container i {
+  margin: 5px;
+}
+/* Estilos para los tabs de imágenes */
+
+.image-tabs-container {
+  margin-top: 30px;
+  width: 45%;
+  justify-self: end;
+  align-items: center;
+}
+
+.image-tabs-nav {
+  display: flex;
+  border-bottom: 2px solid #930e14;
+  margin-bottom: 20px;
+  gap: 12px;
+  justify-content: center;
+}
+
+.image-tab {
+  padding: 4px 40px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: #747474;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  max-width: 147px;
+  width: 100%;
+}
+
+.image-tab:hover {
+  color: #333;
+}
+
+.image-tab.active {
+  color: #fff;
+  font-weight: 600;
+  background-color: #930e14;
+}
+
+.image-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #930e14;
+}
+
+.image-tabs-content {
+  position: relative;
+  min-height: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.image-tab-pane {
+  display: none;
+  animation: fadeIn 0.5s ease;
+  padding: 34px;
+  border-radius: 8px;
+}
+
+.image-tab-pane.active {
+  display: block;
+}
+
+.tab-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .image-tabs-container {
+    margin-top: 30px;
+    width: 100%;
+    justify-self: center;
+    align-items: center;
+  }
+
+  .image-tabs-nav {
+    overflow: auto;
+    justify-content: flex-start;
+    height: auto;
+  }
+  .image-tabs-content {
+    min-height: auto;
+  }
+}

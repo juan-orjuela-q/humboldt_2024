@@ -185,27 +185,27 @@ if (contenido2) {
   // Arreglo de imágenes (editar rutas aquí)
   const slidesData = [
     {
-      src: "./input/img/ficha-305-galeria-1.jpg",
+      src: "https://reporte.humboldt.org.co/assets/img/2024/3/305/ficha-305-galeria-1.jpg",
       alt: "Slide 1",
     },
     {
-      src: "./input/img/ficha-305-galeria-2.jpg",
+      src: "https://reporte.humboldt.org.co/assets/img/2024/3/305/ficha-305-galeria-2.jpg",
       alt: "Slide 2",
     },
     {
-      src: "./input/img/ficha-305-galeria-3.jpg",
+      src: "https://reporte.humboldt.org.co/assets/img/2024/3/305/ficha-305-galeria-3.jpg",
       alt: "Slide 3",
     },
     {
-      src: "./input/img/ficha-305-galeria-4.jpg",
+      src: "https://reporte.humboldt.org.co/assets/img/2024/3/305/ficha-305-galeria-4.jpg",
       alt: "Slide 4",
     },
     {
-      src: "./input/img/ficha-305-galeria-5.jpg",
+      src: "https://reporte.humboldt.org.co/assets/img/2024/3/305/ficha-305-galeria-5.jpg",
       alt: "Slide 5",
     },
     {
-      src: "./input/img/ficha-305-galeria-6.jpg",
+      src: "https://reporte.humboldt.org.co/assets/img/2024/3/305/ficha-305-galeria-6.jpg",
       alt: "Slide 6",
     },
   ];
