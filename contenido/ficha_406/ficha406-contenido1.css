@@ -16,6 +16,10 @@
   margin: 40px 0;
 }
 
+.title-container h2 {
+  margin: 0px;
+}
+
 /* Contenedor de información */
 .info-container {
   min-height: 300px;

@@ -56,6 +56,8 @@ Highcharts.chart("container", {
   plotOptions: {
     bar: {
       color: "#F59C00",
+      borderWidth: 0, 
+      borderRadius: 0,
       dataLabels: {
         enabled: true,
         style: {
@@ -89,7 +91,7 @@ Highcharts.chart("container", {
   series: [
     {
       name: "Número de registros",
-      data: [45, 4, 89, 89, 49, 43],
+      data: [45, 4, 89, 24, 49, 43],
     },
   ],
 });

@@ -1,6 +1,4 @@
-body {
-  background: #fff !important;
-}
+
 .title-container {
   display: flex;
   gap: 10px;
@@ -74,11 +72,15 @@ body {
   background-position: center;
 }
 .map-filters .registros-corozo input:checked + label:before {
-  background-color: #682172;
+  background-color: #f59c00;
 }
 
 .map-filters .bosque-seco input:checked + label:before {
-  background-color: #f59c00;
+  background-color: #88caff;
+}
+
+.map-filters .distribucion input:checked + label:before {
+  background-color: #682172;
 }
 
 .checkbox-container {
@@ -139,7 +141,7 @@ body {
 .map-colombia {
   position: absolute;
   bottom: 0;
-  right: 5%;
+  right: 20%;
   height: 255px;
   width: 180px;
 }
@@ -213,8 +215,11 @@ body {
     transform: scale(1);
   }
   .map-colombia {
+    position: relative;
     height: 150px;
     width: 120px;
+    right: 0;
+
   }
 
   .map-filters {

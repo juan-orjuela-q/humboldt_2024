@@ -61,20 +61,34 @@ body {
   fill: red !important;
 }
 
-.highcharts-menu-item:last-child {
-  display: none;
-}
-
 .highcharts-exporting-group {
   display: none !important;
 }
 
-.title-container {
+.title-container-contenido2 {
   display: flex;
   gap: 10px;
   color: #fff;
 }
 
+.title-container h2 {
+  margin: 0px;
+}
+
 .container {
   padding: 60px 0;
+}
+
+.bookmark {
+  filter: invert(1);
+}
+
+.color-white-text {
+  color: #fff;
+}
+
+@media (max-width: 750px) {
+  .container {
+    padding: 0;
+  }
 }

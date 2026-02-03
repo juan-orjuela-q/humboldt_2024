@@ -18,6 +18,12 @@
 
 .column {
   position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.column img {
+  max-height: 70vh;
 }
 
 .general-map {
@@ -87,11 +93,11 @@
 
 /* Colores personalizados para cada checkbox */
 .map-filters .area-distribucion input:checked + label:before {
-  background-color: #9c9c9c;
+  background-color: #97ac6e;
 }
 
 .map-filters .bosque-seco input:checked + label:before {
-  background-color: #ee9537;
+  background-color: #748141;
 }
 
 .map-filters .checkbox-container label {
@@ -158,11 +164,8 @@
   border: 1px solid #999;
 }
 
-@media screen and (min-width: 980px) and (max-width: 1860px) {
-  .general-map {
-    right: 5px;
-    top: -5px;
-  }
+.map-colombia {
+  max-width: 200px;
 }
 
 @media screen and (max-width: 770px) {
@@ -172,10 +175,6 @@
   .elements-map-height {
     display: flex;
     flex-direction: column-reverse;
-  }
-
-  .general-map {
-    right: 0px;
   }
 
   .filters-table {

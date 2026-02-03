@@ -1,6 +1,4 @@
-body {
-  background: #eeece3 !important;
-}
+
 .title-container {
   display: flex;
   gap: 10px;
@@ -358,8 +356,8 @@ td {
 
 .jaguar-description {
   position: absolute;
-  left: 6%;
-  top: 5%;
+  left: 0%;
+  top: 0%;
   max-width: 330px;
   text-align: left;
   padding: 20px;
@@ -447,5 +445,32 @@ td {
   max-width: 200px;
 
 }
+}
+
+@media screen and (max-width: 500px) {
+  .container-nota {
+    display: none;
+  }
+
+  .img-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .jaguar-description {
+    left: 65%;
+    
+  }
+
+  .jaguar-description-category img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .scientific-name {
+    color: #333;
+  }
+  
 }
 

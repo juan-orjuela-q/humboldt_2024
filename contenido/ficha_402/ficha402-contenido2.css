@@ -24,8 +24,6 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  top: -80px;
-  transform: scale(1.5);
   max-width: 70vh;
   z-index: 100;
 }
@@ -168,7 +166,7 @@ body {
   top: 30%;
   right: 5%;
   height: 255px;
-  width: 180px;
+  width: 200px;
 }
 
 .img-container {
@@ -182,30 +180,17 @@ body {
   border-radius: 8px;
 }
 
-@media screen and (max-width: 1150px) {
-  .map-container {
-    margin: 0 80px;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    position: relative;
-    top: -80px;
-    transform: scale(1.5);
-    max-width: 70vh;
-    z-index: 100;
-  }
-}
-
 @media screen and (max-width: 750px) {
   .map-container {
     transform: scale(1);
     margin: 0;
   }
   .map-colombia {
-    height: 150px;
-    width: 120px;
-    top: 10%;
-    left: 60%;
+    position: relative;
+    height: 250px;
+    width: 200px;
+    top: 0;
+    left: 0;
   }
 
   .map-filters {

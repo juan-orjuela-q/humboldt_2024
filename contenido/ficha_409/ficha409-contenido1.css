@@ -8,6 +8,10 @@
   margin-top: 40px;
 }
 
+.title-container h2 {
+  margin-bottom: 0px;
+}
+
 .title-container i {
   margin: 5px;
 }

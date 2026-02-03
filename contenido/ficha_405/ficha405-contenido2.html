@@ -18,23 +18,35 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/themes/adaptive.js"></script>
 
-<div class="align-l container">
+<div class="align-l">
   <div class="title-container">
     <div>
       <i class="icon icon_h2 bars bg-green_blue_dark"></i>
     </div>
     <h2 class="color-gris-osc">
-      Hoja de ruta para la implementación de la estrategia de gestión integral
-      de las invasiones biológicas en el archipiélago
+      Vías de introducción priorizadas para la gestión
     </h2>
   </div>
   <div class="col-group">
-    <div class="col-dt-9">
+    <div class="col-dt-8">
       <figure class="highcharts-figure">
         <div id="container"></div>
       </figure>
+      <!-- Botón para abrir el modal -->
+      <div class="container-modal-trigger">
+        <button class="modal-trigger" id="modal-trigger">
+          <div class="modal-trigger-content">
+            <div class="modal-trigger-icon">
+              <i class="icon icon_h2 bookmark bg-green_blue_dark"></i>
+            </div>
+            <span class="modal-trigger-text"
+              >Toca para ver más información</span
+            >
+          </div>
+        </button>
+      </div>
     </div>
-    <div class="col-dt-3">
+    <div class="col-dt-4">
       <div class="container-info">
         <div>
           <i class="icon icon_h2 bookmark bg-green_blue_dark"></i>
@@ -43,7 +55,7 @@
           <div class="gris-texto align-l">
             <div class="anfibio-description-category">
               <img
-                src="./input/img/ficha-305-icono-anfibio.png"
+                src="https://reporte.humboldt.org.co/assets/img/2024/4/405/ficha-405-icono-anfibio.png"
                 alt="anfibio icono"
               />
               <span class="status-anfibio">LC</span>
@@ -61,18 +73,11 @@
       </div>
 
       <div class="img-container">
-        <img src="./input/img/ficha-405-imagen.png" alt="Anfibio" />
+        <img
+          src="https://reporte.humboldt.org.co/assets/img/2024/4/405/ficha-405-imagen.png"
+          alt="Anfibio"
+        />
       </div>
-
-      <!-- Botón para abrir el modal -->
-      <button class="modal-trigger" id="modal-trigger">
-        <div class="modal-trigger-content">
-          <div class="modal-trigger-icon">
-            <i class="icon icon_h2 bookmark bg-green_blue_dark"></i>
-          </div>
-          <span class="modal-trigger-text">Toca para ver más información</span>
-        </div>
-      </button>
     </div>
   </div>
 </div>
@@ -96,7 +101,7 @@
         introducción de estas especies está relacionada con la importación de
         productos básicos, el transporte mediante vectores y la dispersión desde
         regiones cercanas.
-      </p>     
+      </p>
     </div>
   </div>
 </div>

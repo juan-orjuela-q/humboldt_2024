@@ -5,21 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (containerNativas) {
     // Paleta de colores de la imagen para nativas
     const coloresNativas = [
-      "#636363", // Rojo claro
-      "#FF9E6B", // Naranja claro
-      "#698ED0", // Amarillo claro
-      "#997300", // Verde agua claro
-      "#264478", // Azul claro
-      "#ED7D31", // Azul oscuro
-      "#FFC000", // Rosa coral
-      "#9E480E", // Verde lima
-      "#70AD47", // Verde azulado
-      "#A5A5A5", // Coral
-      "#F4A261", // Naranja arena
-      "#E9C46A", // Amarillo dorado
-      "#264653", // Azul grisáceo oscuro
-      "#2A9D8F", // Turquesa
-      "#E9C46A", // Amarillo
+      "#5FC7D7", // Verde azulado claro - para acuáticas
+      "#00A3C3", // Azul dodger - para acuáticas o cielo
+      "#6e62f1", // Coral - común en gráficos de frutas tropicales
+      "#9770B1", // Lima verde - para vegetación
+      "#DC81B5", // Oro - para especies valiosas
+      "#f12c36", // Blueviolet - para flores
+      "#F05347", // Tomate - para especies en riesgo
+      "#3CB371", // Verde mar medio - para árboles
+      "#9370DB", // Púrpura medio - para diversidad
+      "#FF4500", // Naranja rojizo - para datos destacados
+      "#2E8B57", // Verde mar - para especies terrestres
+      "#4169E1", // Azul real - para endémicas
+      "#DC143C", // Carmesí - para prioritarias
+      "#228B22", // Verde bosque - para nativas
+      "#8B008B", // Magenta oscuro - para raras
     ];
 
     // Datos de especies nativas extraídos del Excel (Salida 1A Nativas)
@@ -355,12 +355,31 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       tooltip: {
         headerFormat: "",
-        pointFormat:
-          "<b>{point.name}</b><br/>" +
-          "Nombre científico: <b>{point.nombreCientifico}</b><br/>" +
-          "Nombre común: <b>{point.nombreComun}</b><br/>" +
-          "Cantidad registrada: <b>{point.value}</b><br/>" +
-          "Porcentaje del total: <b>{point.percentage:.1f}%</b>",
+        pointFormatter: function () {
+          let tooltipContent = `<b>${this.name}</b><br/>`;
+
+          // Validar y mostrar nombre científico solo si no está vacío
+          const nombreCientifico =
+            this.options.nombreCientifico || this.nombreCientifico;
+          if (nombreCientifico && nombreCientifico.trim() !== "") {
+            tooltipContent += `Nombre científico: <b>${nombreCientifico}</b><br/>`;
+          }
+
+          // Validar y mostrar nombre común solo si no está vacío
+          const nombreComun = this.options.nombreComun || this.nombreComun;
+          if (nombreComun && nombreComun.trim() !== "") {
+            tooltipContent += `Nombre común: <b>${nombreComun}</b><br/>`;
+          }
+
+          // Mostrar valor y porcentaje siempre
+          tooltipContent += `Cantidad registrada: <b>${this.value || 0}</b><br/>`;
+
+          if (this.percentage !== undefined) {
+            tooltipContent += `Porcentaje del total: <b>${this.percentage.toFixed(1)}%</b>`;
+          }
+
+          return tooltipContent;
+        },
       },
       credits: {
         enabled: false,
@@ -375,14 +394,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (containerIntroducidas) {
     // Paleta de colores de la imagen para introducidas
     const coloresIntroducidas = [
-      "#636363", // Rosa coral
-      "#43682B", // Amarillo claro
-      "#5B9BD5", // Verde agua
-      "#9E480E", // Azul claro
-      "#70AD47", // Azul oscuro
-      "#698ED0", // Naranja claro
-      "#ED7D31", // Verde lima
-      "#264478", // Verde azulado
+      "#5FC7D7", // Verde azulado claro - para acuáticas
+      "#00A3C3", // Azul dodger - para acuáticas o cielo
+      "#a199f8", // Coral - común en gráficos de frutas tropicales
+      "#9770B1", // Lima verde - para vegetación
+      "#DC81B5", // Oro - para especies valiosas
+      "#f12c36", // Blueviolet - para flores
+      "#F05347", // Tomate - para especies en riesgo
+      "#4783ec", // Verde azulado
       "#E76F51", // Coral
       "#F4A261", // Naranja arena
       "#E9C46A", // Amarillo dorado
@@ -772,12 +791,31 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
       tooltip: {
         headerFormat: "",
-        pointFormat:
-          "<b>{point.name}</b><br/>" +
-          "Nombre científico: <b>{point.nombreCientifico}</b><br/>" +
-          "Nombre común: <b>{point.nombreComun}</b><br/>" +
-          "Cantidad registrada: <b>{point.value}</b><br/>" +
-          "Porcentaje del total: <b>{point.percentage:.1f}%</b>",
+        pointFormatter: function () {
+          let tooltipContent = `<b>${this.name}</b><br/>`;
+
+          // Validar y mostrar nombre científico solo si no está vacío
+          const nombreCientifico =
+            this.options.nombreCientifico || this.nombreCientifico;
+          if (nombreCientifico && nombreCientifico.trim() !== "") {
+            tooltipContent += `Nombre científico: <b>${nombreCientifico}</b><br/>`;
+          }
+
+          // Validar y mostrar nombre común solo si no está vacío
+          const nombreComun = this.options.nombreComun || this.nombreComun;
+          if (nombreComun && nombreComun.trim() !== "") {
+            tooltipContent += `Nombre común: <b>${nombreComun}</b><br/>`;
+          }
+
+          // Mostrar valor y porcentaje siempre
+          tooltipContent += `Cantidad registrada: <b>${this.value || 0}</b><br/>`;
+
+          if (this.percentage !== undefined) {
+            tooltipContent += `Porcentaje del total: <b>${this.percentage.toFixed(1)}%</b>`;
+          }
+
+          return tooltipContent;
+        },
       },
       credits: {
         enabled: false,
@@ -794,26 +832,78 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Coordenadas y rutas de imágenes
   const municipalitiesData = {
-    1: { x: 47, y: 25, image: "./input/img/ficha-407-tierras-desnudas.png" },
-    2: { x: 29, y: 34, image: "./input/img/ficha-407-terreno-preparacion.png" },
-    3: { x: 78, y: 51, image: "./input/img/ficha-407-terreno-barbecho.png" },
-    4: { x: 43, y: 40, image: "./input/img/ficha-407-monocultivo.png" },
-    5: { x: 32, y: 67, image: "./input/img/ficha-407-policultivo.png" },
-    6: { x: 66, y: 37, image: "./input/img/ficha-407-pastizales.png" },
-    7: { x: 19, y: 48, image: "./input/img/ficha-407-silvopatoril.png" },
-    8: { x: 37, y: 52, image: "./input/img/ficha-407-huerto-mixto.png" },
-    9: { x: 63, y: 48, image: "./input/img/ficha-407-agrosilvicola.png" },
+    1: {
+      x: 47,
+      y: 25,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-tierras-desnudas.png",
+    },
+    2: {
+      x: 29,
+      y: 34,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-terreno-preparacion.png",
+    },
+    3: {
+      x: 78,
+      y: 51,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-terreno-barbecho.png",
+    },
+    4: {
+      x: 43,
+      y: 40,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-monocultivo.png",
+    },
+    5: {
+      x: 32,
+      y: 67,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-policultivo.png",
+    },
+    6: {
+      x: 66,
+      y: 37,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-pastizales.png",
+    },
+    7: {
+      x: 19,
+      y: 48,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-silvopatoril.png",
+    },
+    8: {
+      x: 37,
+      y: 52,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-huerto-mixto.png",
+    },
+    9: {
+      x: 63,
+      y: 48,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-agrosilvicola.png",
+    },
     10: {
       x: 70,
       y: 32,
-      image: "./input/img/ficha-407-vegetacion-secundaria.png",
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-vegetacion-secundaria.png",
     },
     11: {
       x: 67,
       y: 18,
-      image: "./input/img/ficha-407-vegetacion-secundaria--alta.png",
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-vegetacion-secundaria-alta.png",
     },
-    12: { x: 19, y: 22, image: "./input/img/ficha-407-bosques.png" },
+    12: {
+      x: 19,
+      y: 22,
+      image:
+        "https://reporte.humboldt.org.co/assets/img/2024/4/407/ficha-407-bosques.png",
+    },
   };
 
   // Variables globales
@@ -851,7 +941,6 @@ document.addEventListener("DOMContentLoaded", function () {
       numberElement.style.left = `${data.x}%`;
       numberElement.style.top = `${data.y}%`;
       numberElement.dataset.id = id;
-      numberElement.title = `Número ${id}`;
       mapNumbersContainer.appendChild(numberElement);
     });
   }
