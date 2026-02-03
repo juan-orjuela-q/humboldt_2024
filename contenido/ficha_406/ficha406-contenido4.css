@@ -16,6 +16,10 @@ body {
   z-index: 20;
 }
 
+.title-container h2 {
+  margin: 0px;
+}
+
 .title-container i {
   margin: 5px;
 }
@@ -42,7 +46,7 @@ body {
 }
 
 /* Filtros del mapa */
-.map-filters {
+.map-filterss {
   position: relative;
   z-index: 100;
   padding: 20px;
@@ -50,13 +54,14 @@ body {
   flex-direction: column;
   height: 100%;
   justify-content: space-around;
+  gap: 50px;
 }
 
-.map-filters input {
+.map-filterss input {
   display: none;
 }
 
-.map-filters label {
+.map-filterss label {
   position: relative;
   color: #000 !important;
   margin: 0.35rem 0;
@@ -147,7 +152,7 @@ body {
   .title-container {
     margin-bottom: 0;
   }
-  .map-filters {
+  .map-filterss {
     gap: 20px;
     height: auto;
   }

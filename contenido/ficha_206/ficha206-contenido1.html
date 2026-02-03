@@ -10,8 +10,9 @@
 <link rel="stylesheet" href="../../general/main-v3.css" />
 <link rel="stylesheet" href="../../general/sonar.min.css" />
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<div class="container col-group">
+<div class="col-group">
   <div class="title-container">
     <div>
       <i class="icon icon_h2 bars bg-green_clear"></i>
@@ -22,26 +23,45 @@
     <div class="container-content">
       <!-- Checkboxes a la izquierda -->
       <div class="checkbox-container">
+        <label
+          class="text-grey wow flipInX"
+          data-wow-delay="0.7s"
+          style="
+            visibility: visible;
+            animation-delay: 0.7s;
+            animation-name: flipInX;
+          "
+          ><i class="icon icon_h5 warning bg-grey"></i>Interactúa con las capas
+          del mapa</label
+        >
         <ul class="checkbox-group">
           <li>
             <input type="radio" id="radio-actual" name="escenario" checked />
+
             <label for="radio-actual">
-              <span class="checkbox-custom"></span>
-              Escenario actual
+              <div>
+                <span class="checkbox-custom"></span>
+              </div>
+
+              Escenario actual (2021-2040)
             </label>
           </li>
           <li>
             <input type="radio" id="radio-tendencial" name="escenario" />
             <label for="radio-tendencial">
-              <span class="checkbox-custom"></span>
-              Escenario tendencial
+              <div>
+                <span class="checkbox-custom"></span>
+              </div>
+              Escenario tendencial (2021-2040)
             </label>
           </li>
           <li>
             <input type="radio" id="radio-pesimista" name="escenario" />
             <label for="radio-pesimista">
-              <span class="checkbox-custom"></span>
-              Escenario pesimista
+              <div>
+                <span class="checkbox-custom"></span>
+              </div>
+              Escenario pesimista (2021-2040)
             </label>
           </li>
         </ul>
@@ -58,9 +78,14 @@
             <div class="img-container col-group">
               <div class="map-container col-dt-9">
                 <img
-                  src="./input/img/ficha-206-mapa-escenario-tendencial.png"
+                  src="https://reporte.humboldt.org.co/assets/img/2024/2/206/ficha-206-mapa-escenario-tendencial.png"
                   alt="mapa tendencial"
                 />
+                <div class="elemento-gradiente">
+                  <div class="texto-superior">Mayor</div>
+                  <div class="cuadro-gradiente gradient-color"></div>
+                  <div class="texto-inferior">Menor</div>
+                </div>
               </div>
               <div class="container-info col-dt-3">
                 <div class="departamentos-lista">
@@ -77,14 +102,9 @@
                     <li>Antioquia</li>
                   </ul>
                 </div>
-                <div class="elemento-gradiente">
-                  <div class="texto-superior">Mayor</div>
-                  <div class="cuadro-gradiente gradient-color"></div>
-                  <div class="texto-inferior">Menor</div>
-                </div>
                 <img
                   class="map-colombia"
-                  src="./input/img/ficha-206-mapa-general.png"
+                  src="https://reporte.humboldt.org.co/assets/img/2024/2/206/ficha-206-mapa-general.png"
                   alt="mapa Colombia"
                 />
               </div>
@@ -99,9 +119,14 @@
             <div class="img-container col-group">
               <div class="map-container col-dt-9">
                 <img
-                  src="./input/img/ficha-206-mapa-escenario-pesimista.png"
+                  src="https://reporte.humboldt.org.co/assets/img/2024/2/206/ficha-206-mapa-escenario-pesimista.png"
                   alt="mapa pesimista"
                 />
+                <div class="elemento-gradiente">
+                  <div class="texto-superior">Mayor</div>
+                  <div class="cuadro-gradiente gradient-color"></div>
+                  <div class="texto-inferior">Menor</div>
+                </div>
               </div>
               <div class="container-info col-dt-3">
                 <div class="departamentos-lista">
@@ -118,14 +143,9 @@
                     <li>Antioquia</li>
                   </ul>
                 </div>
-                <div class="elemento-gradiente">
-                  <div class="texto-superior">Mayor</div>
-                  <div class="cuadro-gradiente gradient-color"></div>
-                  <div class="texto-inferior">Menor</div>
-                </div>
                 <img
                   class="map-colombia"
-                  src="./input/img/ficha-206-mapa-general.png"
+                  src="https://reporte.humboldt.org.co/assets/img/2024/2/206/ficha-206-mapa-general.png"
                   alt="mapa Colombia"
                 />
               </div>
@@ -140,9 +160,14 @@
             <div class="img-container col-group">
               <div class="map-container col-dt-9">
                 <img
-                  src="./input/img/ficha-206-mapa-escenario-actual.png"
+                  src="https://reporte.humboldt.org.co/assets/img/2024/2/206/ficha-206-mapa-escenario-actual.png"
                   alt="mapa actual"
                 />
+                <div class="elemento-gradiente">
+                  <div class="texto-superior">Mayor</div>
+                  <div class="cuadro-gradiente gradient-color"></div>
+                  <div class="texto-inferior">Menor</div>
+                </div>
               </div>
               <div class="container-info col-dt-3">
                 <div class="departamentos-lista">
@@ -159,14 +184,9 @@
                     <li>Antioquia</li>
                   </ul>
                 </div>
-                <div class="elemento-gradiente">
-                  <div class="texto-superior">Mayor</div>
-                  <div class="cuadro-gradiente gradient-color"></div>
-                  <div class="texto-inferior">Menor</div>
-                </div>
                 <img
                   class="map-colombia"
-                  src="./input/img/ficha-206-mapa-general.png"
+                  src="https://reporte.humboldt.org.co/assets/img/2024/2/206/ficha-206-mapa-general.png"
                   alt="mapa Colombia"
                 />
               </div>

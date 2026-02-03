@@ -139,4 +139,8 @@ ul {
   .locations-section {
     flex: 1;
   }
+
+  .mapa-colombia {
+    position: static;
+  }
 }

@@ -5,6 +5,10 @@
   margin-bottom: 40px;
 }
 
+.title-container h2 {
+  margin: 0px;
+}
+
 .title-container i {
   margin: 5px;
 }
@@ -98,7 +102,6 @@
   gap: 12px;
   padding: 10px 15px;
   border-radius: 6px;
-  background-color: #f8f9fa;
 }
 
 .region-color {

@@ -292,7 +292,11 @@ document.addEventListener("DOMContentLoaded", function () {
       spacingBottom: 40, // Espacio para leyenda
     },
     title: {
-      text: null,
+      text: "Áreas someras",
+      style: {
+        fontFamily: "'Rubik', sans-serif",
+        color: "#000000",
+      },
     },
     subtitle: {
       text: null,
@@ -453,7 +457,11 @@ document.addEventListener("DOMContentLoaded", function () {
       spacingBottom: 40,
     },
     title: {
-      text: null,
+      text: "Paisajes submarinos profundos",
+      style: {
+        fontFamily: "'Rubik', sans-serif",
+        color: "#000000",
+      },
     },
     subtitle: {
       text: null,

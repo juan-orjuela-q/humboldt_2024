@@ -13,66 +13,83 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <div class="container align-l">
-  <div class="col-group info-container">
-    <div class="col-dt-12">
-      <div class="title-container">
-        <div>
-          <i class="icon icon_h2 markermap bg-blue"></i>
-        </div>
-        <h2 class="">Contenidos de carbono del CCZ (en t C/ha)</h2>
+  <div class="title-container">
+    <div>
+      <i class="icon icon_h2 markermap bg-blue"></i>
+    </div>
+    <h2 class="">Contenidos de carbono del CCZ (en t C/ha)</h2>
+  </div>
+  <div class="col-group">
+    <div id="bio2024-layerMap-108-map_3-filters" class="map-filters col-dt-3">
+      <div class="checkbox-container na">
+        <input type="checkbox" id="na" checked />
+        <label for="na"> NA </label>
       </div>
-      <div id="bio2024-layerMap-108-map_3-filters" class="map-filters">
-        <div class="checkbox-container na">
-          <input type="checkbox" id="na" checked />
-          <label for="na"> NA </label>
-        </div>
 
-        <div class="checkbox-container mapa-001">
-          <input type="checkbox" id="mapa-001" checked />
-          <label for="mapa-001"> 0,01 - 50,00 </label>
-        </div>
-
-        <div class="checkbox-container mapa-50-01">
-          <input type="checkbox" id="mapa-50-01" checked />
-          <label for="mapa-50-01"> 50,01 - 59,80 </label>
-        </div>
-
-        <div class="checkbox-container mapa-59-81">
-          <input type="checkbox" id="mapa-59-81" checked />
-          <label for="mapa-59-81"> 59,81 - 70,40 </label>
-        </div>
-
-        <div class="checkbox-container mapa-70-41">
-          <input type="checkbox" id="mapa-70-41" checked />
-          <label for="mapa-70-41"> 70,41 - 92,80 </label>
-        </div>
-
-        <div class="checkbox-container mapa-92-81">
-          <input type="checkbox" id="mapa-92-81" checked />
-          <label for="mapa-92-81"> 92,81 - 128,90 </label>
-        </div>
-
-        <div class="checkbox-container mapa-128">
-          <input type="checkbox" id="mapa-128" checked />
-          <label for="mapa-128"> 128,91 - 149,80 </label>
-        </div>
+      <div class="checkbox-container mapa-001">
+        <input type="checkbox" id="mapa-001" checked />
+        <label for="mapa-001"> 0,01 - 50,00 </label>
       </div>
-      <div id="bio2024-layerMap-108-map_3-content" class="map-container">
+
+      <div class="checkbox-container mapa-50-01">
+        <input type="checkbox" id="mapa-50-01" checked />
+        <label for="mapa-50-01"> 50,01 - 59,80 </label>
+      </div>
+
+      <div class="checkbox-container mapa-59-81">
+        <input type="checkbox" id="mapa-59-81" checked />
+        <label for="mapa-59-81"> 59,81 - 70,40 </label>
+      </div>
+
+      <div class="checkbox-container mapa-70-41">
+        <input type="checkbox" id="mapa-70-41" checked />
+        <label for="mapa-70-41"> 70,41 - 92,80 </label>
+      </div>
+
+      <div class="checkbox-container mapa-92-81">
+        <input type="checkbox" id="mapa-92-81" checked />
+        <label for="mapa-92-81"> 92,81 - 128,90 </label>
+      </div>
+
+      <div class="checkbox-container mapa-128">
+        <input type="checkbox" id="mapa-128" checked />
+        <label for="mapa-128"> 128,91 - 149,80 </label>
+      </div>
+    </div>
+    <div id="bio2024-layerMap-108-map_3-content" class="map-container col-dt-9">
+      <img
+        src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-noaplica.png"
+        alt="Mapa NA"
+      />
+      <div class="map-layers">
         <img
-          src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-na.png"
-          alt="Mapa NA"
+          src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-001.png"
+          id="img-mapa-001"
         />
-        <div class="map-layers">
-          <img src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-001.png" id="img-mapa-001" />
-          <img src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-50-01.png" id="img-mapa-50-01" />
-          <img src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-59-81.png" id="img-mapa-59-81" />
-          <img src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-70-41.png" id="img-mapa-70-41" />
-          <img src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-92-81.png" id="img-mapa-92-81" />
-          <img src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-128.png" id="img-mapa-128" />
-        </div>
+        <img
+          src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-50-01.png"
+          id="img-mapa-50-01"
+        />
+        <img
+          src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-59-81.png"
+          id="img-mapa-59-81"
+        />
+        <img
+          src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-70-41.png"
+          id="img-mapa-70-41"
+        />
+        <img
+          src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-92-81.png"
+          id="img-mapa-92-81"
+        />
+        <img
+          src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-128.png"
+          id="img-mapa-128"
+        />
       </div>
     </div>
   </div>
+
   <img
     class="map-colombia"
     src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-mapa-general.png"
@@ -81,5 +98,8 @@
 </div>
 
 <div class="img-container">
-  <img src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-imagen.png" alt="Cosecha de corozo" />
+  <img
+    src="https://reporte.humboldt.org.co/assets/img/2024/4/402/ficha-402-imagen.jpg"
+    alt="Cosecha de corozo"
+  />
 </div>

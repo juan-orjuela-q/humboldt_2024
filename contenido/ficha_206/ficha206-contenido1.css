@@ -8,7 +8,9 @@
   gap: 10px;
   margin: 40px 0;
 }
-
+i {
+  margin-right: 5px;
+}
 .container-tabs {
   display: flex;
   flex-direction: column;
@@ -48,6 +50,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  text-align: left;
 }
 
 .checkbox-group input[type="radio"] {
@@ -153,7 +156,7 @@
 }
 
 .img-container {
-  margin-top: 40px;
+  position: relative;
 }
 
 .elemento-gradiente {
@@ -167,6 +170,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 20%;
 }
 
 .elemento-gradiente:hover {
@@ -215,11 +221,10 @@
 
 .map-container {
   position: relative;
-  width: 100%;
-  height: 100%;
+  height: 100dvh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
 }
 
 .map-colombia {
@@ -227,9 +232,10 @@
   height: 228px;
 }
 
-.map-container img:first-child {
+.map-container img {
   width: 100%;
   height: auto;
+  max-width: 70vh;
 }
 
 .container-info {
@@ -278,12 +284,16 @@
   .checkbox-group li {
     width: 100%;
   }
+  .map-container {
+    display: block;
+  }
 
   .elemento-gradiente {
     width: 100%;
     margin-bottom: 20px;
     align-items: flex-start;
-    text-align: left;
+    text-align: left; 
+    position: relative;
   }
 
   .cuadro-gradiente {

@@ -9,6 +9,18 @@
   margin: 5px;
 }
 
+.context-icon {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  justify-content: end;
+}
+
+.context-icon div {
+  display: flex;
+}
+
 /* Estilos para la línea de tiempo */
 
 .timeline-container {
@@ -106,8 +118,6 @@
   margin: 30px 0;
   width: 100%;
 }
-
-
 
 /* Eliminar los puntos de lista anteriores */
 .event-container::before {

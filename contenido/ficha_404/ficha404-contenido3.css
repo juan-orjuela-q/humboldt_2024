@@ -1,9 +1,8 @@
-.bg-img-ficha404-contenido3 {
-  background-image: url("./input/img/Ficha-404-imagen.jpg") !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+.bg-img-ficha404-contenido3 img {
   min-height: 300px;
   max-height: 1450px;
-  height: 100%;
-  background-size: cover !important;
+  height: 100vh;
+  object-fit: cover;
+  width: 100%;
+
 }

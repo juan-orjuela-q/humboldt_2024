@@ -74,6 +74,10 @@ body {
   gap: 10px;
 }
 
+.title-container h2 {
+  margin: 0px;
+}
+
 .container {
   padding: 60px 0px;
 }

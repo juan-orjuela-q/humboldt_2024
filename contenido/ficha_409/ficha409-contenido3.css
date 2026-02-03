@@ -41,8 +41,8 @@
   margin: 0.3rem 10px;
 }
 
-.highcharts-no-tooltip {
-  display: none;
+.highcharts-exporting-group {
+  display: none !important;
 }
 
 .title-container {
@@ -62,6 +62,14 @@
   display: flex;
   gap: 10px;
   margin: 40px 0 80px;
+}
+
+.title-container i {
+  margin: 5px;
+}
+
+.title-container h2 {
+  margin-bottom: 0px;
 }
 
 /*css del contenido*/

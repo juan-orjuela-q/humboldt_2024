@@ -16,6 +16,10 @@ body {
   z-index: 20;
 }
 
+.title-container h2 {
+  margin: 0px;
+}
+
 .title-container i {
   margin: 5px;
 }

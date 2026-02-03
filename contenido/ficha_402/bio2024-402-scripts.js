@@ -187,8 +187,9 @@ document.addEventListener("DOMContentLoaded", function () {
           154.165942765, // OM-BI
           70.814136, // HM-F
         ],
-        color: "#3E7239",
+        color: "#eaa828",
         pointWidth: 30, // Ancho ajustado
+        borderColor: "#fff",
       },
       {
         name: "RCOS 0-50 cm",
@@ -221,8 +222,9 @@ document.addEventListener("DOMContentLoaded", function () {
           -104.59342859708799, // OM-BI
           -110.48177264717985, // HM-F
         ],
-        color: "#EFB442",
+        color: "#99237C",
         pointWidth: 30, // Ancho ajustado
+        borderColor: "#fff",
       },
     ],
   });

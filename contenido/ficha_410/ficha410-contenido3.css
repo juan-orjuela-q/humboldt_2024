@@ -1,17 +1,9 @@
-/* ==========================================================================
-   ESTILOS PARA FICHA 410 - REPRESENTATIVIDAD ECOSISTÉMICA
-   ========================================================================== */
-
-/* RESET Y CONFIGURACIONES BASE
-   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* CONTENEDORES PRINCIPALES
-   ========================================================================== */
 .ficha-container {
   padding-left: 40px;
   gap: 40px;
@@ -23,8 +15,7 @@
   margin-bottom: 40px;
 }
 
-/* ENCABEZADO Y TÍTULO
-   ========================================================================== */
+
 .title-container {
   display: flex;
   align-items: center;
@@ -34,12 +25,9 @@
 
 .title-container h2 {
   margin: 0;
-  font-size: 24px;
-  line-height: 1.3;
 }
 
-/* SISTEMA DE TABS
-   ========================================================================== */
+
 .tab-group {
   list-style: none;
   padding: 0;
@@ -87,8 +75,7 @@
   border-radius: 2px;
 }
 
-/* CONTENIDO DE TABS
-   ========================================================================== */
+
 .tab-content {
   margin-top: 30px;
 }
@@ -103,19 +90,13 @@
   margin-bottom: 40px;
 }
 
-/* PANEL DE LEYENDA (COL-DT-3)
-   ========================================================================== */
+
 .map-filters {
   flex: 0 0 25%;
   max-width: 320px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-
-.representatividad-leyenda {
-  padding: 20px;
-
 }
 
 .leyenda-titulo {
@@ -161,15 +142,13 @@
   line-height: 1.4;
 }
 
-/* COLORES POR NIVEL DE REPRESENTATIVIDAD */
-.nivel-alto .leyenda-color { background-color: #38A800; }        /* Verde oscuro */
-.nivel-medio-alto .leyenda-color { background-color: #8BD100; }  /* Verde */
-.nivel-medio .leyenda-color { background-color: #FFFF00; }       /* Amarillo */
-.nivel-bajo .leyenda-color { background-color: #FF8000; }        /* Naranja */
-.nivel-sin .leyenda-color { background-color: #FF0000; }         /* Rojo */
 
-/* MINI MAPA
-   ========================================================================== */
+.nivel-alto .leyenda-color { background-color: #38A800; }     
+.nivel-medio-alto .leyenda-color { background-color: #8BD100; }  
+.nivel-medio .leyenda-color { background-color: #FFFF00; }     
+.nivel-bajo .leyenda-color { background-color: #FF8000; }      
+.nivel-sin .leyenda-color { background-color: #FF0000; }    
+
 .mini-mapa {
   padding: 15px;
   text-align: center;
@@ -188,8 +167,7 @@
   font-style: italic;
 }
 
-/* CONTENEDOR DE MAPA PRINCIPAL (COL-DT-9)
-   ========================================================================== */
+
 .map-container {
   flex: 1;
   position: relative;
@@ -198,14 +176,13 @@
 }
 
 .mapa-principal {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 70vh;
 }
 
 
-/* RESPONSIVE DESIGN
-   ========================================================================== */
-@media screen and (max-width: 1024px) {
+
+@media screen and (max-width: 1000px) {
   .ficha-container {
     padding-left: 20px;
     padding-right: 20px;

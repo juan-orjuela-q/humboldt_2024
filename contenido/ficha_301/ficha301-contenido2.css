@@ -64,17 +64,12 @@
   display: none !important;
 }
 
-body {
-  background-image: url("https://reporte.humboldt.org.co/assets/img/2024/3/301/ficha-301-fondo.jpg") !important;
-  background-repeat: no-repeat !important;
-  min-height: 300px;
-  max-height: 1450px;
-  height: 100%;
-  background-size: cover !important;
+.img-fondo {
+  mix-blend-mode: multiply !important;
+  max-height: 800px;
 }
 
-
-.title-container {
+.title-container-contenido2 {
   display: flex;
   gap: 10px;
   margin: 40px 0;
@@ -88,10 +83,10 @@ body {
   .info-container {
     padding: 10px !important;
   }
-  .highcharts-root{
+  .highcharts-root {
     width: 290px !important;
   }
-  .highcharts-figure{
+  .highcharts-figure {
     margin: 0 !important;
   }
 }

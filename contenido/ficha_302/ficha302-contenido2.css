@@ -16,6 +16,9 @@
   margin: 5px;
 }
 
+.table-container {
+  overflow-x: auto;
+}
 /* Tabla estilos */
 .fauna-table {
   width: 100%;
@@ -73,29 +76,33 @@
 }
 
 .fauna-table th.sortable:hover::after {
-  color: #ff9800;
+  color: #fff;
 }
 
 /* Flechas de ordenación naranjas */
 .fauna-table th.sorted-asc::after {
   content: "▲";
-  color: #ff9800;
+  color: #fff;
   font-size: 14px;
   font-weight: bold;
 }
 
 .fauna-table th.sorted-desc::after {
   content: "▼";
-  color: #ff9800;
+  color: #fff;
   font-size: 14px;
   font-weight: bold;
 }
 
 /* Texto naranja cuando está activa la ordenación */
 .fauna-table th.active-sort {
-  color: #ff9800 !important;
-  background: linear-gradient(to bottom, #ffe8cc, #ffd8a8);
+  color: #fff !important;
+  background: #ff9800; 
   font-weight: 800;
+}
+
+.fauna-table th.active-sort span {
+  color: #fff !important;
 }
 
 /* CORRECCIÓN: Encabezados en minúscula - arreglar posición */
@@ -188,54 +195,6 @@
   display: none;
 }
 
-/* Usar pseudo-elementos para mostrar el texto en minúscula */
-.fauna-table th:nth-child(1)::before {
-  content: "orden";
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #000;
-  display: block;
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.fauna-table th:nth-child(2)::before {
-  content: "familia";
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #000;
-  display: block;
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.fauna-table th:nth-child(3)::before {
-  content: "especie";
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #000;
-  display: block;
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.fauna-table th:nth-child(4)::before {
-  content: "nombre común";
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #000;
-  display: block;
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 /* Celdas del cuerpo */
 .fauna-table td {

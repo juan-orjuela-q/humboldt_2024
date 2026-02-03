@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     ],
     subtitle: {
-      text: "Caribe continental<br/>protegido",
+      text: "Caribe continental<br/>protegido<br/> 1 975 212 ha",
       align: "center",
       verticalAlign: "middle",
       useHTML: true, // Permite usar HTML en el texto
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     ],
     subtitle: {
-      text: "Caribe continental<br/>NO protegido",
+      text: "Caribe continental<br/>NO protegido<br/>11 566 696 ha",
       align: "center",
       verticalAlign: "middle",
       useHTML: true,
@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     ],
     subtitle: {
-      text: "Total Caribe<br/>continental",
+      text: "Total Caribe<br/>continental<br/>13 541 908 ha",
       align: "center",
       verticalAlign: "middle",
       useHTML: true,
@@ -288,50 +288,149 @@ document.addEventListener("DOMContentLoaded", function () {
       y: 0,
     },
   });
+
+  Highcharts.chart("porcentaje-territorio", {
+    chart: {
+      type: "column",
+      height: "700px",
+      backgroundColor: "transparent",
+      style: {
+        fontFamily: "Rubik, sans-serif",
+      },
+      spacing: [10, 10, 10, 10], // Reducir espaciado
+    },
+    title: {
+      text: null, // Eliminar título
+    },
+    xAxis: {
+      categories: [""], // Categoría vacía
+      title: {
+        text: null,
+      },
+      labels: {
+        enabled: false, // Ocultar etiquetas
+      },
+      lineWidth: 0, // Eliminar línea del eje
+      tickLength: 0, // Eliminar marcas
+    },
+    yAxis: {
+      min: 0,
+      max: 100,
+      title: {
+        text: null, // Eliminar título
+      },
+      labels: {
+        enabled: false, // Ocultar etiquetas
+      },
+      gridLineWidth: 0, // Eliminar líneas de la cuadrícula
+      lineWidth: 0, // Eliminar línea del eje
+    },
+    legend: {
+      enabled: true,
+    },
+    tooltip: {
+      enabled: false,
+      shared: false,
+    },
+    plotOptions: {
+      column: {
+        stacking: "percent",
+        pointWidth: 30,
+        borderWidth: 0,
+        dataLabels: {
+          enabled: true,
+          format:
+            '<span style="font-size: 16px; font-weight: bold;">{point.y:.2f}%</span><br/><span style="font-size: 12px;">{point.hectareas}</span>',
+          style: {
+            fontFamily: "Rubik, sans-serif",
+            fontSize: "14px",
+            fontWeight: "bold",
+            color: "#fff",
+            textOutline: "none",
+          },
+          verticalAlign: "middle",
+          align: "left",
+          x: 50,
+          useHTML: true,
+        },
+      },
+    },
+    series: [
+      {
+        name: "Protegido",
+        color: "#A22783",
+        data: [
+          {
+            y: 14.59,
+            hectareas: "11 566 696 ha",
+            color: "#A22783",
+          },
+        ],
+      },
+      {
+        name: "No protegido",
+        color: "#D1D2D4",
+        data: [
+          {
+            y: 85.41,
+            hectareas: "1 975 212 ha",
+            color: "#D1D2D4",
+          },
+        ],
+      },
+    ],
+    credits: {
+      enabled: false,
+    },
+  });
 });
 
-//conteniodo 3
 document.addEventListener("DOMContentLoaded", function () {
-  // Sistema de tabs
-  document.querySelectorAll(".tab a").forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
+  // Datos del Excel "Copia de Salida_3" - Columna G: Porcentaje acumulado de pérdida
+  const years = [1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2022, 2023];
+  
+  // Datos como valores POSITIVOS (no negativos)
+  const perdidaAcumuladaProtegidas = [
+    0.0,                     // 1985
+    0.0145525994662054,      // 1990 
+    0.029419408180646,       // 1995 
+    0.043971094466958,       // 2000 
+    0.068594284854232,       // 2005 
+    0.100512790660356,       // 2010 
+    0.136342454896287,       // 2015 
+    0.184291179848326,       // 2020 
+    0.222664776589166,       // 2022 
+    0.266069730408133        // 2023 
+  ];
+  
+  const perdidaAcumuladaNoProtegidas = [
+    0.0,                     // 1985
+    0.033054433014916,       // 1990 
+    0.075483186054646,       // 1995 
+    0.108381867489758,       // 2000 
+    0.146696324365697,       // 2005 
+    0.201709263226613,       // 2010 
+    0.253452767189705,       // 2015 
+    0.302167751194581,       // 2020 
+    0.361228255869608,       // 2022 
+    0.463054376008551        // 2023 
+  ];
+  
+  const perdidaAcumuladaCaribe = [
+    0.0,                     // 1985
+    0.029090308280414,       // 1990 
+    0.059667247218528,       // 1995 
+    0.086993207750184,       // 2000 
+    0.121697287770764,       // 2005 
+    0.16239291857695,        // 2010 
+    0.199755281137354,       // 2015 
+    0.236143145777584,       // 2020 
+    0.280084224196099,       // 2022 
+    0.342236415980486        // 2023 
+  ];
 
-      // Remover clase active de todos los padres
-      document.querySelectorAll(".tab").forEach((tab) => {
-        tab.classList.remove("active");
-      });
-
-      // Agregar clase active al padre del enlace clickeado
-      this.parentElement.classList.add("active");
-
-      const target = this.getAttribute("href");
-
-      // Ocultar todos los contenidos de pestañas
-      document.querySelectorAll(".tab-content > div").forEach((content) => {
-        content.style.display = "none";
-      });
-
-      // Mostrar el contenido objetivo con fadeIn
-      const targetElement = document.querySelector(target);
-      if (targetElement) {
-        targetElement.style.display = "flex";
-        targetElement.style.opacity = "0";
-
-        let opacity = 0;
-        const fadeIn = setInterval(() => {
-          if (opacity >= 1) {
-            clearInterval(fadeIn);
-          }
-          targetElement.style.opacity = opacity.toString();
-          opacity += 0.1;
-        }, 60); // 600ms total (60ms * 10 steps)
-      }
-    });
-  });
-
-  // Gráfica 1: Áreas Protegidas
-  Highcharts.chart("protegidas", {
+  // Gráfico único con las 3 series de porcentaje acumulado
+  Highcharts.chart("grafico-unico", {
     chart: {
       backgroundColor: "transparent",
       height: "500px",
@@ -341,203 +440,159 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
     title: {
-      text: null,
+      text: "Porcentaje Acumulado de Pérdida de Cobertura Natural (1985-2023)",
       style: {
         color: "black",
         fontFamily: "Rubik, Arial, sans-serif",
+        fontSize: "16px",
+        fontWeight: "bold"
       },
+    },
+    subtitle: {
+      text: "Datos del Caribe Continental Colombiano - Porcentaje acumulado de pérdida",
+      style: {
+        color: "#666",
+        fontFamily: "Rubik, sans-serif",
+        fontSize: "12px"
+      }
     },
     xAxis: {
       title: {
         text: "Año",
         style: {
           color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
+          fontFamily: "Rubik, sans-serif",
         },
       },
       labels: {
         style: {
           color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
+          fontFamily: "Rubik, sans-serif",
         },
       },
-      categories: [1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2022, 2023],
+      categories: years,
+      crosshair: true
     },
     yAxis: {
       title: {
-        text: "Superficie (ha)",
+        text: "Porcentaje Acumulado de Pérdida (%)",
         style: {
           color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
+          fontFamily: "Rubik, sans-serif",
         },
       },
       labels: {
         style: {
           color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
+          fontFamily: "Rubik, sans-serif",
         },
+        formatter: function() {
+          return this.value.toFixed(1) + '%';
+        }
       },
+      reversed: true, // Esto invierte el eje Y (cero arriba)
+      min: 0,         // El valor MÍNIMO es 0 (arriba)
+      max: 50,        // El valor MÁXIMO es 50 (abajo)
+      tickInterval: 5,
+      gridLineWidth: 1,
+      gridLineColor: 'rgba(0,0,0,0.1)',
+      // Asegurar que 0 esté arriba y 50 abajo
+      startOnTick: true,
+      endOnTick: true
     },
     tooltip: {
-      headerFormat: "<b>Áreas Protegidas</b><br/>",
-      pointFormat: "Año: {point.x}<br>Superficie: {point.y:,.0f} ha",
-      style: {
-        fontFamily: "Rubik, Arial, sans-serif",
+      shared: true,
+      useHTML: true,
+      formatter: function() {
+        let tooltip = '<b>Año: ' + this.x + '</b><br/>';
+        
+        this.points.forEach(point => {
+          const porcentaje = point.y.toFixed(2);
+          const valorPorcentaje = porcentaje + '%';
+          
+          tooltip += `
+            <div style="display: flex; align-items: center; margin: 5px 0;">
+              <span style="display: inline-block; width: 10px; height: 10px; 
+                  background-color: ${point.color}; margin-right: 8px; border-radius: 50%;"></span>
+              <div>
+                <div style="font-weight: bold;">${point.series.name}</div>
+                <div>Pérdida acumulada: <b>${valorPorcentaje}</b></div>
+                <div style="font-size: 11px; color: #666; margin-top: 2px;">
+                  ${this.x === 1985 ? 'Año base (sin pérdida)' : `Desde 1985 hasta ${this.x}`}
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        
+        return tooltip;
       },
+      style: {
+        fontFamily: "Rubik, sans-serif",
+      },
+    },
+    legend: {
+      enabled: true,
+      layout: 'horizontal',
+      align: 'center',
+      verticalAlign: 'bottom',
+      itemStyle: {
+        fontFamily: "Rubik, sans-serif",
+        color: "black"
+      }
+    },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: true,
+          radius: 5
+        },
+        lineWidth: 2
+      }
     },
     series: [
       {
         name: "Áreas Protegidas",
-        data: [
-          1344244.64, 1324688.12, 1321623.32, 1319666.39, 1304892.77,
-          1309124.26, 1301458.85, 1283375.48, 1279435.74, 1268285.49,
-        ],
-        color: "#2caffe",
+        data: perdidaAcumuladaProtegidas.map(p => p * 100), // Convertir a porcentaje (valores POSITIVOS)
+        color: "#2CAFFE", // Azul claro
         marker: {
-          enabled: true,
+          symbol: 'circle'
         },
+        dashStyle: 'Solid'
       },
-    ],
-  });
-
-  // Gráfica 2: Áreas NO Protegidas
-  Highcharts.chart("no-protegidas", {
-    chart: {
-      backgroundColor: "transparent",
-      height: "500px",
-      style: {
-        color: "black",
-        fontFamily: "Rubik, Arial, sans-serif",
-      },
-    },
-    title: {
-      text: null,
-      style: {
-        color: "black",
-        fontFamily: "Rubik, Arial, sans-serif",
-      },
-    },
-    xAxis: {
-      title: {
-        text: "Año",
-        style: {
-          color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
-        },
-      },
-      labels: {
-        style: {
-          color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
-        },
-      },
-      categories: [1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2022, 2023],
-    },
-    yAxis: {
-      title: {
-        text: "Superficie (ha)",
-        style: {
-          color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
-        },
-      },
-      labels: {
-        style: {
-          color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
-        },
-      },
-    },
-    tooltip: {
-      headerFormat: "<b>Áreas NO Protegidas</b><br/>",
-      pointFormat: "Año: {point.x}<br>Superficie: {point.y:,.0f} ha",
-      style: {
-        fontFamily: "Rubik, Arial, sans-serif",
-      },
-    },
-    series: [
       {
         name: "Áreas NO Protegidas",
-        data: [
-          4844103.78, 4683830.64, 4481118.7, 4432951.44, 4371804.48, 4418814.03,
-          4465072.25, 4462933.21, 4493430.91, 4450214.26,
-        ],
-        color: "#2caffe",
+        data: perdidaAcumuladaNoProtegidas.map(p => p * 100), // Convertir a porcentaje (valores POSITIVOS)
+        color: "#FF6B6B", // Rojo coral
         marker: {
-          enabled: true,
+          symbol: 'square'
         },
+        dashStyle: 'Solid'
       },
-    ],
-  });
-
-  // Gráfica 3: Caribe Continental Total
-  Highcharts.chart("caribe-continental", {
-    chart: {
-      backgroundColor: "transparent",
-      height: "500px",
-      style: {
-        color: "black",
-        fontFamily: "Rubik, Arial, sans-serif",
-      },
-    },
-    title: {
-      text: null,
-      style: {
-        color: "black",
-        fontFamily: "Rubik, Arial, sans-serif",
-      },
-    },
-    xAxis: {
-      title: {
-        text: "Año",
-        style: {
-          color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
-        },
-      },
-      labels: {
-        style: {
-          color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
-        },
-      },
-      categories: [1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2022, 2023],
-    },
-    yAxis: {
-      title: {
-        text: "Superficie (ha)",
-        style: {
-          color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
-        },
-      },
-      labels: {
-        style: {
-          color: "black",
-          fontFamily: "Rubik, Arial, sans-serif",
-        },
-      },
-    },
-    tooltip: {
-      headerFormat: "<b>Caribe Continental Total</b><br/>",
-      pointFormat: "Año: {point.x}<br>Superficie: {point.y:,.0f} ha",
-      style: {
-        fontFamily: "Rubik, Arial, sans-serif",
-      },
-    },
-    series: [
       {
-        name: "Caribe Continental",
-        data: [
-          6188348.42, 6008518.76, 5802742.02, 5752617.83, 5676697.26,
-          5727938.28, 5766531.1, 5746308.69, 5772866.65, 5718499.75,
-        ],
-        color: "#2caffe",
+        name: "Caribe Continental Total",
+        data: perdidaAcumuladaCaribe.map(p => p * 100), // Convertir a porcentaje (valores POSITIVOS)
+        color: "#4ECDC4", // Turquesa
         marker: {
-          enabled: true,
+          symbol: 'triangle'
         },
-      },
+        dashStyle: 'Solid'
+      }
     ],
+    responsive: {
+      rules: [{
+        condition: {
+          maxWidth: 500
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom'
+          }
+        }
+      }]
+    }
   });
 });
 
@@ -591,7 +646,18 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
     legend: {
-      enabled: false,
+      enabled: true,
+      align: "center",
+      verticalAlign: "bottom",
+      layout: "horizontal",
+      itemStyle: {
+        color: "#000",
+        fontFamily: "Rubik, sans-serif",
+        fontSize: "14px",
+      },
+      itemHoverStyle: {
+        color: "#00748B",
+      },
     },
     tooltip: {
       pointFormat:
@@ -670,7 +736,16 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
       xAxis: {
-        categories: ["1970", "1990", "2000", "2010", "2020", "2022", "2023", "2023 Amazonia"],
+        categories: [
+          "1970",
+          "1990",
+          "2000",
+          "2010",
+          "2020",
+          "2022",
+          "2023",
+          "2023 Amazonia",
+        ],
         lineColor: "#000",
         labels: {
           style: {
@@ -812,8 +887,8 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             {
               name: "2023 Amazonia",
-              y: 12.76, 
-              color: "#00748B", 
+              y: 12.76,
+              color: "#00748B",
             },
           ],
         },

@@ -1,3 +1,7 @@
+.container {
+  padding-bottom: 40px;
+}
+
 .info-container {
   margin-bottom: 40px;
 }
@@ -6,6 +10,10 @@
   display: flex;
   gap: 10px;
   margin-top: 40px;
+}
+
+.title-container h2 {
+  margin: 0px;
 }
 
 .title-container i {
@@ -162,9 +170,9 @@
 }
 }
 
-@media screen and (min-width: 980px) and (max-width: 1860px) {
+@media screen and (min-width: 980px) and (max-width: 1260px) {
   .general-map {
-    right: 5px;
-    top: -5px;
+    right: 80px;
+    top: 0px;
   }
 }

@@ -1,4 +1,8 @@
 /* Estilos para el carrusel de ficha110 contenido4 */
+.title-section4 {
+  color: #fff;
+}
+
 .ficha305-contenido4-carousel-wrapper {
   display: flex;
   justify-content: center;
@@ -14,7 +18,7 @@
 
 .ficha305-contenido4-carousel {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
   height: 80%;
   max-height: 600px;
