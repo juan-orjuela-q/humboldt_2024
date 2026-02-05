@@ -559,80 +559,56 @@ body {
   background: #aebc14;
 }
 
+
 /* ============================================ */
-/* ESTILOS PARA TOGGLE BUTTONS DE USOS */
+/* NUEVO SWITCH VISUAL PARA USOS */
 /* ============================================ */
 
-.use-toggle-group {
-  margin-bottom: 15px;
+.switch-toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  margin-left: 10px;
 }
 
-.use-toggle-header {
-  display: flex;
-  align-items: center;
+.switch-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.use-icon-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-
-.use-icon-header span {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  min-width: 90px;
-}
-
-.use-toggle-buttons {
-  display: flex;
-  gap: 5px;
-  margin-left: auto;
-}
-
-.use-toggle-btn {
-  padding: 6px 15px;
-  border: 2px solid #4ab9ad;
-  background: white;
-  color: #4ab9ad;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 6px;
+.slider {
+  position: absolute;
   cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 50px;
-  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e0e0e0;
+  transition: 0.4s;
+  border-radius: 24px;
 }
 
-.use-toggle-btn:hover {
-  background: #f0f9f8;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.use-toggle-btn.active {
-  background: #4ab9ad;
-  color: white;
+.switch-toggle input:checked + .slider {
+  background-color: #4ab9ad;
 }
 
-.use-toggle-btn:first-child {
-  border-radius: 6px 0 0 6px;
-  border-right: none;
-}
-
-.use-toggle-btn:last-child {
-  border-radius: 0 6px 6px 0;
-}
-
-/* Para un solo botón activo por grupo */
-.use-toggle-buttons .use-toggle-btn.active ~ .use-toggle-btn {
-  background: white;
-  color: #999;
-  border-color: #ddd;
-}
-
-.use-toggle-buttons .use-toggle-btn.active ~ .use-toggle-btn:hover {
-  background: #f5f5f5;
+.switch-toggle input:checked + .slider:before {
+  transform: translateX(20px);
 }
 
 /* Responsive */
@@ -675,4 +651,13 @@ body {
   .iic-filter-option {
     padding: 6px 0;
   }
+}
+
+
+.use-toggle-buttons {
+    position: absolute;
+    right: 0;
+}
+.use-toggle-group {
+    position: relative;
 }
