@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "nativas-raiz",
         parent: "",
-        name: "Especies Nativas",
+        name: "Especies nativas",
         value: 203,
         color: "#fff", // Azul grisáceo oscuro
       },
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
       title: {
-        text: "Especies Nativas",
+        text: "Especies nativas",
         style: {
           fontSize: "22px",
           fontWeight: "bold",
@@ -362,14 +362,9 @@ document.addEventListener("DOMContentLoaded", function () {
           const nombreCientifico =
             this.options.nombreCientifico || this.nombreCientifico;
           if (nombreCientifico && nombreCientifico.trim() !== "") {
-            tooltipContent += `Nombre científico: <b>${nombreCientifico}</b><br/>`;
+            tooltipContent += `Nombre científico: <b style="font-style: italic;">${nombreCientifico}</b><br/>`;
           }
 
-          // Validar y mostrar nombre común solo si no está vacío
-          const nombreComun = this.options.nombreComun || this.nombreComun;
-          if (nombreComun && nombreComun.trim() !== "") {
-            tooltipContent += `Nombre común: <b>${nombreComun}</b><br/>`;
-          }
 
           // Mostrar valor y porcentaje siempre
           tooltipContent += `Cantidad registrada: <b>${this.value || 0}</b><br/>`;
@@ -417,7 +412,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "introducidas-raiz",
         parent: "",
-        name: "Especies Introducidas",
+        name: "Especies introducidas",
         value: 269,
         color: "#fff", // Azul grisáceo
       },
@@ -721,7 +716,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
       title: {
-        text: "Especies Introducidas",
+        text: "Especies introducidas",
         style: {
           fontSize: "22px",
           fontWeight: "bold",
@@ -798,7 +793,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const nombreCientifico =
             this.options.nombreCientifico || this.nombreCientifico;
           if (nombreCientifico && nombreCientifico.trim() !== "") {
-            tooltipContent += `Nombre científico: <b>${nombreCientifico}</b><br/>`;
+            tooltipContent += `Nombre científico: <b style="font-style: italic;">${nombreCientifico}</b><br/>`;
           }
 
           // Validar y mostrar nombre común solo si no está vacío

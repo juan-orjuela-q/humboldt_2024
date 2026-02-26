@@ -1,7 +1,7 @@
 // ============================================
 // CONTENIDO 1 - GRÁFICO DE COLUMNAS
 // ============================================
-
+document.addEventListener("DOMContentLoaded", function () {
 const contenido1 = document.getElementById("tendencia-perdida");
 if (contenido1) {
   Highcharts.chart("tendencia-perdida", {
@@ -26,7 +26,7 @@ if (contenido1) {
     },
     xAxis: {
       categories: ["Consumo", "Comercio", "Mascota", "Artesanía", "Medicina"],
-      crosshair: true,
+      crosshair: true, 
       labels: {
         style: {
           color: "#000",
@@ -98,6 +98,7 @@ if (contenido1) {
     ],
   });
 }
+});
 
 // ============================================
 // CONTENIDO 2 - SISTEMA DE FILTROS
@@ -941,16 +942,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Función para obtener los usos seleccionados (versión con botones)
   function getSelectedCheckboxes(name) {
     if (name === "use-filter") {
-      const activeButtons = document.querySelectorAll(".use-toggle-btn.active");
+      const switches = document.querySelectorAll(".use-switch");
       const selectedUses = [];
-
-      Array.from(activeButtons).forEach((btn) => {
+      Array.from(switches).forEach((sw) => {
         selectedUses.push({
-          uso: btn.dataset.use,
-          valor: btn.dataset.value === "true",
+          uso: sw.dataset.use,
+          valor: sw.checked,
         });
       });
-
       return selectedUses;
     } else {
       const checkboxes = document.querySelectorAll(
@@ -976,10 +975,16 @@ document.addEventListener("DOMContentLoaded", function () {
       // Filtrar por grupo
       if (species.grupo !== currentFilters.grupo) return false;
 
-      // Filtrar por usos (Sí/No)
+      // Filtrar por usos (OR - al menos uno debe coincidir)
       if (currentFilters.usos.length > 0) {
-        for (const usoFilter of currentFilters.usos) {
-          if (species[usoFilter.uso] !== usoFilter.valor) return false;
+        // Si todos los switches están activos, no filtrar por uso
+        const allActive = currentFilters.usos.every(u => u.valor === true);
+        if (!allActive) {
+          // Al menos uno de los usos activos debe coincidir
+          const algunoCoincide = currentFilters.usos.some(usoFilter => {
+            return usoFilter.valor === true && species[usoFilter.uso] === true;
+          });
+          if (!algunoCoincide) return false;
         }
       }
 
@@ -1137,22 +1142,10 @@ document.addEventListener("DOMContentLoaded", function () {
       radio.addEventListener("change", applyFilters);
     });
 
-    // Botones toggle de usos
-    const useToggleButtons = document.querySelectorAll(".use-toggle-btn");
-    useToggleButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const useType = this.dataset.use;
-        const buttonsGroup = document.querySelectorAll(
-          `.use-toggle-btn[data-use="${useType}"]`
-        );
-
-        // Remover activo de todos los botones del mismo grupo
-        buttonsGroup.forEach((btn) => btn.classList.remove("active"));
-
-        // Activar el botón clickeado
-        this.classList.add("active");
-
-        // Aplicar filtros
+    // Switches de usos
+    const useSwitches = document.querySelectorAll(".use-switch");
+    useSwitches.forEach((input) => {
+      input.addEventListener("change", function () {
         applyFilters();
       });
     });
@@ -1171,13 +1164,10 @@ document.addEventListener("DOMContentLoaded", function () {
           radio.checked = radio.value === "Reptil";
         });
 
-        // Restablecer botones de usos (Sí por defecto)
-        const allUseButtons = document.querySelectorAll(".use-toggle-btn");
-        allUseButtons.forEach((btn) => {
-          btn.classList.remove("active");
-          if (btn.dataset.value === "true") {
-            btn.classList.add("active");
-          }
+        // Restablecer switches de usos (activados por defecto)
+        const allUseSwitches = document.querySelectorAll(".use-switch");
+        allUseSwitches.forEach((sw) => {
+          sw.checked = true;
         });
 
         // Desmarcar checkboxes de IIC

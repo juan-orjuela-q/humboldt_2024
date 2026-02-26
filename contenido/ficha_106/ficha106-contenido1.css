@@ -166,8 +166,8 @@ p.note {
   pointer-events: none;
 }
 
-/* tooltip simple */
-.tooltip {
+/* tooltip-contenido-1 simple */
+.tooltip-contenido-1 {
   position: absolute;
   background: white !important;
   border-radius: 6px;
@@ -178,7 +178,7 @@ p.note {
   text-align: left;
 }
 
-.tooltip::after {
+.tooltip-contenido-1::after {
   border-top: 10px solid #fff !important;
 }
 .venn-svg {
@@ -191,13 +191,13 @@ p.note {
   margin-top: -50px;
 }
 
-.tooltip h3 {
+.tooltip-contenido-1 h3 {
   font-size: 16px;
   font-weight: 700;
   color: #000;
 }
 
-.tooltip p {
+.tooltip-contenido-1 p {
   font-size: 16px;
   font-weight: 400;
   color: #000;

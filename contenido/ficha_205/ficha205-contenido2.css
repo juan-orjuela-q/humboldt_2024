@@ -11,7 +11,7 @@
 .title-container {
   display: flex;
   gap: 10px;
-  margin: 40px 0;
+  padding: 40px 0;
 }
 
 .species-table {
@@ -113,4 +113,20 @@ th {
 .progress-bar:hover {
   background: linear-gradient(90deg, #9b6fcf, #7a1dcd);
   box-shadow: 0 0 5px rgba(106, 13, 173, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .info-container {
+    display: flex;
+    justify-content: center;
+  }
+  .species-table {
+    background: #ffffffb3;
+    margin: 0;
+    border-collapse: collapse;
+  }
+  .species-table td,
+  .species-table th {
+    padding: 12px 15px !important;
+  }
 }

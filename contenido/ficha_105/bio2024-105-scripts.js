@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Crear el chart de Highcharts
       return Highcharts.chart("especies-dulceacuicolas", {
         chart: {
-          height: "100%",
+          height: "600px",
           backgroundColor: "transparent",
           style: {
             fontFamily: "rubik, sans-serif",
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 level: 3,
                 colorVariation: {
                   key: "brightness",
-                  to: -0.3,
+                  to: -0.1,
                 },
               },
             ],
@@ -107,11 +107,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
         tooltip: {
           headerFormat: "",
-          pointFormat:
-            "<b>{point.name}</b><br/>" +
-            "Categoría de amenaza: <b>{point.categoria}</b><br/>" +
-            "Endémica: <b>{point.endemica}</b><br/>" +
-            "Número de especies: <b>{point.value}</b>",
+          useHTML: true, // Habilitar HTML para mejor control
+          pointFormatter: function () {
+            // Construir el tooltip dinámicamente
+            let tooltip = `<b>${this.name}</b><br/>`;
+
+            // Solo agregar nombre científico si existe
+            if (this.nombreCientifico) {
+              tooltip += `Nombre científico: <i>${this.nombreCientifico}</i><br/>`;
+            }
+
+            // Agregar categoría de amenaza si existe
+            if (this.categoria) {
+              tooltip += `Categoría de amenaza: <b>${this.categoria}</b><br/>`;
+            }
+
+            // Agregar endemismo si existe
+            if (this.endemica) {
+              tooltip += `Endémica: <b>${this.endemica}</b><br/>`;
+            }
+
+            return tooltip;
+          },
         },
       });
     };
@@ -121,9 +138,9 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "0.0",
         parent: "",
-        name: "Peces del Caribe",
+        name: "Peces dulceacuícolas en categorías de amenaza",
         value: 14,
-        color: "#1f77b4",
+        color: "#ffffff",
       },
       {
         id: "1.0",
@@ -131,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
         name: "En Peligro Crítico (CR)",
         value: 1,
         categoria: "CR",
-        color: "#d62728",
+        color: "#D50000",
       },
       {
         id: "1.1",
@@ -139,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
         name: "En Peligro (EN)",
         value: 4,
         categoria: "EN",
-        color: "#ff7f0e",
+        color: "#F59C00",
       },
       {
         id: "1.2",
@@ -147,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
         name: "Vulnerable (VU)",
         value: 9,
         categoria: "VU",
-        color: "#ffbb78",
+        color: "#E9C101",
       },
       // Especies en Peligro Crítico (CR)
       {
@@ -172,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "2.2",
         parent: "1.1",
-        name: "Corunta",
+        name: "Marozco",
         value: 1,
         categoria: "EN",
         endemica: "Sí",
@@ -190,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "2.4",
         parent: "1.1",
-        name: "Lamprea",
+        name: "Mayupa",
         value: 1,
         categoria: "EN",
         endemica: "Sí",
@@ -200,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "2.5",
         parent: "1.2",
-        name: "Jetudo",
+        name: "Pataló",
         value: 1,
         categoria: "VU",
         endemica: "Sí",
@@ -254,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "2.11",
         parent: "1.2",
-        name: "Yamú",
+        name: "Comelón",
         value: 1,
         categoria: "VU",
         endemica: "Sí",
@@ -263,7 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         id: "2.12",
         parent: "1.2",
-        name: "Marranito",
+        name: "Marozco",
         value: 1,
         categoria: "VU",
         endemica: "No",
@@ -281,492 +298,107 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     createChart(data);
+  }
 
-    // Gráfico de composición ictiofauna CON LEYENDA
-    Highcharts.chart("composicion-ictiofauna", {
-      chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        height: "100%",
-        backgroundColor: "transparent",
-        type: "pie",
-        style: {
-          fontFamily: "Rubik, sans-serif",
-        },
+  // Gráfico de composición ictiofauna CON LEYENDA
+  Highcharts.chart("composicion-ictiofauna", {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      height: "700px",
+      backgroundColor: "transparent",
+      type: "pie",
+      style: {
+        fontFamily: "Rubik, sans-serif",
       },
-      title: {
-        text: null,
-        style: {
-          color: "#000",
-          fontFamily: "Rubik, sans-serif",
-          fontWeight: "bold",
-        },
+    },
+    title: {
+      text: null,
+      style: {
+        color: "#000",
+        fontFamily: "Rubik, sans-serif",
+        fontWeight: "bold",
       },
-      tooltip: {
-        backgroundColor: "#FFFFFF",
-        borderColor: "#CCCCCC",
-        borderRadius: 8,
+    },
+    tooltip: {
+      backgroundColor: "#FFFFFF",
+      borderColor: "#CCCCCC",
+      borderRadius: 8,
+      borderWidth: 1,
+      pointFormat:
+        '<span style="color:{point.color}">●</span> {point.name}<br/>' +
+        "Cantidad: <b>{point.y}</b><br/>" +
+        "Porcentaje: <b>{point.percentage:.1f}%</b>",
+      style: {
+        color: "#000",
+        fontFamily: "Rubik, sans-serif",
+      },
+    },
+    accessibility: {
+      point: {
+        valueSuffix: "%",
+      },
+    },
+    legend: {
+      enabled: true,
+      align: "center",
+      verticalAlign: "bottom",
+      layout: "horizontal",
+      itemStyle: {
+        color: "#000",
+        fontFamily: "Rubik, sans-serif",
+        fontSize: "12px",
+        fontWeight: "normal",
+      },
+      itemHoverStyle: {
+        color: "#333",
+      },
+      itemHiddenStyle: {
+        color: "#ccc",
+      },
+      symbolHeight: 12,
+      symbolWidth: 12,
+      symbolRadius: 6,
+      padding: 10,
+      margin: 10,
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: {
+          enabled: false,
+        },
+        showInLegend: true,
+      },
+    },
+    series: [
+      {
+        borderColor: "#ffffff",
         borderWidth: 1,
-        pointFormat:
-          '<span style="color:{point.color}">●</span> {point.name}<br/>' +
-          "Cantidad: <b>{point.y}</b><br/>" +
-          "Porcentaje: <b>{point.percentage:.1f}%</b>",
-        style: {
-          color: "#000",
-          fontFamily: "Rubik, sans-serif",
-        },
-      },
-      accessibility: {
-        point: {
-          valueSuffix: "%",
-        },
-      },
-      legend: {
-        enabled: true,
-        align: "center",
-        verticalAlign: "bottom",
-        layout: "horizontal",
-        itemStyle: {
-          color: "#000",
-          fontFamily: "Rubik, sans-serif",
-          fontSize: "12px",
-          fontWeight: "normal",
-        },
-        itemHoverStyle: {
-          color: "#333",
-        },
-        itemHiddenStyle: {
-          color: "#ccc",
-        },
-        symbolHeight: 12,
-        symbolWidth: 12,
-        symbolRadius: 6,
-        padding: 10,
-        margin: 10,
-      },
-      plotOptions: {
-        pie: {
-          allowPointSelect: true,
-          cursor: "pointer",
-          dataLabels: {
-            enabled: false,
+        name: "Composición Ictiofauna",
+        colorByPoint: true,
+        data: [
+          {
+            name: "Especies endémicas",
+            y: 149,
+            sliced: false,
+            selected: true,
+            color: "#75C8DA",
           },
-          showInLegend: true,
-        },
-      },
-      series: [
-        {
-          borderColor: "#ffffff",
-          borderWidth: 1,
-          name: "Composición Ictiofauna",
-          colorByPoint: true,
-          data: [
-            {
-              name: "Especies endémicas",
-              y: 149,
-              sliced: false,
-              selected: true,
-              color: "#75C8DA",
-            },
-            {
-              name: "Especies migratorias",
-              y: 16,
-              color: "#D50000",
-            },
-            {
-              name: "Especies de uso pesquero/ornamental",
-              y: 58,
-              color: "#E9C101",
-            },
-          ],
-        },
-      ],
-    });
-  }
-
-  // Gráfico Sankey - verificar que el contenedor exista
-  const sankeyContainer = document.getElementById("sankey-container");
-  if (sankeyContainer) {
-    Highcharts.chart("sankey-container", {
-      chart: {
-        type: "sankey",
-        backgroundColor: "transparent",
-        height: "50%",
-        zooming: {
-          type: "xy",
-        },
-        panning: {
-          enabled: true,
-          type: "xy",
-        },
-        panKey: "shift",
-      },
-      title: {
-        text: null,
-      },
-      accessibility: {
-        point: {
-          valueDescriptionFormat:
-            "{index}. {point.from} a {point.to}, " + "{point.weight}.",
-        },
-      },
-      tooltip: {
-        headerFormat: null,
-        pointFormat:
-          "{point.fromNode.name} → {point.toNode.name}: {point.weight}",
-        nodeFormat: "{point.name}: {point.sum}",
-      },
-      series: [
-        {
-          borderColor: "#ffffff",
-          borderWidth: 1,
-          keys: ["from", "to", "weight"],
-          nodes: [
-            // Nodos principales
-            {
-              id: "Cocreado",
-              name: "Cocreado",
-              color: "#4A90E2",
-              column: 0,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "16px",
-                },
-              },
-            },
-            {
-              id: "Colaborativo",
-              name: "Colaborativo",
-              color: "#7ED321",
-              column: 0,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "16px",
-                },
-              },
-            },
-            {
-              id: "Contributivo",
-              name: "Contributivo",
-              color: "#BD10E0",
-              column: 0,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "16px",
-                },
-              },
-            },
-
-            // Actividades Cocreado
-            {
-              id: "Análisis documental",
-              name: "1. Análisis documental (actores y territorial)",
-              color: "#4A90E2",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Acercamiento territorial",
-              name: "2. Acercamiento territorial",
-              color: "#4A90E2",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Diagnóstico",
-              name: "3. Diagnóstico",
-              color: "#4A90E2",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Alcance",
-              name: "4. Alcance (objetivos y área de estudio)",
-              color: "#4A90E2",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Variables e indicadores",
-              name: "5. Variables e indicadores",
-              color: "#4A90E2",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Diseño metodológico",
-              name: "6. Diseño metodológico",
-              color: "#4A90E2",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-
-            // Actividades Colaborativo
-            {
-              id: "Sistema de monitoreo",
-              name: "7. Sistema de monitoreo y evaluación",
-              color: "#7ED321",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Fortalecimiento capacidades",
-              name: "8. Fortalecimiento de capacidades técnicas",
-              color: "#7ED321",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Implementación",
-              name: "9. Implementación y seguimiento",
-              color: "#7ED321",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Sistematización datos",
-              name: "10. Sistematización de datos",
-              color: "#7ED321",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Análisis de datos",
-              name: "11. Análisis de datos",
-              color: "#7ED321",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Socialización",
-              name: "12. Socialización y difusión de resultados",
-              color: "#7ED321",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-            {
-              id: "Evaluación decisiones",
-              name: "13. Evaluación y toma de decisiones",
-              color: "#7ED321",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-
-            // Actividades Contributivo
-            {
-              id: "Uso de resultados",
-              name: "14. Uso de resultados a diferentes escalas",
-              color: "#BD10E0",
-              column: 1,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "14px",
-                },
-              },
-            },
-
-            // Categorías de importancia
-            {
-              id: "Fundamental",
-              name: "Fundamental",
-              color: "#FF6B6B",
-              column: 2,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "16px",
-                },
-              },
-            },
-            {
-              id: "Opcional",
-              name: "Opcional",
-              color: "#FFD93D",
-              column: 2,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "16px",
-                },
-              },
-            },
-            {
-              id: "Proyectado",
-              name: "Proyectado",
-              color: "#6BCF7F",
-              column: 2,
-              dataLabels: {
-                style: {
-                  backgroundColor: "white",
-                  padding: "3px",
-                  fontFamily: "Rubik, sans-serif",
-                  fontSize: "16px",
-                },
-              },
-            },
-          ],
-          data: [
-            // Conexiones desde Cocreado (solo las primeras 6 actividades)
-            ["Cocreado", "Análisis documental", 1],
-            ["Cocreado", "Acercamiento territorial", 1],
-            ["Cocreado", "Diagnóstico", 1],
-            ["Cocreado", "Alcance", 1],
-            ["Cocreado", "Variables e indicadores", 1],
-            ["Cocreado", "Diseño metodológico", 1],
-
-            // Conexiones desde Colaborativo (actividades 7-13)
-            ["Colaborativo", "Sistema de monitoreo", 1],
-            ["Colaborativo", "Fortalecimiento capacidades", 1],
-            ["Colaborativo", "Implementación", 1],
-            ["Colaborativo", "Sistematización datos", 1],
-            ["Colaborativo", "Análisis de datos", 1],
-            ["Colaborativo", "Socialización", 1],
-            ["Colaborativo", "Evaluación decisiones", 1],
-
-            // Conexiones desde Contributivo (solo actividad 14)
-            ["Contributivo", "Uso de resultados", 1],
-
-            // Conexiones a categorías de importancia - TODAS las actividades van a Fundamental
-            ["Análisis documental", "Fundamental", 1],
-            ["Acercamiento territorial", "Fundamental", 1],
-            ["Diagnóstico", "Fundamental", 1],
-            ["Alcance", "Fundamental", 1],
-            ["Variables e indicadores", "Fundamental", 1],
-            ["Diseño metodológico", "Fundamental", 1],
-            ["Sistema de monitoreo", "Fundamental", 1],
-            ["Fortalecimiento capacidades", "Fundamental", 1],
-            ["Implementación", "Fundamental", 1],
-            ["Sistematización datos", "Fundamental", 1],
-            ["Análisis de datos", "Fundamental", 1],
-            ["Socialización", "Fundamental", 1],
-            ["Evaluación decisiones", "Fundamental", 1],
-            ["Uso de resultados", "Fundamental", 1],
-          ],
-          name: "Proceso de Investigación",
-          dataLabels: {
-            enabled: true,
-            style: {
-              fontFamily: "Rubik, sans-serif",
-              fontSize: "14px",
-              color: "#000000",
-              textOutline: "none",
-              fontWeight: "normal",
-              backgroundColor: "white",
-              padding: "3px",
-            },
+          {
+            name: "Especies migratorias",
+            y: 16,
+            color: "#D50000",
           },
-          nodeWidth: 25,
-          nodePadding: 8,
-        },
-      ],
-    });
-  }
+          {
+            name: "Especies de uso pesquero/ornamental",
+            y: 58,
+            color: "#E9C101",
+          },
+        ],
+      },
+    ],
+  });
 });

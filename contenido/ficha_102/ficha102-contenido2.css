@@ -94,8 +94,8 @@
   font-size: 18px;
 }
 
-.ficha102-contenido2 .card  p{
-	margin: 0;
+.ficha102-contenido2 .card p {
+  margin: 0;
 }
 
 .ficha102-contenido2 .card .category {
@@ -216,4 +216,10 @@
   height: 56px;
   cursor: pointer;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .ficha102-contenido2 .filters {
+    width: 100%;
+  }
 }

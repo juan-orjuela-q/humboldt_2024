@@ -1,0 +1,116 @@
+.img-fondo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.img-fondo-container > .img-fondo-desktop {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  object-fit: cover;
+  min-height: 300px;
+  max-height: 1450px;
+  height: 100%;
+  object-position: center bottom;
+}
+
+.img-fondo-container > .img-fondo-mobile {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  object-fit: cover;
+  min-height: 300px;
+  max-height: 1450px;
+  height: 100%;
+  object-position: center bottom;
+}
+
+.content-position {
+  position: relative !important;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+}
+
+/* Contenedor de imagen */
+.img-container {
+  position: relative;
+  margin-top: 30px;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.status-corzuela {
+  color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a6811;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.corzuela-description {
+  position: absolute;
+  left: 10%;
+  top: 55%;
+  max-width: 330px;
+  text-align: left;
+  padding: 20px;
+}
+
+.corzuela-description-category {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.corzuela-description-category img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.scientific-name {
+  font-style: italic;
+  color: #666;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+@media (max-width: 1080px) {
+  .corzuela-description {
+    left: 0%;
+    top: 55%;
+  }
+}
+
+@media (max-width: 550px) {
+  .corzuela-description {
+    top: 0%;
+    left: 28%;
+  }
+  .img-fondo-container > .img-fondo-mobile {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    object-fit: cover;
+    height: 100%;
+    object-position: center bottom;
+  }
+
+  .img-fondo-container > .img-fondo-desktop {
+    display: none;
+  }
+}

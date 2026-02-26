@@ -40,7 +40,6 @@ body {
   object-fit: contain;
 }
 
-
 .map-filters input {
   display: none;
 }
@@ -78,12 +77,10 @@ body {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
-
 }
 
 .map-table th,
 .map-table td {
-
   padding: 12px;
   text-align: center;
 }
@@ -103,7 +100,6 @@ body {
 
 .filters-table td {
   padding: 12px;
-
 }
 
 td {
@@ -185,11 +181,16 @@ td {
   opacity: 0;
   visibility: hidden;
   transform: translate(10%, -100%) scale(0.9);
-  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    visibility 220ms;
 }
 
 .img-circle {
-  transition: opacity 220ms ease, transform 220ms ease;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
 }
 
 .more {
@@ -288,5 +289,19 @@ td {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .map-container {
+    position: relative;
+    transform: scale(1);
+    max-width: 100vh;
+    margin: 0 auto;
+    z-index: 50;
+  }
+
+  .map-colombia {
+    bottom: -20px;
   }
 }

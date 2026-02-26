@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../../general/jquery.fullPage.css" />
 <link rel="stylesheet" href="../../general/main-v3.css" />
 <link rel="stylesheet" href="../../general/sonar.min.css" />
+<meta name="viewport" content="width=device-width" />
 
 <link rel="stylesheet" href="ficha101-contenido1.css" />
 <script src="bio2024-101-scripts.js" defer></script>
@@ -27,32 +28,33 @@
       Registros en el SiB Colombia para la región
     </h2>
   </div>
+  
   <div class="col-dt-8">
-    <div>
+    <!-- Grupo de tabs con data-tab-group -->
+    <div data-tab-group="grupo1">
       <ul class="tab-group">
-        <li class="tab active"><a href="#contienental">Zona Continental</a></li>
-        <li class="tab"><a href="#marina">Zona marina</a></li>
+        <li class="tab active">
+          <a href="#" data-tab-target="#continental">Zona Continental</a>
+        </li>
+        <li class="tab">
+          <a href="#" data-tab-target="#marina">Zona marina</a>
+        </li>
       </ul>
       <div class="line-tabs bg-green_blue"></div>
     </div>
 
-    <div class="tab-content">
-      <div id="contienental">
+    <!-- Contenido de tabs con data-tab-content-group -->
+    <div class="tab-content" data-tab-content-group="grupo1">
+      <div id="continental" data-tab-content class="tab-pane active">
         <div class="total-info-container">
-          <div class="">
+          <div class="info-numbers">
             <p class="text-description-graphic">
               Número total de registros:
-              <span
-                id="total-registros-continental"
-                class="quantity-graphic"
-              ></span>
+              <span id="total-registros-continental" class="quantity-graphic"></span>
             </p>
             <p class="text-description-graphic">
               Número total de especies:
-              <span
-                id="total-especies-continental"
-                class="quantity-graphic"
-              ></span>
+              <span id="total-especies-continental" class="quantity-graphic"></span>
             </p>
           </div>
           <div class="graphic-text">
@@ -60,19 +62,16 @@
           </div>
         </div>
         <figure class="highcharts-figure">
-          <div id="ficha-101-contenido1-grafica1"></div>
+          <div id="ficha-101-contenido1-grafica1" class="chart-container"></div>
         </figure>
       </div>
 
-      <div id="marina">
+      <div id="marina" data-tab-content class="tab-pane">
         <div class="total-info-container">
-          <div class="">
+          <div class="info-numbers">
             <p class="text-description-graphic">
               Número total de registros:
-              <span
-                id="total-registros-marinos"
-                class="quantity-graphic"
-              ></span>
+              <span id="total-registros-marinos" class="quantity-graphic"></span>
             </p>
             <p class="text-description-graphic">
               Número total de especies:
@@ -84,11 +83,12 @@
           </div>
         </div>
         <figure class="highcharts-figure">
-          <div id="ficha-101-contenido1-grafica2"></div>
+          <div id="ficha-101-contenido1-grafica2" class="chart-container"></div>
         </figure>
       </div>
     </div>
   </div>
+  
   <div class="col-dt-4">
     <div class="align-l culumn-info">
       <i class="icon icon_h2 markermap bg-green_blue space-circle"></i>
@@ -109,8 +109,8 @@
     </div>
     <div class="map-img">
       <img
-        src="./input/ficha-101-biodiversidad-cifras-region-caribe.png"
-        alt=""
+        src="https://reporte.humboldt.org.co/assets/img/2024/1/101/ficha-101-mapa-biodiversidad-cifras-region-caribe.png"
+        alt="Mapa de biodiversidad región Caribe"
       />
     </div>
   </div>

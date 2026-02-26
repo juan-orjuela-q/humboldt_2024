@@ -115,3 +115,13 @@
   width: 24px;
   text-align: center;
 }
+
+
+@media screen and (max-width: 768px) {
+  .info-container {
+    display: block;
+  }
+  .description {
+    position: static;
+  }
+}

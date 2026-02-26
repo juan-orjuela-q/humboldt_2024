@@ -117,3 +117,19 @@
   width: 14px;
   height: 14px;
 }
+
+@media screen and (max-width: 768px) {
+  .container-map-aves {
+    display: block;
+  }
+  .panel {
+    width: 100%;
+  }
+  .mapa {
+    width: 100%;
+  }
+  .hotspot-aves {
+    position: static;
+  }
+  
+}

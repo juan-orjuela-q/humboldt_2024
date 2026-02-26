@@ -115,3 +115,16 @@ body {
 .text-container {
   max-width: 300px;
 }
+
+.libelula {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .element-bg-libelula {
+    background-image: none !important;
+  }
+  .libelula {
+    display: block;
+  }
+}

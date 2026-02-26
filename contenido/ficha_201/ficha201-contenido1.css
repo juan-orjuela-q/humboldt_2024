@@ -126,23 +126,23 @@
 }
 
 .card .status.LC {
-  background-color: #3A6811;
+  background-color: #3a6811;
 }
 
 .card .status.NT {
-  background-color: #689F38;
+  background-color: #689f38;
 }
 
 .card .status.VU {
-  background-color: #E9C101;
+  background-color: #e9c101;
 }
 
 .card .status.CR {
-  background-color: #D50000;
+  background-color: #d50000;
 }
 
 .card .status.EN {
-  background-color: #F59C00;
+  background-color: #f59c00;
 }
 
 #species-cards {
@@ -315,4 +315,21 @@
   gap: 10px;
   color: #747474;
   font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    width: 100%;
+  }
+  .img-container {
+    margin-top: 0;
+  }
+  .turtle-description {
+    position: static;
+    padding: 10px 20px;
+  }
+  .turtle-note {
+    position: static;
+    padding: 10px 20px;
+  }
 }

@@ -81,14 +81,13 @@ body {
 
 .map-filters .rios input:checked + label:before {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
-  background-color: #60e6df;
+  background-color: #5795cf;
 }
 
 .map-filters .areas_protegidas input:checked + label:before {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,1)"><path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z"></path></svg>');
   background-color: #b6b5b1;
 }
-
 
 .checkbox-container {
   display: flex;
@@ -153,4 +152,17 @@ body {
   width: 180px;
 }
 
+@media (max-width: 768px) {
+  .map-colombia {
+    width: 120px;
+    height: 170px;
+  }
+  .map-container {
+    transform: scale(1);
+  }
+  .map-filters {
+    position: relative;
+    z-index: 150;
 
+  }
+}

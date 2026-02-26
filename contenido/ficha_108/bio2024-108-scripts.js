@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (!customLabel) {
             customLabel = chart.options.chart.custom.label = chart.renderer
-              .label("Total<br/>" + `<strong>${totalFormateado}</strong>`)
+              .label( `<strong>${totalFormateado}</strong>`)
               .css({
                 color: "#333",
                 textAnchor: "middle",
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
     legend: {
-      enabled: true,
+      enabled: false,
       align: "center",
       verticalAlign: "bottom",
       layout: "horizontal",
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     series: [
       {
-        name: "Registrations",
+        name: "Porcentaje",
         colorByPoint: true,
         innerSize: "75%",
         data: [
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Transformado",
             y: 10,
             valor: "56 267",
-            color: "#F59C00",
+            color: "#07d4b8",
           },
         ],
       },
@@ -589,7 +589,7 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         name: "Permanente",
         data: [4.4, 0.7, 3.2, 3.4, 2.4, 1.7, 24.1, 2.7],
-        color: "#F59C00",
+        color: "#07d4b8",
       },
       {
         name: "Temporal",

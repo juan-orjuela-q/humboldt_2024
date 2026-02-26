@@ -150,7 +150,7 @@
   justify-content: end;
 }
 
-.description .scientific-name{
+.description .scientific-name {
   font-style: italic;
 }
 
@@ -167,4 +167,14 @@
 .map-img img {
   max-height: 300px;
   margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+  .col-group_container {
+    display: block;
+  }
+  .tab-group {
+    justify-content: start;
+    overflow: auto;
+  }
 }
