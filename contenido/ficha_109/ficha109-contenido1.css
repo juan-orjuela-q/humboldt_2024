@@ -155,17 +155,48 @@
 }
 
 @media screen and (max-width: 750px) {
+  /* Mobile: horizontal scrollable tab bar */
   .tab-group {
-    display: block;
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 6px;
+    /* keep list-style off and remove extra wraps */
+    white-space: nowrap;
+  }
+  .elemento-gradiente {
+    text-align: justify;
+    margin-bottom: 50px;
+  }
+
+  .cuadro-gradiente {
+    width: 50px;
   }
 
   .tab-group li {
-    min-width: 200px;
-    max-width: 50%;
+    display: inline-flex;
+    min-width: 140px;
+    max-width: none;
+    flex: 0 0 auto;
   }
 
   .tab-group li a {
-    width: 50%;
+    width: auto;
+    padding: 10px 18px;
+    font-size: 18px;
+    justify-content: center;
+  }
+
+  /* Optional: small visual improvements for scrollbar on webkit */
+  .tab-group::-webkit-scrollbar {
+    height: 8px;
+  }
+  .tab-group::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
   }
 }

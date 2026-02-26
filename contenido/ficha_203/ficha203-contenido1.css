@@ -87,7 +87,7 @@
 }
 .map-filters .humedales input:checked + label:before {
   background-image: url();
-  background-color: #00647a;
+  background-color: #99DBF1;
 }
 
 .map-filters .manglares input:checked + label:before {
@@ -175,4 +175,12 @@
   right: 8%;
   width: 85px;
   height: 110px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .info-container {
+    width: 100%;
+  }
+  
 }

@@ -923,30 +923,60 @@ if (contenido3) {
       type: "pie",
       backgroundColor: "none",
       height: 600,
-      custom: {},
+      custom: {
+        image: null
+      },
       events: {
         render() {
-          const chart = this,
-            series = chart.series[0];
+          const chart = this;
+          const series = chart.series[0];
+          const chartWidth = chart.chartWidth;
+          const isMobile = chartWidth < 768;
+          const isTablet = chartWidth >= 768 && chartWidth < 992;
+          
+          // Calcular dimensiones responsivas
+          let imageWidth, imageHeight, xOffset, yOffset;
+          
+          if (isMobile) {
+            // Móvil: imagen más pequeña
+            imageWidth = 200;
+            imageHeight = 167;
+            xOffset = -100;
+            yOffset = -80;
+          } else if (isTablet) {
+            // Tablet: imagen mediana
+            imageWidth = 280;
+            imageHeight = 234;
+            xOffset = -140;
+            yOffset = -110;
+          } else {
+            // Desktop: imagen original
+            imageWidth = 380;
+            imageHeight = 317;
+            xOffset = -190;
+            yOffset = -150;
+          }
+          
           let customImage = chart.options.chart.custom.image;
-
+          
           if (!customImage) {
             customImage = chart.options.chart.custom.image = chart.renderer
               .image(
                 "https://reporte.humboldt.org.co/assets/img/2024/1/102/patos-afines-descrpcion.png",
-                series.center[0] + chart.plotLeft - 40,
-                series.center[1] + chart.plotTop - 40,
-                380,
-                317
+                series.center[0] + chart.plotLeft + xOffset,
+                series.center[1] + chart.plotTop + yOffset,
+                imageWidth,
+                imageHeight
               )
               .add();
+          } else {
+            customImage.attr({
+              x: series.center[0] + chart.plotLeft + xOffset,
+              y: series.center[1] + chart.plotTop + yOffset,
+              width: imageWidth,
+              height: imageHeight
+            });
           }
-
-          // Actualizar posición de la imagen cuando se redibuje el chart
-          customImage.attr({
-            x: series.center[0] + chart.plotLeft - 190,
-            y: series.center[1] + chart.plotTop - 150,
-          });
         },
       },
     },
@@ -963,16 +993,23 @@ if (contenido3) {
         "{point.name}: <b>{point.cantidad}</b> ({point.percentage:.1f}%)",
       style: {
         fontFamily: "Rubik, sans-serif",
+        fontSize: "14px"
       },
+      backgroundColor: "#FFFFFF",
+      borderColor: "#CCCCCC",
+      borderRadius: 8,
+      borderWidth: 1,
+      shadow: true,
+      enabled: true // Asegurar que está habilitado por defecto
     },
     legend: {
       itemStyle: {
-        color: "#000000", // Texto de la leyenda en negro
+        color: "#000000",
         fontFamily: "Rubik, sans-serif",
       },
       itemHoverStyle: {
-        color: "#333333", // Color al hacer hover
-      },
+        color: "#333333",
+      }
     },
     plotOptions: {
       series: {
@@ -989,11 +1026,74 @@ if (contenido3) {
             style: {
               color: "#000000",
               fontFamily: "Rubik, sans-serif",
-            },
+              textOutline: "none",
+              fontSize: '14px'
+            }
           },
         ],
         showInLegend: true,
       },
+    },
+    // Configuración responsive solo para móvil
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 768
+          },
+          chartOptions: {
+            chart: {
+              height: 500
+            },
+            tooltip: {
+              enabled: false // SOLO DESHABILITAR EN MÓVIL
+            },
+            plotOptions: {
+              series: {
+                dataLabels: [{
+                  enabled: false
+                }],
+                innerSize: '70%' // Agujero más pequeño en móvil
+              }
+            },
+            legend: {
+              layout: 'horizontal',
+              align: 'center',
+              verticalAlign: 'bottom',
+              itemWidth: 150,
+              itemStyle: {
+                fontSize: '12px'
+              }
+            }
+          }
+        }, 
+        {
+          condition: {
+            maxWidth: 480
+          },
+          chartOptions: {
+            chart: {
+              height: 400
+            },
+            tooltip: {
+              enabled: false
+            },
+            plotOptions: {
+              series: {
+                innerSize: '65%'
+              }
+            },
+            legend: {
+              layout: 'vertical',
+              align: 'center',
+              verticalAlign: 'bottom',
+              itemStyle: {
+                fontSize: '10px'
+              }
+            }
+          }
+        }
+      ]
     },
     series: [
       {
@@ -1034,6 +1134,14 @@ if (contenido3) {
         ],
       },
     ],
+  });
+  
+  // Asegurar que el gráfico se redimensione cuando la ventana cambie de tamaño
+  window.addEventListener('resize', function() {
+    const chart = Highcharts.charts.find(c => c && c.renderTo && c.renderTo.id === 'contenido3');
+    if (chart) {
+      chart.reflow();
+    }
   });
 }
 
@@ -1589,7 +1697,7 @@ function normalizeCategoryKey(k) {
 
 // Función para crear visualización de círculos con zoom
 function createCirclePacking(data, svgClass, options = {}) {
-  d3.select("body").selectAll(".tooltip").remove();
+  d3.select("body").selectAll(".tooltip-contenido-4").remove();
   // Preparar los datos en formato jerárquico para D3
   // Acepta `data` como un array de aves o como un objeto { name, children }
   let hierarchyData;
@@ -1668,10 +1776,10 @@ function createCirclePacking(data, svgClass, options = {}) {
   // Crear tooltip
   const tooltip = d3
     .select("body")
-    .selectAll(".tooltip")
+    .selectAll(".tooltip-contenido-4")
     .data([0])
     .join("div")
-    .attr("class", "tooltip")
+    .attr("class", "tooltip-contenido-4")
     .style("opacity", 0)
     .style("position", "absolute")
     .style("background-color", "white")

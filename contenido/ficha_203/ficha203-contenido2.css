@@ -307,3 +307,10 @@
   height: 20px;
   width: 20px;
 }
+
+
+@media screen and (max-width: 768px) {
+  .tab-group {
+    justify-content: flex-start;
+  }
+}

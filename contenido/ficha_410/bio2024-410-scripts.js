@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
     title: {
-      text: null, // Título eliminado
+      text: null,
     },
     subtitle: {
-      text: null, // Subtítulo eliminado
+      text: null,
     },
     xAxis: {
       categories: [
@@ -40,13 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
         style: {
           color: "#000000",
           fontWeight: "bold",
-          fontSize: "14px", // Tamaño aumentado
+          fontSize: "14px",
         },
       },
       labels: {
         style: {
           color: "#000000",
-          fontSize: "12px", // Tamaño aumentado
+          fontSize: "12px",
         },
         rotation: -45,
       },
@@ -59,13 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
         style: {
           color: "#000000",
           fontWeight: "bold",
-          fontSize: "14px", // Tamaño aumentado
+          fontSize: "14px",
         },
       },
       labels: {
         style: {
           color: "#000000",
-          fontSize: "12px", // Tamaño aumentado
+          fontSize: "12px",
         },
         format: "{value:,.0f}",
       },
@@ -77,12 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
       layout: "horizontal",
       align: "center",
       verticalAlign: "bottom",
-      padding: 15, // Más espacio interno
+      padding: 15,
       itemMarginTop: 10,
       itemMarginBottom: 10,
       itemStyle: {
         color: "#000000",
-        fontSize: "16px", // Letra más grande
+        fontSize: "16px",
         fontWeight: "normal",
         cursor: "pointer",
       },
@@ -90,22 +90,21 @@ document.addEventListener("DOMContentLoaded", function () {
         color: "#00748B",
         fontWeight: "bold",
       },
-      itemDistance: 40, // Más separación entre elementos
-      symbolWidth: 20, // Símbolos más grandes
+      itemDistance: 40,
+      symbolWidth: 20,
       symbolHeight: 12,
       symbolRadius: 3,
-      // Mejorar el estilo de los símbolos
-      symbolPadding: 8, // Espacio entre símbolo y texto
+      symbolPadding: 8,
     },
     tooltip: {
       shared: true,
       headerFormat:
         '<span style="font-size: 14px; font-weight: bold">{point.key}</span><br/>',
       pointFormat:
-        '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y:,.0f} ha</b><br/>',
-      valueDecimals: 0,
+        '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y:,.2f} ha</b><br/>',
+      valueDecimals: 2,
       style: {
-        fontSize: "14px", // Tamaño aumentado
+        fontSize: "14px",
         fontFamily: "'Rubik', sans-serif",
       },
     },
@@ -127,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
         marker: {
           enabled: false,
         },
-        // Mejorar hover
         states: {
           hover: {
             enabled: true,
@@ -143,25 +141,25 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         name: "Área Costera (ha)",
         data: [
-          383000, // 1964
-          391057, // 1969
-          471688, // 1977
-          471778, // 1995
-          471783, // 2001
-          475683, // 2002
-          475683, // 2005
-          502804, // 2006
-          508508, // 2008
-          540426, // 2009
-          541921, // 2011
-          550651, // 2012
-          580651, // 2013
-          586945, // 2014
-          586945, // 2018
-          586945, // 2022
-          761599, // 2024
+          383000.0, // 1964
+          418372.46, // 1969
+          471688.46, // 1977
+          471778.15, // 1995
+          471783.45, // 2001
+          475633.45, // 2002
+          475633.45, // 2005
+          502804.45, // 2006
+          508508.25, // 2008
+          540426.14, // 2009
+          541920.54, // 2011
+          550650.82, // 2012
+          580650.82, // 2013
+          586944.62, // 2014
+          586944.62, // 2018
+          586944.62, // 2022
+          586944.62, // 2024
         ],
-        color: "#008493", // Azul marino
+        color: "#008493",
         fillColor: {
           linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
           stops: [
@@ -173,71 +171,31 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         name: "Área Marina (ha)",
         data: [
-          0, // 1964
-          6943, // 1969
-          136322, // 1977
-          137848, // 1995
-          137887, // 2001
-          137887, // 2002
-          6639587, // 2005
-          6639587, // 2006
-          6639587, // 2008
-          6644612, // 2009
-          6644612, // 2011
-          6644612, // 2012
-          6813637, // 2013
-          6825024, // 2014
-          6892200, // 2018
-          10204747, // 2022
-          10228993, // 2024
+          0.0, // 1964
+          35827.54, // 1969
+          136321.54, // 1977
+          137847.83, // 1995
+          137886.73, // 2001
+          137886.73, // 2002
+          6639586.73, // 2005
+          6639586.73, // 2006
+          6639586.73, // 2008
+          6644611.73, // 2009
+          6644611.73, // 2011
+          6644611.73, // 2012
+          6813636.59, // 2013
+          6825023.79, // 2014
+          6892200.44, // 2018
+          10204747.44, // 2022
+          10204747.44, // 2024
         ],
-        color: "#BEE2E9", // Azul claro
+        color: "#BEE2E9",
         fillColor: {
           linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
           stops: [
             [0, "rgba(109, 198, 218, 0.8)"],
             [1, "rgba(109, 198, 218, 0.2)"],
           ],
-        },
-      },
-      {
-        name: "Total Área Protegida",
-        type: "line",
-        data: [
-          383000, // 1964
-          398000, // 1969
-          608010, // 1977
-          609626, // 1995
-          609670, // 2001
-          613570, // 2002
-          7115270, // 2005
-          7142391, // 2006
-          7148095, // 2008
-          7185038, // 2009
-          7186532, // 2011
-          7195263, // 2012
-          7394287, // 2013
-          7411968, // 2014
-          7479145, // 2018
-          10791692, // 2022
-          10990592, // 2024
-        ],
-        color: "#F59C00", // Verde
-        lineWidth: 3,
-        marker: {
-          enabled: true,
-          radius: 6, // Marcadores más grandes
-          symbol: "circle",
-          lineWidth: 2,
-          lineColor: "#ffffff",
-          fillColor: "#F59C00",
-        },
-        dashStyle: "Solid",
-        zIndex: 5,
-        tooltip: {
-          valueSuffix: " ha",
-          pointFormat:
-            '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y:,.0f} ha</b><br/>',
         },
       },
     ],
@@ -259,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             legend: {
               itemStyle: {
-                fontSize: "12px", // Tamaño reducido en móvil
+                fontSize: "12px",
               },
               padding: 10,
               itemDistance: 20,
@@ -267,6 +225,208 @@ document.addEventListener("DOMContentLoaded", function () {
             tooltip: {
               style: {
                 fontSize: "12px",
+              },
+            },
+          },
+        },
+      ],
+    },
+  });
+
+  Highcharts.chart("areasMarinasTotal", {
+    chart: {
+      type: "area",
+      backgroundColor: "transparent",
+      height: "600px",
+      style: {
+        fontFamily: "'Rubik', sans-serif",
+        color: "#000000",
+      },
+    },
+    title: {
+      text: null,
+    },
+    subtitle: {
+      text: null,
+    },
+    xAxis: {
+      categories: [
+        "1964",
+        "1969",
+        "1977",
+        "1995",
+        "2001",
+        "2002",
+        "2005",
+        "2006",
+        "2008",
+        "2009",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2018",
+        "2022",
+        "2024",
+      ],
+      title: {
+        text: null,
+      },
+      labels: {
+        style: {
+          color: "#000000",
+          fontSize: "14px",
+          
+        },
+        rotation: 0,
+        step: 1,
+      },
+      lineWidth: 1,
+      lineColor: "#CCCCCC",
+      tickWidth: 1,
+      tickLength: 5,
+      tickColor: "#CCCCCC",
+      gridLineWidth: 1,
+      gridLineColor: "#EEEEEE",
+    },
+    yAxis: {
+      title: {
+        text: null,
+      },
+      labels: {
+        style: {
+          color: "#000000",
+          fontSize: "14px",
+          
+        },
+        format: "{value}",
+      },
+      min: 0,
+      max: 25,
+      tickInterval: 5,
+      gridLineWidth: 1,
+      gridLineColor: "#EEEEEE",
+      lineWidth: 1,
+      lineColor: "#CCCCCC",
+    },
+    legend: {
+      enabled: true,
+      layout: "horizontal",
+      align: "center",
+      verticalAlign: "bottom",
+      padding: 15,
+      itemMarginTop: 10,
+      itemMarginBottom: 10,
+      itemStyle: {
+        color: "#000000",
+        fontSize: "14px",
+        fontWeight: "normal",
+        cursor: "pointer",
+      },
+      itemHoverStyle: {
+        color: "#F59C00",
+        
+      },
+      itemDistance: 40,
+      symbolWidth: 20,
+      symbolHeight: 12,
+      symbolRadius: 3,
+      symbolPadding: 8,
+    },
+    tooltip: {
+      enabled: true,
+      headerFormat: "",
+      pointFormat: "<b>Año: {point.category}</b><br/>Número de áreas marinas protegidas declaradas: {point.y}",
+      borderColor: "#CCCCCC",
+      style: {
+        fontSize: "14px",
+        color: "#fff",
+        fontFamily: "'Rubik', sans-serif",
+      },
+    },
+    plotOptions: {
+      area: {
+        lineColor: "#F59C00",
+        lineWidth: 3,
+        fillColor: {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, "rgba(0, 132, 147, 0.7)"],
+            [1, "rgba(190, 226, 233, 0.3)"],
+          ],
+        },
+        marker: {
+          enabled: true,
+          fillColor: "#F59C00",
+          lineWidth: 2,
+          lineColor: "#FFFFFF",
+          radius: 6,
+          symbol: "circle",
+        },
+        dataLabels: {
+          enabled: true,
+          format: "{y}",
+          style: {
+            color: "#000000",
+            fontSize: "14px",
+            fontWeight: "bold",
+            textOutline: "none",
+          },
+          y: -15,
+        },
+      },
+    },
+    series: [
+      {
+        name: "Número de área",
+        type: "area",
+        data: [
+          1, // 1964
+          3, // 1969
+          6, // 1977
+          7, // 1995
+          8, // 2001
+          9, // 2002
+          10, // 2005
+          11, // 2006
+          13, // 2008
+          15, // 2009
+          16, // 2011
+          17, // 2012
+          20, // 2013
+          22, // 2014
+          23, // 2018
+          24, // 2022
+          24, // 2024
+        ],
+      },
+    ],
+    credits: {
+      enabled: false,
+    },
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 768,
+          },
+          chartOptions: {
+            xAxis: {
+              labels: {
+                rotation: -45,
+                fontSize: "12px",
+              },
+            },
+            yAxis: {
+              labels: {
+                fontSize: "12px",
+              },
+            },
+            plotOptions: {
+              area: {
+                dataLabels: {
+                  enabled: false,
+                },
               },
             },
           },

@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Natural",
             y: 64.2,
             valor: "1 268 285",
-            color: "#689F38",
+            color: "#00748B",
           },
           {
             name: "Transformado",
@@ -386,50 +386,54 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Datos del Excel "Copia de Salida_3" - Columna G: Porcentaje acumulado de pérdida
+  // Años para el eje X
   const years = [1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2022, 2023];
-  
-  // Datos como valores POSITIVOS (no negativos)
-  const perdidaAcumuladaProtegidas = [
-    0.0,                     // 1985
-    0.0145525994662054,      // 1990 
-    0.029419408180646,       // 1995 
-    0.043971094466958,       // 2000 
-    0.068594284854232,       // 2005 
-    0.100512790660356,       // 2010 
-    0.136342454896287,       // 2015 
-    0.184291179848326,       // 2020 
-    0.222664776589166,       // 2022 
-    0.266069730408133        // 2023 
-  ];
-  
-  const perdidaAcumuladaNoProtegidas = [
-    0.0,                     // 1985
-    0.033054433014916,       // 1990 
-    0.075483186054646,       // 1995 
-    0.108381867489758,       // 2000 
-    0.146696324365697,       // 2005 
-    0.201709263226613,       // 2010 
-    0.253452767189705,       // 2015 
-    0.302167751194581,       // 2020 
-    0.361228255869608,       // 2022 
-    0.463054376008551        // 2023 
-  ];
-  
-  const perdidaAcumuladaCaribe = [
-    0.0,                     // 1985
-    0.029090308280414,       // 1990 
-    0.059667247218528,       // 1995 
-    0.086993207750184,       // 2000 
-    0.121697287770764,       // 2005 
-    0.16239291857695,        // 2010 
-    0.199755281137354,       // 2015 
-    0.236143145777584,       // 2020 
-    0.280084224196099,       // 2022 
-    0.342236415980486        // 2023 
+
+  // 📌 DATOS EN NEGATIVO SEGÚN LAS IMÁGENES:
+
+  // 1️⃣ Áreas Protegidas
+  const perdidaProtegidas = [
+    0.0, // 1985
+    -1.45, // 1990
+    -1.69, // 1995
+    -1.83, // 2000
+    -2.95, // 2005
+    -2.63, // 2010
+    -3.22, // 2015
+    -4.6, // 2020
+    -4.91, // 2022
+    -5.78, // 2023
   ];
 
-  // Gráfico único con las 3 series de porcentaje acumulado
+  // 2️⃣ Áreas NO Protegidas
+  const perdidaNoProtegidas = [
+    0.0, // 1985
+    -3.31, // 1990
+    -7.64, // 1995
+    -8.71, // 2000
+    -10.09, // 2005
+    -9.02, // 2010
+    -7.97, // 2015
+    -8.02, // 2020
+    -7.33, // 2022
+    -8.29, // 2023
+  ];
+
+  // 3️⃣ Caribe Continental TOTAL
+  const perdidaCaribe = [
+    0.0, // 1985
+    -2.91, // 1990
+    -6.33, // 1995
+    -7.19, // 2000
+    -8.51, // 2005
+    -7.61, // 2010
+    -6.94, // 2015
+    -7.29, // 2020
+    -6.83, // 2022
+    -7.77, // 2023
+  ];
+
+  // Gráfico con 3 series en NEGATIVO
   Highcharts.chart("grafico-unico", {
     chart: {
       backgroundColor: "transparent",
@@ -440,21 +444,21 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
     title: {
-      text: "Porcentaje Acumulado de Pérdida de Cobertura Natural (1985-2023)",
+      text: "Porcentaje de Pérdida de Cobertura Natural (1985-2023)",
       style: {
         color: "black",
         fontFamily: "Rubik, Arial, sans-serif",
         fontSize: "16px",
-        fontWeight: "bold"
+        fontWeight: "bold",
       },
     },
     subtitle: {
-      text: "Datos del Caribe Continental Colombiano - Porcentaje acumulado de pérdida",
+      text: "Datos del Caribe Continental Colombiano - Valores negativos = pérdida",
       style: {
         color: "#666",
         fontFamily: "Rubik, sans-serif",
-        fontSize: "12px"
-      }
+        fontSize: "12px",
+      },
     },
     xAxis: {
       title: {
@@ -471,11 +475,11 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
       categories: years,
-      crosshair: true
+      crosshair: true,
     },
     yAxis: {
       title: {
-        text: "Porcentaje Acumulado de Pérdida (%)",
+        text: "Porcentaje de Pérdida (%)",
         style: {
           color: "black",
           fontFamily: "Rubik, sans-serif",
@@ -486,45 +490,58 @@ document.addEventListener("DOMContentLoaded", function () {
           color: "black",
           fontFamily: "Rubik, sans-serif",
         },
-        formatter: function() {
-          return this.value.toFixed(1) + '%';
-        }
+        formatter: function () {
+          return this.value.toFixed(2) + "%";
+        },
       },
-      reversed: true, // Esto invierte el eje Y (cero arriba)
-      min: 0,         // El valor MÍNIMO es 0 (arriba)
-      max: 50,        // El valor MÁXIMO es 50 (abajo)
-      tickInterval: 5,
+      min: -12, // Valor mínimo del eje Y (abajo)
+      max: 1, // Valor máximo del eje Y (arriba)
+      tickInterval: 2,
       gridLineWidth: 1,
-      gridLineColor: 'rgba(0,0,0,0.1)',
-      // Asegurar que 0 esté arriba y 50 abajo
-      startOnTick: true,
-      endOnTick: true
+      gridLineColor: "rgba(0,0,0,0.1)",
+      plotLines: [
+        {
+          color: "#333",
+          width: 1,
+          value: 0,
+          zIndex: 5,
+          dashStyle: "dash",
+          label: {
+            text: "Línea base (0% pérdida)",
+            style: {
+              color: "#666",
+              fontSize: "11px",
+            },
+          },
+        },
+      ],
     },
     tooltip: {
       shared: true,
       useHTML: true,
-      formatter: function() {
-        let tooltip = '<b>Año: ' + this.x + '</b><br/>';
-        
-        this.points.forEach(point => {
-          const porcentaje = point.y.toFixed(2);
-          const valorPorcentaje = porcentaje + '%';
-          
+      formatter: function () {
+        let tooltip = "<b>Año: " + this.x + "</b><br/>";
+
+        this.points.forEach((point) => {
+          const valor = point.y;
+          const porcentaje = valor.toFixed(2);
+          const signo = valor > 0 ? "+" : "";
+
           tooltip += `
             <div style="display: flex; align-items: center; margin: 5px 0;">
               <span style="display: inline-block; width: 10px; height: 10px; 
                   background-color: ${point.color}; margin-right: 8px; border-radius: 50%;"></span>
               <div>
                 <div style="font-weight: bold;">${point.series.name}</div>
-                <div>Pérdida acumulada: <b>${valorPorcentaje}</b></div>
+                <div>Pérdida: <b>${signo}${porcentaje}%</b></div>
                 <div style="font-size: 11px; color: #666; margin-top: 2px;">
-                  ${this.x === 1985 ? 'Año base (sin pérdida)' : `Desde 1985 hasta ${this.x}`}
+                  ${valor === 0 ? "Año base" : valor < 0 ? "Pérdida de cobertura" : "Ganancia de cobertura"}
                 </div>
               </div>
             </div>
           `;
         });
-        
+
         return tooltip;
       },
       style: {
@@ -533,69 +550,70 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     legend: {
       enabled: true,
-      layout: 'horizontal',
-      align: 'center',
-      verticalAlign: 'bottom',
+      layout: "horizontal",
+      align: "center",
+      verticalAlign: "bottom",
       itemStyle: {
         fontFamily: "Rubik, sans-serif",
-        color: "black"
-      }
+        color: "black",
+      },
     },
     plotOptions: {
       series: {
         marker: {
           enabled: true,
-          radius: 5
+          radius: 5,
         },
-        lineWidth: 2
-      }
+        lineWidth: 2,
+      },
     },
     series: [
       {
         name: "Áreas Protegidas",
-        data: perdidaAcumuladaProtegidas.map(p => p * 100), // Convertir a porcentaje (valores POSITIVOS)
+        data: perdidaProtegidas,
         color: "#2CAFFE", // Azul claro
         marker: {
-          symbol: 'circle'
+          symbol: "circle",
         },
-        dashStyle: 'Solid'
+        dashStyle: "Solid",
       },
       {
         name: "Áreas NO Protegidas",
-        data: perdidaAcumuladaNoProtegidas.map(p => p * 100), // Convertir a porcentaje (valores POSITIVOS)
+        data: perdidaNoProtegidas,
         color: "#FF6B6B", // Rojo coral
         marker: {
-          symbol: 'square'
+          symbol: "square",
         },
-        dashStyle: 'Solid'
+        dashStyle: "Solid",
       },
       {
         name: "Caribe Continental Total",
-        data: perdidaAcumuladaCaribe.map(p => p * 100), // Convertir a porcentaje (valores POSITIVOS)
+        data: perdidaCaribe,
         color: "#4ECDC4", // Turquesa
         marker: {
-          symbol: 'triangle'
+          symbol: "triangle",
         },
-        dashStyle: 'Solid'
-      }
+        dashStyle: "Solid",
+      },
     ],
     responsive: {
-      rules: [{
-        condition: {
-          maxWidth: 500
+      rules: [
+        {
+          condition: {
+            maxWidth: 500,
+          },
+          chartOptions: {
+            legend: {
+              layout: "horizontal",
+              align: "center",
+              verticalAlign: "bottom",
+            },
+          },
         },
-        chartOptions: {
-          legend: {
-            layout: 'horizontal',
-            align: 'center',
-            verticalAlign: 'bottom'
-          }
-        }
-      }]
-    }
+      ],
+    },
   });
 });
-
 //conteniodo 4
 document.addEventListener("DOMContentLoaded", function () {
   Highcharts.chart("remanencia", {

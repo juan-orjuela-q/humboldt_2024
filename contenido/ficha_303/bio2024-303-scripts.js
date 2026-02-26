@@ -1,7 +1,7 @@
 // ============================================
 // CONTENIDO 1 - GRÁFICO DE COLUMNAS
 // ============================================
-
+document.addEventListener("DOMContentLoaded", function () {
 const contenido1 = document.getElementById("tendencia-perdida");
 if (contenido1) {
   Highcharts.chart("tendencia-perdida", {
@@ -98,6 +98,7 @@ if (contenido1) {
     ],
   });
 }
+});
 
 // ============================================
 // CONTENIDO 2 - SISTEMA DE FILTROS

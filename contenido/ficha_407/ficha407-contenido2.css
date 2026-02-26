@@ -94,6 +94,7 @@
   display: flex;
   gap: 15px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .region-item {
@@ -102,6 +103,11 @@
   gap: 12px;
   padding: 10px 15px;
   border-radius: 6px;
+}
+
+.region-item > img {
+  width: 30px;
+  height: 30px;
 }
 
 .region-color {

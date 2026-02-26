@@ -403,9 +403,6 @@ if (container) {
       },
     },
     legend: {
-      align: "right",
-      verticalAlign: "middle",
-      layout: "vertical",
       itemStyle: {
         color: "#000",
         fontFamily: "Rubik, sans-serif",

@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // TOOLTIPS - Interactividad de números sobre la imagen
     // ============================================================
 
-    const tooltips = document.querySelectorAll('.tooltip');
+    const tooltips = document.querySelectorAll('.tooltip-contenido-2');
 
     tooltips.forEach(tooltip => {
         tooltip.addEventListener('mouseenter', function() {

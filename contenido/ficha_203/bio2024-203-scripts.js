@@ -147,7 +147,7 @@ if (contenido3) {
         colorByPoint: true,
         data: [
           {
-            name: "Guajira",
+            name: "La Guajira",
             y: 2729.53,
             sliced: false,
             selected: true,

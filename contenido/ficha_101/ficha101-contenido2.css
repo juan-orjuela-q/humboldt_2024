@@ -165,19 +165,112 @@
   margin: 0;
 }
 
-@media screen and (max-width: 750px) {
+/* Móviles grandes y tablets pequeñas */
+@media screen and (max-width: 768px) {
+  .title-container h2 {
+    font-size: 20px;
+  }
+  
   .tab-group {
-    display: block;
-    gap: 20px;
+    gap: 10px;
   }
-
+  
   .tab-group li {
-    min-width: 200px;
-    max-width: 50%;
+    min-width: 150px;
   }
-
+  
   .tab-group li a {
-    width: 50%;
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+  
+  .total-info-container {
+    padding: 10px;
+  }
+  
+  .text-description-graphic {
+    font-size: 14px;
+  }
+  
+  
+  
+  .culumn-info {
+    flex-direction: column;
+  }
+  
+  .space-circle {
+    align-self: flex-start;
+  }
+}
+
+/* Móviles pequeños */
+@media screen and (max-width: 576px) {
+  .tab-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .tab-group li {
+    min-width: 100%;
+  }
+  
+  .tab-group li a {
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .total-info-container {
+    margin: 10px 0;
+  }
+  
+  .info-numbers {
+    width: 100%;
+  }
+  
+  .graphic-text {
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+  }
+  
+  .chart-container {
+    height: 350px;
+  }
+  
+  .map-img img {
+    max-height: 250px;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media screen and (max-width: 375px) {
+  .chart-container {
+    height: 300px;
+  }
+  
+  .text-description-graphic {
+    font-size: 12px;
+  }
+  
+  .culumn-info p {
+    font-size: 12px;
+  }
+}
+
+/* Optimización para orientación landscape en móviles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .chart-container {
+    height: 300px;
+  }
+  
+  .tab-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .tab-group li {
+    flex: 1 1 auto;
   }
 }
 

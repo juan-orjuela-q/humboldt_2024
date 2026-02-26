@@ -224,3 +224,9 @@ body {
   opacity: 0.8;
   background-color: #75c8da;
 }
+
+@media screen and (max-width: 768px) {
+  .col-dt-6 {
+    width: 100%;
+  }
+}
